@@ -1,0 +1,28 @@
+01 - 
+Policy
+  Name: Homelab-To-Internet
+  Incoming Interface  : Zone-Homelab
+  Outgoing Interface  : SD-WAN
+  Source              : Homelab address
+  Destination         : all
+  Schedule            : always
+  Service             : HTTP, HTTPS
+  Action              : ACCEPT
+
+Firewall/Network Options
+  Protocol Options    : default
+
+Security Profiles
+  AntiVirus               : Unchecked
+  Web Filter              : Unchecked
+  DNS Filter              : Unchecked
+  Application Control     : Unchecked
+  IPS                     : Unchecked
+  File Filter             : Unchecked
+  SSL Inspection          : Unchecked
+  certificate-inspection  : Unchecked
+
+Logging Options
+  Log Allowed Traffic : All Sessions
+
+Enable this policy: Checked

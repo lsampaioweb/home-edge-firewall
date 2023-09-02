@@ -1,0 +1,25 @@
+Name                : Home-To-Monitoring
+Incoming Interface  : Zone-Home
+Outgoing Interface  : Zone-Home-Infra
+Source              : LAG-Home address
+Destination         : VL-Home-Monitor address
+Schedule            : always
+Service             : HTTPS
+Action              : ACCEPT
+
+Firewall/Network Options
+  Protocol Options    : default
+
+Security Profiles
+  AntiVirus               : Unchecked
+  Web Filter              : Unchecked
+  DNS Filter              : Unchecked
+  Application Control     : Unchecked
+  IPS                     : Unchecked
+  File Filter             : Unchecked
+  SSL Inspection          : Unchecked
+
+Logging Options
+  Log Allowed Traffic : All Sessions
+
+Enable this policy: Checked

@@ -1,0 +1,25 @@
+Name                : Monitoring-Server-To-Client
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : Zone-Home-Infra
+Source              : Home-Monitor address
+Destination         : Home-Core address, Home-Device address
+Schedule            : always
+Service             : Zabbix-Client, SNMP, PING, HTTPS
+Action              : ACCEPT
+
+Firewall/Network Options
+  Protocol Options    : default
+
+Security Profiles
+  AntiVirus               : Unchecked
+  Web Filter              : Unchecked
+  DNS Filter              : Unchecked
+  Application Control     : Unchecked
+  IPS                     : Unchecked
+  File Filter             : Unchecked
+  SSL Inspection          : Unchecked
+
+Logging Options
+  Log Allowed Traffic : All Sessions
+
+Enable this policy: Checked
