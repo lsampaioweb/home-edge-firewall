@@ -1,0 +1,21 @@
+Interface:
+  Name              : LAG-Homelab
+  Alias             : 
+  Type              : 802.3ad Aggregrate
+  Interface members : Int-Homelab (port12)
+  Role              : LAN
+  
+Address:
+  Addressing mode                       : Manual
+  IP/Netmask                            : 0.0.0.0/0.0.0.0
+  Create address object matching subnet : Unchecked
+
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+Network:
+  Device detection                : Checked
+  Security mode                   : Unchecked
+
+Miscellaneous:
+  Status: Enabled

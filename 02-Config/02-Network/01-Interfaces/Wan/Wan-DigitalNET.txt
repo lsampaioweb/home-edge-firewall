@@ -1,0 +1,21 @@
+Interface:
+  Alias               : DigitalNET
+  Role                : WAN
+  Estimated bandwidth : 
+                        200000 kbps Upstream
+                        100000 kbps Downstream
+  
+Address:
+  Addressing mode                     : DHCP
+  Retrieve default gateway from server: Checked
+  Distance                            : 5
+  Override internal DNS               : Checked
+
+Administrative Access:
+  PING                        : Checked
+  Security Fabric Connection  : Checked
+
+  Receive LLDP : Use VDOM Setting
+
+Miscellaneous:
+  Status: Enabled

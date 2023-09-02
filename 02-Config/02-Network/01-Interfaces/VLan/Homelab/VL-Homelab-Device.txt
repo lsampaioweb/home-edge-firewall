@@ -1,0 +1,32 @@
+Interface:
+  Alias : VL-Homelab-Device
+  Role  : LAN
+  
+Address:
+  Addressing mode : Manual
+  IP/Netmask      : 172.16.1.1/255.255.255.224
+
+Administrative Access:  
+  PING                        : Checked
+  SSH                         : Checked
+  SNMP                        : Checked
+  Security Fabric Connection  : Checked
+
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+DHCP Server:
+  DHCP status     : Enabled
+  Address range   : 172.16.1.18-172.16.1.30
+  Netmask         : 255.255.255.224
+  Default gateway : Same as Interface IP
+  DNS server      : Same as Interface IP
+  Lease time      : 604800
+
+Network:
+  Device detection                : Checked
+  Automatically authorize devices : Unchecked
+  Security mode                   : Unchecked
+
+Miscellaneous:
+  Status: Enabled

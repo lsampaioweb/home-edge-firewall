@@ -1,0 +1,52 @@
+Interface:
+  Name              : LAG-Home
+  Alias             : 
+  Type              : 802.3ad Aggregrate
+  Interface members : Int-Home(port1)
+  Role              : LAN
+  
+Address:
+  Addressing mode                       : Manual
+  IP/Netmask                            : 192.168.2.1/24
+  Create address object matching subnet : Checked
+
+Administrative Access:
+  HTTPS                       : Checked
+  PING                        : Checked
+  SSH                         : Checked (Only if/when necessary)
+  Security Fabric Connection  : Checked
+
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+DHCP Server:
+  DHCP status     : Enabled
+  Address range   : 192.168.2.200-192.168.2.254
+  Netmask         : 255.255.255.0
+  Default gateway : Same as Interface IP
+  DNS server      : Same as Interface IP
+  Lease time      : 604800
+
+Advanced:
+  NTP server : Local
+
+  CLI:
+  config system dhcp server
+    edit x
+      set domain "homelab"
+    next
+  end
+
+  CLI:
+  config system interface
+    edit LAG-Home
+      set lacp-mode static
+    end
+
+Network:
+  Device detection                : Checked
+  Automatically authorize devices : Unchecked
+  Security mode                   : Unchecked
+
+Miscellaneous:
+  Status: Enabled

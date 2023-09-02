@@ -1,0 +1,3 @@
+Name                      : Zone-Home
+Block intra-zone traffic  : Checked
+Interface members         : LAG-Home
