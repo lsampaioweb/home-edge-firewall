@@ -1,0 +1,12 @@
+Policy
+  Incoming Interface  : Zone-Homelab
+  Outgoing Interface  : DigitalNET (wan1), Claro (win2)
+  Source Address      : Homelab address
+  Destination Address : all
+
+NAT
+  NAT : Checked
+    IP Pool Configuration : Use Outgoing Interface Address
+    Protocol              : any
+  Comments                : Homelab To Internet
+  Enable this Policy      : Checked

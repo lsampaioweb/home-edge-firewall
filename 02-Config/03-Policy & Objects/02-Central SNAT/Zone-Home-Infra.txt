@@ -1,0 +1,12 @@
+Policy
+  Incoming Interface  : Zone-Home-Infra
+  Outgoing Interface  : DigitalNET (wan1), Claro (win2)
+  Source Address      : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address
+  Destination Address : all
+
+NAT
+  NAT : Checked
+    IP Pool Configuration : Use Outgoing Interface Address
+    Protocol              : any
+  Comments                : Home-Infra To Internet
+  Enable this Policy      : Checked

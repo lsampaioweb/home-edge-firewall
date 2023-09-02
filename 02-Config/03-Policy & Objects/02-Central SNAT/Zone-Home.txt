@@ -1,0 +1,13 @@
+Policy
+  Incoming Interface  : Zone-Home
+  Outgoing Interface  : DigitalNET (wan1), Claro (win2)
+  Source Address      : LAG-Home Address
+  Destination Address : all
+
+NAT
+  NAT : Checked
+    IP Pool Configuration : Use Outgoing Interface Address
+    Protocol              : any
+    Explicit port mapping : Unchecked
+  Comments                : Lan To Internet
+  Enable this Policy      : Checked
