@@ -1,0 +1,33 @@
+DNS Service on Interface
+  Edit DNS Service
+    01
+      Interface     : LAG-Home
+      Mode          : Recursive
+      DNS Filter    : default
+      DNS over HTTPS: Unchecked
+    02
+      Interface     : VL-Home-Core
+      Mode          : Recursive
+      DNS Filter    : default
+      DNS over HTTPS: Unchecked
+    03
+      Interface     : VL-Home-Device
+      Mode          : Recursive
+      DNS Filter    : default
+      DNS over HTTPS: Unchecked
+    04
+      Interface     : VL-Home-Monitor
+      Mode          : Recursive
+      DNS Filter    : default
+      DNS over HTTPS: Unchecked
+
+DNS Database
+  New DNS Zone
+    Type                    : Primary
+    View                    : Shadow
+    DNS Zone                : homelab
+    Domain Name             : homelab
+    Hostname of Primary DNS : dns-01
+    Contact Email Address   : lsampaio
+    TTL (86400 seconds)     : 1 Day
+    Authoritative           : Checked

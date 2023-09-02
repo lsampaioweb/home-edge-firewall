@@ -1,0 +1,42 @@
+DNS Entries
+  01 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-firewall-01
+  IP Address                          : 192.168.2.1
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+  
+  02 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-firewall-01-snmp
+  IP Address                          : 192.168.5.1
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  03 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-esxi-01
+  IP Address                          : 192.168.3.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+  
+  04 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-ldap-01
+  IP Address                          : 192.168.4.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+  
+  05 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-postgresql-01
+  IP Address                          : 192.168.5.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  06 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-zabbix-01
+  IP Address                          : 192.168.5.3
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  07 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-grafana-01
+  IP Address                          : 192.168.5.4
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
