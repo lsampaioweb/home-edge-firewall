@@ -1,0 +1,30 @@
+SNMP Agent:
+  Description : Fortigate 80E
+  Location    : DC Home-Infra
+  Contact Info: lsampaioweb+edge-firewall-01@gmail.com
+
+User Name : edge-firewall-01-zabbix-user
+Enabled   : Checked
+
+Security Level
+  Authentication            : Checked
+  Authentication Algorithm  : SHA256
+  Password                  : KeyChain: "edge-firewall-01-zabbix-user"
+  Private                   : Checked
+  Encryption Algorithm      : AES256
+  Password                  : KeyChain: "edge-firewall-01-zabbix-user"
+
+Host:
+  IP Address                : 192.168.5.3
+
+Queries:
+  Enabled : Checked
+  Port    : 161
+
+Traps:
+  Enabled     : Checked
+  Local Port  : 161
+  Remote Port : 162
+
+SNMP Event:
+  Disable HA and other stuff that I am not using.

@@ -1,0 +1,4 @@
+Username              : LDAP Firewall Admins
+Type                  : Match all users in a remote server group
+Administrator profile : super_admin
+Remote User Group     : Firewall-Admins

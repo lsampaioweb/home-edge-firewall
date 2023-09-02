@@ -1,0 +1,12 @@
+config log syslogd setting
+
+status              : enable 
+server              : edge-grafana-01.homelab 
+mode                : udp 
+port                : 1514
+facility            : local7 
+source-ip           : 
+format              : default 
+priority            : default 
+max-log-rate        : 0
+interface-select-method: auto 

@@ -1,0 +1,53 @@
+System Settings:
+  Host name                       : edge-firewall-01
+  Time zone                       : (GMT-3:00 Brasilia)
+  Set Time                        : NTP
+  Select server                   : FortiGuard
+  Sync interval                   : 60
+  Setup device as local NTP server: Checked
+    Listen on Interfaces          : LAG-Home, VL-Home-Core, VL-Home-Device, VL-Home-Monitor
+
+Administration Settings:
+  HTTP port               : 80
+  Redirect to HTTPS       : Checked
+  HTTPS port              : 443
+  HTTPS server certificate: edge-firewall-ssl
+  SSH port                : 22
+
+Password Policy:
+  Password scope : Both
+  Minimum length : 8
+
+Workflow Management:
+  Configuration save mode : Automatic
+
+View Settings:
+  Language          : English
+  Theme             : Onyx
+  Date/Time display : Fortigate timezone
+  NGFW Mode         : Profile-based
+  Central SNAT      : Checked
+
+Email Service:
+  Use custom settings : Checked
+  SMTP Server         : specify : smtp.gmail.com
+  Port                : specify : 587
+  Authentication      : Checked
+  Username            : lsampaioweb@gmail.com
+  Password            : KeyChain Key: "lsampaio-edge-firewall-smtp-password"
+  Security Mode       : starttls
+  Default Reply to    : lsampaioweb@gmail.com
+
+CLI:
+config alertemail setting
+  set username "lsampaioweb@gmail.com"
+  set mailto1 "lsampaioweb+edge-firewall-01-alerts@gmail.com"
+  set configuration-changes-logs enable
+  set firewall-authentication-failure-logs enable
+  set sslvpn-authentication-errors-logs enable
+  set admin-login-logs enable
+  set ssh-logs enable
+end
+  # To test:
+    diagnose log alertmail test
+
