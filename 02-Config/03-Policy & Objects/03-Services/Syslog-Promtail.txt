@@ -1,0 +1,7 @@
+Name      : Syslog-Promtail
+Category  : Network Services
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : UDP 1514

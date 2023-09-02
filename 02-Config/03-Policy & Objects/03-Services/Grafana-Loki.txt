@@ -1,0 +1,7 @@
+Name      : Grafana-Loki
+Category  : Network Services
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 3100
