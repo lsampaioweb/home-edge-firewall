@@ -1,0 +1,18 @@
+Edit Policy
+  Name                : DigitalNET
+  Incoming Interface  : DigitalNET (wan1)
+  Source Address      : all
+  Destination Address : all
+  Service             : ALL
+
+L3 Anomalies
+  All options :
+    Logging : Checked
+    Action  : Monitor
+
+L4 Anomalies
+  All options :
+    Logging : Checked
+    Action  : Monitor
+
+Enable this policy    : Checked
