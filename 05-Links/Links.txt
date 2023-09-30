@@ -1,2 +1,5 @@
 01 - FortiGate - IPV4 DoS Policy
   https://www.youtube.com/watch?v=Ia1-4xCwNOM
+
+02 - How to disable NetBIOS using DHCP Server options
+  https://community.fortinet.com/t5/FortiGate/Technical-Tip-How-to-disable-NetBIOS-using-DHCP-Server-options/ta-p/195730
