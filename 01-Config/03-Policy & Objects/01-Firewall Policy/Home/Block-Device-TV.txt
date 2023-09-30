@@ -1,0 +1,12 @@
+Name                : Block-Device-TV
+Incoming Interface  : Zone-Home
+Outgoing Interface  : SD-WAN
+Source              : Block-Device-01
+Destination         : all
+Schedule            : always
+Service             : ALL
+Action              : DENY
+
+Log Violation Traffic : Checked
+
+Enable this policy: Checked
