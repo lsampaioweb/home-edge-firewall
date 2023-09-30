@@ -19,3 +19,9 @@ Network:
 
 Miscellaneous:
   Status: Enabled
+
+  CLI:
+  config system interface
+    edit LAG-Homelab
+      set lacp-mode static
+    end

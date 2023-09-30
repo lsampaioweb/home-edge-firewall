@@ -40,3 +40,51 @@ DNS Entries
   IP Address                          : 192.168.5.4
   TTL                                 : Use Zone TTL
   Status                              : Enabled
+  
+  08 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : switch-01
+  IP Address                          : 172.16.10.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+  
+  09 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-01
+  IP Address                          : 172.16.10.3
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+  
+  10 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-02
+  IP Address                          : 172.16.10.4
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  11 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-03
+  IP Address                          : 172.16.10.5
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  12 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-04
+  IP Address                          : 172.16.10.6
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  13 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-05
+  IP Address                          : 172.16.10.7
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  14 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-06
+  IP Address                          : 172.16.10.8
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  15 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : pve-07
+  IP Address                          : 172.16.10.9
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
