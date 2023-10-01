@@ -1,0 +1,7 @@
+Name      : SMTPS
+Category  : Email
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 587
