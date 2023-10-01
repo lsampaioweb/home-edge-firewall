@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : All Sessions
+  Log Allowed Traffic : UTM
 
 Enable this policy: Checked
