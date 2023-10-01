@@ -1,4 +1,4 @@
-01 - 
+01 -
 Policy
   Name: Homelab-To-Internet
   Incoming Interface  : Zone-Homelab
@@ -6,7 +6,7 @@ Policy
   Source              : Homelab address
   Destination         : all
   Schedule            : always
-  Service             : HTTP, HTTPS
+  Service             : HTTP, HTTPS, PING
   Action              : ACCEPT
 
 Firewall/Network Options
