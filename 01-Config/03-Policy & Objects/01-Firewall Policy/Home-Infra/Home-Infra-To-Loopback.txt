@@ -1,0 +1,26 @@
+Name                : Home-Infra-To-Loopback
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : INT-Loopback
+Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address
+Destination         : INT-Loopback address
+Schedule            : always
+Service             : NTP, PING, SNMP
+Action              : ACCEPT
+
+Security Profiles
+  AntiVirus                   : Unchecked
+  Web Filter                  : Unchecked
+  DNS Filter                  : Unchecked
+  Application Control         : Unchecked
+  IPS                         : Unchecked
+  File Filter                 : Unchecked
+  SSL Inspection              : Unchecked
+
+Advanced
+  WCCP                        : Unchecked
+  Exempt from Captive Portal  : Unchecked
+
+Logging Options
+  Log Allowed Traffic : UTM
+
+Enable this policy: Checked
