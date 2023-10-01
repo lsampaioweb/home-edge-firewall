@@ -1,89 +1,101 @@
 DNS Entries
-  01 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-firewall-01
   IP Address                          : 192.168.2.1
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  02 - Type                           : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-firewall-01-snmp
-  IP Address                          : 192.168.5.1
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-firewall-01-loopback
+  IP Address                          : 172.16.1.1
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  03 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Canonical Name (CNAME)
+  Hostname                            : edge-firewall-01-snmp
+  Canonical Name (CNAME)              : edge-firewall-01-loopback
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Canonical Name (CNAME)
+  Hostname                            : ntp-pool
+  Canonical Name (CNAME)              : edge-firewall-01-loopback
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-esxi-01
   IP Address                          : 192.168.3.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  04 - Type                           : Address (A) and IPv4 Pointer (PTR)
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-ldap-01
   IP Address                          : 192.168.4.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  05 - Type                           : Address (A) and IPv4 Pointer (PTR)
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-postgresql-01
   IP Address                          : 192.168.5.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  06 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-zabbix-01
   IP Address                          : 192.168.5.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  07 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-grafana-01
   IP Address                          : 192.168.5.4
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  08 - Type                           : Address (A) and IPv4 Pointer (PTR)
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : switch-01
   IP Address                          : 172.16.10.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  09 - Type                           : Address (A) and IPv4 Pointer (PTR)
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-01
   IP Address                          : 172.16.10.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
-  
-  10 - Type                           : Address (A) and IPv4 Pointer (PTR)
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-02
   IP Address                          : 172.16.10.4
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  11 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-03
   IP Address                          : 172.16.10.5
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  12 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-04
   IP Address                          : 172.16.10.6
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  13 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-05
   IP Address                          : 172.16.10.7
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  14 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-06
   IP Address                          : 172.16.10.8
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  15 - Type                           : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-07
   IP Address                          : 172.16.10.9
   TTL                                 : Use Zone TTL

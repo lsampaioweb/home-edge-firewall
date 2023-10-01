@@ -5,7 +5,7 @@ Interface:
   Interface     : LAG-Home-Infra
   VLAN ID       : 5
   Role          : LAN
-  
+
 Address:
   Addressing mode : Manual
   IP/Netmask      : 192.168.5.1/255.255.255.240
@@ -14,7 +14,6 @@ Create address object matching subnet: Checked
 
 Administrative Access:
   PING                        : Checked
-  SNMP                        : Checked
   Security Fabric Connection  : Checked
 
 DHCP Server:
@@ -27,7 +26,7 @@ DHCP Server:
 
 Advanced:
   NTP server : Local
-  
+
   CLI:
   config system dhcp server
     edit x

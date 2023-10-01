@@ -1,0 +1,23 @@
+Interface:
+  Alias         : INT-loopback
+  Type          : Loopback Interface
+  Role          : LAN
+
+Address:
+  IP/Netmask      : 172.16.1.1/255.255.255.255
+
+Create address object matching subnet: Checked
+
+Administrative Access:
+  PING                        : Checked
+  SNMP                        : Checked
+  Security Fabric Connection  : Checked
+
+Network:
+  Automatically authorize devices : Unchecked
+  Security mode                   : Unchecked
+
+Comments: Interface that can be used for NTP, SNMP and others
+
+Miscellaneous:
+  Status: Enabled
