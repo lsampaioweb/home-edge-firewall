@@ -4,7 +4,7 @@ Outgoing Interface  : Zone-Homelab
 Source              : Iphone-Luciano, Macbook-Luciano, Macbook-Fernanda
 Destination         : VL-HLab-Device address
 Schedule            : always
-Service             : Proxmox-Server, HTTP, HTTPS, PING, SSH
+Service             : Proxmox-Server, HTTP, HTTPS, PING, SSH, RDP
 Action              : ACCEPT
 
 Firewall/Network Options
