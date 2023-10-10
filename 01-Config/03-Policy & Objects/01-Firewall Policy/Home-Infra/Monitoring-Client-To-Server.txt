@@ -1,10 +1,10 @@
 Name                : Monitoring-Client-To-Server
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : Home-Core address, Home-Device address
-Destination         : Home-Monitor address
+Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Storage address
+Destination         : VL-Home-Monitor address
 Schedule            : always
-Service             : Zabbix-Server, Grafana-Loki, SYSLOG, SYSLOG-Promtail, SNMP
+Service             : Grafana-Loki, SNMP, SYSLOG, SYSLOG-Promtail, Zabbix-Server
 Action              : ACCEPT
 
 Firewall/Network Options

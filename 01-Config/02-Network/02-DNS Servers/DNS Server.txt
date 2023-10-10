@@ -25,6 +25,11 @@ DNS Service on Interface
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
+    06
+      Interface     : VL-Home-Storage
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
 
 DNS Database
   New DNS Zone

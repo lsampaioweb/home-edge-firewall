@@ -1,7 +1,7 @@
 Name                : Home-Infra-To-Loopback
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : INT-Loopback
-Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address
+Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Destination         : INT-Loopback address
 Schedule            : always
 Service             : NTP, PING, SNMP

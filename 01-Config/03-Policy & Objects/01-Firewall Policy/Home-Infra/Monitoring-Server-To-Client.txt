@@ -1,10 +1,10 @@
 Name                : Monitoring-Server-To-Client
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : Home-Monitor address
-Destination         : Home-Core address, Home-Device address
+Source              : VL-Home-Monitor address
+Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Storage address
 Schedule            : always
-Service             : Zabbix-Client, SNMP, PING, HTTPS
+Service             : HTTPS, PING, SNMP, Zabbix-Client
 Action              : ACCEPT
 
 Firewall/Network Options

@@ -1,7 +1,7 @@
-Name                : Home-Infra-To-Wan
+Name                : Home-Infra-To-Internet
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : SD-WAN
-Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address
+Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Destination         : all
 Schedule            : always
 Service             : HTTP, HTTPS

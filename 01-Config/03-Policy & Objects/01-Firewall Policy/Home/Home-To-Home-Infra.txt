@@ -2,7 +2,7 @@ Name                : Home-To-Home-Infra
 Incoming Interface  : Zone-Home
 Outgoing Interface  : Zone-Home-Infra
 Source              : Iphone-Luciano, Macbook-Luciano, Macbook-Fernanda
-Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address
+Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Schedule            : always
 Service             : ALL
 Action              : ACCEPT

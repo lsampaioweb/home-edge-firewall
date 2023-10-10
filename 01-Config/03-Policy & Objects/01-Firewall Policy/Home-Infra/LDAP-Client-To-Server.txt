@@ -1,7 +1,7 @@
 Name                : LDAP-Client-To-Server
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-Home-Monitor address, VL-Home-Device address
+Source              : VL-Home-Monitor address, VL-Home-Device address, VL-Home-Storage address
 Destination         : VL-Home-Core address
 Schedule            : always
 Service             : LDAP, LDAP_UDP, LDAPS, LDAPS_UDP
