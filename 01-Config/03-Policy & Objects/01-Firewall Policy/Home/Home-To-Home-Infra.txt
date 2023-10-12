@@ -4,7 +4,7 @@ Outgoing Interface  : Zone-Home-Infra
 Source              : Iphone-Luciano, Macbook-Luciano, Macbook-Fernanda
 Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Schedule            : always
-Service             : ALL
+Service             : HTTP, HTTPS, PING, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
