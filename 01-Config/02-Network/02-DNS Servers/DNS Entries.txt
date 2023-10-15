@@ -59,9 +59,21 @@ DNS Entries
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
-  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Type                                : Address (A)
   Hostname                            : api.edge-minio-01
   IP Address                          : 192.168.6.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-minio-02
+  IP Address                          : 192.168.6.3
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A)
+  Hostname                            : api.edge-minio-02
+  IP Address                          : 192.168.6.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
