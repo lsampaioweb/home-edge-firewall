@@ -1,13 +1,11 @@
-01 -
-Policy
-  Name: Homelab-To-Internet
-  Incoming Interface  : Zone-Homelab
-  Outgoing Interface  : SD-WAN
-  Source              : Homelab address
-  Destination         : all
-  Schedule            : always
-  Service             : HTTP, HTTPS, PING, SMTPS
-  Action              : ACCEPT
+Name                : Homelab-To-Internet
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : SD-WAN
+Source              : Homelab address
+Destination         : all
+Schedule            : always
+Service             : HTTP, HTTPS, PING, SMTPS
+Action              : ACCEPT
 
 Firewall/Network Options
   Protocol Options    : default

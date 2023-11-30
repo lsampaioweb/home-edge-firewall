@@ -1,0 +1,30 @@
+Interface:
+  Name              : LAG-H-Infra-01
+  Alias             :
+  Type              : 802.3ad Aggregrate
+  Interface members : Int-Home-01-01 (port3)
+                      Int-Home-01-02 (port4)
+                      Int-Home-01-03 (port5)
+                      Int-Home-01-04 (port6)
+  Role              : LAN
+
+Address:
+  Addressing mode                       : Manual
+  IP/Netmask                            : 0.0.0.0/0.0.0.0
+  Create address object matching subnet : Unchecked
+
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+Network:
+  Device detection                : Checked
+  Security mode                   : Unchecked
+
+Miscellaneous:
+  Status: Enabled
+
+  CLI:
+  config system interface
+    edit LAG-H-Infra-01
+      set lacp-mode static
+    end

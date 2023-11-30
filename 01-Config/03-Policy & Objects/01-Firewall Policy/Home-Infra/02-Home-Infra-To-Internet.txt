@@ -1,10 +1,10 @@
-Name                : Home-To-Wan
-Incoming Interface  : Zone-Home
+Name                : Home-Infra-To-Internet
+Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : SD-WAN
-Source              : LAG-Home address
+Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Destination         : all
 Schedule            : always
-Service             : ALL
+Service             : HTTP, HTTPS, PING, SMTPS
 Action              : ACCEPT
 
 Firewall/Network Options

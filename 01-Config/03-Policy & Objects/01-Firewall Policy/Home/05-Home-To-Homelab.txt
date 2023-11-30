@@ -1,10 +1,10 @@
-Name                : Home-To-Home-Infra
+Name                : Home-To-Homelab
 Incoming Interface  : Zone-Home
-Outgoing Interface  : Zone-Home-Infra
-Source              : Iphone-Luciano, Macbook-Luciano, Macbook-Fernanda
-Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
+Outgoing Interface  : Zone-Homelab
+Source              : Celular-Luciano, Macbook-Luciano
+Destination         : VL-HLab-Device address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SSH
+Service             : Proxmox-Server, HTTP, HTTPS, PING, SSH, RDP
 Action              : ACCEPT
 
 Firewall/Network Options

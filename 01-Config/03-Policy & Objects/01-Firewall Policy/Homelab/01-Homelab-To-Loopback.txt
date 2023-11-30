@@ -4,7 +4,7 @@ Outgoing Interface  : INT-Loopback
 Source              : VL-HLab-Device address
 Destination         : INT-Loopback address
 Schedule            : always
-Service             : NTP, PING, SNMP
+Service             : NTP, SNMP, PING
 Action              : ACCEPT
 
 Security Profiles

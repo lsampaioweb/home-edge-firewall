@@ -1,13 +1,13 @@
 Interface:
-  Name              : LAG-Home-Infra
-  Alias             : 
+  Name              : LAG-H-Infra-02
+  Alias             :
   Type              : 802.3ad Aggregrate
-  Interface members : Int-Home-Infra-01 (port4)
-                      Int-Home-Infra-02 (port5)
-                      Int-Home-Infra-03 (port8)
-                      Int-Home-Infra-04 (port9)
+  Interface members : Int-Home-02-01 (port7)
+                      Int-Home-02-02 (port8)
+                      Int-Home-02-03 (port9)
+                      Int-Home-02-04 (port10)
   Role              : LAN
-  
+
 Address:
   Addressing mode                       : Manual
   IP/Netmask                            : 0.0.0.0/0.0.0.0
@@ -25,6 +25,6 @@ Miscellaneous:
 
   CLI:
   config system interface
-    edit LAG-Home-Infra
+    edit LAG-H-Infra-02
       set lacp-mode static
     end
