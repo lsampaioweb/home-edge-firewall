@@ -1,7 +1,7 @@
 Policy
   Incoming Interface  : Zone-Homelab
   Outgoing Interface  : DigitalNET (wan1), Claro (win2)
-  Source Address      : Homelab address
+  Source Address      : VL-HLab-Device, VL-HL-Stg-JpSrv
   Destination Address : all
 
 NAT

@@ -1,7 +1,7 @@
 Name                : Homelab-To-Loopback
 Incoming Interface  : Zone-Homelab
 Outgoing Interface  : INT-Loopback
-Source              : VL-HLab-Device address
+Source              : VL-HLab-Device address, VL-HL-Stg-JpSrv address
 Destination         : INT-Loopback address
 Schedule            : always
 Service             : NTP, SNMP, PING

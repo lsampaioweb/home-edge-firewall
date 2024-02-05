@@ -1,7 +1,7 @@
 Name                : Homelab-To-Internet
 Incoming Interface  : Zone-Homelab
 Outgoing Interface  : SD-WAN
-Source              : Homelab address
+Source              : VL-HLab-Device address, VL-HL-Stg-JpSrv address
 Destination         : all
 Schedule            : always
 Service             : HTTP, HTTPS, PING, SMTPS

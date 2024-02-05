@@ -6,26 +6,31 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     02
-      Interface     : VL-HLab-Device
+      Interface     : VL-HL-Stg-JpSrv
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     03
-      Interface     : VL-Home-Core
+      Interface     : VL-HLab-Device
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     04
-      Interface     : VL-Home-Device
+      Interface     : VL-Home-Core
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     05
-      Interface     : VL-Home-Monitor
+      Interface     : VL-Home-Device
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     06
+      Interface     : VL-Home-Monitor
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    07
       Interface     : VL-Home-Storage
       Mode          : Recursive
       DNS Filter    : Unchecked

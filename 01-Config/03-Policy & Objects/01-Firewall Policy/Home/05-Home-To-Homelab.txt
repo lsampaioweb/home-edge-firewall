@@ -2,7 +2,7 @@ Name                : Home-To-Homelab
 Incoming Interface  : Zone-Home
 Outgoing Interface  : Zone-Homelab
 Source              : Celular-Luciano, Macbook-Luciano
-Destination         : VL-HLab-Device address
+Destination         : VL-HLab-Device address, VL-HL-Stg-JpSrv address
 Schedule            : always
 Service             : Proxmox-Server, HTTP, HTTPS, PING, SSH, RDP
 Action              : ACCEPT
