@@ -26,5 +26,5 @@ Miscellaneous:
   CLI:
   config system interface
     edit LAG-H-Infra-01
-      set lacp-mode static
+      set lacp-mode active
     end

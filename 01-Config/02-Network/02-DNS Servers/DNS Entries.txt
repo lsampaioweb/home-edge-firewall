@@ -24,13 +24,13 @@ DNS Entries
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-esxi-01
+  Hostname                            : edge-pve-01
   IP Address                          : 192.168.3.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-esxi-02
+  Hostname                            : edge-pve-02
   IP Address                          : 192.168.3.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
@@ -128,5 +128,11 @@ DNS Entries
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-07
   IP Address                          : 172.16.10.9
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : sud-jumpserver-01
+  IP Address                          : 10.0.20.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled

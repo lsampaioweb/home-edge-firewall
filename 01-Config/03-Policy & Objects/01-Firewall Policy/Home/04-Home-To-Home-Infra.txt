@@ -4,7 +4,7 @@ Outgoing Interface  : Zone-Home-Infra
 Source              : Celular-Luciano, Macbook-Luciano
 Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SSH
+Service             : HTTP, HTTPS, PING, SSH, Proxmox-Server,
 Action              : ACCEPT
 
 Firewall/Network Options
