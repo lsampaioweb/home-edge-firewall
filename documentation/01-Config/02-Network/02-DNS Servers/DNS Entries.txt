@@ -37,49 +37,49 @@ DNS Entries
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-ldap-01
-  IP Address                          : 192.168.4.2
+  IP Address                          : 192.168.6.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-postgresql-01
-  IP Address                          : 192.168.5.2
-  TTL                                 : Use Zone TTL
-  Status                              : Enabled
-
-  Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-zabbix-01
-  IP Address                          : 192.168.5.3
-  TTL                                 : Use Zone TTL
-  Status                              : Enabled
-
-  Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-grafana-01
-  IP Address                          : 192.168.5.4
+  IP Address                          : 192.168.7.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-minio-01
-  IP Address                          : 192.168.6.2
+  IP Address                          : 192.168.7.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
   Hostname                            : api.edge-minio-01
-  IP Address                          : 192.168.6.2
+  IP Address                          : 192.168.7.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-minio-02
-  IP Address                          : 192.168.6.3
+  IP Address                          : 192.168.7.4
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
   Hostname                            : api.edge-minio-02
-  IP Address                          : 192.168.6.3
+  IP Address                          : 192.168.7.4
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-zabbix-01
+  IP Address                          : 192.168.8.2
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Address (A) and IPv4 Pointer (PTR)
+  Hostname                            : edge-grafana-01
+  IP Address                          : 192.168.8.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
@@ -133,6 +133,6 @@ DNS Entries
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : sud-jumpserver-01
-  IP Address                          : 10.0.20.2
+  IP Address                          : 10.0.101.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled

@@ -1,0 +1,15 @@
+Interface:
+  Name         : SS-HI-VMS
+  Type         : Software Switch
+  Interface    : LAG-HI-VMS-01, LAG-HI-VMS-02
+  Role         : LAN
+
+Address:
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+Network:
+  Device detection : Checked
+
+Miscellaneous:
+  Status: Enabled

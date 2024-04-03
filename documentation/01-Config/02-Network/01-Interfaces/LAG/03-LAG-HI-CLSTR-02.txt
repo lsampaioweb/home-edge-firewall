@@ -1,11 +1,8 @@
 Interface:
-  Name              : LAG-H-Infra-01
+  Name              : LAG-HI-CLSTR-02
   Alias             :
   Type              : 802.3ad Aggregrate
-  Interface members : Int-Home-01-01 (port3)
-                      Int-Home-01-02 (port4)
-                      Int-Home-01-03 (port5)
-                      Int-Home-01-04 (port6)
+  Interface members : Int-Home-02-02 (port8)
   Role              : LAN
 
 Address:
@@ -25,6 +22,6 @@ Miscellaneous:
 
   CLI:
   config system interface
-    edit LAG-H-Infra-01
+    edit LAG-HI-CLSTR-02
       set lacp-mode active
     end

@@ -1,0 +1,15 @@
+Interface:
+  Name         : SS-HI-CLSTR
+  Type         : Software Switch
+  Interface    : LAG-HI-CLSTR-01, LAG-HI-CLSTR-02
+  Role         : LAN
+
+Address:
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+Network:
+  Device detection : Checked
+
+Miscellaneous:
+  Status: Enabled

@@ -1,0 +1,27 @@
+Interface:
+  Name              : LAG-HI-CLSTR-01
+  Alias             :
+  Type              : 802.3ad Aggregrate
+  Interface members : Int-Home-01-02 (port4)
+  Role              : LAN
+
+Address:
+  Addressing mode                       : Manual
+  IP/Netmask                            : 0.0.0.0/0.0.0.0
+  Create address object matching subnet : Unchecked
+
+  Receive LLDP  : Use VDOM Setting
+  Transmit LLDP : Use VDOM Setting
+
+Network:
+  Device detection                : Checked
+  Security mode                   : Unchecked
+
+Miscellaneous:
+  Status: Enabled
+
+  CLI:
+  config system interface
+    edit LAG-HI-CLSTR-01
+      set lacp-mode active
+    end

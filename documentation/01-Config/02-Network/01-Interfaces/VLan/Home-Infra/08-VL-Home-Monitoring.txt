@@ -3,12 +3,12 @@ Interface:
   Type          : VLAN
   VLAN Protocol : 802.1Q
   Interface     : SS-Home-Infra
-  VLAN ID       : 5
+  VLAN ID       : 8
   Role          : LAN
 
 Address:
   Addressing mode : Manual
-  IP/Netmask      : 192.168.5.1/255.255.255.240
+  IP/Netmask      : 192.168.8.1/255.255.255.240
 
 Create address object matching subnet: Checked
 
@@ -18,7 +18,7 @@ Administrative Access:
 
 DHCP Server:
   DHCP status     : Enabled
-  Address range   : 192.168.5.2-192.168.5.14
+  Address range   : 192.168.8.2-192.168.8.14
   Netmask         : 255.255.255.240
   Default gateway : Same as Interface IP
   DNS server      : Same as Interface IP
@@ -35,9 +35,9 @@ Network:
 Miscellaneous:
   Status: Enabled
 
-  CLI:
-  config system dhcp server
-    edit x
-      set domain "homelab"
-    next
-  end
+CLI:
+config system dhcp server
+  edit x
+    set domain "homelab"
+  next
+end
