@@ -1,8 +1,8 @@
 Interface:
-  Alias         : VL-Home-Storage
+  Name          : VL-Home-Storage
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-Home-Infra
+  Interface     : SS-HI-STRG
   VLAN ID       : 5
   Role          : LAN
 

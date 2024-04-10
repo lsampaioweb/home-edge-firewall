@@ -1,8 +1,8 @@
 Interface:
-  Alias         : VL-Home-Cluster
+  Name          : VL-Home-Cluster
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-Home-Infra
+  Interface     : SS-HI-CLSTR
   VLAN ID       : 4
   Role          : LAN
 

@@ -1,8 +1,8 @@
 Interface:
-  Alias         : VL-Home-Device
+  Name          : VL-Home-Device
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-Home-Infra
+  Interface     : SS-HI-VMS
   VLAN ID       : 3
   Role          : LAN
 

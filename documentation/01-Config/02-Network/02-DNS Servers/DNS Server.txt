@@ -1,47 +1,52 @@
 DNS Service on Interface
   Edit DNS Service
-    01
+    -
       Interface     : LAG-Home
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
-    02
-      Interface     : VL-Home-Device
+    -
+      Interface     : VL-HI-Template
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
-    03
-      Interface     : VL-Home-Cluster
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    04
-      Interface     : VL-Home-Storage
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    05
-      Interface     : VL-Home-Core
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    06
-      Interface     : VL-Home-Database
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    07
-      Interface     : VL-Home-Monitor
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    08
+    -
       Interface     : VL-HL-Stg-JpSrv
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
-    09
+    -
       Interface     : VL-HLab-Device
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Cluster
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Core
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Device
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Database
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Monitor
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-Home-Storage
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked

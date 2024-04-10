@@ -1,8 +1,8 @@
 Interface:
-  Alias         : VL-Home-Monitor
+  Name          : VL-Home-Monitor
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-Home-Infra
+  Interface     : SS-HI-VMS
   VLAN ID       : 8
   Role          : LAN
 

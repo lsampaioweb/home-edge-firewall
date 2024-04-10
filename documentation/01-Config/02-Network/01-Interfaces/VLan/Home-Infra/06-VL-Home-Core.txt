@@ -1,8 +1,8 @@
 Interface:
-  Alias         : VL-Home-Core
+  Name          : VL-Home-Core
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-Home-Infra
+  Interface     : SS-HI-VMS
   VLAN ID       : 6
   Role          : LAN
 
