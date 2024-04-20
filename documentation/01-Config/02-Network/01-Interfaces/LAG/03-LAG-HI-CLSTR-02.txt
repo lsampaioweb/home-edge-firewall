@@ -3,6 +3,8 @@ Interface:
   Alias             :
   Type              : 802.3ad Aggregrate
   Interface members : Int-Home-02-02 (port8)
+                      Int-Home-02-03 (port9)
+                      Int-Home-02-04 (port10)
   Role              : LAN
 
 Address:
