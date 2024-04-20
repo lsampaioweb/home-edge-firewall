@@ -2,7 +2,7 @@ Interface:
   Name          : VL-Home-Storage
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-HI-STRG
+  Interface     : SS-HI-CLSTR
   VLAN ID       : 5
   Role          : LAN
 
