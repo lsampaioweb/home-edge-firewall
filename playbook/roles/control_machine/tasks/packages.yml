@@ -1,0 +1,22 @@
+---
+- name: "Ensure apt packages are installed"
+  ansible.builtin.include_tasks: "{{ path_packages_apt }}"
+  vars:
+    update_cache: true
+    upgrade: "safe"
+    packages:
+      - {name: "pip"}
+      - {name: "python-is-python3"}
+
+- name: "Ensure pip packages are installed"
+  ansible.builtin.include_tasks: "{{ path_packages_pip }}"
+  vars:
+    packages:
+      - {name: "ansible"}
+      - {name: "ansible-lint"}
+
+- name: "Ensure Ansible Galaxy collections are installed"
+  ansible.builtin.include_tasks: "{{ path_packages_ansible_galaxy }}"
+  vars:
+    packages:
+      - {name: "fortinet.fortios"} # To work with Fortigate.

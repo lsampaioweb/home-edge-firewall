@@ -1,0 +1,7 @@
+---
+- name: "Setting up the control machine to run Ansible scripts"
+  hosts: "ControlMachine"
+  become: true
+
+  roles:
+    - "control_machine"

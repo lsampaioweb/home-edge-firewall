@@ -1,0 +1,3 @@
+---
+# The id of the password saved in the secret manager. Each firewall has its own password.
+password_id: "{{ ansible_hostname }}-admin-password"

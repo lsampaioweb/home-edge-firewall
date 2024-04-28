@@ -1,0 +1,9 @@
+[ControlMachine]
+localhost ansible_connection=local
+
+[hosts]
+edge-firewall-01
+
+[hosts:vars]
+ansible_user="admin"
+ansible_network_os=fortinet.fortios.fortios
