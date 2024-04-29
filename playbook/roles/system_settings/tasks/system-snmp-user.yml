@@ -1,0 +1,24 @@
+---
+- name: "Fetching all system global settings"
+  fortinet.fortios.fortios_configuration_fact:
+    selector: "system.snmp_user"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+    # msg: "{{ output.meta.results.hostname }}"
+
+# - name: "Setting up the XXX"
+#   fortinet.fortios.fortios_switch_controller_snmp_user:
+#     vdom: "{{ vdom | default(omit) }}"
+#     state: "present"
+#     switch_controller_snmp_user:
+#       auth_proto: "sha256"
+#       auth_pwd: "XXXX"
+#       priv_proto: "aes256"
+#       priv_pwd: "XXXX"
+#       name: "edge-firewall-01-zabbix-user"
+#       query_port: "161"
+#       security_level: "auth-priv"
+#       queries: "enable"

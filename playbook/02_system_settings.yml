@@ -1,0 +1,6 @@
+---
+- name: "Setting up the system settings"
+  hosts: "firewalls"
+
+  roles:
+    - "system_settings"

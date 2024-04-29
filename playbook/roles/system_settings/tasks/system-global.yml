@@ -1,0 +1,20 @@
+---
+- name: "Fetching all system global settings"
+  fortinet.fortios.fortios_configuration_fact:
+    selector: "system_global"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    # msg: "{{ output }}"
+    msg: "{{ output.meta.results.hostname }}"
+
+- name: "Setting up the system settings"
+  fortinet.fortios.fortios_system_global:
+    vdom: "{{ vdom | default(omit) }}"
+    system_global:
+      admin_server_cert: "edge-firewall-01.homelab"
+      alias: "FortiGate-80E"
+      hostname: "edge-firewall-01"
+      timezone: "18"
+      gui_theme: "onyx"

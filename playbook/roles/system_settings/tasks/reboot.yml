@@ -1,0 +1,7 @@
+---
+- name: "Rebooting this device"
+  fortinet.fortios.fortios_monitor:
+    vdom: "{{ vdom | default(omit) }}"
+    selector: "reboot.system.os"
+    params:
+      event_log_message: "Reboot requested by Ansible"

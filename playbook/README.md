@@ -13,7 +13,8 @@ secret-tool lookup password "edge-firewall-01-admin-password"
 Run the command in the terminal:
 ```bash
 ansible-playbook site.yml
-ansible-playbook update.yml
+ansible-playbook 01_control_machine.yml
+ansible-playbook 02_system_settings.yml
 ```
 
 # Roles you can execute:

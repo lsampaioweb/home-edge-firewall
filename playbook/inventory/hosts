@@ -1,9 +1,11 @@
 [ControlMachine]
 localhost ansible_connection=local
 
-[hosts]
-edge-firewall-01
+[firewalls]
+edge-firewall-01.homelab
 
-[hosts:vars]
-ansible_user="admin"
+[firewalls:vars]
+ansible_user=admin
 ansible_network_os=fortinet.fortios.fortios
+ansible_connection=httpapi
+ansible_httpapi_use_ssl=true

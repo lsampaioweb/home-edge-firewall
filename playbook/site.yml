@@ -1,0 +1,6 @@
+---
+- name: "Run the control machine playbook"
+  ansible.builtin.import_playbook: "01_control_machine.yml"
+
+- name: "Run the update playbook"
+  ansible.builtin.import_playbook: "update.yml"

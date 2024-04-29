@@ -1,0 +1,24 @@
+---
+# show firewall policy 19
+# config firewall policy
+#     edit 19
+#         set name "Template-To-Home"
+#         set uuid b325ebd6-f6e6-51ee-150b-36680ca2d321
+#         set srcintf "Zone-Home-Infra"
+#         set dstintf "Zone-Home"
+#         set action accept
+#         set srcaddr "VL-HI-Template address"
+#         set dstaddr "LAG-Home address"
+#         set schedule "always"
+#         set service "Cloud-Init"
+#         set logtraffic all
+#     next
+# end
+# - name: "Setting up the system settings"
+#   fortinet.fortios.fortios_firewall_policy:
+#     state: "present"
+#     firewall_policy:
+#       policyid: 1
+#       name: "XXX"
+#       srcintf:
+#         - name: "XX"

@@ -1,0 +1,6 @@
+---
+# The id of the password saved in the secret manager. Each firewall has its own password.
+password_id: "{{ inventory_hostname | replace('.' + domain, '') }}-admin-password"
+
+# The password of the user that will connect.
+ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + password_id) }}"
