@@ -17,9 +17,11 @@ ansible-playbook 01_control_machine.yml
 ansible-playbook 02_system_settings.yml
 ```
 
-# Roles you can execute:
+#
+### Roles you can execute:
 1. [Setup](roles/control_machine/README.md) the control machine to run Ansible scripts.
 
-# Created by:
+#
+### Created by:
 
 1. Luciano Sampaio.
