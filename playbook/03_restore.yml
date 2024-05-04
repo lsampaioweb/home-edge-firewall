@@ -1,0 +1,6 @@
+---
+- name: "Restoring the system settings"
+  hosts: "firewalls"
+
+  roles:
+    - "restore"

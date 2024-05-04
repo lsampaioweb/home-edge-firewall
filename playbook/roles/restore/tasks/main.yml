@@ -1,0 +1,3 @@
+---
+- name: "Restoring the system settings from a backup file"
+  ansible.builtin.import_tasks: "restore.yml"

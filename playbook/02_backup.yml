@@ -1,0 +1,6 @@
+---
+- name: "Backing up the system settings"
+  hosts: "firewalls"
+
+  roles:
+    - "backup"
