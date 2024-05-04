@@ -1,0 +1,14 @@
+---
+- name: "Setting the initial id of the entries"
+  ansible.builtin.set_fact:
+    next_id: 1
+
+- name: "Retrieving the firewall addresses files"
+  ansible.builtin.import_tasks: "get-list-files.yml"
+
+- name: "Creating a firewall address entry"
+  ansible.builtin.include_tasks: "add-entry.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"

@@ -1,0 +1,7 @@
+---
+- name: "Setting up the firewall addresses"
+  hosts: "firewalls"
+
+  roles:
+    # - "backup"
+    - "firewall_address"

@@ -1,0 +1,6 @@
+---
+- name: "Retrieving the firewall addresses files"
+  ansible.builtin.find:
+    paths: "{{ backup_firewall_address_path }}"
+    patterns: "*.{{ backup_extention }}"
+  register: "backup_files"

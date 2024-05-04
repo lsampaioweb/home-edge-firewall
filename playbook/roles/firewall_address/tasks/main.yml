@@ -1,0 +1,6 @@
+---
+- name: "Backing up the firewall addresses"
+  ansible.builtin.import_tasks: "backup.yml"
+
+# - name: "Creating the firewall addresses"
+#   ansible.builtin.import_tasks: "firewall-address.yml"
