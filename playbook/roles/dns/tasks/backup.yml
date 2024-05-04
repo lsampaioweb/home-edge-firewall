@@ -1,0 +1,27 @@
+---
+- name: "Fetching all DNS entries"
+  fortinet.fortios.fortios_configuration_fact:
+    selector: "system_dns-database"
+  register: "data"
+
+# - name: "Debug"
+#   ansible.builtin.debug:
+#     # msg: "{{ data }}"
+#     msg: "{{ data.meta.results[1] }}"
+#     # msg: "{{ data.meta.results[1]['dns-entry'] }}"
+#     # msg: "{{ data.meta.results[0]['dns-entry'][0].hostname }}"
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.file:
+    path: "{{ backup_dns_path }}"
+    state: "directory"
+    mode: "0755"
+
+- name: "Saving the DNS settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ item | to_nice_json(indent=2) }}"
+    dest: "{{ backup_dns_path }}/{{ item.name }}.{{ backup_extention }}"
+    mode: "0644"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"

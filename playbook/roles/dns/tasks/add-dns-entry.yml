@@ -1,0 +1,61 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+# - name: "Printing the desired settings json object"
+#   ansible.builtin.debug:
+#     msg: "{{ desired_settings }}"
+#   when: debug | bool
+
+# - name: "Setting DNS settings"
+#   fortinet.fortios.fortios_system_dns_database:
+#     vdom: "{{ vdom | default(omit) }}"
+#     state: "present"
+#     system_dns_database:
+#       name: "{{ desired_settings.name }}"
+#       domain: "{{ desired_settings.domain }}"
+#       authoritative: "{{ desired_settings.authoritative }}"
+#       contact: "{{ desired_settings.contact }}"
+#       status: "{{ desired_settings.status }}"
+#       type: "{{ desired_settings.type }}"
+#       view: "{{ desired_settings.view }}"
+#   register: "output"
+
+# - name: "Debug"
+#   ansible.builtin.debug:
+#     msg: "{{ output }}"
+#   when: debug | bool
+
+- name: "Creating DNS entries"
+  fortinet.fortios.fortios_system_dns_database:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    member_state: "present"
+    member_path: "dns_entry:id"
+    system_dns_database:
+      name: "{{ desired_settings.name }}"
+      dns_entry:
+        # - id: "{{ item.id }}"
+        - id: "{{ next_id | int + index }}"
+          hostname: "{{ item.hostname }}"
+          canonical_name: "{{ item['canonical-name'] }}"
+          ip: "{{ item.ip }}"
+          preference: "{{ item.preference }}"
+          ttl: "{{ item.ttl }}"
+          type: "{{ item.type }}"
+          status: "{{ item.status }}"
+  loop: "{{ desired_settings['dns-entry'] | default([]) }}"
+  loop_control:
+    index_var: "index"
+    label: "{{ next_id | int + index }}: {{ item.hostname }} - {{ item.type }}"
+  register: "output"
+
+- name: "Setting the initial id of the entries"
+  ansible.builtin.set_fact:
+    next_id: "{{ (next_id | int) + (desired_settings['dns-entry'] | default([]) | length) }}"
+
+# - name: "Debug"
+  # ansible.builtin.debug:
+    # msg: "{{ output }}"
+  # when: debug | bool

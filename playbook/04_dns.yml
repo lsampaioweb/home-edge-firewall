@@ -1,0 +1,7 @@
+---
+- name: "Setting up the DNS database and entries"
+  hosts: "firewalls"
+
+  roles:
+    - "backup"
+    - "dns"

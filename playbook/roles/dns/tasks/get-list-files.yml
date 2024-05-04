@@ -1,0 +1,6 @@
+---
+- name: "Retrieving the DNS files"
+  ansible.builtin.find:
+    paths: "{{ backup_dns_path }}"
+    patterns: "*.{{ backup_extention }}"
+  register: "backup_files"

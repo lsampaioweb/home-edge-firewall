@@ -8,3 +8,5 @@ ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + password_i
 backup_path: "./backup"
 backup_extention: "bkp"
 backup_files_to_keep: 8
+
+backup_dns_path: "{{ backup_path }}/dns"

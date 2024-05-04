@@ -1,7 +1,4 @@
 ---
-# - name: "Backing up the current configuration"
-#   ansible.builtin.import_tasks: "backup.yml"
-
 # - name: "XXX"
 #   ansible.builtin.import_tasks: "system-global.yml"
 
@@ -13,9 +10,3 @@
 
 # - name: "XXX"
 #   ansible.builtin.import_tasks: "firewall-address.yml"
-
-# - name: "XXX"
-#   ansible.builtin.import_tasks: "system-dns-database.yml"
-
-# - name: "Restoring from a backup file"
-#   ansible.builtin.import_tasks: "restore.yml"
