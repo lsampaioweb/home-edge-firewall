@@ -1,0 +1,19 @@
+---
+- name: "Creating firewall addresses entry"
+  fortinet.fortios.fortios_firewall_address:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    firewall_address:
+      uuid: "{{ desired_settings.uuid | default(omit) }}"
+      name: "{{ desired_settings.name }}"
+      type: "{{ desired_settings.type }}"
+      associated_interface: "{{ desired_settings['associated-interface'] | default(omit) }}"
+      comment: "{{ desired_settings.comment }}"
+      interface: "{{ desired_settings.interface | default(omit) }}"
+      subnet: "{{ desired_settings.subnet | default(omit) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

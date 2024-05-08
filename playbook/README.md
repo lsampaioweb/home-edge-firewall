@@ -13,8 +13,19 @@ secret-tool lookup password "edge-firewall-01-admin-password"
 Run the command in the terminal:
 ```bash
 ansible-playbook site.yml
-ansible-playbook 01_control_machine.yml
-ansible-playbook 02_system_settings.yml
+ansible-playbook 01-control-machine.yml
+ansible-playbook 02-backup.yml
+ansible-playbook 03-restore.yml
+ansible-playbook 04-dns.yml
+ansible-playbook 05-firewall-address.yml
+ansible-playbook 06-system-settings.yml
+
+# You can use tags in order to run only backup or create tasks.
+--tags "backup,untagged"
+--tags "backup,untagged,debug"
+
+--tags "create,untagged"
+--tags "create,untagged,debug"
 ```
 
 #

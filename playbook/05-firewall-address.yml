@@ -3,5 +3,5 @@
   hosts: "firewalls"
 
   roles:
-    # - "backup"
+    - "backup"
     - "firewall_address"

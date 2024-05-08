@@ -3,10 +3,10 @@
   ansible.builtin.set_fact:
     desired_settings: "{{ lookup('file', file.path) }}"
 
-# - name: "Printing the desired settings json object"
-#   ansible.builtin.debug:
-#     msg: "{{ desired_settings }}"
-#   when: debug | bool
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: "debug"
 
 # - name: "Setting DNS settings"
 #   fortinet.fortios.fortios_system_dns_database:
@@ -22,10 +22,10 @@
 #       view: "{{ desired_settings.view }}"
 #   register: "output"
 
-# - name: "Debug"
-#   ansible.builtin.debug:
-#     msg: "{{ output }}"
-#   when: debug | bool
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: "debug"
 
 - name: "Creating DNS entries"
   fortinet.fortios.fortios_system_dns_database:
@@ -55,7 +55,7 @@
   ansible.builtin.set_fact:
     next_id: "{{ (next_id | int) + (desired_settings['dns-entry'] | default([]) | length) }}"
 
-# - name: "Debug"
-  # ansible.builtin.debug:
-    # msg: "{{ output }}"
-  # when: debug | bool
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: "debug"
