@@ -1,8 +1,4 @@
 ---
-- name: "Setting the initial id of the entries"
-  ansible.builtin.set_fact:
-    next_id: 1
-
 - name: "Retrieving the DNS files"
   ansible.builtin.import_tasks: "get-list-files.yml"
 

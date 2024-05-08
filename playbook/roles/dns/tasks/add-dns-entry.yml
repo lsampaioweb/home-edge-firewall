@@ -36,8 +36,7 @@
     system_dns_database:
       name: "{{ desired_settings.name }}"
       dns_entry:
-        # - id: "{{ item.id }}"
-        - id: "{{ next_id | int + index }}"
+        - id: "{{ item.id }}"
           hostname: "{{ item.hostname }}"
           canonical_name: "{{ item['canonical-name'] }}"
           ip: "{{ item.ip }}"
@@ -48,12 +47,8 @@
   loop: "{{ desired_settings['dns-entry'] | default([]) }}"
   loop_control:
     index_var: "index"
-    label: "{{ next_id | int + index }}: {{ item.hostname }} - {{ item.type }}"
+    label: "{{ item.id }}: {{ item.hostname }} - {{ item.type }}"
   register: "output"
-
-- name: "Setting the initial id of the entries"
-  ansible.builtin.set_fact:
-    next_id: "{{ (next_id | int) + (desired_settings['dns-entry'] | default([]) | length) }}"
 
 - name: "Debug"
   ansible.builtin.debug:
