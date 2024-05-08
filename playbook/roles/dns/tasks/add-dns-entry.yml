@@ -6,26 +6,26 @@
 - name: "Printing the desired settings json object"
   ansible.builtin.debug:
     msg: "{{ desired_settings }}"
-  tags: "debug"
+  tags: ["never", "debug"]
 
-# - name: "Setting DNS settings"
-#   fortinet.fortios.fortios_system_dns_database:
-#     vdom: "{{ vdom | default(omit) }}"
-#     state: "present"
-#     system_dns_database:
-#       name: "{{ desired_settings.name }}"
-#       domain: "{{ desired_settings.domain }}"
-#       authoritative: "{{ desired_settings.authoritative }}"
-#       contact: "{{ desired_settings.contact }}"
-#       status: "{{ desired_settings.status }}"
-#       type: "{{ desired_settings.type }}"
-#       view: "{{ desired_settings.view }}"
-#   register: "output"
+- name: "Setting DNS settings"
+  fortinet.fortios.fortios_system_dns_database:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    system_dns_database:
+      name: "{{ desired_settings.name }}"
+      domain: "{{ desired_settings.domain }}"
+      authoritative: "{{ desired_settings.authoritative }}"
+      contact: "{{ desired_settings.contact }}"
+      status: "{{ desired_settings.status }}"
+      type: "{{ desired_settings.type }}"
+      view: "{{ desired_settings.view }}"
+  register: "output"
 
 - name: "Debug"
   ansible.builtin.debug:
     msg: "{{ output }}"
-  tags: "debug"
+  tags: ["never", "debug"]
 
 - name: "Creating DNS entries"
   fortinet.fortios.fortios_system_dns_database:
@@ -58,4 +58,4 @@
 - name: "Debug"
   ansible.builtin.debug:
     msg: "{{ output }}"
-  tags: "debug"
+  tags: ["never", "debug"]

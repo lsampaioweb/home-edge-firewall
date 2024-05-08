@@ -4,12 +4,13 @@
     selector: "system_dns-database"
   register: "data"
 
-# - name: "Debug"
-#   ansible.builtin.debug:
-#     # msg: "{{ data }}"
-#     msg: "{{ data.meta.results[1] }}"
-#     # msg: "{{ data.meta.results[1]['dns-entry'] }}"
-#     # msg: "{{ data.meta.results[0]['dns-entry'][0].hostname }}"
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+    # msg: "{{ data.meta.results[1] }}"
+    # msg: "{{ data.meta.results[1]['dns-entry'] }}"
+    # msg: "{{ data.meta.results[0]['dns-entry'][0].hostname }}"
+  tags: ["never", "debug"]
 
 - name: "Ensure the backup directory exists"
   ansible.builtin.file:
