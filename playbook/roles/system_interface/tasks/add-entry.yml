@@ -1,0 +1,46 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating System Interfaces entries: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_system_interface:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    system_interface:
+      name: "{{ desired_settings.name }}"
+      type: "{{ desired_settings.type }}"
+      vlanid: "{{ desired_settings.vlanid }}"
+      status: "{{ desired_settings.status }}"
+      alias: "{{ desired_settings.alias | default(omit) }}"
+      aggregate: "{{ desired_settings.aggregate | default(omit) }}"
+      aggregate_type: "{{ desired_settings['aggregate-type'] | default(omit) }}"
+      allowaccess: "{{  (desired_settings.allowaccess == '') | ternary(omit, desired_settings.allowaccess | replace(' ', ',')) }}"
+      description: "{{ desired_settings.description | default(omit) }}"
+      device_identification: "{{ desired_settings['device-identification'] | default(omit) }}"
+      devindex: "{{ desired_settings.devindex | default(omit) }}"
+      interface: "{{ desired_settings.interface | default(omit) }}"
+      ip: "{{ desired_settings.ip | default(omit) }}"
+      lacp_mode: "{{ desired_settings['lacp-mode'] | default(omit) }}"
+      lldp_reception: "{{ desired_settings['lldp-reception'] | default(omit) }}"
+      lldp_transmission: "{{ desired_settings['lldp-transmission'] | default(omit) }}"
+      member: >
+        {{ (desired_settings.member
+        | ansible.utils.remove_keys(target=['q_origin_key'])
+        | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
+        | default(omit) }}
+      monitor_bandwidth: "{{ desired_settings['monitor-bandwidth'] | default(omit) }}"
+      role: "{{ desired_settings.role | default(omit) }}"
+      snmp_index: "{{ desired_settings['snmp-index'] | default(omit) }}"
+      src_check: "{{ desired_settings['src-check'] | default(omit) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

@@ -1,0 +1,14 @@
+---
+- name: "Ensure the backup directory exists"
+  ansible.builtin.file:
+    path: "{{ path }}"
+    state: "directory"
+    mode: "0755"
+
+- name: "Saving the System Interface settings in a local file: {{ item.name }}"
+  ansible.builtin.copy:
+    content: "{{ item | to_nice_json(indent=2) }}"
+    dest: "{{ path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"

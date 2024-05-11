@@ -24,3 +24,9 @@ path_role_firewall_address: "{{ path_roles }}/firewall_address/tasks"
 
 # Services.
 path_role_services: "{{ path_roles }}/services/tasks"
+
+# System Interface.
+path_role_system_interface: "{{ path_roles }}/system_interface/tasks"
+
+# Firewall policy.
+path_role_firewall_policy: "{{ path_roles }}/firewall_policy/tasks"

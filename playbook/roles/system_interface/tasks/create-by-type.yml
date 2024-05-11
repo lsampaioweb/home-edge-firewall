@@ -1,0 +1,12 @@
+---
+- name: "Retrieving the backup files of the Physical Interfaces"
+  ansible.builtin.include_tasks: "get-files.yml"
+  vars:
+    paths: "{{ item.paths }}"
+
+- name: "Creating a System Interface entry"
+  ansible.builtin.include_tasks: "add-entry.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"

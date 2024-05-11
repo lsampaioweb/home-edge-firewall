@@ -1,0 +1,19 @@
+---
+- name: "Fetching all System Interface entries"
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit) }}"
+    selector: "system_interface"
+  register: "data"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Backing up the System Interface settings"
+  ansible.builtin.include_tasks: "backup-by-type.yml"
+  vars:
+    path: "{{ backup_system_interface_path }}/{{ item.type }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }} - {{ item.type }}"

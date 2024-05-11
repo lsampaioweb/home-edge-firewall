@@ -2,5 +2,20 @@
 - name: "Run the control machine playbook"
   ansible.builtin.import_playbook: "01-control-machine.yml"
 
+- name: "Run the Backup playbook"
+  ansible.builtin.import_playbook: "02-backup.yml"
+
 - name: "Run the DNS playbook"
   ansible.builtin.import_playbook: "04-dns.yml"
+
+- name: "Run the Firewall addresses playbook"
+  ansible.builtin.import_playbook: "05-firewall-address.yml"
+
+- name: "Run the Services playbook"
+  ansible.builtin.import_playbook: "06-services.yml"
+
+- name: "Run the System Interface playbook"
+  ansible.builtin.import_playbook: "07-system-interface.yml"
+
+- name: "Run the Firewall Policy playbook"
+  ansible.builtin.import_playbook: "08-firewall-policy.yml"

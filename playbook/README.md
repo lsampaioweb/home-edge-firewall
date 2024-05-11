@@ -29,9 +29,17 @@ ansible-playbook 06-services.yml
 ansible-playbook 06-services-backup.yml
 ansible-playbook 06-services-create.yml
 
-ansible-playbook 06-system-settings.yml
+ansible-playbook 07-system-interface.yml
+ansible-playbook 07-system-interface-backup.yml
+ansible-playbook 07-system-interface-create.yml
 
-# You can use tags in order to run only backup or create tasks.
+ansible-playbook 08-firewall-policy.yml
+ansible-playbook 08-firewall-policy-backup.yml
+ansible-playbook 08-firewall-policy-create.yml
+
+ansible-playbook 09-system-settings.yml
+
+# You can use tags in order to run only print extra information on the output.
 --tags "untagged,debug"
 ```
 

@@ -11,8 +11,19 @@ backup_path: "./backup{{ '/' + vdom | default(omit) }}"
 backup_extention: "bkp"
 backup_files_to_keep: 5
 
+# DNS.
 backup_dns_path: "{{ backup_path }}/dns"
+
+# Firewall address.
 backup_firewall_address_path: "{{ backup_path }}/firewall_address"
+
+# Services.
 backup_services_path: "{{ backup_path }}/services"
 backup_services_group_path: "{{ backup_services_path }}/groups"
 backup_services_custom_path: "{{ backup_services_path }}/custom"
+
+# System Interface.
+backup_system_interface_path: "{{ backup_path }}/system_interface"
+
+# Firewall policy.
+backup_firewall_policy_path: "{{ backup_path }}/firewall_policy"

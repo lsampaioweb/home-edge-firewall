@@ -1,0 +1,8 @@
+---
+- name: "System Interface settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating System Interface entries"
+      ansible.builtin.include_tasks: "{{ path_role_system_interface }}/create.yml"
+      tags: ["always", "debug"]
