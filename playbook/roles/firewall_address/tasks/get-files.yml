@@ -1,5 +1,5 @@
 ---
-- name: "Retrieving the firewall addresses files"
+- name: "Retrieving the backup files"
   ansible.builtin.find:
     paths: "{{ backup_firewall_address_path }}"
     patterns: "*.{{ backup_extention }}"

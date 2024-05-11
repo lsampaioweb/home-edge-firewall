@@ -1,0 +1,6 @@
+---
+- name: "Backing up the Custom Services settings"
+  ansible.builtin.include_tasks: "backup-custom.yml"
+
+- name: "Backing up the Groups Services settings"
+  ansible.builtin.include_tasks: "backup-groups.yml"

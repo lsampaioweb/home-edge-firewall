@@ -1,9 +1,0 @@
----
-- name: "Backing up the firewall addresses"
-  ansible.builtin.include_tasks: "backup.yml"
-  tags: ["backup"]
-
-- name: "Creating the firewall addresses"
-  ansible.builtin.include_tasks:
-    file: "firewall-address.yml"
-  tags: ["never", "create"]

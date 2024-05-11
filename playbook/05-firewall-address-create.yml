@@ -1,0 +1,8 @@
+---
+- name: "Firewall addresses settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall addresses entries"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_address }}/create.yml"
+      tags: ["always", "debug"]

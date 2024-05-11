@@ -1,0 +1,8 @@
+---
+- name: "DNS settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the DNS settings"
+      ansible.builtin.include_tasks: "{{ path_role_dns }}/backup.yml"
+      tags: ["always", "debug"]

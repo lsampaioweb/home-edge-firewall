@@ -1,6 +1,7 @@
 ---
 - name: "Fetching all DNS entries"
   fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit) }}"
     selector: "system_dns-database"
   register: "data"
 

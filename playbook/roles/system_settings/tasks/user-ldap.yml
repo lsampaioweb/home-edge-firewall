@@ -1,6 +1,7 @@
 ---
 - name: "Fetching the LDAP settings"
   fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit) }}"
     selector: "user_ldap"
   register: "output"
 

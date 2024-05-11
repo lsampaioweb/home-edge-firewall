@@ -9,3 +9,4 @@ ansible_user=admin
 ansible_network_os=fortinet.fortios.fortios
 ansible_connection=httpapi
 ansible_httpapi_use_ssl=true
+vdom=root

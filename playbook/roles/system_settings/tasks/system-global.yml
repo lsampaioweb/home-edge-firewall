@@ -1,6 +1,7 @@
 ---
 - name: "Fetching all system global settings"
   fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit) }}"
     selector: "system_global"
   register: "output"
 

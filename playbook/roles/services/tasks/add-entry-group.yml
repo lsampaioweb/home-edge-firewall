@@ -1,0 +1,27 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating Group Service entries"
+  fortinet.fortios.fortios_firewall_service_group:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    firewall_service_group:
+      name: "{{ desired_settings.name }}"
+      color: "{{ desired_settings.color }}"
+      comment: "{{ desired_settings.comment }}"
+      fabric_object: "{{ desired_settings['fabric-object'] }}"
+      proxy: "{{ desired_settings.proxy }}"
+      member: "{{ (desired_settings.member | ansible.utils.remove_keys(target=['q_origin_key'])) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

@@ -1,3 +1,4 @@
 ---
 - name: "Restoring the system settings from a backup file"
-  ansible.builtin.import_tasks: "restore.yml"
+  ansible.builtin.include_tasks: "restore.yml"
+  tags: ["always", "debug"]

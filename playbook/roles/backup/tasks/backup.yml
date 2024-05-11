@@ -7,10 +7,17 @@
       scope: "global"
   register: "data"
 
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+    # msg: "{{ data.meta.results[1] }}"
+  tags: ["never", "debug"]
+
 - name: "Ensure the backup directory exists"
   ansible.builtin.file:
     path: "{{ backup_path }}"
     state: "directory"
+    recurse: true
     mode: "0755"
 
 - name: "Saving the settings in a local file"

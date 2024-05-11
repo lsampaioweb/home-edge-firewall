@@ -1,8 +1,0 @@
----
-- name: "Backing up the DNS settings"
-  ansible.builtin.include_tasks: "backup.yml"
-  tags: ["backup"]
-
-- name: "Creating DNS entries"
-  ansible.builtin.include_tasks: "system-dns-database.yml"
-  tags: ["never", "create"]

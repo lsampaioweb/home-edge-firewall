@@ -16,16 +16,23 @@ ansible-playbook site.yml
 ansible-playbook 01-control-machine.yml
 ansible-playbook 02-backup.yml
 ansible-playbook 03-restore.yml
+
 ansible-playbook 04-dns.yml
+ansible-playbook 04-dns-backup.yml
+ansible-playbook 04-dns-create.yml
+
 ansible-playbook 05-firewall-address.yml
+ansible-playbook 05-firewall-address-backup.yml
+ansible-playbook 05-firewall-address-create.yml
+
+ansible-playbook 06-services.yml
+ansible-playbook 06-services-backup.yml
+ansible-playbook 06-services-create.yml
+
 ansible-playbook 06-system-settings.yml
 
 # You can use tags in order to run only backup or create tasks.
---tags "backup,untagged"
---tags "backup,untagged,debug"
-
---tags "create,untagged"
---tags "create,untagged,debug"
+--tags "untagged,debug"
 ```
 
 #

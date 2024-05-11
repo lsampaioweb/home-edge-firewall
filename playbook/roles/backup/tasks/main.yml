@@ -1,4 +1,4 @@
 ---
 - name: "Backing up the system settings"
-  ansible.builtin.import_tasks: "backup.yml"
-  tags: ["backup"]
+  ansible.builtin.include_tasks: "backup.yml"
+  tags: ["always", "debug"]

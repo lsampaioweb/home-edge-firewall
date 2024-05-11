@@ -20,3 +20,8 @@
       vdom: "{{ vdom | default(omit) }}"
       file_content: "{{ lookup('file', file_name) | string | b64encode }}"
   register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

@@ -1,0 +1,8 @@
+---
+- name: "Services settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Services entries"
+      ansible.builtin.include_tasks: "{{ path_role_services }}/create.yml"
+      tags: ["always", "debug"]

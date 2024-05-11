@@ -10,7 +10,7 @@
       associated_interface: "{{ desired_settings['associated-interface'] | default(omit) }}"
       comment: "{{ desired_settings.comment }}"
       interface: "{{ desired_settings.interface | default(omit) }}"
-      macaddr: "{{ [(desired_settings.macaddr[0] | ansible.utils.remove_keys(target=['q_origin_key']))] }}"
+      macaddr: "{{ (desired_settings.macaddr | ansible.utils.remove_keys(target=['q_origin_key'])) }}"
   register: "output"
 
 - name: "Debug"
