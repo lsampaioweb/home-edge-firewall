@@ -33,19 +33,19 @@ ansible-playbook 07-system-interface.yml
 ansible-playbook 07-system-interface-backup.yml
 ansible-playbook 07-system-interface-create.yml
 
-ansible-playbook 08-firewall-policy.yml
-ansible-playbook 08-firewall-policy-backup.yml
-ansible-playbook 08-firewall-policy-create.yml
+ansible-playbook 08-system-zone.yml
+ansible-playbook 08-system-zone-backup.yml
+ansible-playbook 08-system-zone-create.yml
 
-ansible-playbook 09-system-settings.yml
+ansible-playbook 09-firewall-policy.yml
+ansible-playbook 09-firewall-policy-backup.yml
+ansible-playbook 09-firewall-policy-create.yml
 
-# You can use tags in order to run only print extra information on the output.
+ansible-playbook 10-system-settings.yml
+
+# You can use tags in order to print extra information on the output.
 --tags "untagged,debug"
 ```
-
-#
-### Roles you can execute:
-1. [Setup](roles/control_machine/README.md) the control machine to run Ansible scripts.
 
 #
 ### Created by:

@@ -17,5 +17,8 @@
 - name: "Run the System Interface playbook"
   ansible.builtin.import_playbook: "07-system-interface.yml"
 
+- name: "Run the System Zone playbook"
+  ansible.builtin.import_playbook: "08-system-zone.yml"
+
 - name: "Run the Firewall Policy playbook"
-  ansible.builtin.import_playbook: "08-firewall-policy.yml"
+  ansible.builtin.import_playbook: "09-firewall-policy.yml"

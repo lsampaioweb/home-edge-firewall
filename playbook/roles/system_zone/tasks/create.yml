@@ -1,10 +1,8 @@
 ---
 - name: "Retrieving the backup files"
   ansible.builtin.include_tasks: "get-files.yml"
-  vars:
-    paths: "{{ item.paths }}"
 
-- name: "Creating a System Interface entry"
+- name: "Creating a System Zone entry"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:

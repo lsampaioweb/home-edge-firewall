@@ -1,0 +1,30 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating System Interfaces entries: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_system_zone:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    system_zone:
+      name: "{{ desired_settings.name }}"
+      description: "{{ desired_settings.description | default(omit) }}"
+      interface: >
+        {{ (desired_settings.interface
+        | ansible.utils.remove_keys(target=['q_origin_key'])
+        | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
+        | default(omit) }}
+      intrazone: "{{ desired_settings.intrazone | default(omit) }}"
+      tagging: "{{ desired_settings.tagging | default(omit) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

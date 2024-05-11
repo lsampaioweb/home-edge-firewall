@@ -19,7 +19,7 @@ path_roles: "roles"
 # DNS.
 path_role_dns: "{{ path_roles }}/dns/tasks"
 
-# Firewall address.
+# Firewall Address.
 path_role_firewall_address: "{{ path_roles }}/firewall_address/tasks"
 
 # Services.
@@ -28,5 +28,8 @@ path_role_services: "{{ path_roles }}/services/tasks"
 # System Interface.
 path_role_system_interface: "{{ path_roles }}/system_interface/tasks"
 
-# Firewall policy.
+# System Zone.
+path_role_system_zone: "{{ path_roles }}/system_zone/tasks"
+
+# Firewall Policy.
 path_role_firewall_policy: "{{ path_roles }}/firewall_policy/tasks"

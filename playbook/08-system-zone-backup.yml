@@ -1,0 +1,8 @@
+---
+- name: "System Zone settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the System Zone settings"
+      ansible.builtin.include_tasks: "{{ path_role_system_zone }}/backup.yml"
+      tags: ["always", "debug"]

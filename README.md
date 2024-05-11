@@ -20,6 +20,10 @@ git submodule update --init --recursive
 ```
 
 #
+### Roles you can execute:
+[Roles](playbook/README.md "Roles")
+
+#
 ### Links:
 
 [Links](links.md "Links")

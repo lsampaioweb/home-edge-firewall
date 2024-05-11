@@ -14,7 +14,7 @@ backup_files_to_keep: 5
 # DNS.
 backup_dns_path: "{{ backup_path }}/dns"
 
-# Firewall address.
+# Firewall Address.
 backup_firewall_address_path: "{{ backup_path }}/firewall_address"
 
 # Services.
@@ -25,5 +25,8 @@ backup_services_custom_path: "{{ backup_services_path }}/custom"
 # System Interface.
 backup_system_interface_path: "{{ backup_path }}/system_interface"
 
-# Firewall policy.
+# System Zone.
+backup_system_zone_path: "{{ backup_path }}/system_zone"
+
+# Firewall Policy.
 backup_firewall_policy_path: "{{ backup_path }}/firewall_policy"
