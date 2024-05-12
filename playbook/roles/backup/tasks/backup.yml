@@ -10,12 +10,11 @@
 - name: "Debug"
   ansible.builtin.debug:
     msg: "{{ data }}"
-    # msg: "{{ data.meta.results[1] }}"
   tags: ["never", "debug"]
 
 - name: "Ensure the backup directory exists"
   ansible.builtin.file:
-    path: "{{ backup_path }}"
+    path: "{{ backup_global_config_path }}"
     state: "directory"
     recurse: true
     mode: "0755"
@@ -23,14 +22,14 @@
 - name: "Saving the settings in a local file"
   ansible.builtin.copy:
     content: "{{ data.meta.raw }}"
-    dest: "{{ backup_path }}/{{ data_format }}.{{ backup_extention }}"
+    dest: "{{ backup_global_config_path }}/{{ data_format }}.{{ backup_extention }}"
     mode: "0644"
   vars:
     data_format: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}"
 
 - name: "Retrieving the amount of backup files"
   ansible.builtin.find:
-    paths: "{{ backup_path }}"
+    paths: "{{ backup_global_config_path }}"
     patterns: "*.{{ backup_extention }}"
   register: "backup_files"
 

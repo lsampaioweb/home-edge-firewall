@@ -15,7 +15,6 @@
     system_interface:
       name: "{{ desired_settings.name }}"
       type: "{{ desired_settings.type }}"
-      vlanid: "{{ desired_settings.vlanid }}"
       status: "{{ desired_settings.status }}"
       alias: "{{ desired_settings.alias | default(omit) }}"
       aggregate: "{{ desired_settings.aggregate | default(omit) }}"
@@ -24,6 +23,8 @@
       description: "{{ desired_settings.description | default(omit) }}"
       device_identification: "{{ desired_settings['device-identification'] | default(omit) }}"
       devindex: "{{ desired_settings.devindex | default(omit) }}"
+      estimated_downstream_bandwidth: "{{ desired_settings['estimated-downstream-bandwidth'] | default(omit) }}"
+      estimated_upstream_bandwidth: "{{ desired_settings['estimated-upstream-bandwidth'] | default(omit) }}"
       interface: "{{ desired_settings.interface | default(omit) }}"
       ip: "{{ desired_settings.ip | default(omit) }}"
       lacp_mode: "{{ desired_settings['lacp-mode'] | default(omit) }}"
@@ -35,9 +36,13 @@
         | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
         | default(omit) }}
       monitor_bandwidth: "{{ desired_settings['monitor-bandwidth'] | default(omit) }}"
+      mtu: "{{ desired_settings.mtu | default(omit) }}"
       role: "{{ desired_settings.role | default(omit) }}"
       snmp_index: "{{ desired_settings['snmp-index'] | default(omit) }}"
       src_check: "{{ desired_settings['src-check'] | default(omit) }}"
+      vdom: "{{ desired_settings.vdom }}"
+      vlan_protocol: "{{ desired_settings['vlan-protocol'] | default(omit) }}"
+      vlanid: "{{ desired_settings.vlanid }}"
   register: "output"
 
 - name: "Debug"

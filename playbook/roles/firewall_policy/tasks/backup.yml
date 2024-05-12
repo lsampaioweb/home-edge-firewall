@@ -1,0 +1,28 @@
+---
+- name: "Fetching all Firewall Policy entries"
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit) }}"
+    selector: "firewall_policy"
+  register: "data"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.file:
+    path: "{{ backup_firewall_policy_path }}"
+    state: "directory"
+    mode: "0755"
+
+- name: "Saving the Firewall Policy settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ item | to_nice_json(indent=2) }}"
+    dest: "{{ backup_firewall_policy_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"

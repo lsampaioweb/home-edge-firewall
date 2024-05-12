@@ -1,0 +1,8 @@
+---
+- name: "Firewall Policy settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall Policy entries"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_policy }}/create.yml"
+      tags: ["always", "debug"]

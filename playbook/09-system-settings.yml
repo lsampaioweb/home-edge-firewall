@@ -1,7 +1,0 @@
----
-- name: "Setting up the system settings"
-  hosts: "firewalls"
-
-  roles:
-    # - "backup"
-    - "system_settings"

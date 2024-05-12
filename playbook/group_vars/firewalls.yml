@@ -11,6 +11,9 @@ backup_path: "./backup{{ '/' + vdom | default(omit) }}"
 backup_extention: "bkp"
 backup_files_to_keep: 5
 
+# Global config.
+backup_global_config_path: "{{ backup_path }}/global"
+
 # DNS.
 backup_dns_path: "{{ backup_path }}/dns"
 

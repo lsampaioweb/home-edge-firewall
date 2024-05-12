@@ -1,0 +1,6 @@
+---
+- name: "Retrieving the backup files"
+  ansible.builtin.find:
+    paths: "{{ backup_firewall_policy_path }}"
+    patterns: "*.{{ backup_extention }}"
+  register: "backup_files"

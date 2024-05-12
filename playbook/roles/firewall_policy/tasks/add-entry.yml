@@ -1,0 +1,62 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating Firewall Policy entry: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_firewall_policy:
+    vdom: "{{ vdom | default(omit) }}"
+    state: "present"
+    firewall_policy:
+      name: "{{ desired_settings.name }}"
+      action: "{{ desired_settings.action }}"
+      av_profile: "{{ desired_settings['av-profile'] }}"
+      cifs_profile: "{{ desired_settings['cifs-profile'] }}"
+      comments: "{{ desired_settings.comments }}"
+      dlp_profile: "{{ desired_settings['dlp-profile'] }}"
+      dnsfilter_profile: "{{ desired_settings['dnsfilter-profile'] }}"
+      dstaddr: >
+        {{ (desired_settings.dstaddr
+        | ansible.utils.remove_keys(target=['q_origin_key']))
+        | default(omit) }}
+      dstintf: >
+        {{ (desired_settings.dstintf
+        | ansible.utils.remove_keys(target=['q_origin_key']))
+        | default(omit) }}
+      emailfilter_profile: "{{ desired_settings['emailfilter-profile'] }}"
+      file_filter_profile: "{{ desired_settings['file-filter-profile'] }}"
+      icap_profile: "{{ desired_settings['icap-profile'] }}"
+      logtraffic: "{{ desired_settings.logtraffic }}"
+      nat: "{{ desired_settings.nat }}"
+      policyid: "{{ desired_settings.policyid }}"
+      sctp_filter_profile: "{{ desired_settings['sctp-filter-profile'] }}"
+      service: >
+        {{ (desired_settings.service
+        | ansible.utils.remove_keys(target=['q_origin_key']))
+        | default(omit) }}
+      srcaddr: >
+        {{ (desired_settings.srcaddr
+        | ansible.utils.remove_keys(target=['q_origin_key']))
+        | default(omit) }}
+      srcintf: >
+        {{ (desired_settings.srcintf
+        | ansible.utils.remove_keys(target=['q_origin_key']))
+        | default(omit) }}
+      ssh_filter_profile: "{{ desired_settings['ssh-filter-profile'] }}"
+      ssl_ssh_profile: "{{ desired_settings['ssl-ssh-profile'] }}"
+      videofilter_profile: "{{ desired_settings['videofilter-profile'] }}"
+      voip_profile: "{{ desired_settings['voip-profile'] }}"
+      waf_profile: "{{ desired_settings['waf-profile'] }}"
+      status: "{{ desired_settings.status }}"
+      webfilter_profile: "{{ desired_settings['webfilter-profile'] }}"
+      webproxy_profile: "{{ desired_settings['webproxy-profile'] }}"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
