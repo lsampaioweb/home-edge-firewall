@@ -10,7 +10,7 @@
 
 - name: "Setting DNS settings"
   fortinet.fortios.fortios_system_dns_database:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     system_dns_database:
       name: "{{ desired_settings.name }}"
@@ -29,7 +29,7 @@
 
 - name: "Creating DNS entries"
   fortinet.fortios.fortios_system_dns_database:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     member_state: "present"
     member_path: "dns_entry:id"

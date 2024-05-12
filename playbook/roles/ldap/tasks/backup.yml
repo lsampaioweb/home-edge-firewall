@@ -1,8 +1,8 @@
 ---
-- name: "Fetching all System Zone entries"
+- name: "Fetching all LDAP entries"
   fortinet.fortios.fortios_configuration_fact:
     vdom: "{{ vdom | default(omit, true) }}"
-    selector: "system_zone"
+    selector: "user_ldap"
   register: "data"
 
 - name: "Debug"
@@ -12,14 +12,14 @@
 
 - name: "Ensure the backup directory exists"
   ansible.builtin.file:
-    path: "{{ backup_system_zone_path }}"
+    path: "{{ backup_ldap_path }}"
     state: "directory"
     mode: "0755"
 
-- name: "Saving the System Zone settings in a local file: {{ item.name }}"
+- name: "Saving the LDAP settings in a local file"
   ansible.builtin.copy:
     content: "{{ item | to_nice_json(indent=2) }}"
-    dest: "{{ backup_system_zone_path }}/{{ file }}"
+    dest: "{{ backup_ldap_path }}/{{ file }}"
     mode: "0644"
   vars:
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"

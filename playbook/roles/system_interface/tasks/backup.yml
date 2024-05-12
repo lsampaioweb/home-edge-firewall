@@ -1,7 +1,7 @@
 ---
 - name: "Fetching all System Interface entries"
   fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     selector: "system_interface"
   register: "data"
 

@@ -33,3 +33,6 @@ backup_system_zone_path: "{{ backup_path }}/system_zone"
 
 # Firewall Policy.
 backup_firewall_policy_path: "{{ backup_path }}/firewall_policy"
+
+# LDAP.
+backup_ldap_path: "{{ backup_path }}/ldap"

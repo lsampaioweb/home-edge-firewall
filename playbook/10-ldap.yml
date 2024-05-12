@@ -1,0 +1,6 @@
+---
+- name: "Run the backup playbook"
+  ansible.builtin.import_playbook: "10-ldap-backup.yml"
+
+- name: "Run the create playbook"
+  ansible.builtin.import_playbook: "10-ldap-create.yml"

@@ -41,7 +41,11 @@ ansible-playbook 09-firewall-policy.yml
 ansible-playbook 09-firewall-policy-backup.yml
 ansible-playbook 09-firewall-policy-create.yml
 
-ansible-playbook 10-system-settings.yml
+ansible-playbook 10-ldap.yml
+ansible-playbook 10-ldap-backup.yml
+ansible-playbook 10-ldap-create.yml
+
+ansible-playbook 11-system-settings.yml
 
 # You can use tags in order to print extra information on the output.
 --tags "untagged,debug"

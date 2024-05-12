@@ -22,3 +22,6 @@
 
 - name: "Run the Firewall Policy playbook"
   ansible.builtin.import_playbook: "09-firewall-policy.yml"
+
+- name: "Run the LDAP playbook"
+  ansible.builtin.import_playbook: "10-ldap.yml"

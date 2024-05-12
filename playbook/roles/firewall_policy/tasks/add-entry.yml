@@ -10,7 +10,7 @@
 
 - name: "Creating Firewall Policy entry: {{ desired_settings.name }}"
   fortinet.fortios.fortios_firewall_policy:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     firewall_policy:
       name: "{{ desired_settings.name }}"
@@ -23,11 +23,11 @@
       dstaddr: >
         {{ (desired_settings.dstaddr
         | ansible.utils.remove_keys(target=['q_origin_key']))
-        | default(omit) }}
+        | default(omit, true) }}
       dstintf: >
         {{ (desired_settings.dstintf
         | ansible.utils.remove_keys(target=['q_origin_key']))
-        | default(omit) }}
+        | default(omit, true) }}
       emailfilter_profile: "{{ desired_settings['emailfilter-profile'] }}"
       file_filter_profile: "{{ desired_settings['file-filter-profile'] }}"
       icap_profile: "{{ desired_settings['icap-profile'] }}"
@@ -38,15 +38,15 @@
       service: >
         {{ (desired_settings.service
         | ansible.utils.remove_keys(target=['q_origin_key']))
-        | default(omit) }}
+        | default(omit, true) }}
       srcaddr: >
         {{ (desired_settings.srcaddr
         | ansible.utils.remove_keys(target=['q_origin_key']))
-        | default(omit) }}
+        | default(omit, true) }}
       srcintf: >
         {{ (desired_settings.srcintf
         | ansible.utils.remove_keys(target=['q_origin_key']))
-        | default(omit) }}
+        | default(omit, true) }}
       ssh_filter_profile: "{{ desired_settings['ssh-filter-profile'] }}"
       ssl_ssh_profile: "{{ desired_settings['ssl-ssh-profile'] }}"
       videofilter_profile: "{{ desired_settings['videofilter-profile'] }}"

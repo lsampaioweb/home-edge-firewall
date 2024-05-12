@@ -10,18 +10,18 @@
 
 - name: "Creating System Interfaces entries: {{ desired_settings.name }}"
   fortinet.fortios.fortios_system_zone:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     system_zone:
       name: "{{ desired_settings.name }}"
-      description: "{{ desired_settings.description | default(omit) }}"
+      description: "{{ desired_settings.description | default(omit, true) }}"
       interface: >
         {{ (desired_settings.interface
         | ansible.utils.remove_keys(target=['q_origin_key'])
         | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
-        | default(omit) }}
-      intrazone: "{{ desired_settings.intrazone | default(omit) }}"
-      tagging: "{{ desired_settings.tagging | default(omit) }}"
+        | default(omit, true) }}
+      intrazone: "{{ desired_settings.intrazone | default(omit, true) }}"
+      tagging: "{{ desired_settings.tagging | default(omit, true) }}"
   register: "output"
 
 - name: "Debug"

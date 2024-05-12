@@ -10,7 +10,7 @@
 
 - name: "Creating Group Service entries"
   fortinet.fortios.fortios_firewall_service_group:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     firewall_service_group:
       name: "{{ desired_settings.name }}"

@@ -1,7 +1,7 @@
 ---
 - name: "Fetching all system global settings"
   fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     selector: "system_global"
   register: "output"
 
@@ -12,7 +12,7 @@
 
 - name: "Setting up the system settings"
   fortinet.fortios.fortios_system_global:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     system_global:
       admin_server_cert: "edge-firewall-01.homelab"
       alias: "FortiGate-80E"

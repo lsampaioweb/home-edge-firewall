@@ -33,3 +33,6 @@ path_role_system_zone: "{{ path_roles }}/system_zone/tasks"
 
 # Firewall Policy.
 path_role_firewall_policy: "{{ path_roles }}/firewall_policy/tasks"
+
+# LDAP.
+path_role_ldap: "{{ path_roles }}/ldap/tasks"

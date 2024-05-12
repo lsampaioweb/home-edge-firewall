@@ -12,12 +12,12 @@
 - name: "Restoring the system settings from a file"
   when: file_name | default([]) | length > 0
   fortinet.fortios.fortios_monitor:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     selector: "restore.system.config"
     params:
       scope: "global"
       source: "upload"
-      vdom: "{{ vdom | default(omit) }}"
+      vdom: "{{ vdom | default(omit, true) }}"
       file_content: "{{ lookup('file', file_name) | string | b64encode }}"
   register: "output"
 

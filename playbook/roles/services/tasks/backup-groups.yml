@@ -1,7 +1,7 @@
 ---
 - name: "Fetching all Group Services entries"
   fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     selector: "firewall.service_group"
   register: "data"
 

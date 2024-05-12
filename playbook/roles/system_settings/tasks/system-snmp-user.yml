@@ -1,7 +1,7 @@
 ---
 - name: "Fetching all system global settings"
   fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit) }}"
+    vdom: "{{ vdom | default(omit, true) }}"
     selector: "system.snmp_user"
   register: "output"
 
@@ -12,7 +12,7 @@
 
 # - name: "Setting up the XXX"
 #   fortinet.fortios.fortios_switch_controller_snmp_user:
-#     vdom: "{{ vdom | default(omit) }}"
+#     vdom: "{{ vdom | default(omit, true) }}"
 #     state: "present"
 #     switch_controller_snmp_user:
 #       auth_proto: "sha256"
