@@ -87,7 +87,7 @@ Run these commands on the computer running Ansible:
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml
-    ansible-playbook site-restore.yml
+    ansible-playbook site-create.yml
     ```
 
 ### Created by:

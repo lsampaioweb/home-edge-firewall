@@ -8,7 +8,7 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating System Interfaces entries: {{ desired_settings.name }}"
+- name: "Creating System Interfaces entry: {{ desired_settings.name }}"
   fortinet.fortios.fortios_system_interface:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
@@ -34,7 +34,7 @@
         {{ (desired_settings.member
         | ansible.utils.remove_keys(target=['q_origin_key'])
         | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
-        | default(omit, true) }}
+        | default(omit) }}
       monitor_bandwidth: "{{ desired_settings['monitor-bandwidth'] | default(omit, true) }}"
       mtu: "{{ desired_settings.mtu | default(omit, true) }}"
       role: "{{ desired_settings.role | default(omit, true) }}"
