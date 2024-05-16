@@ -8,7 +8,7 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating Group Service entries"
+- name: "Creating Group Service entry: {{ desired_settings.name }}"
   fortinet.fortios.fortios_firewall_service_group:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"

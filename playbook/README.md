@@ -26,7 +26,7 @@ Run these commands on the computer running Ansible:
     ```
 
 1. These playbooks perform system backups and restores:
-    - Backup all settings:
+    - Backup all settings. It will keep only the latest 5 files.
     ```bash
     ansible-playbook 02-backup.yml
     ```
