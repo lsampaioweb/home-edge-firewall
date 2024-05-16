@@ -1,6 +1,0 @@
----
-- name: "Run the backup playbook"
-  ansible.builtin.import_playbook: "07-system-interface-backup.yml"
-
-- name: "Run the create playbook"
-  ansible.builtin.import_playbook: "07-system-interface-create.yml"

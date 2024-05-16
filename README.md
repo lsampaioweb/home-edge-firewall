@@ -5,7 +5,7 @@ Repository with the settings used on my Fortigate 80E on the Home environment.
 This repository uses sub-modules:<br/>
 1. [ansible-common-tasks](https://github.com/lsampaioweb/ansible-common-tasks "ansible-common-tasks").
 
-In order to download all the submodules, you have to run the followinng commands:
+In order to download all the submodules, you have to run the following commands:
 
 ```bash
 # Clone the repository and all of its submodules.

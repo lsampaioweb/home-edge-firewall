@@ -1,5 +1,5 @@
 ---
-- name: "Retrieving the amount of backup files"
+- name: "Retrieving the backup files"
   ansible.builtin.find:
     paths: "{{ backup_global_config_path }}"
     patterns: "*.{{ backup_extention }}"

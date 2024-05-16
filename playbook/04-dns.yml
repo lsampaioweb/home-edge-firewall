@@ -1,6 +1,0 @@
----
-- name: "Run the backup playbook"
-  ansible.builtin.import_playbook: "04-dns-backup.yml"
-
-- name: "Run the create playbook"
-  ansible.builtin.import_playbook: "04-dns-create.yml"

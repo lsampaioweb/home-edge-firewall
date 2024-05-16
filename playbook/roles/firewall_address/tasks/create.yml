@@ -1,5 +1,5 @@
 ---
-- name: "Retrieving the firewall addresses files"
+- name: "Retrieving the backup files"
   ansible.builtin.include_tasks: "get-files.yml"
 
 - name: "Creating a firewall address entry"
