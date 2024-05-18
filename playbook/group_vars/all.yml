@@ -19,6 +19,7 @@ path_common_firewall_tasks: "{{ path_roles_common_firewall }}/tasks"
 path_common_firewall_configuration_fact: "{{ path_common_firewall_tasks }}/configuration-fact.yml"
 path_common_firewall_create_directory: "{{ path_common_firewall_tasks }}/create-directory.yml"
 path_common_firewall_get_backup_files: "{{ path_common_firewall_tasks }}/get-backup-files.yml"
+path_common_firewall_create_ansible_attributes: "{{ path_common_firewall_tasks }}/create-ansible-attributes.yml"
 
 # Roles
 path_roles: "roles"
@@ -43,6 +44,9 @@ path_role_firewall_policy: "{{ path_roles }}/firewall_policy/tasks"
 
 # LDAP.
 path_role_ldap: "{{ path_roles }}/ldap/tasks"
+
+# SNMP.
+path_role_snmp: "{{ path_roles }}/snmp/tasks"
 
 # System Settings.
 path_role_system_settings: "{{ path_roles }}/system_settings/tasks"

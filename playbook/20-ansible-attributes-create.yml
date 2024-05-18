@@ -1,0 +1,6 @@
+---
+- name: "Creating Ansible attributes"
+  hosts: "firewalls"
+
+  roles:
+    - "ansible_attributes"

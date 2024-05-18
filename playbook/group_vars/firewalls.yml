@@ -12,6 +12,9 @@ backup_vdom_path: "{{ backup_path }}{{ (vdom is defined and vdom != '') | ternar
 backup_extention: "bkp"
 backup_files_to_keep: 10
 
+# Ansible attributes.
+backup_ansible_attributes_path: "{{ backup_path }}/ansible"
+
 # Global config.
 backup_global_config_path: "{{ backup_path }}/global"
 
@@ -37,6 +40,9 @@ backup_firewall_policy_path: "{{ backup_vdom_path }}/firewall_policy"
 
 # LDAP.
 backup_ldap_path: "{{ backup_vdom_path }}/ldap"
+
+# SNMP.
+backup_snmp_path: "{{ backup_vdom_path }}/snmp"
 
 # System Settings.
 backup_system_settings_path: "{{ backup_vdom_path }}/system_settings"

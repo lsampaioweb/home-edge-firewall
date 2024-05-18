@@ -26,5 +26,8 @@
 - name: "Run the LDAP playbook"
   ansible.builtin.import_playbook: "10-ldap-backup.yml"
 
+- name: "Run the SNMP playbook"
+  ansible.builtin.import_playbook: "11-snmp-backup.yml"
+
 - name: "Run the System Settings playbook"
-  ansible.builtin.import_playbook: "11-system-settings-backup.yml"
+  ansible.builtin.import_playbook: "12-system-settings-backup.yml"

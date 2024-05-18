@@ -1,0 +1,29 @@
+---
+- name: "Reading the json file that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating SNMP entries"
+  fortinet.fortios.fortios_switch_controller_snmp_user:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    switch_controller_snmp_user:
+      name: "{{ desired_settings.name }}"
+      auth_proto: "sha256"
+      auth_pwd: "XXXX"
+      priv_proto: "aes256"
+      priv_pwd: "XXXX"
+      query_port: "161"
+      security_level: "auth-priv"
+      queries: "enable"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

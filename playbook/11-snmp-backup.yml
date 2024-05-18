@@ -1,0 +1,7 @@
+---
+- name: "SNMP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the SNMP settings"
+      ansible.builtin.include_tasks: "{{ path_role_snmp }}/backup.yml"
