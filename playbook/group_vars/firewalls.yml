@@ -7,35 +7,36 @@ ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + password_i
 
 search_keywork: "ansible"
 
-backup_path: "./backup{{ '/' + vdom | default(omit) }}"
+backup_path: "./backup"
+backup_vdom_path: "{{ backup_path }}{{ (vdom is defined and vdom != '') | ternary('/' + vdom, '') }}"
 backup_extention: "bkp"
-backup_files_to_keep: 5
+backup_files_to_keep: 10
 
 # Global config.
 backup_global_config_path: "{{ backup_path }}/global"
 
 # DNS.
-backup_dns_path: "{{ backup_path }}/dns"
+backup_dns_path: "{{ backup_vdom_path }}/dns"
 
 # Firewall Address.
-backup_firewall_address_path: "{{ backup_path }}/firewall_address"
+backup_firewall_address_path: "{{ backup_vdom_path }}/firewall_address"
 
 # Services.
-backup_services_path: "{{ backup_path }}/services"
+backup_services_path: "{{ backup_vdom_path }}/services"
 backup_services_group_path: "{{ backup_services_path }}/groups"
 backup_services_custom_path: "{{ backup_services_path }}/custom"
 
 # System Interface.
-backup_system_interface_path: "{{ backup_path }}/system_interface"
+backup_system_interface_path: "{{ backup_vdom_path }}/system_interface"
 
 # System Zone.
-backup_system_zone_path: "{{ backup_path }}/system_zone"
+backup_system_zone_path: "{{ backup_vdom_path }}/system_zone"
 
 # Firewall Policy.
-backup_firewall_policy_path: "{{ backup_path }}/firewall_policy"
+backup_firewall_policy_path: "{{ backup_vdom_path }}/firewall_policy"
 
 # LDAP.
-backup_ldap_path: "{{ backup_path }}/ldap"
+backup_ldap_path: "{{ backup_vdom_path }}/ldap"
 
 # System Settings.
-backup_system_settings_path: "{{ backup_path }}/system_settings"
+backup_system_settings_path: "{{ backup_vdom_path }}/system_settings"

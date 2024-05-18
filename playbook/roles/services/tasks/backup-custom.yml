@@ -1,9 +1,8 @@
 ---
 - name: "Fetching all Custom Services entries"
-  fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit, true) }}"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
     selector: "firewall.service_custom"
-  register: "data"
 
 - name: "Debug"
   ansible.builtin.debug:
@@ -11,10 +10,9 @@
   tags: ["never", "debug"]
 
 - name: "Ensure the backup directory exists"
-  ansible.builtin.file:
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
     path: "{{ backup_services_custom_path }}"
-    state: "directory"
-    mode: "0755"
 
 - name: "Saving the Services with 'Ansible' keyword in the comments to a local file"
   ansible.builtin.copy:

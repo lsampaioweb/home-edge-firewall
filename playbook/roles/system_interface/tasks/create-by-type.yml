@@ -1,6 +1,6 @@
 ---
 - name: "Retrieving the backup files"
-  ansible.builtin.include_tasks: "get-files.yml"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ item.paths }}"
 

@@ -1,9 +1,8 @@
 ---
 - name: "Fetching all System Interface entries"
-  fortinet.fortios.fortios_configuration_fact:
-    vdom: "{{ vdom | default(omit, true) }}"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
     selector: "system_interface"
-  register: "data"
 
 - name: "Debug"
   ansible.builtin.debug:

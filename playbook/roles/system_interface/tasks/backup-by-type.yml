@@ -1,9 +1,6 @@
 ---
 - name: "Ensure the backup directory exists"
-  ansible.builtin.file:
-    path: "{{ path }}"
-    state: "directory"
-    mode: "0755"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
 
 - name: "Saving the System Interface settings in a local file: {{ item.name }}"
   ansible.builtin.copy:

@@ -5,6 +5,7 @@ domain: "homelab"
 # Import Paths.
 path_roles_common: "roles/common"
 path_common_tasks: "{{ path_roles_common }}/tasks"
+path_tasks_debian: "{{ path_common_tasks }}/debian"
 
 # Packages.
 path_debian_packages: "{{ path_tasks_debian }}/packages"

@@ -1,0 +1,18 @@
+---
+- name: "Creating the Ansible attributes"
+  ansible.builtin.lineinfile:
+    path: "{{ path }}/{{ file }}"
+    line: "{{ key ~ desired_settings_item ~ each_item ~ default_omit }}"
+    mode: "0644"
+    create: true
+  vars:
+    file: "{{ ((file_name | replace(' ', '-')) + '-ansible.keys') | lower }}"
+    key: "{{ item.key | replace('-', '_') + ': ' }}"
+    desired_settings_item: "{{ '\"{{ desired_settings' }}"
+    start_bracket: "['"
+    end_bracket: "']"
+    each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"
+    default_omit: " | default(omit, true) }}\""
+  loop: "{{ results | dict2items | sort(attribute='key') }}"
+  loop_control:
+    label: "{{ key }}"
