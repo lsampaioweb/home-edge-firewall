@@ -1,0 +1,7 @@
+color: "{{ desired_settings.color | default(omit, true) }}"
+comment: "{{ desired_settings.comment | default(omit, true) }}"
+fabric_object: "{{ desired_settings['fabric-object'] | default(omit, true) }}"
+member: "{{ desired_settings.member | default(omit, true) }}"
+name: "{{ desired_settings.name | default(omit, true) }}"
+proxy: "{{ desired_settings.proxy | default(omit, true) }}"
+q_origin_key: "{{ desired_settings.q_origin_key | default(omit, true) }}"

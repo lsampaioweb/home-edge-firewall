@@ -1,14 +1,17 @@
 ---
-- name: "Creating the Ansible attributes"
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+
+- name: "Creating the Ansible attributes for: {{ selector }}"
   ansible.builtin.lineinfile:
     path: "{{ path }}/{{ file }}"
     line: "{{ key ~ desired_settings_item ~ each_item ~ default_omit }}"
     mode: "0644"
     create: true
   vars:
-    file: "{{ ((file_name | replace(' ', '-')) + '-ansible.keys') | lower }}"
-    key: "{{ item.key | replace('-', '_') + ': ' }}"
-    desired_settings_item: "{{ '\"{{ desired_settings' }}"
+    file: "{{ ((selector | replace('-', '_')) + '.keys') | lower }}"
+    key: "{{ item.key | replace('-', '_') }}"
+    desired_settings_item: "{{ ': \"{{ desired_settings' }}"
     start_bracket: "['"
     end_bracket: "']"
     each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"

@@ -1,0 +1,6 @@
+description: "{{ desired_settings.description | default(omit, true) }}"
+interface: "{{ desired_settings.interface | default(omit, true) }}"
+intrazone: "{{ desired_settings.intrazone | default(omit, true) }}"
+name: "{{ desired_settings.name | default(omit, true) }}"
+q_origin_key: "{{ desired_settings.q_origin_key | default(omit, true) }}"
+tagging: "{{ desired_settings.tagging | default(omit, true) }}"
