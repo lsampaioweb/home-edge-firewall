@@ -1,0 +1,45 @@
+---
+- name: "Fetching all system global settings"
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit, true) }}"
+    selector: "system_global"
+  register: "data"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+    # msg: "{{ output.meta.results }}"
+    # msg: "{{ output.meta.results.hostname }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.file:
+    path: "{{ backup_system_settings_path }}"
+    state: "directory"
+    mode: "0755"
+
+- name: "Saving the System Settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ data.meta.results | to_nice_json(indent=2) }}"
+    dest: "{{ backup_system_settings_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    file: "{{ ((data.meta.results.hostname | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+
+# - name: "Populating the list that will hold all keys from the results"
+#   ansible.builtin.lineinfile:
+#     path: "{{ backup_system_settings_path }}/{{ file }}"
+#     line: "{{ key ~ desired_settings_item ~ each_item ~ default_omit }}"
+#     mode: "0644"
+#     create: true
+#   vars:
+#     file: "{{ ((data.meta.results.hostname | replace(' ', '-')) + '-ansible.keys') | lower }}"
+#     key: "{{ item.key | replace('-', '_') + ': ' }}"
+#     desired_settings_item: "{{ '\"{{ desired_settings' }}"
+#     start_bracket: "['"
+#     end_bracket: "']"
+#     each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"
+#     default_omit: " | default(omit, true) }}\""
+#   loop: "{{ data.meta.results | dict2items | sort(attribute='key') }}"
+#   loop_control:
+#     label: "{{ key }}"

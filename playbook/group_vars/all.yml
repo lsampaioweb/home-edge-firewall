@@ -36,3 +36,6 @@ path_role_firewall_policy: "{{ path_roles }}/firewall_policy/tasks"
 
 # LDAP.
 path_role_ldap: "{{ path_roles }}/ldap/tasks"
+
+# System Settings.
+path_role_system_settings: "{{ path_roles }}/system_settings/tasks"

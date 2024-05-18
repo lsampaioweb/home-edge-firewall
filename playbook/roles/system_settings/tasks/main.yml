@@ -1,6 +1,0 @@
----
-- name: "XXX"
-  ansible.builtin.import_tasks: "system-global.yml"
-
-# - name: "XXX"
-#   ansible.builtin.import_tasks: "system-snmp-user.yml"

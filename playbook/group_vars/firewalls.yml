@@ -36,3 +36,6 @@ backup_firewall_policy_path: "{{ backup_path }}/firewall_policy"
 
 # LDAP.
 backup_ldap_path: "{{ backup_path }}/ldap"
+
+# System Settings.
+backup_system_settings_path: "{{ backup_path }}/system_settings"
