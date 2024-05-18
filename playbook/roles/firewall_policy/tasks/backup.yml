@@ -21,6 +21,6 @@
     mode: "0644"
   vars:
     file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  loop: "{{ data.meta.results | default([]) }}"
+  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
   loop_control:
     label: "{{ item.name }}"

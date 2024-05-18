@@ -22,6 +22,6 @@
   vars:
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   when: item.comment is search(search_keywork, ignorecase=true)
-  loop: "{{ data.meta.results | default([]) }}"
+  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
   loop_control:
     label: "{{ item.name }}"

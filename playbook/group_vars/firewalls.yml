@@ -12,6 +12,7 @@ ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ansible_pa
 snmp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + snmp_password_id) }}"
 
 search_keywork: "ansible"
+invalid_attribute: "q_origin_key"
 
 backup_path: "./backup"
 backup_vdom_path: "{{ backup_path }}{{ (vdom is defined and vdom != '') | ternary('/' + vdom, '') }}"
@@ -52,3 +53,6 @@ backup_snmp_path: "{{ backup_vdom_path }}/snmp"
 
 # System Settings.
 backup_system_settings_path: "{{ backup_vdom_path }}/system_settings"
+
+# NTP.
+backup_ntp_path: "{{ backup_vdom_path }}/ntp"

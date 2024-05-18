@@ -17,7 +17,6 @@
       description: "{{ desired_settings.description | default(omit, true) }}"
       interface: >
         {{ (desired_settings.interface
-        | ansible.utils.remove_keys(target=['q_origin_key'])
         | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
         | default(omit, true) }}
       intrazone: "{{ desired_settings.intrazone | default(omit, true) }}"

@@ -2,6 +2,9 @@
 - name: "Run the control machine playbook"
   ansible.builtin.import_playbook: "01-control-machine.yml"
 
+- name: "Run the Backup playbook"
+  ansible.builtin.import_playbook: "02-backup.yml"
+
 - name: "Run the DNS playbook"
   ansible.builtin.import_playbook: "04-dns-create.yml"
 
@@ -28,3 +31,6 @@
 
 - name: "Run the System Settings playbook"
   ansible.builtin.import_playbook: "12-system-settings-create.yml"
+
+- name: "Run the NTP playbook"
+  ansible.builtin.import_playbook: "13-ntp-create.yml"

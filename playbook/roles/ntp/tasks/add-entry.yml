@@ -16,10 +16,6 @@
       allow_transfer: "{{ desired_settings['allow-transfer'] | default(omit, true) }}"
       authoritative: "{{ desired_settings.authoritative | default(omit, true) }}"
       contact: "{{ desired_settings.contact | default(omit, true) }}"
-      dns_entry: >
-        {{ (desired_settings['dns-entry']
-        | ansible.utils.replace_keys(target=[{'before': 'canonical-name', 'after': 'canonical_name'}]))
-        | default(omit, true) }}
       domain: "{{ desired_settings.domain | default(omit, true) }}"
       forwarder: "{{ desired_settings.forwarder | default(omit, true) }}"
       ip_primary: "{{ desired_settings['ip-primary'] | default(omit, true) }}"
@@ -31,6 +27,34 @@
       ttl: "{{ desired_settings.ttl | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"
       view: "{{ desired_settings.view | default(omit, true) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
+
+- name: "Creating DNS entries"
+  fortinet.fortios.fortios_system_dns_database:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    member_state: "present"
+    member_path: "dns_entry:id"
+    system_dns_database:
+      name: "{{ desired_settings.name }}"
+      dns_entry:
+        - id: "{{ item.id }}"
+          hostname: "{{ item.hostname }}"
+          canonical_name: "{{ item['canonical-name'] }}"
+          ip: "{{ item.ip }}"
+          preference: "{{ item.preference }}"
+          ttl: "{{ item.ttl }}"
+          type: "{{ item.type }}"
+          status: "{{ item.status }}"
+  loop: "{{ desired_settings['dns-entry'] | default([]) }}"
+  loop_control:
+    index_var: "index"
+    label: "{{ item.id }}: {{ item.hostname }} - {{ item.type }}"
   register: "output"
 
 - name: "Debug"

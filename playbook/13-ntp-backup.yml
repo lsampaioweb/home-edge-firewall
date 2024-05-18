@@ -1,0 +1,7 @@
+---
+- name: "NTP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the NTP settings"
+      ansible.builtin.include_tasks: "{{ path_role_ntp }}/backup.yml"

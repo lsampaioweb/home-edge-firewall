@@ -18,7 +18,7 @@
       comment: "{{ desired_settings.comment }}"
       fabric_object: "{{ desired_settings['fabric-object'] }}"
       proxy: "{{ desired_settings.proxy }}"
-      member: "{{ (desired_settings.member | ansible.utils.remove_keys(target=['q_origin_key'])) }}"
+      member: "{{ desired_settings.member }}"
   register: "output"
 
 - name: "Debug"

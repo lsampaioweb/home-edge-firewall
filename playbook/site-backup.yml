@@ -31,3 +31,6 @@
 
 - name: "Run the System Settings playbook"
   ansible.builtin.import_playbook: "12-system-settings-backup.yml"
+
+- name: "Run the NTP playbook"
+  ansible.builtin.import_playbook: "13-ntp-backup.yml"

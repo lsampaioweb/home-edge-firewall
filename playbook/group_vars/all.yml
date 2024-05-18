@@ -50,3 +50,6 @@ path_role_snmp: "{{ path_roles }}/snmp/tasks"
 
 # System Settings.
 path_role_system_settings: "{{ path_roles }}/system_settings/tasks"
+
+# NTP.
+path_role_ntp: "{{ path_roles }}/ntp/tasks"

@@ -32,7 +32,6 @@
       lldp_transmission: "{{ desired_settings['lldp-transmission'] | default(omit, true) }}"
       member: >
         {{ (desired_settings.member
-        | ansible.utils.remove_keys(target=['q_origin_key'])
         | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
         | default(omit) }}
       monitor_bandwidth: "{{ desired_settings['monitor-bandwidth'] | default(omit, true) }}"

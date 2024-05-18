@@ -89,10 +89,22 @@ Run these commands on the computer running Ansible:
     ansible-playbook 10-ldap-create.yml
     ```
 
+1. Backup and create SNMP settings:
+    ```bash
+    ansible-playbook 11-snmp-backup.yml
+    ansible-playbook 11-snmp-create.yml
+    ```
+
 1. Backup and create global system settings:
     ```bash
-    ansible-playbook 11-system-settings-backup.yml
-    ansible-playbook 11-system-settings-create.yml
+    ansible-playbook 12-system-settings-backup.yml
+    ansible-playbook 12-system-settings-create.yml
+    ```
+
+1. Backup and create NTP system settings:
+    ```bash
+    ansible-playbook 13-ntp-backup.yml
+    ansible-playbook 13-ntp-create.yml
     ```
 
 1. Run all other playbooks in one execution:
