@@ -24,6 +24,6 @@
     mode: "0644"
   vars:
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  loop: "{{ data.meta.results | default([]) }}"
+  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=['q_origin_key']) }}"
   loop_control:
     label: "{{ item.name }}"

@@ -16,7 +16,6 @@
   ansible.builtin.file:
     path: "{{ backup_global_config_path }}"
     state: "directory"
-    recurse: true
     mode: "0755"
 
 - name: "Saving the settings in a local file"

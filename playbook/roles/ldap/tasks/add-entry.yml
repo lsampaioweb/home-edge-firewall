@@ -31,7 +31,7 @@
       interface_select_method: "{{ desired_settings['interface-select-method'] | default(omit, true) }}"
       member_attr: "{{ desired_settings['member-attr'] | default(omit, true) }}"
       obtain_user_info: "{{ desired_settings['obtain-user-info'] | default(omit, true) }}"
-      # password: "{{ desired_settings.password | default(omit, true) }}"
+      # password: "{{ XXX }}"
       password_attr: "{{ desired_settings['password-attr'] | default(omit, true) }}"
       password_expiry_warning: "{{ desired_settings['password-expiry-warning'] | default(omit, true) }}"
       password_renewal: "{{ desired_settings['password-renewal'] | default(omit, true) }}"

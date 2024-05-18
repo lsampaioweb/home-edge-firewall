@@ -15,6 +15,17 @@ Run these commands on the computer running Ansible:
     secret-tool lookup password "edge-firewall-01-admin-password"
     ```
 
+1. Save the password that Zabbix will use to collect events and metrics from the firewall.
+
+    ```bash
+    secret-tool store --label="edge-firewall-01-snmp-password" password "edge-firewall-01-snmp-password"
+    ```
+
+1. Confirm the password was correctly saved in the secret manager:
+    ```bash
+    secret-tool lookup password "edge-firewall-01-snmp-password"
+    ```
+
 1. Prepare the Ubuntu machine to run Ansible playbooks:
     ```bash
     ansible-playbook 01-control-machine.yml
