@@ -5,4 +5,3 @@
   tasks:
     - name: "Backing up the LDAP settings"
       ansible.builtin.include_tasks: "{{ path_role_ldap }}/backup.yml"
-      tags: ["always", "debug"]

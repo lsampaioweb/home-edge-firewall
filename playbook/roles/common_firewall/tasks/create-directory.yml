@@ -1,0 +1,6 @@
+---
+- name: "Ensure the directory: '{{ path }}' exists"
+  ansible.builtin.file:
+    path: "{{ path }}"
+    state: "directory"
+    mode: "{{ mode | default('0755', true) }}"

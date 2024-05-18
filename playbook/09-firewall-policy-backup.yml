@@ -5,4 +5,3 @@
   tasks:
     - name: "Backing up the Firewall Policy settings"
       ansible.builtin.include_tasks: "{{ path_role_firewall_policy }}/backup.yml"
-      tags: ["always", "debug"]

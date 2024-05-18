@@ -5,4 +5,3 @@
   tasks:
     - name: "Backing up the System Interface settings"
       ansible.builtin.include_tasks: "{{ path_role_system_interface }}/backup.yml"
-      tags: ["always", "debug"]

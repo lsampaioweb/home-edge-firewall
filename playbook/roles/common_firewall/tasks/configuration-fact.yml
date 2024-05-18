@@ -1,0 +1,6 @@
+---
+- name: "Fetching Configuration Facts: '{{ selector }}' from VDOM: '{{ vdom }}'"
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit, true) }}"
+    selector: "{{ selector }}"
+  register: "data"

@@ -5,13 +5,19 @@ domain: "homelab"
 # Import Paths.
 path_roles_common: "roles/common"
 path_common_tasks: "{{ path_roles_common }}/tasks"
-path_tasks_debian: "{{ path_common_tasks }}/debian"
 
 # Packages.
 path_debian_packages: "{{ path_tasks_debian }}/packages"
 path_packages_apt: "{{ path_debian_packages }}/apt.yml"
 path_packages_pip: "{{ path_debian_packages }}/pip.yml"
 path_packages_ansible_galaxy: "{{ path_debian_packages }}/ansible_galaxy.yml"
+
+# Import Common Firewall Paths.
+path_roles_common_firewall: "roles/common_firewall"
+path_common_firewall_tasks: "{{ path_roles_common_firewall }}/tasks"
+path_common_firewall_configuration_fact: "{{ path_common_firewall_tasks }}/configuration-fact.yml"
+path_common_firewall_create_directory: "{{ path_common_firewall_tasks }}/create-directory.yml"
+path_common_firewall_get_backup_files: "{{ path_common_firewall_tasks }}/get-backup-files.yml"
 
 # Roles
 path_roles: "roles"

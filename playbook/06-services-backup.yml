@@ -5,4 +5,3 @@
   tasks:
     - name: "Backing up the Services settings"
       ansible.builtin.include_tasks: "{{ path_role_services }}/backup.yml"
-      tags: ["always", "debug"]

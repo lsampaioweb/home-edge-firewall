@@ -1,0 +1,8 @@
+---
+- name: "Retrieving the backup files from: '{{ paths }}' with '{{ internal_patterns }}'"
+  ansible.builtin.find:
+    paths: "{{ paths }}"
+    patterns: "{{ internal_patterns }}"
+  vars:
+    internal_patterns: "{{ (patterns is defined) | ternary(patterns, '*.' + backup_extention) }}"
+  register: "backup_files"
