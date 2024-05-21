@@ -13,20 +13,17 @@
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     system_dns_database:
-      allow_transfer: "{{ desired_settings['allow-transfer'] | default(omit, true) }}"
+      allow_transfer: "{{ desired_settings.allow_transfer | default(omit, true) }}"
       authoritative: "{{ desired_settings.authoritative | default(omit, true) }}"
       contact: "{{ desired_settings.contact | default(omit, true) }}"
-      dns_entry: >
-        {{ (desired_settings['dns-entry']
-        | ansible.utils.replace_keys(target=[{'before': 'canonical-name', 'after': 'canonical_name'}]))
-        | default(omit, true) }}
+      dns_entry: "{{ desired_settings.dns_entry | default(omit, true) }}"
       domain: "{{ desired_settings.domain | default(omit, true) }}"
       forwarder: "{{ desired_settings.forwarder | default(omit, true) }}"
-      ip_primary: "{{ desired_settings['ip-primary'] | default(omit, true) }}"
+      ip_primary: "{{ desired_settings.ip_primary | default(omit, true) }}"
       name: "{{ desired_settings.name | default(omit, true) }}"
-      primary_name: "{{ desired_settings['primary-name'] | default(omit, true) }}"
-      rr_max: "{{ desired_settings['rr-max'] | default(omit, true) }}"
-      source_ip: "{{ desired_settings['source-ip'] | default(omit, true) }}"
+      primary_name: "{{ desired_settings.primary_name | default(omit, true) }}"
+      rr_max: "{{ desired_settings.rr_max | default(omit, true) }}"
+      source_ip: "{{ desired_settings.source_ip | default(omit, true) }}"
       status: "{{ desired_settings.status | default(omit, true) }}"
       ttl: "{{ desired_settings.ttl | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"

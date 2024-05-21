@@ -18,10 +18,10 @@
       status: "{{ desired_settings.status }}"
       alias: "{{ desired_settings.alias | default(omit, true) }}"
       aggregate: "{{ desired_settings.aggregate | default(omit, true) }}"
-      aggregate_type: "{{ desired_settings['aggregate-type'] | default(omit, true) }}"
+      aggregate_type: "{{ desired_settings.aggregate_type | default(omit, true) }}"
       allowaccess: "{{  (desired_settings.allowaccess == '') | ternary(omit, desired_settings.allowaccess | replace(' ', ',')) }}"
       description: "{{ desired_settings.description | default(omit, true) }}"
-      device_identification: "{{ desired_settings['device-identification'] | default(omit, true) }}"
+      device_identification: "{{ desired_settings.device_identification | default(omit, true) }}"
       devindex: "{{ desired_settings.devindex | default(omit, true) }}"
       estimated_downstream_bandwidth: "{{ desired_settings['estimated-downstream-bandwidth'] | default(omit, true) }}"
       estimated_upstream_bandwidth: "{{ desired_settings['estimated-upstream-bandwidth'] | default(omit, true) }}"
@@ -30,10 +30,7 @@
       lacp_mode: "{{ desired_settings['lacp-mode'] | default(omit, true) }}"
       lldp_reception: "{{ desired_settings['lldp-reception'] | default(omit, true) }}"
       lldp_transmission: "{{ desired_settings['lldp-transmission'] | default(omit, true) }}"
-      member: >
-        {{ (desired_settings.member
-        | ansible.utils.replace_keys(target=[{'before': 'interface-name', 'after': 'interface_name'}]))
-        | default(omit) }}
+      member: "{{ desired_settings.member | default(omit) }}"
       monitor_bandwidth: "{{ desired_settings['monitor-bandwidth'] | default(omit, true) }}"
       mtu: "{{ desired_settings.mtu | default(omit, true) }}"
       role: "{{ desired_settings.role | default(omit, true) }}"

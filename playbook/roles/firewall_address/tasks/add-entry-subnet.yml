@@ -7,7 +7,7 @@
       uuid: "{{ desired_settings.uuid | default(omit, true) }}"
       name: "{{ desired_settings.name }}"
       type: "{{ desired_settings.type }}"
-      associated_interface: "{{ desired_settings['associated-interface'] | default(omit, true) }}"
+      associated_interface: "{{ desired_settings.associated_interface | default(omit, true) }}"
       comment: "{{ desired_settings.comment }}"
       interface: "{{ desired_settings.interface | default(omit, true) }}"
       subnet: "{{ desired_settings.subnet | default(omit, true) }}"

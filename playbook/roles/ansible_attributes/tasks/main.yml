@@ -10,7 +10,8 @@
     # selector: "system.snmp_user"
     # selector: "system_interface"
     # selector: "system_global"
-    selector: "system_zone"
+    # selector: "system_zone"
+    selector: "system_ntp"
 
 - name: "Fetching all entries"
   ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"

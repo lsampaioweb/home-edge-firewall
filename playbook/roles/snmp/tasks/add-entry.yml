@@ -13,14 +13,14 @@
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     switch_controller_snmp_user:
-      auth_proto: "{{ desired_settings['auth-proto'] | default(omit, true) }}"
+      auth_proto: "{{ desired_settings.auth_proto | default(omit, true) }}"
       auth_pwd: "{{ snmp_password }}"
       name: "{{ desired_settings.name | default(omit, true) }}"
-      priv_proto: "{{ desired_settings['priv-proto'] | default(omit, true) }}"
+      priv_proto: "{{ desired_settings.priv_proto | default(omit, true) }}"
       priv_pwd: "{{ snmp_password }}"
       queries: "{{ desired_settings.queries | default(omit, true) }}"
-      query_port: "{{ desired_settings['query-port'] | default(omit, true) }}"
-      security_level: "{{ desired_settings['security-level'] | default(omit, true) }}"
+      query_port: "{{ desired_settings.query_port | default(omit, true) }}"
+      security_level: "{{ desired_settings.security_level | default(omit, true) }}"
   register: "output"
 
 - name: "Debug"

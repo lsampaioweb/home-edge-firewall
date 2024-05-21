@@ -13,6 +13,6 @@
   ansible.builtin.include_tasks: "backup-by-type.yml"
   vars:
     path: "{{ backup_system_interface_path }}/{{ item.type }}"
-  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
+  loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }} - {{ item.type }}"

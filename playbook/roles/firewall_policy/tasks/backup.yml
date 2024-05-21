@@ -16,11 +16,18 @@
 
 - name: "Saving the Firewall Policy settings in a local file"
   ansible.builtin.copy:
-    content: "{{ item | to_nice_json(indent=2) }}"
+    content: "{{ line | to_nice_json(indent=2) }}"
     dest: "{{ backup_firewall_policy_path }}/{{ file }}"
     mode: "0644"
   vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'av-profile' , 'after': 'av_profile'},
+        {'before': 'cifs-profile' , 'after': 'cifs_profile'}
+      ], matching_parameter= 'regex')) }}
     file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
+  loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"

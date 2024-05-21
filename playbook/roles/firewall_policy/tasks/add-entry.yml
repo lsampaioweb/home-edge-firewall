@@ -15,8 +15,8 @@
     firewall_policy:
       name: "{{ desired_settings.name }}"
       action: "{{ desired_settings.action }}"
-      av_profile: "{{ desired_settings['av-profile'] }}"
-      cifs_profile: "{{ desired_settings['cifs-profile'] }}"
+      av_profile: "{{ desired_settings.av_profile }}"
+      cifs_profile: "{{ desired_settings.cifs_profile }}"
       comments: "{{ desired_settings.comments }}"
       dlp_profile: "{{ desired_settings['dlp-profile'] }}"
       dnsfilter_profile: "{{ desired_settings['dnsfilter-profile'] }}"

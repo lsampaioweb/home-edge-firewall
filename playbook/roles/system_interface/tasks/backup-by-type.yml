@@ -4,8 +4,16 @@
 
 - name: "Saving the System Interface settings in a local file: {{ item.name }}"
   ansible.builtin.copy:
-    content: "{{ item | to_nice_json(indent=2) }}"
+    content: "{{ line | to_nice_json(indent=2) }}"
     dest: "{{ path }}/{{ file }}"
     mode: "0644"
   vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'aggregate-type'         , 'after': 'aggregate_type'},
+        {'before': 'device-identification'  , 'after': 'device_identification'},
+        {'before': 'interface-name'         , 'after': 'interface_name'}
+      ], matching_parameter= 'regex')) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"

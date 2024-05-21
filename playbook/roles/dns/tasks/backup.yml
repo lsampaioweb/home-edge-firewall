@@ -19,11 +19,23 @@
 
 - name: "Saving the DNS settings in a local file"
   ansible.builtin.copy:
-    content: "{{ item | to_nice_json(indent=2) }}"
+    content: "{{ line | to_nice_json(indent=2) }}"
     dest: "{{ backup_dns_path }}/{{ file }}"
     mode: "0644"
   vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'allow-transfer' , 'after': 'allow_transfer'},
+        {'before': 'dns-entry'      , 'after': 'dns_entry'},
+        {'before': 'canonical-name' , 'after': 'canonical_name'},
+        {'before': 'ip-primary'     , 'after': 'ip_primary'},
+        {'before': 'primary-name'   , 'after': 'primary_name'},
+        {'before': 'rr-max'         , 'after': 'rr_max'},
+        {'before': 'source-ip'      , 'after': 'source_ip'}
+      ], matching_parameter= 'regex')) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
+  loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"
