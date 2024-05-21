@@ -16,8 +16,19 @@
 
 - name: "Saving the NTP settings in a local file"
   ansible.builtin.copy:
-    content: "{{ data.meta.results | ansible.utils.remove_keys(target=[invalid_attribute]) | to_nice_json(indent=2) }}"
+    content: "{{ line | to_nice_json(indent=2) }}"
     dest: "{{ backup_ntp_path }}/{{ file }}"
     mode: "0644"
   vars:
+    line: >
+      {{ (data.meta.results
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'interface-name' , 'after': 'interface_name'},
+        {'before': 'key-id'         , 'after': 'key_id'},
+        {'before': 'key-type'       , 'after': 'key_type'},
+        {'before': 'server-mode'    , 'after': 'server_mode'},
+        {'before': 'source-ip'      , 'after': 'source_ip'},
+        {'before': 'source-ip6'     , 'after': 'source_ip6'}
+      ], matching_parameter= 'regex')) }}
     file: "{{ ((data.meta.results.type | replace(' ', '-')) + '.' + backup_extention) | lower }}"
