@@ -39,7 +39,7 @@
         {'before': 'sub-type'             , 'after': 'sub_type'},
         {'before': 'tag-detection-level'  , 'after': 'tag_detection_level'},
         {'before': 'tag-type'             , 'after': 'tag_type'},
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   when: item.comment is search(search_keywork, ignorecase=true)
   loop: "{{ data.meta.results | default([]) }}"

@@ -28,7 +28,7 @@
         {'before': 'priv-proto'     , 'after': 'priv_proto'},
         {'before': 'query-port'     , 'after': 'query_port'},
         {'before': 'security-level' , 'after': 'security_level'}
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:

@@ -25,7 +25,7 @@
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
         {'before': 'interface-name', 'after': 'interface_name'}
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:

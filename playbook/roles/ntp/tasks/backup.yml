@@ -30,5 +30,5 @@
         {'before': 'server-mode'    , 'after': 'server_mode'},
         {'before': 'source-ip'      , 'after': 'source_ip'},
         {'before': 'source-ip6'     , 'after': 'source_ip6'}
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ ((data.meta.results.type | replace(' ', '-')) + '.' + backup_extention) | lower }}"

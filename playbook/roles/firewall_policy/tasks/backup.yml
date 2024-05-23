@@ -26,7 +26,7 @@
       | ansible.utils.replace_keys(target=[
         {'before': 'av-profile' , 'after': 'av_profile'},
         {'before': 'cifs-profile' , 'after': 'cifs_profile'}
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
