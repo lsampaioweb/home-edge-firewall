@@ -15,5 +15,5 @@
         {'before': 'aggregate-type'         , 'after': 'aggregate_type'},
         {'before': 'device-identification'  , 'after': 'device_identification'},
         {'before': 'interface-name'         , 'after': 'interface_name'}
-      ], matching_parameter= 'regex')) }}
+      ])) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
