@@ -1,0 +1,7 @@
+---
+- name: "Syslog settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the Syslog settings"
+      ansible.builtin.include_tasks: "{{ path_role_syslog }}/backup.yml"

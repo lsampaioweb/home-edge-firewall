@@ -56,3 +56,6 @@ path_role_ntp: "{{ path_roles }}/ntp/tasks"
 
 # DHCP.
 path_role_dhcp: "{{ path_roles }}/dhcp/tasks"
+
+# Syslog.
+path_role_syslog: "{{ path_roles }}/syslog/tasks"

@@ -37,3 +37,6 @@
 
 - name: "Run the DHCP playbook"
   ansible.builtin.import_playbook: "14-dhcp-backup.yml"
+
+- name: "Run the Syslog playbook"
+  ansible.builtin.import_playbook: "15-syslog-backup.yml"

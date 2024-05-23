@@ -1,0 +1,35 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating a Syslog entry for: {{ desired_settings.server }}"
+  fortinet.fortios.fortios_log_syslogd_setting:
+    vdom: "{{ vdom | default(omit, true) }}"
+    log_syslogd_setting:
+      certificate: "{{ desired_settings.certificate | default(omit, true) }}"
+      custom_field_name: "{{ desired_settings.custom_field_name | default(omit, true) }}"
+      enc_algorithm: "{{ desired_settings.enc_algorithm | default(omit, true) }}"
+      facility: "{{ desired_settings.facility | default(omit, true) }}"
+      format: "{{ desired_settings.format | default(omit, true) }}"
+      interface: "{{ desired_settings.interface | default(omit, true) }}"
+      interface_select_method: "{{ desired_settings.interface_select_method | default(omit, true) }}"
+      max_log_rate: "{{ desired_settings.max_log_rate | default(omit, true) }}"
+      mode: "{{ desired_settings.mode | default(omit, true) }}"
+      port: "{{ desired_settings.port | default(omit, true) }}"
+      priority: "{{ desired_settings.priority | default(omit, true) }}"
+      server: "{{ desired_settings.server | default(omit, true) }}"
+      source_ip: "{{ desired_settings.source_ip | default(omit, true) }}"
+      ssl_min_proto_version: "{{ desired_settings.ssl_min_proto_version | default(omit, true) }}"
+      status: "{{ desired_settings.status | default(omit, true) }}"
+      syslog_type: "{{ desired_settings.syslog_type | default(omit, true) }}"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
