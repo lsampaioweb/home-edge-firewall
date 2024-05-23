@@ -56,3 +56,6 @@ backup_system_settings_path: "{{ backup_vdom_path }}/system_settings"
 
 # NTP.
 backup_ntp_path: "{{ backup_vdom_path }}/ntp"
+
+# DHCP.
+backup_dhcp_path: "{{ backup_vdom_path }}/dhcp"

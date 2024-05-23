@@ -53,3 +53,6 @@ path_role_system_settings: "{{ path_roles }}/system_settings/tasks"
 
 # NTP.
 path_role_ntp: "{{ path_roles }}/ntp/tasks"
+
+# DHCP.
+path_role_dhcp: "{{ path_roles }}/dhcp/tasks"
