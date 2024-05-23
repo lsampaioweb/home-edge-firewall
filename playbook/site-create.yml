@@ -34,3 +34,6 @@
 
 - name: "Run the NTP playbook"
   ansible.builtin.import_playbook: "13-ntp-create.yml"
+
+- name: "Run the DHCP playbook"
+  ansible.builtin.import_playbook: "14-dhcp-create.yml"

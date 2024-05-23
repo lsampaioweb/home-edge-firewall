@@ -1,0 +1,7 @@
+---
+- name: "DHCP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating DHCP entries"
+      ansible.builtin.include_tasks: "{{ path_role_dhcp }}/create.yml"

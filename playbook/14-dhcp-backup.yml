@@ -1,0 +1,7 @@
+---
+- name: "DHCP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the DHCP settings"
+      ansible.builtin.include_tasks: "{{ path_role_dhcp }}/backup.yml"
