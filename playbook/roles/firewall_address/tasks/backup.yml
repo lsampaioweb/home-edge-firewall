@@ -26,7 +26,19 @@
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
-        {'before': 'associated-interface' , 'after': 'associated_interface'}
+        {'before': 'allow-routing'        , 'after': 'allow_routing'},
+        {'before': 'associated-interface' , 'after': 'associated_interface'},
+        {'before': 'cache-ttl'            , 'after': 'cache_ttl'},
+        {'before': 'clearpass-spt'        , 'after': 'clearpass_spt'},
+        {'before': 'fabric-object'        , 'after': 'fabric_object'},
+        {'before': 'fsso-group'           , 'after': 'fsso_group'},
+        {'before': 'node-ip-only'         , 'after': 'node_ip_only'},
+        {'before': 'obj-id'               , 'after': 'obj_id'},
+        {'before': 'obj-type'             , 'after': 'obj_type'},
+        {'before': 'sdn-addr-type'        , 'after': 'sdn_addr_type'},
+        {'before': 'sub-type'             , 'after': 'sub_type'},
+        {'before': 'tag-detection-level'  , 'after': 'tag_detection_level'},
+        {'before': 'tag-type'             , 'after': 'tag_type'},
       ], matching_parameter= 'regex')) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
   when: item.comment is search(search_keywork, ignorecase=true)

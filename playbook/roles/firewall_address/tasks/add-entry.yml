@@ -6,13 +6,43 @@
 - name: "Printing the desired settings json object"
   ansible.builtin.debug:
     msg:
-      # - "{{ desired_settings }}"
-      - "{{ desired_settings.type }}"
+      - "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Setting the add entry file that will be included based on the type"
-  ansible.builtin.set_fact:
-    include_file: "add-entry-{{ (desired_settings.type == 'mac') | ternary('macaddr', 'subnet') }}.yml"
+- name: "Creating firewall addresses entry: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_firewall_address:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    firewall_address:
+      allow_routing: "{{ desired_settings.allow_routing | default(omit, true) }}"
+      associated_interface: "{{ desired_settings.associated_interface | default(omit, true) }}"
+      cache_ttl: "{{ desired_settings.cache_ttl | default(omit, true) }}"
+      clearpass_spt: "{{ desired_settings.clearpass_spt | default(omit, true) }}"
+      color: "{{ desired_settings.color | default(omit, true) }}"
+      comment: "{{ desired_settings.comment | default(omit, true) }}"
+      country: "{{ desired_settings.country | default(omit, true) }}"
+      fabric_object: "{{ desired_settings.fabric_object | default(omit, true) }}"
+      filter: "{{ desired_settings.filter | default(omit, true) }}"
+      fsso_group: "{{ desired_settings.fsso_group | default(omit, true) }}"
+      interface: "{{ desired_settings.interface | default(omit, true) }}"
+      list: "{{ desired_settings.list | default(omit, true) }}"
+      macaddr: "{{ desired_settings.macaddr | default(omit, true) }}"
+      name: "{{ desired_settings.name | default(omit, true) }}"
+      node_ip_only: "{{ desired_settings.node_ip_only | default(omit, true) }}"
+      obj_id: "{{ desired_settings.obj_id | default(omit, true) }}"
+      obj_type: "{{ desired_settings.obj_type | default(omit, true) }}"
+      sdn: "{{ desired_settings.sdn | default(omit, true) }}"
+      sdn_addr_type: "{{ desired_settings.sdn_addr_type | default(omit, true) }}"
+      subnet: "{{ desired_settings.subnet | default(omit, true) }}"
+      sub_type: "{{ desired_settings.sub_type | default(omit, true) }}"
+      tag_detection_level: "{{ desired_settings.tag_detection_level | default(omit, true) }}"
+      tag_type: "{{ desired_settings.tag_type | default(omit, true) }}"
+      tagging: "{{ desired_settings.tagging | default(omit, true) }}"
+      type: "{{ desired_settings.type | default(omit, true) }}"
+      uuid: "{{ desired_settings.uuid | default(omit, true) }}"
+  register: "output"
 
-- name: "Creating a firewall address entry"
-  ansible.builtin.include_tasks: "{{ include_file }}"
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
