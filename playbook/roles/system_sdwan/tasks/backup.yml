@@ -27,6 +27,3 @@
         {'before': 'interface-name', 'after': 'interface_name'}
       ])) }}
     file: "{{ (('SDWAN' | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  # loop: "{{ data.meta.results | default([]) }}"
-  # loop_control:
-    # label: "{{ item.name }}"
