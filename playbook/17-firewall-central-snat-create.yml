@@ -1,0 +1,7 @@
+---
+- name: "Firewall Central SNAT settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall Central SNAT entries"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_central_snat }}/create.yml"

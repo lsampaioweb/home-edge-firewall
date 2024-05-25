@@ -1,0 +1,7 @@
+---
+- name: "Firewall Central SNAT settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the Firewall Central SNAT settings"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_central_snat }}/backup.yml"

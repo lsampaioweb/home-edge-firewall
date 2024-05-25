@@ -1,0 +1,41 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating a Firewall Central SNAT entry for: {{ desired_settings.srcintf[0].name }}"
+  fortinet.fortios.fortios_firewall_central_snat_map:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    firewall_central_snat_map:
+      comments: "{{ desired_settings.comments | default(omit) }}"
+      dst_addr: "{{ desired_settings.dst_addr | default(omit) }}"
+      dst_addr6: "{{ desired_settings.dst_addr6 | default(omit) }}"
+      dst_port: "{{ desired_settings.dst_port | default(omit) }}"
+      dstintf: "{{ desired_settings.dstintf | default(omit) }}"
+      nat: "{{ desired_settings.nat | default(omit) }}"
+      nat_ippool: "{{ desired_settings.nat_ippool | default(omit) }}"
+      nat_ippool6: "{{ desired_settings.nat_ippool6 | default(omit) }}"
+      nat_port: "{{ desired_settings.nat_port | default(omit) }}"
+      nat46: "{{ desired_settings.nat46 | default(omit) }}"
+      nat64: "{{ desired_settings.nat64 | default(omit) }}"
+      orig_addr: "{{ desired_settings.orig_addr | default(omit) }}"
+      orig_addr6: "{{ desired_settings.orig_addr6 | default(omit) }}"
+      orig_port: "{{ desired_settings.orig_port | default(omit) }}"
+      policyid: "{{ desired_settings.policyid | default(omit) }}"
+      protocol: "{{ desired_settings.protocol | default(omit) }}"
+      srcintf: "{{ desired_settings.srcintf | default(omit) }}"
+      status: "{{ desired_settings.status | default(omit) }}"
+      type: "{{ desired_settings.type | default(omit) }}"
+      uuid: "{{ desired_settings.uuid | default(omit) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

@@ -43,3 +43,6 @@
 
 - name: "Run the Firewall DOS Policy playbook"
   ansible.builtin.import_playbook: "16-firewall-dos-policy-backup.yml"
+
+- name: "Run the Firewall Central SNAT playbook"
+  ansible.builtin.import_playbook: "17-firewall-central-snat-backup.yml"

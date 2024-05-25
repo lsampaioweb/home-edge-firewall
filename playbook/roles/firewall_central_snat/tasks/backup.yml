@@ -1,0 +1,40 @@
+---
+- name: "Fetching all Firewall Central SNAT entries"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "firewall_central-snat-map"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_firewall_central_snat_path }}"
+
+- name: "Saving the Firewall Central SNAT settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ line | to_nice_json(indent=2) }}"
+    dest: "{{ backup_firewall_central_snat_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'dst-addr'   , 'after': 'dst_addr'},
+        {'before': 'dst-addr6'  , 'after': 'dst_addr6'},
+        {'before': 'dst-port'   , 'after': 'dst_port'},
+        {'before': 'nat-ippool' , 'after': 'nat_ippool'},
+        {'before': 'nat-ippool6', 'after': 'nat_ippool6'},
+        {'before': 'nat-port'   , 'after': 'nat_port'},
+        {'before': 'orig-addr'  , 'after': 'orig_addr'},
+        {'before': 'orig-addr6' , 'after': 'orig_addr6'},
+        {'before': 'orig-port'  , 'after': 'orig_port'}
+      ])) }}
+    file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.srcintf[0].name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.srcintf[0].name }}"

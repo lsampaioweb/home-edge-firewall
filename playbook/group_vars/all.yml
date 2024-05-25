@@ -62,3 +62,6 @@ path_role_syslog: "{{ path_roles }}/syslog/tasks"
 
 # Firewall DOS Policy.
 path_role_firewall_dos_policy: "{{ path_roles }}/firewall_dos_policy/tasks"
+
+# Firewall Central SNAT.
+path_role_firewall_central_snat: "{{ path_roles }}/firewall_central_snat/tasks"
