@@ -22,6 +22,7 @@
       service: "{{ desired_settings.service | default(omit) }}"
       srcaddr: "{{ desired_settings.srcaddr | default(omit) }}"
       status: "{{ desired_settings.status | default(omit) }}"
+  register: "output"
 
 - name: "Debug"
   ansible.builtin.debug:

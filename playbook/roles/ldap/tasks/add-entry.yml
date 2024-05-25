@@ -52,6 +52,7 @@
       type: "{{ desired_settings.type | default(omit, true) }}"
       user_info_exchange_server: "{{ desired_settings['user-info-exchange-server'] | default(omit, true) }}"
       username: "{{ desired_settings.username | default(omit, true) }}"
+  register: "output"
 
 - name: "Debug"
   ansible.builtin.debug:

@@ -40,6 +40,7 @@
       status: "{{ desired_settings.status }}"
       webfilter_profile: "{{ desired_settings['webfilter-profile'] }}"
       webproxy_profile: "{{ desired_settings['webproxy-profile'] }}"
+  register: "output"
 
 - name: "Debug"
   ansible.builtin.debug:

@@ -63,6 +63,7 @@
       wifi_ac3: "{{ desired_settings['wifi-ac3'] | default(omit, true) }}"
       wins_server1: "{{ desired_settings['wins-server1'] | default(omit, true) }}"
       wins_server2: "{{ desired_settings['wins-server2'] | default(omit, true) }}"
+  register: "output"
 
 - name: "Debug"
   ansible.builtin.debug:
