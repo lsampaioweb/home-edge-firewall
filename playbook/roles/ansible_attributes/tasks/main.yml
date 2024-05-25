@@ -13,10 +13,10 @@
     # selector: "system_zone"
     # selector: "system_ntp"
     # selector: "system.dhcp_server"
-    selector: "log.syslogd_setting"
-    # selector: "system_sdwan"
+    # selector: "log.syslogd_setting"
+    selector: "firewall_DoS-policy"
     # selector: "firewall_central-snat-map"
-    # selector: "firewall_DoS-policy"
+    # selector: "system_sdwan"
 
 - name: "Fetching all entries"
   ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"

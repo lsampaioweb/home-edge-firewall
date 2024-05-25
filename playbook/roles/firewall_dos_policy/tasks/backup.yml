@@ -1,0 +1,34 @@
+---
+- name: "Fetching all Firewall DOS Policy entries"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "firewall_DoS-policy"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_firewall_dos_policy_path }}"
+
+- name: "Saving the Firewall DOS Policy settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ line | to_nice_json(indent=2) }}"
+    dest: "{{ backup_firewall_dos_policy_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'quarantine-expiry'  , 'after': 'quarantine_expiry'},
+        {'before': 'quarantine-log'     , 'after': 'quarantine_log'},
+        {'before': 'threshold(default)' , 'after': 'threshold_default'}
+      ])) }}
+    file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"

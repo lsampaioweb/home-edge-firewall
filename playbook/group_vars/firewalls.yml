@@ -62,3 +62,6 @@ backup_dhcp_path: "{{ backup_vdom_path }}/dhcp"
 
 # Syslog.
 backup_syslog_path: "{{ backup_vdom_path }}/syslog"
+
+# Firewall DOS Policy.
+backup_firewall_dos_policy_path: "{{ backup_vdom_path }}/firewall_dos_policy"

@@ -1,0 +1,29 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating a Firewall DOS Policy entry for: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_firewall_dos_policy:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    firewall_dos_policy:
+      anomaly: "{{ desired_settings.anomaly | default(omit) }}"
+      comments: "{{ desired_settings.comments | default(omit) }}"
+      dstaddr: "{{ desired_settings.dstaddr | default(omit) }}"
+      interface: "{{ desired_settings.interface | default(omit) }}"
+      name: "{{ desired_settings.name | default(omit) }}"
+      policyid: "{{ desired_settings.policyid | default(omit) }}"
+      service: "{{ desired_settings.service | default(omit) }}"
+      srcaddr: "{{ desired_settings.srcaddr | default(omit) }}"
+      status: "{{ desired_settings.status | default(omit) }}"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

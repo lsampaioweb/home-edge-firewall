@@ -1,0 +1,7 @@
+---
+- name: "Firewall DOS Policy settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall DOS Policy entries"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_dos_policy }}/create.yml"
