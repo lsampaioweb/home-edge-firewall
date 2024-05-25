@@ -1,0 +1,7 @@
+---
+- name: "Static Routing settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Backing up the Static Routing settings"
+      ansible.builtin.include_tasks: "{{ path_role_static_routing }}/backup.yml"

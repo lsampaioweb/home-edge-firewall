@@ -1,0 +1,7 @@
+---
+- name: "Static Routing settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Static Routing entries"
+      ansible.builtin.include_tasks: "{{ path_role_static_routing }}/create.yml"

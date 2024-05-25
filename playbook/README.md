@@ -149,6 +149,12 @@ Run these commands on the computer running Ansible:
     ansible-playbook 19-system-vdom-create.yml
     ```
 
+1. Backup and create Static Routes settings:
+    ```bash
+    ansible-playbook 20-static-route-backup.yml
+    ansible-playbook 20-static-route-create.yml
+    ```
+
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml

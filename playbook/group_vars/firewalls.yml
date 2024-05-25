@@ -74,3 +74,6 @@ backup_firewall_central_snat_path: "{{ backup_vdom_path }}/firewall_central_snat
 
 # System SDWAN.
 backup_system_sdwan_path: "{{ backup_vdom_path }}/system_sdwan"
+
+# Static Routing.
+backup_static_routing_path: "{{ backup_vdom_path }}/static_routing"

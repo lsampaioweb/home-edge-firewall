@@ -1,0 +1,41 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating Static Routing entries: {{ desired_settings.sdwan_zone[0].name }}"
+  fortinet.fortios.fortios_router_static:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    router_static:
+      bfd: "{{ desired_settings.bfd | default(omit) }}"
+      blackhole: "{{ desired_settings.blackhole | default(omit) }}"
+      comment: "{{ desired_settings.comment | default(omit) }}"
+      device: "{{ desired_settings.device | default(omit) }}"
+      distance: "{{ desired_settings.distance | default(omit) }}"
+      dst: "{{ desired_settings.dst | default(omit) }}"
+      dstaddr: "{{ desired_settings.dstaddr | default(omit) }}"
+      dynamic_gateway: "{{ desired_settings.dynamic_gateway | default(omit) }}"
+      gateway: "{{ desired_settings.gateway | default(omit) }}"
+      internet_service: "{{ desired_settings.internet_service | default(omit) }}"
+      internet_service_custom: "{{ desired_settings.internet_service_custom | default(omit) }}"
+      link_monitor_exempt: "{{ desired_settings.link_monitor_exempt | default(omit) }}"
+      priority: "{{ desired_settings.priority | default(omit) }}"
+      sdwan_zone: "{{ desired_settings.sdwan_zone | default(omit) }}"
+      seq_num: "{{ desired_settings.seq_num | default(omit) }}"
+      src: "{{ desired_settings.src | default(omit) }}"
+      status: "{{ desired_settings.status | default(omit) }}"
+      tag: "{{ desired_settings.tag | default(omit) }}"
+      vrf: "{{ (desired_settings.vrf != 'unspecified') | ternary(desired_settings.vrf, '') | default(omit, true) }}"
+      weight: "{{ desired_settings.weight | default(omit) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

@@ -71,3 +71,6 @@ path_role_firewall_central_snat: "{{ path_roles }}/firewall_central_snat/tasks"
 
 # System SDWAN.
 path_role_system_sdwan: "{{ path_roles }}/system_sdwan/tasks"
+
+# Static Routing.
+path_role_static_routing: "{{ path_roles }}/static_routing/tasks"

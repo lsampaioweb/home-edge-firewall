@@ -52,3 +52,6 @@
 
 - name: "Run the System VDOM playbook"
   ansible.builtin.import_playbook: "19-system-vdom-create.yml"
+
+- name: "Run the Static Routing playbook"
+  ansible.builtin.import_playbook: "20-static-route-create.yml"

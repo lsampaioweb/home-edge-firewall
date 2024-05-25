@@ -1,8 +1,8 @@
 ---
 - name: "Creating the variables that will be used in the playbook"
   ansible.builtin.set_fact:
-    selector: "system_vdom"
-    # selector: "router_static"
+    # selector: "system_vdom"
+    selector: "router_static"
     # selector: "system_dns-database"
     # selector: "firewall_address"
     # selector: "firewall_policy"

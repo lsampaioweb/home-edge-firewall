@@ -1,0 +1,37 @@
+---
+- name: "Fetching all Static Routing entries"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "router_static"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_static_routing_path }}"
+
+- name: "Saving the Static Routing settings in a local file"
+  ansible.builtin.copy:
+    content: "{{ line | to_nice_json(indent=2) }}"
+    dest: "{{ backup_static_routing_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'dynamic-gateway'        , 'after': 'dynamic_gateway'},
+        {'before': 'internet-service'       , 'after': 'internet_service'},
+        {'before': 'internet-service-custom', 'after': 'internet_service_custom'},
+        {'before': 'link-monitor-exempt'    , 'after': 'link_monitor_exempt'},
+        {'before': 'sdwan-zone'             , 'after': 'sdwan_zone'},
+        {'before': 'seq-num'                , 'after': 'seq_num'}
+      ])) }}
+    file: "{{ (('%03d' | format(item.priority | int)) ~ '-' ~ (item['sdwan-zone'][0].name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item['sdwan-zone'][0].name }}"
