@@ -24,6 +24,9 @@ path_common_firewall_create_ansible_attributes: "{{ path_common_firewall_tasks }
 # Roles
 path_roles: "roles"
 
+# System VDOM.
+path_role_system_vdom: "{{ path_roles }}/system_vdom/tasks"
+
 # DNS.
 path_role_dns: "{{ path_roles }}/dns/tasks"
 
@@ -65,3 +68,6 @@ path_role_firewall_dos_policy: "{{ path_roles }}/firewall_dos_policy/tasks"
 
 # Firewall Central SNAT.
 path_role_firewall_central_snat: "{{ path_roles }}/firewall_central_snat/tasks"
+
+# System SDWAN.
+path_role_system_sdwan: "{{ path_roles }}/system_sdwan/tasks"

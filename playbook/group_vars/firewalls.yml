@@ -25,6 +25,9 @@ backup_ansible_attributes_path: "{{ backup_path }}/ansible"
 # Global config.
 backup_global_config_path: "{{ backup_path }}/global"
 
+# System VDOM.
+backup_system_vdom_path: "{{ backup_path }}/system_vdom"
+
 # DNS.
 backup_dns_path: "{{ backup_vdom_path }}/dns"
 
@@ -68,3 +71,6 @@ backup_firewall_dos_policy_path: "{{ backup_vdom_path }}/firewall_dos_policy"
 
 # Firewall Central SNAT.
 backup_firewall_central_snat_path: "{{ backup_vdom_path }}/firewall_central_snat"
+
+# System SDWAN.
+backup_system_sdwan_path: "{{ backup_vdom_path }}/system_sdwan"

@@ -1,0 +1,5 @@
+flag: "{{ desired_settings.flag | default(omit, true) }}"
+name: "{{ desired_settings.name | default(omit, true) }}"
+q_origin_key: "{{ desired_settings.q_origin_key | default(omit, true) }}"
+short_name: "{{ desired_settings['short-name'] | default(omit, true) }}"
+vcluster_id: "{{ desired_settings['vcluster-id'] | default(omit, true) }}"

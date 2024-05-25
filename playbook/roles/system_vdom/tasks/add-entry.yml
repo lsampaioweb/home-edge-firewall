@@ -8,16 +8,15 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating System Zone entries: {{ desired_settings.name }}"
-  fortinet.fortios.fortios_system_zone:
+- name: "Creating System VDOM entries: {{ desired_settings.short_name }}"
+  fortinet.fortios.fortios_system_vdom:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
-    system_zone:
-      name: "{{ desired_settings.name }}"
-      description: "{{ desired_settings.description | default(omit, true) }}"
-      interface: "{{ desired_settings.interface | default(omit, true) }}"
-      intrazone: "{{ desired_settings.intrazone | default(omit, true) }}"
-      tagging: "{{ desired_settings.tagging | default(omit, true) }}"
+    system_vdom:
+      flag: "{{ desired_settings.flag | default(omit) }}"
+      name: "{{ desired_settings.name | default(omit) }}"
+      short_name: "{{ desired_settings.short_name | default(omit) }}"
+      vcluster_id: "{{ desired_settings.vcluster_id | default(omit) }}"
   register: "output"
 
 - name: "Debug"

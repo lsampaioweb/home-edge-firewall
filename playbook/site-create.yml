@@ -46,3 +46,9 @@
 
 - name: "Run the Firewall Central SNAT playbook"
   ansible.builtin.import_playbook: "17-firewall-central-snat-create.yml"
+
+- name: "Run the System SDWAN playbook"
+  ansible.builtin.import_playbook: "18-system-sdwan-create.yml"
+
+- name: "Run the System VDOM playbook"
+  ansible.builtin.import_playbook: "19-system-vdom-create.yml"

@@ -107,6 +107,48 @@ Run these commands on the computer running Ansible:
     ansible-playbook 13-ntp-create.yml
     ```
 
+1. Backup and create DHCP system settings:
+    ```bash
+    ansible-playbook 14-dhcp-backup.yml
+    ansible-playbook 14-dhcp-create.yml
+    ```
+
+1. Backup and create Syslog system settings:
+    ```bash
+    ansible-playbook 15-syslog-backup.yml
+    ansible-playbook 15-syslog-create.yml
+    ```
+
+1. Backup and create Firewall DOS Policy system settings:
+    ```bash
+    ansible-playbook 16-firewall-dos-policy-backup.yml
+    ansible-playbook 16-firewall-dos-policy-create.yml
+    ```
+
+1. Backup and create Firewall DOS Policy system settings:
+    ```bash
+    ansible-playbook 16-firewall-dos-policy-backup.yml
+    ansible-playbook 16-firewall-dos-policy-create.yml
+    ```
+
+1. Backup and create Firewall Central SNAT system settings:
+    ```bash
+    ansible-playbook 17-firewall-central-snat-backup.yml
+    ansible-playbook 17-firewall-central-snat-create.yml
+    ```
+
+1. Backup and create System SDWAN system settings:
+    ```bash
+    ansible-playbook 18-system-sdwan-backup.yml
+    ansible-playbook 18-system-sdwan-create.yml
+    ```
+
+1. Backup and create System VDOM system settings:
+    ```bash
+    ansible-playbook 19-system-vdom-backup.yml
+    ansible-playbook 19-system-vdom-create.yml
+    ```
+
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml

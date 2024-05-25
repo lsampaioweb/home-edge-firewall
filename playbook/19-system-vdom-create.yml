@@ -1,0 +1,7 @@
+---
+- name: "System VDOM settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating System VDOM entries"
+      ansible.builtin.include_tasks: "{{ path_role_system_vdom }}/create.yml"
