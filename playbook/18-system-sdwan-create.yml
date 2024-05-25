@@ -1,0 +1,7 @@
+---
+- name: "System SDWAN settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating System SDWAN entries"
+      ansible.builtin.include_tasks: "{{ path_role_system_sdwan }}/create.yml"

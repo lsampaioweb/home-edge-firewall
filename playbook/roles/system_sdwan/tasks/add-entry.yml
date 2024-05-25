@@ -1,0 +1,35 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating System SDWAN entries: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_system_sdwan:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_sdwan:
+      duplication: "{{ desired_settings.duplication | default(omit, true) }}"
+      duplication_max_num: "{{ desired_settings['duplication-max-num'] | default(omit, true) }}"
+      fail_alert_interfaces: "{{ desired_settings['fail-alert-interfaces'] | default(omit, true) }}"
+      fail_detect: "{{ desired_settings['fail-detect'] | default(omit, true) }}"
+      health_check: "{{ desired_settings['health-check'] | default(omit, true) }}"
+      load_balance_mode: "{{ desired_settings['load-balance-mode'] | default(omit, true) }}"
+      members: "{{ desired_settings.members | default(omit, true) }}"
+      neighbor: "{{ desired_settings.neighbor | default(omit, true) }}"
+      neighbor_hold_boot_time: "{{ desired_settings['neighbor-hold-boot-time'] | default(omit, true) }}"
+      neighbor_hold_down: "{{ desired_settings['neighbor-hold-down'] | default(omit, true) }}"
+      neighbor_hold_down_time: "{{ desired_settings['neighbor-hold-down-time'] | default(omit, true) }}"
+      service: "{{ desired_settings.service | default(omit, true) }}"
+      speedtest_bypass_routing: "{{ desired_settings['speedtest-bypass-routing'] | default(omit, true) }}"
+      status: "{{ desired_settings.status | default(omit, true) }}"
+      zone: "{{ desired_settings.zone | default(omit, true) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
