@@ -38,6 +38,6 @@ Miscellaneous:
 CLI:
 config system dhcp server
   edit x
-    set domain "homelab"
+    set domain "lan.homelab"
   next
 end

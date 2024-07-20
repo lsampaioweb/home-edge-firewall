@@ -1,10 +1,10 @@
 Interface:
   Name              : LAG-Home
-  Alias             : 
+  Alias             :
   Type              : 802.3ad Aggregrate
   Interface members : Int-Home(port1)
   Role              : LAN
-  
+
 Address:
   Addressing mode                       : Manual
   IP/Netmask                            : 192.168.2.1/24
@@ -32,9 +32,9 @@ Advanced:
 
   CLI:
   config system dhcp server
-    edit x
-      set domain "homelab"
-    next
+    edit x (3)
+      set domain "lan.homelab"
+    end
   end
 
   CLI:

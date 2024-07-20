@@ -5,14 +5,14 @@ Interface:
   Interface     : LAG-Homelab
   VLAN ID       : 10
   Role          : LAN
-  
+
 Address:
   Addressing mode : Manual
   IP/Netmask      : 172.16.10.1/255.255.255.240
 
 Create address object matching subnet: Checked
 
-Administrative Access:  
+Administrative Access:
   PING                        : Checked
   Security Fabric Connection  : Checked
 
@@ -30,7 +30,7 @@ Advanced:
   CLI:
   config system dhcp server
     edit x
-      set domain "homelab"
+      set domain "lan.homelab"
     next
   end
 
