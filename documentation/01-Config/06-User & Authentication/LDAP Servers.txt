@@ -1,6 +1,6 @@
 Name                    : edge-ldap
-Server IP/Name          : edge-ldap-01.homelab
-Server Port             : 389     
+Server IP/Name          : edge-ldap-01.lan.homelab
+Server Port             : 389
 Common Name Identifier  : cn
 Distinguished Name      : dc=homelab
 Exchange server         : Unchecked

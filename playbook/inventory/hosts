@@ -2,7 +2,7 @@
 localhost ansible_connection=local
 
 [firewalls]
-edge-firewall-01.homelab
+edge-firewall-01.lan.homelab
 
 [firewalls:vars]
 ansible_user=admin

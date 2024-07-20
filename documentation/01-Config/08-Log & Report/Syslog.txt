@@ -1,6 +1,6 @@
 01 - config log syslogd setting
   status              : enable
-  server              : edge-grafana-01.homelab
+  server              : edge-grafana-01.lan.homelab
   mode                : udp
   port                : 514
   facility            : local7
