@@ -26,9 +26,14 @@ Run these commands on the computer running Ansible:
     secret-tool lookup password "edge-firewall-01-snmp-password"
     ```
 
+1. This repository have git submodule, run this command to download all of them:
+    ```bash
+    git submodule update --init --recursive
+    ```
+
 1. Prepare the Ubuntu machine to run Ansible playbooks:
     ```bash
-    ansible-playbook 01-control-machine.yml
+    ansible-playbook 01-control-machine.yml -K
     ```
 
 1. All playbooks accept `tags` to print extra information in the output:
