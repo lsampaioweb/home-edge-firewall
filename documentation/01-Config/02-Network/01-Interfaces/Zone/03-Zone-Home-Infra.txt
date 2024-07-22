@@ -1,3 +1,3 @@
 Name                      : Zone-Home-Infra
 Block intra-zone traffic  : Checked
-Interface members         : VL-Home-Device, VL-Home-Crypto ,VL-Home-Cluster, VL-HI-Template, VL-Home-Storage.
+Interface members         : VL-Home-Device, VL-Home-Crypto ,VL-HI-Cluster, VL-HI-Template, VL-Home-Storage.

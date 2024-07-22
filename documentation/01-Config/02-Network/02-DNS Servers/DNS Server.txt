@@ -21,7 +21,7 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Cluster
+      Interface     : VL-HI-Cluster
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
@@ -55,8 +55,8 @@ DNS Database
   New DNS Zone
     Type                    : Primary
     View                    : Shadow
-    DNS Zone                : homelab
-    Domain Name             : homelab
+    DNS Zone                : lan.homelab
+    Domain Name             : lan.homelab
     Hostname of Primary DNS : dns-01
     Contact Email Address   : lsampaio
     TTL (86400 seconds)     : 1 Day

@@ -2,9 +2,9 @@ Name                : Home-To-Home-Infra
 Incoming Interface  : Zone-Home
 Outgoing Interface  : Zone-Home-Infra
 Source              : Celular-Luciano, Macbook-Luciano
-Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
+Destination         : VL-Home-Core address, VL-HI-Cluster address, VL-Home-Monitor address, VL-Home-Storage address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SSH, Proxmox-Server,
+Service             : PING, Proxmox-Server, SSH, HTTPS
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : Security Events
 
 Enable this policy: Checked

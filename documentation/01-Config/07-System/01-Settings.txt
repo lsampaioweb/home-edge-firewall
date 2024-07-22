@@ -5,7 +5,7 @@ System Settings:
   Select server                   : FortiGuard
   Sync interval                   : 60
   Setup device as local NTP server: Checked
-    Listen on Interfaces          : LAG-Home, VL-HI-Template, VL-HL-Stg-JpSrv, VL-Home-Cluster, VL-Home-Core, VL-Home-Device, VL-Home-Monitor, VL-Home-Storage, VL-HLab-Device
+    Listen on Interfaces          : LAG-Home, VL-HI-Template, VL-HL-Stg-JpSrv, VL-HI-Cluster, VL-Home-Core, VL-Home-Device, VL-Home-Monitor, VL-Home-Storage, VL-HLab-Device
 
 Administration Settings:
   HTTP port               : 80

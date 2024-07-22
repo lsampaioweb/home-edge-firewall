@@ -1,15 +1,14 @@
-Name                : Home-Infra-To-Internet
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : SD-WAN
-Source              : VL-Home-Core address, VL-HI-Cluster address, VL-Home-Monitor address, VL-Home-Storage address
-Destination         : all
+Name                : Home-To-Cluster
+Incoming Interface  : Zone-Home
+Outgoing Interface  : Zone-Home-Infra
+Source              : Celular-Luciano, Macbook-Luciano
+Destination         : VL-HI-Cluster address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : PING, Proxmox-Server, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
-  Passive Health Check  : Unchecked
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked
