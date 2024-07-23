@@ -1,7 +1,7 @@
 Name                : Home-Infra-To-Loopback
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : INT-Loopback
-Source              : VL-Home-Core address, VL-Home-Device address, VL-Home-Monitor address, VL-Home-Storage address
+Source              : VL-Home-Core address, VL-HI-Cluster address, VL-Home-Monitor address, VL-Home-Storage address
 Destination         : INT-Loopback address
 Schedule            : always
 Service             : NTP, PING, SNMP
@@ -21,6 +21,6 @@ Advanced
   Exempt from Captive Portal  : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked
