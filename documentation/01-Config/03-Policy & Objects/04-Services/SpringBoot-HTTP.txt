@@ -1,0 +1,14 @@
+Name      : SpringBoot-HTTP
+Comments  : Ports that Spring boot app will expose their sites. Ansible
+Category  : Web Access
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 8080
+Destination Port  : TCP 8081
+Destination Port  : TCP 8082
+Destination Port  : TCP 8083
+Destination Port  : TCP 80
+Destination Port  : TCP 443
+Destination Port  : TCP 9443

@@ -1,0 +1,8 @@
+Name      : Cloud-Init
+Comments  : Ports that cloud-init will connect to get the user-data file. Ansible
+Category  : Web Access
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 8100 - 8200

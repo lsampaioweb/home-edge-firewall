@@ -1,0 +1,7 @@
+Name      : Binance-Stream
+Category  : Web Access
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 9443
