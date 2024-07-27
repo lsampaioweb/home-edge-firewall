@@ -1,14 +1,14 @@
-Name                : Home-To-Cluster
+Name                : Home-To-Template
 Incoming Interface  : Zone-Home
 Outgoing Interface  : Zone-Home-Infra
-Source              : Celular-Luciano, Macbook-Luciano
-Destination         : VL-HI-Cluster address
+Source              : LAG-Home address
+Destination         : VL-HI-Template address
 Schedule            : always
-Service             : PING, Proxmox-Server, SSH
+Service             : PING, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options    : default
+  Protocol Options      : default
 
 Security Profiles
   AntiVirus               : Unchecked
