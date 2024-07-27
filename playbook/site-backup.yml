@@ -1,7 +1,4 @@
 ---
-- name: "Run the control machine playbook"
-  ansible.builtin.import_playbook: "01-control-machine.yml"
-
 - name: "Run the Backup playbook"
   ansible.builtin.import_playbook: "02-backup.yml"
 
