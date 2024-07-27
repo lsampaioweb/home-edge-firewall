@@ -2,7 +2,7 @@ Interface:
   Name              : LAG-HI-CLSTR-02
   Alias             :
   Type              : 802.3ad Aggregrate
-  Interface members : Int-Home-02-01 (port7)
+  Interface members : Int-Home-02-01 (port9)
   Role              : LAN
 
 Address:

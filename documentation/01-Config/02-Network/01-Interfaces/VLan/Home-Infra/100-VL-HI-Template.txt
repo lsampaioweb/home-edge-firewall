@@ -37,7 +37,7 @@ Miscellaneous:
 
 CLI:
 config system dhcp server
-  edit x
+  edit 4
     set domain "lan.homelab"
   next
 end

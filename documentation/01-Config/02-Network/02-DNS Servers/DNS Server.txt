@@ -6,6 +6,16 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
+      Interface     : VL-HI-Cluster
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HI-JmpServer
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
       Interface     : VL-HI-Template
       Mode          : Recursive
       DNS Filter    : Unchecked
@@ -17,11 +27,6 @@ DNS Service on Interface
       DNS over HTTPS: Unchecked
     -
       Interface     : VL-HLab-Device
-      Mode          : Recursive
-      DNS Filter    : Unchecked
-      DNS over HTTPS: Unchecked
-    -
-      Interface     : VL-HI-Cluster
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked

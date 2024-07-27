@@ -2,7 +2,7 @@ Interface:
   Name              : LAG-HI-VMS-01
   Alias             :
   Type              : 802.3ad Aggregrate
-  Interface members : Int-Home-01-02 (port4)
+  Interface members : Int-Home-01-02 (port6)
   Role              : LAN
 
 Address:
@@ -23,5 +23,5 @@ Miscellaneous:
   CLI:
   config system interface
     edit LAG-HI-VMS-01
-      set lacp-mode active
+      set lacp-mode static
     end
