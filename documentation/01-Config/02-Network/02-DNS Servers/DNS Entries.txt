@@ -132,7 +132,7 @@ DNS Entries
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : sud-jumpserver-01
-  IP Address                          : 10.0.101.2
+  Hostname                            : edge-jumpserver
+  IP Address                          : 192.168.101.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
