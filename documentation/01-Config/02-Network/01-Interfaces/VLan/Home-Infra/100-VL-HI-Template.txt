@@ -39,5 +39,6 @@ CLI:
 config system dhcp server
   edit 4
     set domain "lan.homelab"
+    set lease-time 600  # 10 minutes instead of 7 days as the default.
   next
 end
