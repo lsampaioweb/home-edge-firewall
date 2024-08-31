@@ -1,15 +1,14 @@
-Name                : Home-Infra-To-Internet
+Name                : Backup-Server-To-Client
 Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : SD-WAN
-Source              : VL-HI-Backup address, VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
-Destination         : all
+Outgoing Interface  : Zone-Home-Infra
+Source              : VL-HI-Backup address
+Destination         : VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : SSH, PING
 Action              : ACCEPT
 
 Firewall/Network Options
-  Passive Health Check  : Unchecked
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked
@@ -21,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : All Sessions
+  Log Allowed Traffic : ALL
 
 Enable this policy: Checked

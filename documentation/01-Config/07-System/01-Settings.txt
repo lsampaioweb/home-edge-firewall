@@ -6,6 +6,7 @@ System Settings:
   Sync interval                   : 60
   Setup device as local NTP server: Checked
     Listen on Interfaces          : LAG-Home,
+                                    VL-HI-Backup,
                                     VL-HI-Cluster,
                                     VL-HI-JmpServer,
                                     VL-HI-Template,

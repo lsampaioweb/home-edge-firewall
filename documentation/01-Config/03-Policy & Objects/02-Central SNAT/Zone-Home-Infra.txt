@@ -1,7 +1,7 @@
 Policy
   Incoming Interface  : Zone-Home-Infra
   Outgoing Interface  : DigitalNET (wan1), Claro (win2)
-  Source Address      : VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
+  Source Address      : VL-HI-Backup address, VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
   Destination Address : all
 
 NAT

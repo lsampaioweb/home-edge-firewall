@@ -1,14 +1,13 @@
-Name                : Home-Infra-To-Internet
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : SD-WAN
-Source              : VL-HI-Backup address, VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
-Destination         : all
+Name                : Home-To-Backup
+Incoming Interface  : Zone-Home
+Outgoing Interface  : Zone-Home-Infra
+Source              : LAG-Home address
+Destination         : VL-HI-Backup address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : PING, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
-  Passive Health Check  : Unchecked
   Protocol Options      : default
 
 Security Profiles

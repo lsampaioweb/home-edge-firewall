@@ -6,6 +6,11 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
+      Interface     : VL-HI-Backup
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
       Interface     : VL-HI-Cluster
       Mode          : Recursive
       DNS Filter    : Unchecked
