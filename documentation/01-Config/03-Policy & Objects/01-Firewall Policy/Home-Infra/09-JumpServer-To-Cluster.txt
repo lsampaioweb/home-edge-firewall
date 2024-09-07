@@ -1,0 +1,25 @@
+Name                : JumpServer-To-Cluster
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : Zone-Home-Infra
+Source              : VL-HI-JmpServer address
+Destination         : VL-HI-Cluster address
+Schedule            : always
+Service             : PING, HTTPS, Proxmox-Server
+Action              : ACCEPT
+
+Firewall/Network Options
+  Protocol Options    : default
+
+Security Profiles
+  AntiVirus               : Unchecked
+  Web Filter              : Unchecked
+  DNS Filter              : Unchecked
+  Application Control     : Unchecked
+  IPS                     : Unchecked
+  File Filter             : Unchecked
+  SSL Inspection          : Unchecked
+
+Logging Options
+  Log Allowed Traffic : ALL
+
+Enable this policy: Checked
