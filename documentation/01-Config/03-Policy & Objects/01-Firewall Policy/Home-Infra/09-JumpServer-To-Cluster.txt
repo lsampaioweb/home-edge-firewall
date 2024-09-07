@@ -4,7 +4,7 @@ Outgoing Interface  : Zone-Home-Infra
 Source              : VL-HI-JmpServer address
 Destination         : VL-HI-Cluster address
 Schedule            : always
-Service             : PING, HTTPS, Proxmox-Server
+Service             : PING, HTTPS, Proxmox-Server, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
