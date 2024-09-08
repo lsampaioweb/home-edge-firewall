@@ -18,12 +18,12 @@ Run these commands on the computer running Ansible:
 1. Save the password that Zabbix will use to collect events and metrics from the firewall.
 
     ```bash
-    secret-tool store --label="edge-firewall-snmp-password" password "edge-firewall-snmp-password"
+    secret-tool store --label="edge-firewall-zabbix-user" password "edge-firewall-zabbix-user"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "edge-firewall-snmp-password"
+    secret-tool lookup password "edge-firewall-zabbix-user"
     ```
 
 1. This repository have git submodule, run this command to download all of them:
