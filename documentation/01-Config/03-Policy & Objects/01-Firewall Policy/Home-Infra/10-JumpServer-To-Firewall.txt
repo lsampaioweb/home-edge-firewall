@@ -4,7 +4,7 @@ Outgoing Interface  : Zone-Home
 Source              : VL-HI-JmpServer address
 Destination         : this-firewall-address
 Schedule            : always
-Service             : HTTPS, PING, SSH
+Service             : HTTPS, PING
 Action              : ACCEPT
 
 Firewall/Network Options
