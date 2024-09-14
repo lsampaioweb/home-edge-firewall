@@ -132,13 +132,13 @@ DNS Entries
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-jumpserver
+  Hostname                            : stg-jump-server-01
   IP Address                          : 192.168.101.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-jumpdesktop
-  IP Address                          : 192.168.101.3
+  Hostname                            : stg-load-balancer-01
+  IP Address                          : 192.168.103.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
