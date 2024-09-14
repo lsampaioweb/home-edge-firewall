@@ -1,0 +1,6 @@
+Interface   : DigitalNET (wan1)
+SD-WAN Zone : SD-WAN
+Gateway     : Dynamic : 192.168.0.1
+Cost        : 0
+Priority    : 1
+Status      : Enabled

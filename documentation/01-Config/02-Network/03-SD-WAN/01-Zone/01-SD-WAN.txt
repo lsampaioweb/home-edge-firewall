@@ -1,0 +1,4 @@
+Name              : SD-WAN
+Interface members :
+                    DigitalNET (wan1)
+                    Claro (wan2)
