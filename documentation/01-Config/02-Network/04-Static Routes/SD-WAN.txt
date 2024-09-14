@@ -1,0 +1,7 @@
+Destination : Subnet
+              0.0.0.0/0.0.0.0
+
+Interface   : SD-WAN
+Comments    : DigitalNET e Claro
+
+Status      : Enabled
