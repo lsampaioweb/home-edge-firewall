@@ -21,6 +21,11 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
+      Interface     : VL-HI-LdBalance
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
       Interface     : VL-HI-Template
       Mode          : Recursive
       DNS Filter    : Unchecked

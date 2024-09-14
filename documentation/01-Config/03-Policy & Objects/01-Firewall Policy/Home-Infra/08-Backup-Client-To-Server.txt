@@ -1,7 +1,7 @@
 Name                : Backup-Client-To-Server
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address
+Source              : VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address, VL-HI-LdBalance address
 Destination         : VL-HI-Backup address
 Schedule            : always
 Service             : HTTPS, PING

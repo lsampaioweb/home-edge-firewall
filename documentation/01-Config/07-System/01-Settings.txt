@@ -9,6 +9,7 @@ System Settings:
                                     VL-HI-Backup,
                                     VL-HI-Cluster,
                                     VL-HI-JmpServer,
+                                    VL-HI-LdBalance,
                                     VL-HI-Template,
                                     VL-HL-Stg-JpSrv,
                                     VL-Home-Core,
