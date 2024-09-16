@@ -1,10 +1,10 @@
-Name                : Home-Infra-To-Internet
+Name                : Template-To-Packer-Server
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home
 Source              : VL-HI-Template address
 Destination         : LAG-Home address
 Schedule            : always
-Service             : Packer-Server
+Service             : Cloud-Init
 Action              : ACCEPT
 
 Firewall/Network Options
