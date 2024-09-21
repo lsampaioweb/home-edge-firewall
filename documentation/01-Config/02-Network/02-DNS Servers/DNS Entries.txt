@@ -142,3 +142,21 @@ DNS Entries
   IP Address                          : 192.168.103.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
+
+  Type                                : Canonical Name (CNAME)
+  Hostname                            : edge-loadbalancer
+  Canonical Name (CNAME)              : stg-load-balancer-01
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Canonical Name (CNAME)
+  Hostname                            : edge-pve
+  Canonical Name (CNAME)              : stg-load-balancer-01
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
+
+  Type                                : Canonical Name (CNAME)
+  Hostname                            : edge-loadbalancer-01
+  Canonical Name (CNAME)              : stg-load-balancer-01
+  TTL                                 : Use Zone TTL
+  Status                              : Enabled
