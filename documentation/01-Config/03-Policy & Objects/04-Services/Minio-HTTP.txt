@@ -1,0 +1,9 @@
+Name      : Minio-HTTP
+Comments  : Ports that Minio will expose. Ansible
+Category  : Web Access
+
+Protocol Options
+Protocol Type     : TCP/UDP/SCTP
+address           : IP Range
+Destination Port  : TCP 9000
+Destination Port  : TCP 9001
