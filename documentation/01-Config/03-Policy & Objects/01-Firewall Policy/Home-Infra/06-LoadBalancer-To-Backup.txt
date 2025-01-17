@@ -1,10 +1,10 @@
-Name                : LoadBalancer-To-Servers
+Name                : LoadBalancer-To-Backup
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
 Source              : VL-HI-LdBalance address
-Destination         : VL-HI-Cluster address, VL-HI-Backup address
+Destination         : VL-HI-Backup address
 Schedule            : always
-Service             : PING, HTTPS, HTTP, Proxmox-Server, SpringBoot-HTTP, Minio-HTTP
+Service             : PING, HTTPS, HTTP, Minio-HTTP
 Action              : ACCEPT
 
 Firewall/Network Options
