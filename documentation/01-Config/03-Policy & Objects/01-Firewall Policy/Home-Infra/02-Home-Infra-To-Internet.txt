@@ -1,7 +1,7 @@
 Name                : Home-Infra-To-Internet
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : SD-WAN
-Source              : VL-HI-Backup address, VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address, VL-HI-LdBalance address
+Source              : VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address
 Destination         : all
 Schedule            : always
 Service             : HTTP, HTTPS, PING, SMTPS

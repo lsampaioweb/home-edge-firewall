@@ -1,14 +1,14 @@
-Name                : Template-To-Packer-Server
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : Zone-Home
-Source              : VL-HI-Template address
-Destination         : LAG-Home address
+Name                : All-To-Ldap
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : Zone-Homelab
+Source              : VL-HL-MGMT address, VL-HL-CORE address, VL-HL-PROXY address, VL-HL-BACKUP address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
+Destination         : VL-HL-LDAP address
 Schedule            : always
-Service             : Cloud-Init
+Service             : LDAP, LDAPS
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked

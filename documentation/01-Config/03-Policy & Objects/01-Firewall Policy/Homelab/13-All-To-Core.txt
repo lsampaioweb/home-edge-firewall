@@ -1,14 +1,14 @@
-Name                : Home-To-LoadBalancer
-Incoming Interface  : Zone-Home
-Outgoing Interface  : Zone-Home-Infra
-Source              : LAG-Home address
-Destination         : VL-HI-LdBalance address
+Name                : All-To-Core
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : Zone-Homelab
+Source              : VL-HL-MGMT address, VL-HL-LDAP address, VL-HL-PROXY address, VL-HL-BACKUP address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
+Destination         : VL-HL-CORE address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SSH
+Service             : DHCP, DNS, NTP
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked

@@ -1,14 +1,14 @@
-Name                : Template-To-JumpServer
+Name                : Monitoring-Server-To-Client
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-Template address
-Destination         : VL-HI-JmpServer address
+Source              : VL-HI-MONITOR address
+Destination         : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-LDAP address, VL-HI-PROXY address, VL-HI-BACKUP address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address, VL-HI-LOADBALANCER address
 Schedule            : always
-Service             : Cloud-Init
+Service             : HTTPS, PING, SNMP, Zabbix-Client
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked

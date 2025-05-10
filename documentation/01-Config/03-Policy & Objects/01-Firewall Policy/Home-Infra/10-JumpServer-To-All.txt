@@ -1,10 +1,10 @@
-Name                : Homelab-To-Internet
-Incoming Interface  : Zone-Homelab
-Outgoing Interface  : SD-WAN
-Source              : VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address
-Destination         : all
+Name                : JumpServer-To-All
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : Zone-Home-Infra
+Source              : VL-HI-JUMPSERVER address
+Destination         : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-LDAP address, VL-HI-PROXY address, VL-HI-BACKUP address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-LOADBALANCER address, VL-HI-MONITOR address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : SSH, PING
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -18,7 +18,6 @@ Security Profiles
   IPS                     : Unchecked
   File Filter             : Unchecked
   SSL Inspection          : Unchecked
-  certificate-inspection  : Unchecked
 
 Logging Options
   Log Allowed Traffic : All Sessions

@@ -1,14 +1,14 @@
-Name                : JumpServer-To-Cluster
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-JmpServer address
-Destination         : VL-HI-Cluster address
+Name                : Template-To-Packer-Server
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : Zone-Home
+Source              : VL-HL-TEMPLATE address
+Destination         : LAG-Home address
 Schedule            : always
-Service             : PING, HTTPS, Proxmox-Server, SSH
+Service             : Cloud-Init
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options    : default
+  Protocol Options      : default
 
 Security Profiles
   AntiVirus               : Unchecked
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : ALL
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

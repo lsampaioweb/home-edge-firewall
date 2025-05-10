@@ -1,14 +1,14 @@
-Name                : Home-To-Template
-Incoming Interface  : Zone-Home
+Name                : JumpServer-To-Mgmt
+Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : LAG-Home address
-Destination         : VL-HI-Template address
+Source              : VL-HI-JUMPSERVER address
+Destination         : VL-HI-MGMT address
 Schedule            : always
-Service             : PING, SSH
+Service             : PING, HTTPS, Proxmox-Server, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked

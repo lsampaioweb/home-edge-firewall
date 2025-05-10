@@ -1,10 +1,10 @@
-Name                : Home-To-Homelab
-Incoming Interface  : Zone-Home
+Name                : Backup-Client-To-Server
+Incoming Interface  : Zone-Homelab
 Outgoing Interface  : Zone-Homelab
-Source              : Celular-Luciano, Macbook-Luciano
-Destination         : VL-HLab-Device address, VL-HL-Stg-JpSrv address
+Source              : VL-HL-MGMT address, VL-HL-CORE address, VL-HL-LDAP address, VL-HL-PROXY address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
+Destination         : VL-HL-BACKUP address
 Schedule            : always
-Service             : Proxmox-Server, HTTP, HTTPS, PING, SSH, RDP
+Service             : HTTPS, PING
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

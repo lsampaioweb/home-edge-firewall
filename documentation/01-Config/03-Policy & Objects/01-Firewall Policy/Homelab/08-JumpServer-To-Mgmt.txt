@@ -1,10 +1,10 @@
-Name                : LDAP-Client-To-Server
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : Zone-Home-Infra
-Source              : VL-Home-Monitor address, VL-Home-Device address, VL-Home-Storage address
-Destination         : VL-Home-Core address
+Name                : JumpServer-To-Mgmt
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : Zone-Homelab
+Source              : VL-HL-JUMPSERVER address
+Destination         : VL-HL-MGMT address
 Schedule            : always
-Service             : LDAP, LDAP_UDP, LDAPS, LDAPS_UDP
+Service             : PING, HTTPS, Proxmox-Server, SSH
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

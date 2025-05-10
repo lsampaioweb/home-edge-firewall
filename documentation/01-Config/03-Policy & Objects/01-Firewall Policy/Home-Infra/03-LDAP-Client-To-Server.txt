@@ -1,14 +1,14 @@
-Name                : JumpServer-To-Firewall
+Name                : LDAP-Client-To-Server
 Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : Zone-Home
-Source              : VL-HI-JmpServer address
-Destination         : this-firewall-address
+Outgoing Interface  : Zone-Home-Infra
+Source              : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-PROXY address, VL-HI-BACKUP address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address, VL-HI-LOADBALANCER address, VL-HI-MONITOR address
+Destination         : VL-HI-LDAP address
 Schedule            : always
-Service             : HTTPS, PING
+Service             : LDAP, LDAPS
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked

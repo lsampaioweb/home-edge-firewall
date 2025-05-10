@@ -1,10 +1,10 @@
-Name                : Home-To-Backup
-Incoming Interface  : Zone-Home
-Outgoing Interface  : Zone-Home-Infra
-Source              : LAG-Home address
-Destination         : VL-HI-Backup address
+Name                : JumpServer-To-Firewall
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : Zone-Home
+Source              : VL-HI-JUMPSERVER address
+Destination         : this-firewall-address
 Schedule            : always
-Service             : PING, SSH
+Service             : HTTPS, PING
 Action              : ACCEPT
 
 Firewall/Network Options

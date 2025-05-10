@@ -1,7 +1,7 @@
 Name                : Homelab-To-Loopback
 Incoming Interface  : Zone-Homelab
 Outgoing Interface  : INT-Loopback
-Source              : VL-HLab-Device address, VL-HL-Stg-JpSrv address
+Source              : VL-HL-MGMT address, VL-HL-CORE address, VL-HL-LDAP address, VL-HL-PROXY address, VL-HL-BACKUP address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
 Destination         : INT-Loopback address
 Schedule            : always
 Service             : NTP, SNMP, PING
@@ -21,6 +21,6 @@ Advanced
   Exempt from Captive Portal  : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

@@ -1,14 +1,14 @@
-Name                : Homelab-To-Internet
-Incoming Interface  : Zone-Homelab
-Outgoing Interface  : SD-WAN
-Source              : VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address
-Destination         : all
+Name                : Template-To-Packer-Server
+Incoming Interface  : Zone-Home-Infra
+Outgoing Interface  : Zone-Home
+Source              : VL-HI-TEMPLATE address
+Destination         : LAG-Home address
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : Cloud-Init
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options    : default
+  Protocol Options      : default
 
 Security Profiles
   AntiVirus               : Unchecked
@@ -18,7 +18,6 @@ Security Profiles
   IPS                     : Unchecked
   File Filter             : Unchecked
   SSL Inspection          : Unchecked
-  certificate-inspection  : Unchecked
 
 Logging Options
   Log Allowed Traffic : All Sessions

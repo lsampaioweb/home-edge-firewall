@@ -1,10 +1,10 @@
-Name                : Home-To-Cluster
+Name                : Home-To-All-HL
 Incoming Interface  : Zone-Home
-Outgoing Interface  : Zone-Home-Infra
-Source              : LAG-Home address
-Destination         : VL-HI-Cluster address
+Outgoing Interface  : Zone-Homelab
+Source              : Macbook-Luciano, MacBook-Fernanda
+Destination         : VL-HL-MGMT address, VL-HL-CORE address, VL-HL-LDAP address, VL-HL-PROXY address, VL-HL-BACKUP address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
 Schedule            : always
-Service             : PING, Proxmox-Server, SSH
+Service             : PING, SSH, Proxmox-Server, HTTP, HTTPS
 Action              : ACCEPT
 
 Firewall/Network Options

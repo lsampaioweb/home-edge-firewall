@@ -1,10 +1,10 @@
-Name                : Monitoring-Server-To-Client
+Name                : Backup-Client-To-Server
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-Home-Monitor address
-Destination         : VL-Home-Core address, VL-Home-Device address, VL-Home-Storage address
+Source              : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-LDAP address, VL-HI-PROXY address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address, VL-HI-LOADBALANCER address, VL-HI-MONITOR address
+Destination         : VL-HI-BACKUP address
 Schedule            : always
-Service             : HTTPS, PING, SNMP, Zabbix-Client
+Service             : HTTPS, PING
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : UTM
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

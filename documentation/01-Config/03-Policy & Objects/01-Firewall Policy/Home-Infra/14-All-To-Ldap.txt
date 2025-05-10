@@ -1,10 +1,10 @@
-Name                : Backup-Server-To-Client
+Name                : All-To-Ldap
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-Backup address
-Destination         : VL-HI-Cluster address, VL-HI-JmpServer address, VL-HI-Template address, VL-HI-LdBalance address
+Source              : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-PROXY address, VL-HI-BACKUP address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address, VL-HI-LOADBALANCER address, VL-HI-MONITOR address
+Destination         : VL-HI-LDAP address
 Schedule            : always
-Service             : SSH, PING
+Service             : LDAP, LDAPS
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -20,6 +20,6 @@ Security Profiles
   SSL Inspection          : Unchecked
 
 Logging Options
-  Log Allowed Traffic : ALL
+  Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked

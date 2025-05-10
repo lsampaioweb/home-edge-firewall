@@ -1,10 +1,10 @@
-Name                : JumpServer-To-Servers
+Name                : Template-To-JumpServer
 Incoming Interface  : Zone-Home-Infra
 Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-JmpServer address
-Destination         : VL-HI-Backup address, VL-HI-JmpServer address, VL-HI-LdBalance address, VL-HI-Template address
+Source              : VL-HI-TEMPLATE address
+Destination         : VL-HI-JUMPSERVER address
 Schedule            : always
-Service             : PING, HTTPS, SSHs
+Service             : Cloud-Init
 Action              : ACCEPT
 
 Firewall/Network Options

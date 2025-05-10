@@ -1,14 +1,14 @@
-Name                : LoadBalancer-To-Cluster
-Incoming Interface  : Zone-Home-Infra
-Outgoing Interface  : Zone-Home-Infra
-Source              : VL-HI-LdBalance address
-Destination         : VL-HI-Cluster address
+Name                : Backup-Server-To-Client
+Incoming Interface  : Zone-Homelab
+Outgoing Interface  : Zone-Homelab
+Source              : VL-HL-BACKUP address
+Destination         : VL-HL-MGMT address, VL-HL-CORE address, VL-HL-LDAP address, VL-HL-PROXY address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address, VL-HL-LOADBALANCER address, VL-HL-MONITOR address
 Schedule            : always
-Service             : PING, HTTPS, HTTP, Proxmox-Server
+Service             : SSH, PING
 Action              : ACCEPT
 
 Firewall/Network Options
-  Protocol Options      : default
+  Protocol Options    : default
 
 Security Profiles
   AntiVirus               : Unchecked
