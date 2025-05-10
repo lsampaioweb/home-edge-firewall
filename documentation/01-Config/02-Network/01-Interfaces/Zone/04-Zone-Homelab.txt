@@ -1,3 +1,3 @@
 Name                      : Zone-Homelab
 Block intra-zone traffic  : Checked
-Interface members         : VL-HLab-Device, VL-HL-Stg-JpSrv
+Interface members         : VL-HL-MGMT, VL-HL-CORE, VL-HL-LDAP, VL-HL-PROXY, VL-HL-BACKUP, VL-HL-REPOSITORY, VL-HL-TEMPLATE, VL-HL-JUMPSERVER, VL-HL-LOADBALANCER, VL-HL-MONITOR
