@@ -1,10 +1,10 @@
 Interface:
   Name              : LAG-Homelab
-  Alias             : 
+  Alias             :
   Type              : 802.3ad Aggregrate
   Interface members : Int-Homelab (port12)
   Role              : LAN
-  
+
 Address:
   Addressing mode                       : Manual
   IP/Netmask                            : 0.0.0.0/0.0.0.0
