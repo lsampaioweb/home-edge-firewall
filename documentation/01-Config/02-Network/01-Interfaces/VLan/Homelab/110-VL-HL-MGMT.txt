@@ -1,14 +1,14 @@
 Interface:
-  Name          : VL-HI-MONITOR
+  Name          : VL-HL-MGMT
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-HI-VMS
-  VLAN ID       : 55
+  Interface     : LAG-Homelab
+  VLAN ID       : 110
   Role          : LAN
 
 Address:
   Addressing mode : Manual
-  IP/Netmask      : 10.0.55.1/255.255.255.240
+  IP/Netmask      : 10.1.10.1/255.255.255.240
 
 Create address object matching subnet: Checked
 
@@ -18,7 +18,7 @@ Administrative Access:
 
 DHCP Server:
   DHCP status     : Enabled
-  Address range   : 10.0.55.2-10.0.55.14
+  Address range   : 10.1.10.2-10.1.10.14
   Netmask         : 255.255.255.240
   Default gateway : Same as Interface IP
   DNS server      : Same as Interface IP
