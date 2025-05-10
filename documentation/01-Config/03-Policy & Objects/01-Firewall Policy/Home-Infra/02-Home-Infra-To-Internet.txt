@@ -19,6 +19,7 @@ Security Profiles
   IPS                     : Unchecked
   File Filter             : Unchecked
   SSL Inspection          : Unchecked
+  certificate-inspection  : Unchecked
 
 Logging Options
   Log Allowed Traffic : All Sessions

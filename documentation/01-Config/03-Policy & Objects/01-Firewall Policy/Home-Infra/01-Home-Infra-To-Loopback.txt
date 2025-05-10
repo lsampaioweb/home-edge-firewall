@@ -4,7 +4,7 @@ Outgoing Interface  : INT-Loopback
 Source              : VL-HI-MGMT address, VL-HI-CORE address, VL-HI-LDAP address, VL-HI-PROXY address, VL-HI-BACKUP address, VL-HI-REPOSITORY address, VL-HI-TEMPLATE address, VL-HI-JUMPSERVER address, VL-HI-LOADBALANCER address, VL-HI-MONITOR address
 Destination         : INT-Loopback address
 Schedule            : always
-Service             : NTP, PING, SNMP
+Service             : NTP, SNMP, PING
 Action              : ACCEPT
 
 Security Profiles
