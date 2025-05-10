@@ -1,10 +1,10 @@
 Interface:
   Alias               : Claro
   Role                : WAN
-  Estimated bandwidth : 
+  Estimated bandwidth :
                         500000 kbps Upstream
                         100000 kbps Downstream
-  
+
 Address:
   Addressing mode                     : DHCP
   Retrieve default gateway from server: Checked
