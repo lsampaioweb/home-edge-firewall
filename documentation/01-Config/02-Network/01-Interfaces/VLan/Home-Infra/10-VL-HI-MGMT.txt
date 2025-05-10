@@ -1,5 +1,5 @@
 Interface:
-  Name          : VL-MGMT
+  Name          : VL-HI-MGMT
   Type          : VLAN
   VLAN Protocol : 802.1Q
   Interface     : SS-HI-CLSTR
