@@ -1,14 +1,14 @@
 Interface:
-  Name          : VL-TEMPLATE
+  Name          : VL-HI-REPOSITORY
   Type          : VLAN
   VLAN Protocol : 802.1Q
   Interface     : SS-HI-VMS
-  VLAN ID       : 40
+  VLAN ID       : 35
   Role          : LAN
 
 Address:
   Addressing mode : Manual
-  IP/Netmask      : 10.0.40.1/255.255.255.240
+  IP/Netmask      : 10.0.35.1/255.255.255.240
 
 Create address object matching subnet: Checked
 
@@ -18,7 +18,7 @@ Administrative Access:
 
 DHCP Server:
   DHCP status     : Enabled
-  Address range   : 10.0.40.2-10.0.40.14
+  Address range   : 10.0.35.2-10.0.35.14
   Netmask         : 255.255.255.240
   Default gateway : Same as Interface IP
   DNS server      : Same as Interface IP
@@ -37,8 +37,7 @@ Miscellaneous:
 
 CLI:
 config system dhcp server
-  edit 4
+  edit x
     set domain "lan.homelab"
-    set lease-time 600  # 10 minutes instead of 7 days as the default.
   next
 end
