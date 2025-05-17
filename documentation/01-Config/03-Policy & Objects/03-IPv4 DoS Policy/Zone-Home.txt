@@ -15,4 +15,4 @@ L4 Anomalies
     Logging : Checked
     Action  : Monitor
 
-Enable this policy    : Checked
+Enable this policy : Checked

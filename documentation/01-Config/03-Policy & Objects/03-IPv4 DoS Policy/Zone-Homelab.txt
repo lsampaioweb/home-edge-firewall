@@ -1,6 +1,6 @@
 Edit Policy
-  Name                : Claro
-  Incoming Interface  : Claro(wan2)
+  Name                : Zone-Homelab
+  Incoming Interface  : Zone-Homelab
   Source Address      : all
   Destination Address : all
   Service             : ALL
