@@ -1,7 +1,0 @@
-Name      : PostgreSQL
-Category  : Database
-
-Protocol Options
-Protocol Type     : TCP/UDP/SCTP
-address           : IP Range
-Destination Port  : TCP 5432
