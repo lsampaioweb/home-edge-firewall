@@ -5,18 +5,7 @@ System Settings:
   Select server                   : FortiGuard
   Sync interval                   : 60
   Setup device as local NTP server: Checked
-    Listen on Interfaces          : LAG-Home,
-                                    VL-HI-Backup,
-                                    VL-HI-Cluster,
-                                    VL-HI-JmpServer,
-                                    VL-HI-LdBalance,
-                                    VL-HI-Template,
-                                    VL-HL-Stg-JpSrv,
-                                    VL-Home-Core,
-                                    VL-Home-Device,
-                                    VL-Home-Monitor,
-                                    VL-Home-Storage,
-                                    VL-HLab-Device
+    Listen on Interfaces          : LAG-Home, VL-HI-MGMT, VL-HI-CORE, VL-HI-LDAP, VL-HI-PROXY, VL-HI-BACKUP, VL-HI-REPOSITORY, VL-HI-TEMPLATE, VL-HI-JUMPSERVER, VL-HI-LOADBALANCER, VL-HI-MONITOR, VL-HL-MGMT, VL-HL-CORE, VL-HL-LDAP, VL-HL-PROXY, VL-HL-BACKUP, VL-HL-REPOSITORY, VL-HL-TEMPLATE, VL-HL-JUMPSERVER, VL-HL-LOADBALANCER, VL-HL-MONITOR
 
 Administration Settings:
   HTTP port               : 80
@@ -61,4 +50,3 @@ config alertemail setting
 end
   # To test:
     diagnose log alertmail test
-
