@@ -15,7 +15,7 @@ Security Level
   Password                  : KeyChain: "edge-firewall-01-zabbix-user"
 
 Host:
-  IP Address                : 192.168.5.3
+  IP Address                : 10.0.55.2
 
 Queries:
   Enabled : Checked
