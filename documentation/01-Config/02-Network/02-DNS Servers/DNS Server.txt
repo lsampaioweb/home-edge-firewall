@@ -6,62 +6,102 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-Backup
+      Interface     : VL-HI-MGMT
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-Cluster
+      Interface     : VL-HI-CORE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-JmpServer
+      Interface     : VL-HI-LDAP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-LdBalance
+      Interface     : VL-HI-PROXY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-Template
+      Interface     : VL-HI-BACKUP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-Stg-JpSrv
+      Interface     : VL-HI-REPOSITORY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HLab-Device
+      Interface     : VL-HI-TEMPLATE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Core
+      Interface     : VL-HI-JUMPSERVER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Device
+      Interface     : VL-HI-LOADBALANCER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Database
+      Interface     : VL-HI-MONITOR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Monitor
+      Interface     : VL-HL-MGMT
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-Home-Storage
+      Interface     : VL-HL-CORE
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-LDAP
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-PROXY
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-BACKUP
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-REPOSITORY
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-TEMPLATE
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-JUMPSERVER
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-LOADBALANCER
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VL-HL-MONITOR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
