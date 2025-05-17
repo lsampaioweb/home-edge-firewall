@@ -1,7 +1,7 @@
 Name                : Homelab-To-Internet
 Incoming Interface  : Zone-Homelab
 Outgoing Interface  : SD-WAN
-Source              : VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address
+Source              : VL-HL-MGMT address, VL-HL-REPOSITORY address, VL-HL-TEMPLATE address, VL-HL-JUMPSERVER address
 Destination         : all
 Schedule            : always
 Service             : HTTP, HTTPS, PING, SMTPS
