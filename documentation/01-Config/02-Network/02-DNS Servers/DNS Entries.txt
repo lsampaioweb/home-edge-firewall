@@ -25,121 +25,115 @@ DNS Entries
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-pve-01
-  IP Address                          : 192.168.3.2
+  IP Address                          : 10.0.10.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-pve-02
-  IP Address                          : 192.168.3.3
+  IP Address                          : 10.0.10.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-ldap-01
-  IP Address                          : 192.168.6.2
-  TTL                                 : Use Zone TTL
-  Status                              : Enabled
-
-  Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-postgresql-01
-  IP Address                          : 192.168.7.2
+  IP Address                          : 10.0.20.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-minio-01
-  IP Address                          : 192.168.7.3
+  IP Address                          : 10.0.30.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
   Hostname                            : api.edge-minio-01
-  IP Address                          : 192.168.7.3
+  IP Address                          : 10.0.30.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-minio-02
-  IP Address                          : 192.168.7.4
+  IP Address                          : 10.0.30.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
   Hostname                            : api.edge-minio-02
-  IP Address                          : 192.168.7.4
+  IP Address                          : 10.0.30.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-zabbix-01
-  IP Address                          : 192.168.8.2
+  IP Address                          : 10.0.55.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : edge-grafana-01
-  IP Address                          : 192.168.8.3
+  IP Address                          : 10.0.55.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : switch-01
-  IP Address                          : 172.16.10.2
+  IP Address                          : 10.1.110.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-01
-  IP Address                          : 172.16.10.3
+  IP Address                          : 10.1.110.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-02
-  IP Address                          : 172.16.10.4
+  IP Address                          : 10.1.110.4
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-03
-  IP Address                          : 172.16.10.5
+  IP Address                          : 10.1.110.5
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-04
-  IP Address                          : 172.16.10.6
+  IP Address                          : 10.1.110.6
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-05
-  IP Address                          : 172.16.10.7
+  IP Address                          : 10.1.110.7
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-06
-  IP Address                          : 172.16.10.8
+  IP Address                          : 10.1.110.8
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : pve-07
-  IP Address                          : 172.16.10.9
+  IP Address                          : 10.1.110.9
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : stg-jump-server-01
-  IP Address                          : 192.168.101.2
+  IP Address                          : 10.1.145.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : stg-load-balancer-01
-  IP Address                          : 192.168.103.2
+  IP Address                          : 10.1.150.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
