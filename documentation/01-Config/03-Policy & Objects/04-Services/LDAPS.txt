@@ -5,11 +5,3 @@ Protocol Options
 Protocol Type     : TCP/UDP/SCTP
 address           : IP Range
 Destination Port  : TCP 636
-
-Name      : LDAPS_UDP
-Category  : Authentication
-
-Protocol Options
-Protocol Type     : TCP/UDP/SCTP
-address           : IP Range
-Destination Port  : UDP 636
