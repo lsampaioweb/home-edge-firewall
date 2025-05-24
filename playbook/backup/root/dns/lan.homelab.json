@@ -1,19 +1,18 @@
 {
-  "status": "enable",
   "type": "primary",
   "view": "shadow",
-  "dns_zone": "test-dns",
-  "domain_name": "test-dns",
-  "hostname_primary_dns": "dns-01",
-  "contact_email_address": "lsampaio",
+  "name": "test-dns",
+  "domain": "test-dns",
+  "primary_name": "dns-01",
+  "contact": "lsampaio",
   "ttl": 86400,
   "authoritative": "enable",
-  "dns_entries": [
+  "dns_entry": [
     {
       "id": 1,
       "type": "A",
       "hostname": "test1",
-      "ip_address": "10.0.55.101",
+      "ip": "10.0.55.101",
       "status": "enable"
     }
   ]

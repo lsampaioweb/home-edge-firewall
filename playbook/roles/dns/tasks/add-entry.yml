@@ -8,40 +8,28 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Transform human-friendly attributes to module attributes"
-  ansible.builtin.set_fact:
-    transformed_settings: >
-      {{ desired_settings | ansible.utils.replace_keys(target=[
-        {'before': 'dns_zone', 'after': 'name'},
-        {'before': 'domain_name', 'after': 'domain'},
-        {'before': 'hostname_primary_dns', 'after': 'primary_name'},
-        {'before': 'contact_email_address', 'after': 'contact'},
-        {'before': 'dns_entries', 'after': 'dns_entry'},
-        {'before': 'ip_address', 'after': 'ip'}
-      ]) }}
-
-- name: "Add or update DNS entry for name: {{ transformed_settings.name }}"
+- name: "Add or update DNS entry for name: {{ desired_settings.name }}"
   fortinet.fortios.fortios_system_dns_database:
     vdom: "{{ vdom | default(omit, true) }}"
     # member_path: "{{ member_path | default('dns_entry:id', true) }}"
     # member_state: "{{ member_state | default('present', true) }}"
     state: "present"
     system_dns_database:
-      name: "{{ transformed_settings.name }}"
-      domain: "{{ transformed_settings.domain | default(omit, true) }}"
-      dns_entry: "{{ transformed_settings.dns_entry | default(omit, true) }}"
-      allow_transfer: "{{ transformed_settings.allow_transfer | default(omit, true) }}"
-      authoritative: "{{ transformed_settings.authoritative | default(omit, true) }}"
-      contact: "{{ transformed_settings.contact | default(omit, true) }}"
-      forwarder: "{{ transformed_settings.forwarder | default(omit, true) }}"
-      ip_primary: "{{ transformed_settings.ip_primary | default(omit, true) }}"
-      primary_name: "{{ transformed_settings.primary_name | default(omit, true) }}"
-      rr_max: "{{ transformed_settings.rr_max | default(omit, true) }}"
-      source_ip: "{{ transformed_settings.source_ip | default(omit, true) }}"
-      status: "{{ transformed_settings.status | default(omit, true) }}"
-      ttl: "{{ transformed_settings.ttl | default(omit, true) }}"
-      type: "{{ transformed_settings.type | default(omit, true) }}"
-      view: "{{ transformed_settings.view | default(omit, true) }}"
+      name: "{{ desired_settings.name }}"
+      domain: "{{ desired_settings.domain | default(omit, true) }}"
+      dns_entry: "{{ desired_settings.dns_entry | default(omit, true) }}"
+      allow_transfer: "{{ desired_settings.allow_transfer | default(omit, true) }}"
+      authoritative: "{{ desired_settings.authoritative | default(omit, true) }}"
+      contact: "{{ desired_settings.contact | default(omit, true) }}"
+      forwarder: "{{ desired_settings.forwarder | default(omit, true) }}"
+      ip_primary: "{{ desired_settings.ip_primary | default(omit, true) }}"
+      primary_name: "{{ desired_settings.primary_name | default(omit, true) }}"
+      rr_max: "{{ desired_settings.rr_max | default(omit, true) }}"
+      source_ip: "{{ desired_settings.source_ip | default(omit, true) }}"
+      status: "{{ desired_settings.status | default(omit, true) }}"
+      ttl: "{{ desired_settings.ttl | default(omit, true) }}"
+      type: "{{ desired_settings.type | default(omit, true) }}"
+      view: "{{ desired_settings.view | default(omit, true) }}"
   register: "output"
 
 - name: "Debug output"
