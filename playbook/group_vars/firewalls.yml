@@ -17,6 +17,7 @@ invalid_attribute: "q_origin_key"
 backup_path: "./backup"
 backup_vdom_path: "{{ backup_path }}{{ (vdom is defined and vdom != '') | ternary('/' + vdom, '') }}"
 backup_extention: "bkp"
+minimal_files_extention: "*.json"
 backup_files_to_keep: 10
 
 # Ansible attributes.

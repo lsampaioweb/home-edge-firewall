@@ -1,5 +1,5 @@
 ---
-- name: "Retrieving the backup files from: '{{ paths }}' with '{{ internal_patterns }}'"
+- name: "Retrieving files from: '{{ paths }}' with '{{ internal_patterns }}'"
   ansible.builtin.find:
     paths: "{{ paths }}"
     patterns: "{{ internal_patterns }}"

@@ -6,4 +6,5 @@
 
 # Backup files
 *.bkp
+# *.json
 *.conf

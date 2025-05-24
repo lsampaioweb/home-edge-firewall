@@ -4,7 +4,7 @@
   vars:
     paths: "{{ backup_dns_path }}"
 
-- name: "Creating a DNS entry"
+- name: "Creating a DNS entry from backup"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:

@@ -1,7 +1,0 @@
----
-- name: "DNS settings"
-  hosts: "firewalls"
-
-  tasks:
-    - name: "Creating DNS entries"
-      ansible.builtin.include_tasks: "{{ path_role_dns }}/create.yml"

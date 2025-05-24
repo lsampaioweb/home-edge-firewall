@@ -54,7 +54,8 @@ Run these commands on the computer running Ansible:
 
 1. Backup and create DNS settings:
     ```bash
-    ansible-playbook 04-dns-backup.yml
+    ansible-playbook 04-dns-create-from-backup.yml
+    ansible-playbook 04-dns-create-from-minimal.yml
     ansible-playbook 04-dns-create.yml
     ```
 
