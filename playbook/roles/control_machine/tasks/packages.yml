@@ -13,7 +13,7 @@
   vars:
     packages:
       - {name: "ansible", install_deps: true}
-      - {name: "ansible-lint", install_deps: true}
+      - {name: "ansible-lint"}
 
 - name: "Ensure Ansible Galaxy collections are installed"
   ansible.builtin.include_tasks: "{{ path_packages_ansible_galaxy }}"
