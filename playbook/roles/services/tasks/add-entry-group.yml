@@ -14,11 +14,11 @@
     state: "present"
     firewall_service_group:
       name: "{{ desired_settings.name }}"
-      color: "{{ desired_settings.color }}"
-      comment: "{{ desired_settings.comment }}"
-      fabric_object: "{{ desired_settings['fabric-object'] }}"
-      proxy: "{{ desired_settings.proxy }}"
       member: "{{ desired_settings.member }}"
+      color: "{{ desired_settings.color | default(omit, true) }}"
+      comment: "{{ desired_settings.comment | default(omit, true) }}"
+      fabric_object: "{{ desired_settings['fabric-object'] | default(omit, true) }}"
+      proxy: "{{ desired_settings.proxy | default(omit, true) }}"
   register: "output"
 
 - name: "Debug"

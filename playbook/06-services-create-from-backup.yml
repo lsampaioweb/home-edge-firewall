@@ -1,0 +1,7 @@
+---
+- name: "Services settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Services entries from backup"
+      ansible.builtin.include_tasks: "{{ path_role_services }}/create-from-backup.yml"
