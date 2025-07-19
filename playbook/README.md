@@ -110,7 +110,8 @@ Run these commands on the computer running Ansible:
 1. Backup and create SNMP settings:
     ```bash
     ansible-playbook 11-snmp-backup.yml
-    ansible-playbook 11-snmp-create.yml
+    ansible-playbook 11-snmp-create-from-backup.yml
+    ansible-playbook 11-snmp-create-from-minimal.yml
     ```
 
 1. Backup and create global system settings:

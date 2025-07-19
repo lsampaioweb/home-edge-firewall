@@ -3,8 +3,9 @@
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_snmp_path }}"
+    patterns: "{{ backup_files_extention }}"
 
-- name: "Creating a SNMP entry"
+- name: "Creating SNMP entries from backup"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:

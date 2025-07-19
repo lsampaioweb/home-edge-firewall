@@ -1,0 +1,7 @@
+---
+- name: "SNMP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating SNMP entries from minimal JSON"
+      ansible.builtin.include_tasks: "{{ path_role_snmp }}/create-from-minimal.yml"

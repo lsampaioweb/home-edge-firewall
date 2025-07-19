@@ -8,19 +8,31 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating SNMP entries"
-  fortinet.fortios.fortios_switch_controller_snmp_user:
+- name: "Creating SNMP entry: {{ desired_settings.name }}"
+  fortinet.fortios.fortios_system_snmp_user:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
-    switch_controller_snmp_user:
+    system_snmp_user:
       auth_proto: "{{ desired_settings.auth_proto | default(omit, true) }}"
       auth_pwd: "{{ snmp_password }}"
+      events: "{{ desired_settings.events.split(' ') if desired_settings.events is defined else omit }}"
+      ha_direct: "{{ desired_settings.ha_direct | default(omit, true) }}"
+      mib_view: "{{ desired_settings.mib_view | default(omit, true) }}"
       name: "{{ desired_settings.name | default(omit, true) }}"
+      notify_hosts: "{{ desired_settings.notify_hosts | default(omit, true) }}"
+      notify_hosts6: "{{ desired_settings.notify_hosts6 | default(omit, true) }}"
       priv_proto: "{{ desired_settings.priv_proto | default(omit, true) }}"
       priv_pwd: "{{ snmp_password }}"
       queries: "{{ desired_settings.queries | default(omit, true) }}"
       query_port: "{{ desired_settings.query_port | default(omit, true) }}"
       security_level: "{{ desired_settings.security_level | default(omit, true) }}"
+      source_ip: "{{ desired_settings.source_ip | default(omit, true) }}"
+      source_ipv6: "{{ desired_settings.source_ipv6 | default(omit, true) }}"
+      status: "{{ desired_settings.status | default(omit, true) }}"
+      trap_lport: "{{ desired_settings.trap_lport | default(omit, true) }}"
+      trap_rport: "{{ desired_settings.trap_rport | default(omit, true) }}"
+      trap_status: "{{ desired_settings.trap_status | default(omit, true) }}"
+      vdoms: "{{ desired_settings.vdoms | default(omit, true) }}"
   register: "output"
 
 - name: "Debug"
