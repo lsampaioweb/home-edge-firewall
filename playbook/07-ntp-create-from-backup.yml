@@ -3,5 +3,5 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating NTP entries"
-      ansible.builtin.include_tasks: "{{ path_role_ntp }}/create.yml"
+    - name: "Creating NTP entries from backup"
+      ansible.builtin.include_tasks: "{{ path_role_ntp }}/create-from-backup.yml"

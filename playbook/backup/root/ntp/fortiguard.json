@@ -1,0 +1,26 @@
+{
+  "type": "fortiguard",
+  "ntpsync": "enable",
+  "syncinterval": 60,
+  "server_mode": "enable",
+  "interface": [
+    {
+      "interface_name": "LAG-Home"
+    },
+    {
+      "interface_name": "VL-HI-Backup"
+    },
+    {
+      "interface_name": "VL-HI-Cluster"
+    },
+    {
+      "interface_name": "VL-HI-JmpServer"
+    },
+    {
+      "interface_name": "VL-HI-LdBalance"
+    },
+    {
+      "interface_name": "VL-HI-Template"
+    }
+  ]
+}

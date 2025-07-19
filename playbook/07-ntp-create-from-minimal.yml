@@ -1,0 +1,7 @@
+---
+- name: "NTP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating NTP entries from minimal JSON"
+      ansible.builtin.include_tasks: "{{ path_role_ntp }}/create-from-minimal.yml"
