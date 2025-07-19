@@ -1,0 +1,180 @@
+{
+  "type": "primary",
+  "view": "shadow",
+  "name": "lan.homelab",
+  "domain": "lan.homelab",
+  "primary_name": "dns-01",
+  "contact": "lsampaio",
+  "ttl": 86400,
+  "authoritative": "enable",
+  "dns_entry": [
+    {
+      "type": "A",
+      "hostname": "edge-firewall-01",
+      "ip": "192.168.2.1",
+      "status": "enable"
+    },
+    {
+      "type": "PTR",
+      "hostname": "edge-firewall-01",
+      "ip": "192.168.2.1",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-firewall-01-loopback",
+      "ip": "172.16.1.1",
+      "status": "enable"
+    },
+    {
+      "type": "PTR",
+      "hostname": "edge-firewall-01-loopback",
+      "ip": "172.16.1.1",
+      "status": "enable"
+    },
+    {
+      "type": "CNAME",
+      "hostname": "edge-firewall-01-snmp",
+      "canonical_name": "edge-firewall-01-loopback",
+      "status": "enable"
+    },
+    {
+      "type": "CNAME",
+      "hostname": "ntp-pool",
+      "canonical_name": "edge-firewall-01-loopback",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-pve-01",
+      "ip": "10.1.10.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-pve-02",
+      "ip": "10.1.10.3",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-ldap-01",
+      "ip": "10.1.20.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-minio-01",
+      "ip": "10.1.30.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "api.edge-minio-01",
+      "ip": "10.1.30.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-minio-02",
+      "ip": "10.1.30.3",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "api.edge-minio-02",
+      "ip": "10.1.30.3",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-zabbix-01",
+      "ip": "10.1.55.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "edge-grafana-01",
+      "ip": "10.1.55.3",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "switch-01",
+      "ip": "10.2.110.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-01",
+      "ip": "10.2.110.3",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-02",
+      "ip": "10.2.110.4",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-03",
+      "ip": "10.2.110.5",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-04",
+      "ip": "10.2.110.6",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-05",
+      "ip": "10.2.110.7",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-06",
+      "ip": "10.2.110.8",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "pve-07",
+      "ip": "10.2.110.9",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "stg-jump-server-01",
+      "ip": "10.2.145.2",
+      "status": "enable"
+    },
+    {
+      "type": "A",
+      "hostname": "stg-load-balancer-01",
+      "ip": "10.2.150.2",
+      "status": "enable"
+    },
+    {
+      "type": "CNAME",
+      "hostname": "edge-loadbalancer",
+      "canonical_name": "stg-load-balancer-01",
+      "status": "enable"
+    },
+    {
+      "type": "CNAME",
+      "hostname": "edge-pve",
+      "canonical_name": "stg-load-balancer-01",
+      "status": "enable"
+    },
+    {
+      "type": "CNAME",
+      "hostname": "edge-loadbalancer-01",
+      "canonical_name": "stg-load-balancer-01",
+      "status": "enable"
+    }
+  ]
+}
