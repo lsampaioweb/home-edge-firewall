@@ -1,0 +1,11 @@
+{
+  "name": "edge-ldap",
+  "server": "edge-ldap-01.homelab",
+  "port": 389,
+  "cnid": "cn",
+  "dn": "dc=homelab",
+  "username": "cn=ldap-reader-firewall,dc=homelab",
+  "member-attr": "memberOf",
+  "secure": "starttls",
+  "obtain-user-info": "enable"
+}

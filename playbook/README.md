@@ -143,7 +143,8 @@ Run these commands on the computer running Ansible:
 1. Backup and create LDAP settings:
     ```bash
     ansible-playbook 15-ldap-backup.yml
-    ansible-playbook 15-ldap-create.yml
+    ansible-playbook 15-ldap-create-from-backup.yml
+    ansible-playbook 15-ldap-create-from-minimal.yml
     ```
 
 1. Backup and create firewall policies:
