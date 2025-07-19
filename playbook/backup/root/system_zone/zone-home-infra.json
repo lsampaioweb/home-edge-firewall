@@ -1,0 +1,22 @@
+{
+  "name": "Zone-Home-Infra",
+  "description": "",
+  "interface": [
+    {
+      "interface_name": "VL-HI-Cluster"
+    },
+    {
+      "interface_name": "VL-HI-JmpServer"
+    },
+    {
+      "interface_name": "VL-HI-Template"
+    },
+    {
+      "interface_name": "VL-HI-Backup"
+    },
+    {
+      "interface_name": "VL-HI-LdBalance"
+    }
+  ],
+  "intrazone": "deny"
+}

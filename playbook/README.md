@@ -66,13 +66,15 @@ Run these commands on the computer running Ansible:
 1. Backup and create VDOM settings:
     ```bash
     ansible-playbook 04-system-vdom-backup.yml
-    ansible-playbook 04-system-vdom-create.yml
+    ansible-playbook 04-system-vdom-create-from-backup.yml
+    ansible-playbook 04-system-vdom-create-from-minimal.yml
     ```
 
 1. Backup and create global system settings:
     ```bash
     ansible-playbook 05-system-settings-backup.yml
-    ansible-playbook 05-system-settings-create.yml
+    ansible-playbook 05-system-settings-create-from-backup.yml
+    ansible-playbook 05-system-settings-create-from-minimal.yml
     ```
 
 1. Backup and create DNS settings:
@@ -85,13 +87,22 @@ Run these commands on the computer running Ansible:
 1. Backup and create NTP system settings:
     ```bash
     ansible-playbook 07-ntp-backup.yml
-    ansible-playbook 07-ntp-create.yml
+    ansible-playbook 07-ntp-create-from-backup.yml
+    ansible-playbook 07-ntp-create-from-minimal.yml
     ```
 
 1. Backup and create interfaces:
     ```bash
     ansible-playbook 08-system-interface-backup.yml
-    ansible-playbook 08-system-interface-create.yml
+    ansible-playbook 08-system-interface-create-from-backup.yml
+    ansible-playbook 08-system-interface-create-from-minimal.yml
+    ```
+
+1. Backup and create system zones:
+    ```bash
+    ansible-playbook 09-system-zone-backup.yml
+    ansible-playbook 09-system-zone-create-from-backup.yml
+    ansible-playbook 09-system-zone-create-from-minimal.yml
     ```
 
 1. Backup and create zones:

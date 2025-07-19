@@ -1,0 +1,31 @@
+{
+  "name": "Zone-Unused",
+  "description": "",
+  "interface": [
+    {
+      "interface_name": "dmz"
+    },
+    {
+      "interface_name": "ha"
+    },
+    {
+      "interface_name": "port2"
+    },
+    {
+      "interface_name": "port11"
+    },
+    {
+      "interface_name": "port4"
+    },
+    {
+      "interface_name": "port8"
+    },
+    {
+      "interface_name": "port3"
+    },
+    {
+      "interface_name": "port7"
+    }
+  ],
+  "intrazone": "deny"
+}
