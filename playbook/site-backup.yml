@@ -2,53 +2,53 @@
 - name: "Run the Backup playbook"
   ansible.builtin.import_playbook: "02-backup.yml"
 
-- name: "Run the DNS playbook"
-  ansible.builtin.import_playbook: "04-dns-backup.yml"
-
-- name: "Run the Firewall Addresses playbook"
-  ansible.builtin.import_playbook: "05-firewall-address-backup.yml"
-
-- name: "Run the Services playbook"
-  ansible.builtin.import_playbook: "06-services-backup.yml"
-
-- name: "Run the System Interface playbook"
-  ansible.builtin.import_playbook: "07-system-interface-backup.yml"
-
-- name: "Run the System Zone playbook"
-  ansible.builtin.import_playbook: "08-system-zone-backup.yml"
-
-- name: "Run the Firewall Policy playbook"
-  ansible.builtin.import_playbook: "09-firewall-policy-backup.yml"
-
-- name: "Run the LDAP playbook"
-  ansible.builtin.import_playbook: "10-ldap-backup.yml"
-
-- name: "Run the SNMP playbook"
-  ansible.builtin.import_playbook: "11-snmp-backup.yml"
+- name: "Run the System VDOM playbook"
+  ansible.builtin.import_playbook: "04-system-vdom-backup.yml"
 
 - name: "Run the System Settings playbook"
-  ansible.builtin.import_playbook: "12-system-settings-backup.yml"
+  ansible.builtin.import_playbook: "05-system-settings-backup.yml"
+
+- name: "Run the DNS playbook"
+  ansible.builtin.import_playbook: "06-dns-backup.yml"
 
 - name: "Run the NTP playbook"
-  ansible.builtin.import_playbook: "13-ntp-backup.yml"
+  ansible.builtin.import_playbook: "07-ntp-backup.yml"
 
-- name: "Run the DHCP playbook"
-  ansible.builtin.import_playbook: "14-dhcp-backup.yml"
+- name: "Run the System Interface playbook"
+  ansible.builtin.import_playbook: "08-system-interface-backup.yml"
 
-- name: "Run the Syslog playbook"
-  ansible.builtin.import_playbook: "15-syslog-backup.yml"
+- name: "Run the System Zone playbook"
+  ansible.builtin.import_playbook: "09-system-zone-backup.yml"
 
-- name: "Run the Firewall DOS Policy playbook"
-  ansible.builtin.import_playbook: "16-firewall-dos-policy-backup.yml"
+- name: "Run the Firewall Addresses playbook"
+  ansible.builtin.import_playbook: "10-firewall-address-backup.yml"
 
-- name: "Run the Firewall Central SNAT playbook"
-  ansible.builtin.import_playbook: "17-firewall-central-snat-backup.yml"
-
-- name: "Run the System SDWAN playbook"
-  ansible.builtin.import_playbook: "18-system-sdwan-backup.yml"
-
-- name: "Run the System VDOM playbook"
-  ansible.builtin.import_playbook: "19-system-vdom-backup.yml"
+- name: "Run the Services playbook"
+  ansible.builtin.import_playbook: "11-services-backup.yml"
 
 - name: "Run the Static Routing playbook"
-  ansible.builtin.import_playbook: "20-static-route-backup.yml"
+  ansible.builtin.import_playbook: "12-static-route-backup.yml"
+
+- name: "Run the System SDWAN playbook"
+  ansible.builtin.import_playbook: "13-system-sdwan-backup.yml"
+
+- name: "Run the Firewall Central SNAT playbook"
+  ansible.builtin.import_playbook: "14-firewall-central-snat-backup.yml"
+
+- name: "Run the LDAP playbook"
+  ansible.builtin.import_playbook: "15-ldap-backup.yml"
+
+- name: "Run the Firewall Policy playbook"
+  ansible.builtin.import_playbook: "16-firewall-policy-backup.yml"
+
+- name: "Run the DHCP playbook"
+  ansible.builtin.import_playbook: "17-dhcp-backup.yml"
+
+- name: "Run the Syslog playbook"
+  ansible.builtin.import_playbook: "18-syslog-backup.yml"
+
+- name: "Run the SNMP playbook"
+  ansible.builtin.import_playbook: "19-snmp-backup.yml"
+
+- name: "Run the Firewall DOS Policy playbook"
+  ansible.builtin.import_playbook: "20-firewall-dos-policy-backup.yml"

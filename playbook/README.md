@@ -63,109 +63,109 @@ Run these commands on the computer running Ansible:
     ansible-playbook 03-restore.yml
     ```
 
-1. Backup and create DNS settings:
+1. Backup and create VDOM settings:
     ```bash
-    ansible-playbook 04-dns-backup.yml
-    ansible-playbook 04-dns-create-from-backup.yml
-    ansible-playbook 04-dns-create-from-minimal.yml
-    ```
-
-1. Backup and create firewall addresses:
-    ```bash
-    ansible-playbook 05-firewall-address-backup.yml
-    ansible-playbook 05-firewall-address-create.yml
-    ```
-
-1. Backup and create services:
-    ```bash
-    ansible-playbook 06-services-backup.yml
-    ansible-playbook 06-services-create-from-backup.yml
-    ansible-playbook 06-services-create-from-minimal.yml
-    ```
-
-1. Backup and create interfaces:
-    ```bash
-    ansible-playbook 07-system-interface-backup.yml
-    ansible-playbook 07-system-interface-create.yml
-    ```
-
-1. Backup and create zones:
-    ```bash
-    ansible-playbook 08-system-zone-backup.yml
-    ansible-playbook 08-system-zone-create.yml
-    ```
-
-1. Backup and create firewall policies:
-    ```bash
-    ansible-playbook 09-firewall-policy-backup.yml
-    ansible-playbook 09-firewall-policy-create.yml
-    ```
-
-1. Backup and create LDAP settings:
-    ```bash
-    ansible-playbook 10-ldap-backup.yml
-    ansible-playbook 10-ldap-create.yml
-    ```
-
-1. Backup and create SNMP settings:
-    ```bash
-    ansible-playbook 11-snmp-backup.yml
-    ansible-playbook 11-snmp-create-from-backup.yml
-    ansible-playbook 11-snmp-create-from-minimal.yml
+    ansible-playbook 04-system-vdom-backup.yml
+    ansible-playbook 04-system-vdom-create.yml
     ```
 
 1. Backup and create global system settings:
     ```bash
-    ansible-playbook 12-system-settings-backup.yml
-    ansible-playbook 12-system-settings-create.yml
+    ansible-playbook 05-system-settings-backup.yml
+    ansible-playbook 05-system-settings-create.yml
+    ```
+
+1. Backup and create DNS settings:
+    ```bash
+    ansible-playbook 06-dns-backup.yml
+    ansible-playbook 06-dns-create-from-backup.yml
+    ansible-playbook 06-dns-create-from-minimal.yml
     ```
 
 1. Backup and create NTP system settings:
     ```bash
-    ansible-playbook 13-ntp-backup.yml
-    ansible-playbook 13-ntp-create.yml
+    ansible-playbook 07-ntp-backup.yml
+    ansible-playbook 07-ntp-create.yml
+    ```
+
+1. Backup and create interfaces:
+    ```bash
+    ansible-playbook 08-system-interface-backup.yml
+    ansible-playbook 08-system-interface-create.yml
+    ```
+
+1. Backup and create zones:
+    ```bash
+    ansible-playbook 09-system-zone-backup.yml
+    ansible-playbook 09-system-zone-create.yml
+    ```
+
+1. Backup and create firewall addresses:
+    ```bash
+    ansible-playbook 10-firewall-address-backup.yml
+    ansible-playbook 10-firewall-address-create.yml
+    ```
+
+1. Backup and create services:
+    ```bash
+    ansible-playbook 11-services-backup.yml
+    ansible-playbook 11-services-create-from-backup.yml
+    ansible-playbook 11-services-create-from-minimal.yml
+    ```
+
+1. Backup and create static routes:
+    ```bash
+    ansible-playbook 12-static-route-backup.yml
+    ansible-playbook 12-static-route-create.yml
+    ```
+
+1. Backup and create SDWAN settings:
+    ```bash
+    ansible-playbook 13-system-sdwan-backup.yml
+    ansible-playbook 13-system-sdwan-create.yml
+    ```
+
+1. Backup and create Central SNAT settings:
+    ```bash
+    ansible-playbook 14-firewall-central-snat-backup.yml
+    ansible-playbook 14-firewall-central-snat-create.yml
+    ```
+
+1. Backup and create LDAP settings:
+    ```bash
+    ansible-playbook 15-ldap-backup.yml
+    ansible-playbook 15-ldap-create.yml
+    ```
+
+1. Backup and create firewall policies:
+    ```bash
+    ansible-playbook 16-firewall-policy-backup.yml
+    ansible-playbook 16-firewall-policy-create.yml
     ```
 
 1. Backup and create DHCP system settings:
     ```bash
-    ansible-playbook 14-dhcp-backup.yml
-    ansible-playbook 14-dhcp-create.yml
+    ansible-playbook 17-dhcp-backup.yml
+    ansible-playbook 17-dhcp-create.yml
     ```
 
 1. Backup and create Syslog system settings:
     ```bash
-    ansible-playbook 15-syslog-backup.yml
-    ansible-playbook 15-syslog-create.yml
+    ansible-playbook 18-syslog-backup.yml
+    ansible-playbook 18-syslog-create.yml
+    ```
+
+1. Backup and create SNMP system settings:
+    ```bash
+    ansible-playbook 19-snmp-backup.yml
+    ansible-playbook 19-snmp-create-from-backup.yml
+    ansible-playbook 19-snmp-create-from-minimal.yml
     ```
 
 1. Backup and create Firewall DOS Policy system settings:
     ```bash
-    ansible-playbook 16-firewall-dos-policy-backup.yml
-    ansible-playbook 16-firewall-dos-policy-create.yml
-    ```
-
-1. Backup and create Firewall DOS Policy system settings:
-    ```bash
-    ansible-playbook 16-firewall-dos-policy-backup.yml
-    ansible-playbook 16-firewall-dos-policy-create.yml
-    ```
-
-1. Backup and create Firewall Central SNAT system settings:
-    ```bash
-    ansible-playbook 17-firewall-central-snat-backup.yml
-    ansible-playbook 17-firewall-central-snat-create.yml
-    ```
-
-1. Backup and create System SDWAN system settings:
-    ```bash
-    ansible-playbook 18-system-sdwan-backup.yml
-    ansible-playbook 18-system-sdwan-create.yml
-    ```
-
-1. Backup and create System VDOM system settings:
-    ```bash
-    ansible-playbook 19-system-vdom-backup.yml
-    ansible-playbook 19-system-vdom-create.yml
+    ansible-playbook 20-firewall-dos-policy-backup.yml
+    ansible-playbook 20-firewall-dos-policy-create.yml
     ```
 
 1. Backup and create Static Routes settings:
