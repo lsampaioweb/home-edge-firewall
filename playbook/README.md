@@ -122,7 +122,8 @@ Run these commands on the computer running Ansible:
 1. Backup and create static routes:
     ```bash
     ansible-playbook 12-static-route-backup.yml
-    ansible-playbook 12-static-route-create.yml
+    ansible-playbook 12-static-route-create-from-backup.yml
+    ansible-playbook 12-static-route-create-from-minimal.yml
     ```
 
 1. Backup and create SDWAN settings:

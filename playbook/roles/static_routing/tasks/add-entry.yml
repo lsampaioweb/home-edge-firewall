@@ -31,7 +31,7 @@
       src: "{{ desired_settings.src | default(omit) }}"
       status: "{{ desired_settings.status | default(omit) }}"
       tag: "{{ desired_settings.tag | default(omit) }}"
-      vrf: "{{ (desired_settings.vrf != 'unspecified') | ternary(desired_settings.vrf, '') | default(omit, true) }}"
+      vrf: "{{ (desired_settings.vrf is defined and desired_settings.vrf != 'unspecified') | ternary(desired_settings.vrf, '') | default(omit, true) }}"
       weight: "{{ desired_settings.weight | default(omit) }}"
   register: "output"
 
