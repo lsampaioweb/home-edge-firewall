@@ -1,0 +1,7 @@
+---
+- name: "Setting up the system settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Setting up System Settings from minimal JSON"
+      ansible.builtin.include_tasks: "{{ path_role_system_settings }}/create-from-minimal.yml"

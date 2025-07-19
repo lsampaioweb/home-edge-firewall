@@ -1,0 +1,13 @@
+---
+- name: "Retrieving the JSON files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
+  vars:
+    paths: "{{ backup_system_settings_path }}"
+    patterns: "{{ minimal_files_extention }}"
+
+- name: "Setting up System Settings from minimal JSON"
+  ansible.builtin.include_tasks: "add-entry.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"
