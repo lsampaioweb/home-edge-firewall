@@ -1,0 +1,11 @@
+{
+  "name": "TV-Suite",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "macaddr": [
+    {
+      "macaddr": "bc:45:5b:c1:12:ec"
+    }
+  ]
+}

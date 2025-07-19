@@ -1,0 +1,7 @@
+{
+  "name": "this-firewall-address",
+  "type": "ipmask",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "subnet": "192.168.2.1 255.255.255.255"
+}

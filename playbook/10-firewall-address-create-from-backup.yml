@@ -1,7 +1,7 @@
 ---
-- name: "Firewall addresses settings"
+- name: "Firewall addresses settings from backup"
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating Firewall addresses entries"
-      ansible.builtin.include_tasks: "{{ path_role_firewall_address }}/create.yml"
+    - name: "Creating Firewall addresses entries from backup"
+      ansible.builtin.include_tasks: "{{ path_role_firewall_address }}/create-from-backup.yml"

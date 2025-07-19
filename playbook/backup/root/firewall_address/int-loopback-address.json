@@ -1,0 +1,7 @@
+{
+  "name": "INT-loopback address",
+  "type": "interface-subnet",
+  "comment": "Ansible",
+  "interface": "INT-loopback",
+  "subnet": "172.16.1.1 255.255.255.255"
+}

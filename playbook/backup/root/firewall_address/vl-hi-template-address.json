@@ -1,0 +1,7 @@
+{
+  "name": "VL-HI-Template address",
+  "type": "interface-subnet",
+  "comment": "Ansible",
+  "interface": "VL-HI-Template",
+  "subnet": "192.168.100.0 255.255.255.240"
+}

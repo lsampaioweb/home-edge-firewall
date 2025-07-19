@@ -1,0 +1,11 @@
+{
+  "name": "jump-server-virtualbox",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "macaddr": [
+    {
+      "macaddr": "08:00:27:ef:be:74"
+    }
+  ]
+}

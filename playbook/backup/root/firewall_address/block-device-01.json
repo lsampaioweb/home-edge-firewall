@@ -1,0 +1,11 @@
+{
+  "name": "Block-Device-01",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "macaddr": [
+    {
+      "macaddr": "3c:77:e6:8a:b7:7b"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TV-Escritorio",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "macaddr": [
+    {
+      "macaddr": "a4:30:7a:f3:32:58"
+    }
+  ]
+}

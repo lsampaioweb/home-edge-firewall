@@ -1,0 +1,11 @@
+{
+  "name": "edge-pve-02",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home-Infra",
+  "macaddr": [
+    {
+      "macaddr": "00:d0:b4:01:77:7c"
+    }
+  ]
+}

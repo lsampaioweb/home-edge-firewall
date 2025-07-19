@@ -1,0 +1,7 @@
+{
+  "name": "VL-HI-JmpServer address",
+  "type": "interface-subnet",
+  "comment": "Ansible",
+  "interface": "VL-HI-JmpServer",
+  "subnet": "192.168.101.0 255.255.255.240"
+}

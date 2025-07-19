@@ -1,0 +1,11 @@
+{
+  "name": "Celular-Maiara",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home",
+  "macaddr": [
+    {
+      "macaddr": "62:4c:cb:89:c1:b6"
+    }
+  ]
+}

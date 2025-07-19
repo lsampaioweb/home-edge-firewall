@@ -105,16 +105,11 @@ Run these commands on the computer running Ansible:
     ansible-playbook 09-system-zone-create-from-minimal.yml
     ```
 
-1. Backup and create zones:
-    ```bash
-    ansible-playbook 09-system-zone-backup.yml
-    ansible-playbook 09-system-zone-create.yml
-    ```
-
 1. Backup and create firewall addresses:
     ```bash
     ansible-playbook 10-firewall-address-backup.yml
-    ansible-playbook 10-firewall-address-create.yml
+    ansible-playbook 10-firewall-address-create-from-backup.yml
+    ansible-playbook 10-firewall-address-create-from-minimal.yml
     ```
 
 1. Backup and create services:

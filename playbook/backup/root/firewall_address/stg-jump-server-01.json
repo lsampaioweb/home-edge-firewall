@@ -1,0 +1,11 @@
+{
+  "name": "stg-jump-server-01",
+  "type": "mac",
+  "comment": "Ansible",
+  "associated_interface": "Zone-Home-Infra",
+  "macaddr": [
+    {
+      "macaddr": "6e:4c:7c:0b:7d:79"
+    }
+  ]
+}
