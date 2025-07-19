@@ -1,0 +1,29 @@
+{
+  "policyid": 1,
+  "comments": "Lan to Internet",
+  "srcintf": [
+    {
+      "name": "Zone-Home"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "wan1"
+    },
+    {
+      "name": "wan2"
+    }
+  ],
+  "orig_addr": [
+    {
+      "name": "LAG-Home address"
+    }
+  ],
+  "dst_addr": [
+    {
+      "name": "all"
+    }
+  ],
+  "nat": "enable",
+  "status": "enable"
+}

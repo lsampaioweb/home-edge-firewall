@@ -1,0 +1,41 @@
+{
+  "policyid": 2,
+  "comments": "Home-Infra To Internet",
+  "srcintf": [
+    {
+      "name": "Zone-Home-Infra"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "wan1"
+    },
+    {
+      "name": "wan2"
+    }
+  ],
+  "orig_addr": [
+    {
+      "name": "VL-HI-Cluster address"
+    },
+    {
+      "name": "VL-HI-JmpServer address"
+    },
+    {
+      "name": "VL-HI-Template address"
+    },
+    {
+      "name": "VL-HI-Backup address"
+    },
+    {
+      "name": "VL-HI-LdBalance address"
+    }
+  ],
+  "dst_addr": [
+    {
+      "name": "all"
+    }
+  ],
+  "nat": "enable",
+  "status": "enable"
+}

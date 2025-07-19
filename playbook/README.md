@@ -129,13 +129,15 @@ Run these commands on the computer running Ansible:
 1. Backup and create SDWAN settings:
     ```bash
     ansible-playbook 13-system-sdwan-backup.yml
-    ansible-playbook 13-system-sdwan-create.yml
+    ansible-playbook 13-system-sdwan-create-from-backup.yml
+    ansible-playbook 13-system-sdwan-create-from-minimal.yml
     ```
 
 1. Backup and create Central SNAT settings:
     ```bash
     ansible-playbook 14-firewall-central-snat-backup.yml
-    ansible-playbook 14-firewall-central-snat-create.yml
+    ansible-playbook 14-firewall-central-snat-create-from-backup.yml
+    ansible-playbook 14-firewall-central-snat-create-from-minimal.yml
     ```
 
 1. Backup and create LDAP settings:
