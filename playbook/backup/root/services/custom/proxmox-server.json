@@ -1,0 +1,7 @@
+{
+  "name": "Proxmox-Server",
+  "comment": "Ansible",
+  "category": "Web Access",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "8006"
+}

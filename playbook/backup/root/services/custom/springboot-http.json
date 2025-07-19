@@ -1,0 +1,7 @@
+{
+  "name": "SpringBoot-HTTP",
+  "comment": "Ansible",
+  "category": "Web Access",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "8080 8081 80 443 9443 8082 8083"
+}

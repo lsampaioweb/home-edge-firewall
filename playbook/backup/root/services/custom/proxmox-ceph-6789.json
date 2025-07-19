@@ -1,0 +1,7 @@
+{
+  "name": "Proxmox-Ceph-6789",
+  "comment": "Ansible",
+  "category": "Network Services",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "6789"
+}

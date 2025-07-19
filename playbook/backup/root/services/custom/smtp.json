@@ -1,0 +1,7 @@
+{
+  "name": "SMTP",
+  "comment": "Ansible",
+  "category": "Email",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "25"
+}

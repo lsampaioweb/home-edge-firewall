@@ -1,0 +1,7 @@
+{
+  "name": "SMTPS",
+  "comment": "Ansible",
+  "category": "Email",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "587"
+}

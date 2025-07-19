@@ -1,0 +1,7 @@
+{
+  "name": "Cloud-Init",
+  "comment": "Ansible",
+  "category": "Network Services",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "8100-8200"
+}

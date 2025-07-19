@@ -1,0 +1,7 @@
+{
+  "name": "PostgreSQL",
+  "comment": "Ansible",
+  "category": "Database",
+  "protocol": "TCP/UDP/SCTP",
+  "tcp-portrange": "5432"
+}

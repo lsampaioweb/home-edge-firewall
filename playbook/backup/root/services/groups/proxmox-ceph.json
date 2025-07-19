@@ -1,0 +1,12 @@
+{
+  "name": "Proxmox-Ceph",
+  "comment": "Ansible",
+  "member": [
+    {
+      "name": "Proxmox-Ceph-3300"
+    },
+    {
+      "name": "Proxmox-Ceph-6789"
+    }
+  ]
+}

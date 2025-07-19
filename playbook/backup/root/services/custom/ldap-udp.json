@@ -1,0 +1,7 @@
+{
+  "name": "LDAP-UDP",
+  "comment": "Ansible",
+  "category": "Authentication",
+  "protocol": "TCP/UDP/SCTP",
+  "udp-portrange": "389"
+}
