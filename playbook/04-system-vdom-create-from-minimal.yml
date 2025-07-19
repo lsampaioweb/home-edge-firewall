@@ -1,0 +1,7 @@
+---
+- name: "System VDOM settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating System VDOM entries from minimal JSON"
+      ansible.builtin.include_tasks: "{{ path_role_system_vdom }}/create-from-minimal.yml"
