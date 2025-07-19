@@ -3,6 +3,7 @@
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_dns_path }}"
+    patterns: "{{ backup_files_extention }}"
 
 - name: "Creating a DNS entry from backup"
   ansible.builtin.include_tasks: "add-entry.yml"

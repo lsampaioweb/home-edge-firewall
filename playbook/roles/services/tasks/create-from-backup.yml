@@ -3,6 +3,7 @@
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_services_custom_path }}"
+    patterns: "{{ backup_files_extention }}"
 
 - name: "Creating Custom Services entries"
   ansible.builtin.include_tasks: "add-entry-custom.yml"
@@ -15,6 +16,7 @@
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_services_group_path }}"
+    patterns: "{{ backup_files_extention }}"
 
 - name: "Creating Group Services entries"
   ansible.builtin.include_tasks: "add-entry-group.yml"
