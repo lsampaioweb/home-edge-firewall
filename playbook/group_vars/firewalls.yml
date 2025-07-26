@@ -4,6 +4,7 @@ inventory_hostname_without_domain: "{{ inventory_hostname | replace('.' + domain
 # The id of the password saved in the secret manager. Each firewall has its own password.
 ansible_password_id: "{{ inventory_hostname_without_domain ~ '-admin-password' }}"
 snmp_password_id: "{{ inventory_hostname_without_domain ~ '-snmp-password' }}"
+ssl_password_id: "{{ inventory_hostname_without_domain ~ '-ssl-password' }}"
 
 # The password of the user that will connect.
 # Ubuntu.
@@ -16,6 +17,12 @@ ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ansible_pa
 snmp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + snmp_password_id) }}"
 # MacOS.
 # snmp_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + snmp_password_id) }}"
+
+# The password of the SSL certificate that will be uploaded to the firewall.
+# Ubuntu.
+ssl_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ssl_password_id) }}"
+# MacOS.
+# ssl_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + ssl_password_id) }}"
 
 search_keywork: "ansible"
 invalid_attribute: "q_origin_key"

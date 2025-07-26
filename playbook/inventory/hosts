@@ -5,8 +5,10 @@ localhost ansible_connection=local
 edge-firewall.lan.homelab
 
 [firewalls:vars]
-ansible_user=admin
 ansible_network_os=fortinet.fortios.fortios
 ansible_connection=httpapi
 ansible_httpapi_use_ssl=true
+ansible_user=admin
 vdom=root
+# Don't use this. This is VERY BAD!
+; ansible_httpapi_validate_certs=false

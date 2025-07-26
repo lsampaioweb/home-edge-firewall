@@ -8,3 +8,5 @@
 *.bkp
 *.conf
 .ansible
+*.crt
+*.key
