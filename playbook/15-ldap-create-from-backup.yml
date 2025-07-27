@@ -1,7 +1,0 @@
----
-- name: "LDAP settings from backup"
-  hosts: "firewalls"
-
-  tasks:
-    - name: "Creating LDAP entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_ldap }}/create-from-backup.yml"

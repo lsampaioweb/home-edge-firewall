@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Backing up the LDAP settings"
-      ansible.builtin.include_tasks: "{{ path_role_ldap }}/backup.yml"
+      ansible.builtin.include_role:
+        name: "ldap"
+        tasks_from: "backup.yml"

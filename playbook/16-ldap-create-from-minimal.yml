@@ -1,0 +1,9 @@
+---
+- name: "LDAP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating LDAP entries from minimal JSON"
+      ansible.builtin.include_role:
+        name: "ldap"
+        tasks_from: "create-from-minimal.yml"
