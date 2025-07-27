@@ -1,0 +1,9 @@
+---
+- name: "Firewall Central SNAT settings from minimal config"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall Central SNAT entries from minimal JSON"
+      ansible.builtin.include_role:
+        name: "firewall_central_snat"
+        tasks_from: "create-from-minimal.yml"

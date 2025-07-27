@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Creating Firewall Central SNAT entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_firewall_central_snat }}/create-from-backup.yml"
+      ansible.builtin.include_role:
+        name: "firewall_central_snat"
+        tasks_from: "create-from-backup.yml"
