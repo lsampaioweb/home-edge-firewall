@@ -24,6 +24,11 @@
       {{ (data.meta.results
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
-        {'before': 'interface-name', 'after': 'interface_name'}
+        {'before': 'interface-name', 'after': 'interface_name'},
+        {'before': 'seq-num', 'after': 'seq_num'},
+        {'before': 'health-check', 'after': 'health_check'},
+        {'before': 'load-balance-mode', 'after': 'load_balance_mode'},
+        {'before': 'duplication-max-num', 'after': 'duplication_max_num'},
+        {'before': 'spillover-threshold', 'after': 'spillover_threshold'}
       ])) }}
-    file: "{{ (('SDWAN' | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+    file: "{{ ('SDWAN' ~ '.' ~ backup_extention) | lower }}"

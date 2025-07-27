@@ -3,7 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating System SD-WAN from backup"
+    - name: "Creating System SD-WAN from minimal JSON"
       ansible.builtin.include_role:
         name: "system_sdwan"
-        tasks_from: "create-from-backup.yml"
+        tasks_from: "create-from-minimal.yml"

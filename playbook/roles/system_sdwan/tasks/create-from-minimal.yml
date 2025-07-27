@@ -1,10 +1,11 @@
 ---
-- name: "Retrieving the backup files"
+- name: "Retrieving the minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_system_sdwan_path }}"
+    patterns: "{{ minimal_files_extention }}"
 
-- name: "Creating a System SDWAN entry"
+- name: "Creating a System SDWAN entry from minimal config"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:

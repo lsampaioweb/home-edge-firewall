@@ -1,0 +1,13 @@
+{
+  "status": "enable",
+  "zone": [
+    {
+      "name": "virtual-wan-link",
+      "service-sla-tie-break": "cfg-order"
+    },
+    {
+      "name": "SD-WAN",
+      "service-sla-tie-break": "cfg-order"
+    }
+  ]
+}

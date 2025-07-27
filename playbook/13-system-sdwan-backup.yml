@@ -1,7 +1,9 @@
 ---
-- name: "System SDWAN settings"
+- name: "System SD-WAN settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Backing up the System SDWAN settings"
-      ansible.builtin.include_tasks: "{{ path_role_system_sdwan }}/backup.yml"
+    - name: "Backing up the System SD-WAN settings"
+      ansible.builtin.include_role:
+        name: "system_sdwan"
+        tasks_from: "backup.yml"
