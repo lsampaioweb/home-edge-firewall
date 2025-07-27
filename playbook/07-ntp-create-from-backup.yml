@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Creating NTP entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_ntp }}/create-from-backup.yml"
+      ansible.builtin.include_role:
+        name: "ntp"
+        tasks_from: "create-from-backup.yml"
