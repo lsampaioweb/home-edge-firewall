@@ -3,5 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating System Interface entries"
-      ansible.builtin.include_tasks: "{{ path_role_system_interface }}/create.yml"
+    - name: "Creating System Interface from backup"
+      ansible.builtin.include_role:
+        name: "system_interface"
+        tasks_from: "create-from-backup.yml"

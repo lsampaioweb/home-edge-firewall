@@ -1,0 +1,14 @@
+{
+  "name": "LAG-Home",
+  "type": "aggregate",
+  "ip": "192.168.2.1 255.255.255.0",
+  "allowaccess": "ping https fabric",
+  "status": "up",
+  "role": "lan",
+  "mode": "static",
+  "member": [
+    {
+      "interface_name": "port1"
+    }
+  ]
+}

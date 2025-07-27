@@ -1,0 +1,10 @@
+{
+  "name": "VL-HI-Cluster",
+  "type": "vlan",
+  "ip": "192.168.3.1 255.255.255.240",
+  "allowaccess": "ping https",
+  "status": "up",
+  "role": "lan",
+  "mode": "static",
+  "vlanid": 3
+}

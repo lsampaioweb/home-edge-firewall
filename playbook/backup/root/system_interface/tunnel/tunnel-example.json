@@ -1,0 +1,9 @@
+{
+  "name": "tunnel-example",
+  "type": "tunnel",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "status": "up",
+  "role": "wan",
+  "mode": "static"
+}

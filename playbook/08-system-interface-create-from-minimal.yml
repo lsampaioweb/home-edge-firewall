@@ -3,7 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Backing up the System Interface settings"
+    - name: "Creating System Interface from minimal JSON"
       ansible.builtin.include_role:
         name: "system_interface"
-        tasks_from: "backup.yml"
+        tasks_from: "create-from-minimal.yml"

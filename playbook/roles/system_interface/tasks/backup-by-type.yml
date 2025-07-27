@@ -10,10 +10,5 @@
   vars:
     line: >
       {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])
-      | ansible.utils.replace_keys(target=[
-        {'before': 'aggregate-type'         , 'after': 'aggregate_type'},
-        {'before': 'device-identification'  , 'after': 'device_identification'},
-        {'before': 'interface-name'         , 'after': 'interface_name'}
-      ])) }}
+      | ansible.utils.remove_keys(target=[invalid_attribute])) }}
     file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"

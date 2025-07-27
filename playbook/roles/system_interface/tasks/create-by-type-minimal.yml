@@ -1,11 +1,11 @@
 ---
-- name: "Retrieving the backup files"
+- name: "Retrieving the JSON files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ item.paths }}"
-    patterns: "{{ backup_files_extention }}"
+    patterns: "{{ minimal_files_extention }}"
 
-- name: "Creating a System Interface entry"
+- name: "Creating a System Interface entry from minimal JSON"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:

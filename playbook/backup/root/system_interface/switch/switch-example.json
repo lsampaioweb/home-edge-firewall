@@ -1,0 +1,9 @@
+{
+  "name": "SS-HI-CLSTR",
+  "type": "switch",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "status": "up",
+  "role": "lan",
+  "mode": "static"
+}

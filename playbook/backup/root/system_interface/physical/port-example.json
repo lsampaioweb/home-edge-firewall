@@ -1,0 +1,10 @@
+{
+  "name": "port1",
+  "type": "physical",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "status": "up",
+  "role": "lan",
+  "mode": "static",
+  "alias": "Physical Port Example"
+}
