@@ -1,0 +1,17 @@
+galaxy_info:
+  company: "thecodemaster.net"
+  author: "Luciano Sampaio"
+  description: "Configure ACME client on the firewall."
+
+  license: "MIT"
+
+  min_ansible_version: "2.16"
+
+  platforms:
+    - name: "Ubuntu"
+
+  galaxy_tags:
+    - "fortigate"
+    - "ubuntu"
+    - "acme"
+    - "vault"

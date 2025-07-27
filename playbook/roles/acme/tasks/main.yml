@@ -1,0 +1,14 @@
+---
+- name: "Configure ACME client to use HCP Vault"
+  fortinet.fortios.fortios_system_acme:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_acme:
+      accounts:
+        - id: 1
+          # Point it to your ACME server's directory URL.
+          ca_url: "{{ acme_ca_url }}"
+          email: "{{ acme_email | b64decode }}"
+      interface:
+      # Define which interface the FortiGate will use for ACME challenges.
+      # This must be an interface that can reach your ACME server.
+        - interface_name: "{{ acme_interface }}"

@@ -1,0 +1,6 @@
+---
+- name: "Configure ACME client"
+  hosts: "firewalls"
+
+  roles:
+    - "acme"
