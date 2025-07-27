@@ -5,50 +5,53 @@
 - name: "Run the System VDOM playbook"
   ansible.builtin.import_playbook: "04-system-vdom-create-from-minimal.yml"
 
+- name: "Run the upload SSL certificate playbook"
+  ansible.builtin.import_playbook: "05-certificate-upload.yml"
+
 - name: "Run the System Settings playbook"
-  ansible.builtin.import_playbook: "05-system-settings-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "06-system-settings-create-from-minimal.yml"
 
 - name: "Run the DNS playbook"
-  ansible.builtin.import_playbook: "06-dns-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "07-dns-create-from-minimal.yml"
 
 - name: "Run the NTP playbook"
-  ansible.builtin.import_playbook: "07-ntp-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "08-ntp-create-from-minimal.yml"
 
 - name: "Run the System Interface playbook"
-  ansible.builtin.import_playbook: "08-system-interface-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "09-system-interface-create-from-minimal.yml"
 
 - name: "Run the System Zone playbook"
-  ansible.builtin.import_playbook: "09-system-zone-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "10-system-zone-create-from-minimal.yml"
 
 - name: "Run the Firewall Addresses playbook"
-  ansible.builtin.import_playbook: "10-firewall-address-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "11-firewall-address-create-from-minimal.yml"
 
 - name: "Run the Services playbook"
-  ansible.builtin.import_playbook: "11-services-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "12-services-create-from-minimal.yml"
 
 - name: "Run the Static Routing playbook"
-  ansible.builtin.import_playbook: "12-static-route-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "13-static-route-create-from-minimal.yml"
 
 - name: "Run the System SDWAN playbook"
-  ansible.builtin.import_playbook: "13-system-sdwan-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "14-system-sdwan-create-from-minimal.yml"
 
 - name: "Run the Firewall Central SNAT playbook"
-  ansible.builtin.import_playbook: "14-firewall-central-snat-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "15-firewall-central-snat-create-from-minimal.yml"
 
 - name: "Run the LDAP playbook"
-  ansible.builtin.import_playbook: "15-ldap-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "16-ldap-create-from-minimal.yml"
 
 - name: "Run the Firewall Policy playbook"
-  ansible.builtin.import_playbook: "16-firewall-policy-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "17-firewall-policy-create-from-minimal.yml"
 
 - name: "Run the DHCP playbook"
-  ansible.builtin.import_playbook: "17-dhcp-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "18-dhcp-create-from-minimal.yml"
 
 - name: "Run the Syslog playbook"
-  ansible.builtin.import_playbook: "18-syslog-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "19-syslog-create-from-minimal.yml"
 
 - name: "Run the SNMP playbook"
-  ansible.builtin.import_playbook: "19-snmp-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "20-snmp-create-from-minimal.yml"
 
 - name: "Run the Firewall DOS Policy playbook"
-  ansible.builtin.import_playbook: "20-firewall-dos-policy-create-from-minimal.yml"
+  ansible.builtin.import_playbook: "21-firewall-dos-policy-create-from-minimal.yml"
