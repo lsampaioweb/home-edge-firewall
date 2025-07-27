@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Creating SNMP entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_snmp }}/create-from-backup.yml"
+      ansible.builtin.include_role:
+        name: "snmp"
+        tasks_from: "create-from-backup.yml"

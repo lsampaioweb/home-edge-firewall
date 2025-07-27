@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Backing up the SNMP settings"
-      ansible.builtin.include_tasks: "{{ path_role_snmp }}/backup.yml"
+      ansible.builtin.include_role:
+        name: "snmp"
+        tasks_from: "backup.yml"
