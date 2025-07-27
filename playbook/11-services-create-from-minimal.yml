@@ -3,5 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating custom services from minimal JSON"
-      ansible.builtin.include_tasks: "{{ path_role_services }}/create-from-minimal.yml"
+    - name: "Creating Services from minimal JSON"
+      ansible.builtin.include_role:
+        name: "services"
+        tasks_from: "create-from-minimal.yml"
