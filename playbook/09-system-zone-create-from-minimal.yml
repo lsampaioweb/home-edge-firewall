@@ -1,7 +1,9 @@
 ---
-- name: "System Zone settings from minimal config"
+- name: "System Zone settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating System Zone entries from minimal config"
-      ansible.builtin.include_tasks: "{{ path_role_system_zone }}/create-from-minimal.yml"
+    - name: "Creating System Zone from minimal JSON"
+      ansible.builtin.include_role:
+        name: "system_zone"
+        tasks_from: "create-from-minimal.yml"

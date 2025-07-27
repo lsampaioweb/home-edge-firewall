@@ -1,7 +1,9 @@
 ---
-- name: "System Zone settings from backup"
+- name: "System Zone settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating System Zone entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_system_zone }}/create-from-backup.yml"
+    - name: "Creating System Zone from backup"
+      ansible.builtin.include_role:
+        name: "system_zone"
+        tasks_from: "create-from-backup.yml"
