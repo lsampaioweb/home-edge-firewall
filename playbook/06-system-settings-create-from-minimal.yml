@@ -1,5 +1,5 @@
 ---
-- name: "Setting up the system settings"
+- name: "System settings"
   hosts: "firewalls"
 
   tasks:

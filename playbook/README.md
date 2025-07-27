@@ -198,13 +198,6 @@ Run these commands on the computer running Ansible:
     ansible-playbook 21-firewall-dos-policy-create-from-minimal.yml
     ```
 
-1. Backup and create Static Routes settings:
-    ```bash
-    ansible-playbook 22-static-route-backup.yml
-    ansible-playbook 22-static-route-create-from-backup.yml
-    ansible-playbook 22-static-route-create-from-minimal.yml
-    ```
-
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml
