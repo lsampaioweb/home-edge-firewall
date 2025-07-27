@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Setting up System Settings from backup"
-      ansible.builtin.include_tasks: "{{ path_role_system_settings }}/create-from-backup.yml"
+      ansible.builtin.include_role:
+        name: "system_settings"
+        tasks_from: "create-from-backup.yml"

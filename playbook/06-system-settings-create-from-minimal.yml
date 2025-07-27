@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Setting up System Settings from minimal JSON"
-      ansible.builtin.include_tasks: "{{ path_role_system_settings }}/create-from-minimal.yml"
+      ansible.builtin.include_role:
+        name: "system_settings"
+        tasks_from: "create-from-minimal.yml"
