@@ -1,0 +1,9 @@
+---
+- name: "Firewall DOS Policy settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall DOS Policy entries from backup"
+      ansible.builtin.include_role:
+        name: "firewall_dos_policy"
+        tasks_from: "create-from-backup.yml"

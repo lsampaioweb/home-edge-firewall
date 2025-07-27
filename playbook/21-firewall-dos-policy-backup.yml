@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Backing up the Firewall DOS Policy settings"
-      ansible.builtin.include_tasks: "{{ path_role_firewall_dos_policy }}/backup.yml"
+      ansible.builtin.include_role:
+        name: "firewall_dos_policy"
+        tasks_from: "backup.yml"
