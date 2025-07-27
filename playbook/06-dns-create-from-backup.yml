@@ -3,5 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating DNS entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_dns }}/create-from-backup.yml"
+    - name: "Creating DNS from backup"
+      ansible.builtin.include_role:
+        name: "dns"
+        tasks_from: "create-from-backup.yml"

@@ -3,5 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating DNS entries from minimal JSON"
-      ansible.builtin.include_tasks: "{{ path_role_dns }}/create-from-minimal.yml"
+    - name: "Creating DNS from minimal JSON"
+      ansible.builtin.include_role:
+        name: "dns"
+        tasks_from: "create-from-minimal.yml"
