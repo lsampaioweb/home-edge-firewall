@@ -1,0 +1,9 @@
+---
+- name: "Syslog settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Syslog entries from minimal JSON"
+      ansible.builtin.include_role:
+        name: "syslog"
+        tasks_from: "create-from-minimal.yml"

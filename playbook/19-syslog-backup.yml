@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Backing up the Syslog settings"
-      ansible.builtin.include_tasks: "{{ path_role_syslog }}/backup.yml"
+      ansible.builtin.include_role:
+        name: "syslog"
+        tasks_from: "backup.yml"

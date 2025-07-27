@@ -1,7 +1,0 @@
----
-- name: "Syslog settings"
-  hosts: "firewalls"
-
-  tasks:
-    - name: "Creating Syslog entries"
-      ansible.builtin.include_tasks: "{{ path_role_syslog }}/create.yml"
