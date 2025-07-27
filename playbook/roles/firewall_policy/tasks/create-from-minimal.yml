@@ -1,0 +1,13 @@
+---
+- name: "Retrieving the backup files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
+  vars:
+    paths: "{{ backup_firewall_policy_path }}"
+    patterns: "{{ minimal_files_extention }}"
+
+- name: "Creating a Firewall Policy entry"
+  ansible.builtin.include_tasks: "add-entry.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"

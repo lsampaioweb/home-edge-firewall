@@ -1,0 +1,9 @@
+---
+- name: "Firewall Policy settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating Firewall Policy entries from minimal JSON"
+      ansible.builtin.include_role:
+        name: "firewall_policy"
+        tasks_from: "create-from-minimal.yml"
