@@ -1,7 +1,9 @@
 ---
-- name: "Firewall addresses settings"
+- name: "Firewall Address settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Backing up the Firewall addresses settings"
-      ansible.builtin.include_tasks: "{{ path_role_firewall_address }}/backup.yml"
+    - name: "Backing up the Firewall Address settings"
+      ansible.builtin.include_role:
+        name: "firewall_address"
+        tasks_from: "backup.yml"

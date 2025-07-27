@@ -1,7 +1,9 @@
 ---
-- name: "Firewall addresses settings from minimal config"
+- name: "Firewall Address settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating Firewall addresses entries from minimal config"
-      ansible.builtin.include_tasks: "{{ path_role_firewall_address }}/create-from-minimal.yml"
+    - name: "Creating Firewall Address from minimal JSON"
+      ansible.builtin.include_role:
+        name: "firewall_address"
+        tasks_from: "create-from-minimal.yml"
