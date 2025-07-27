@@ -1,0 +1,9 @@
+---
+- name: "DHCP settings"
+  hosts: "firewalls"
+
+  tasks:
+    - name: "Creating DHCP entries from backup"
+      ansible.builtin.include_role:
+        name: "dhcp"
+        tasks_from: "create-from-backup.yml"
