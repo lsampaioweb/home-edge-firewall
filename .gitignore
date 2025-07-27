@@ -3,10 +3,11 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+.ansible
+.vscode
 
 # Backup files
 *.bkp
 *.conf
-.ansible
 *.crt
 *.key
