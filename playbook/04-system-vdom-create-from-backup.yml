@@ -3,7 +3,7 @@
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating System VDOM entries from backup"
+    - name: "Creating VDOM from backup"
       ansible.builtin.include_role:
         name: "system_vdom"
         tasks_from: "create-from-backup.yml"
