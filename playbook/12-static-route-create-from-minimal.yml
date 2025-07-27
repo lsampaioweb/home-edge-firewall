@@ -1,7 +1,9 @@
 ---
-- name: "Static Routing settings from minimal config"
+- name: "Static Route settings"
   hosts: "firewalls"
 
   tasks:
-    - name: "Creating Static Routing entries from minimal config"
-      ansible.builtin.include_tasks: "{{ path_role_static_routing }}/create-from-minimal.yml"
+    - name: "Creating Static Route from minimal JSON"
+      ansible.builtin.include_role:
+        name: "static_route"
+        tasks_from: "create-from-minimal.yml"
