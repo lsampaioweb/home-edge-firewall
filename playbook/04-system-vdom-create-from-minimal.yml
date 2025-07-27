@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Creating System VDOM entries from minimal JSON"
-      ansible.builtin.include_tasks: "{{ path_role_system_vdom }}/create-from-minimal.yml"
+      ansible.builtin.include_role:
+        name: "system_vdom"
+        tasks_from: "create-from-minimal.yml"

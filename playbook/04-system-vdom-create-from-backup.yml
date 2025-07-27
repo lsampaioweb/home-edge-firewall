@@ -4,4 +4,6 @@
 
   tasks:
     - name: "Creating System VDOM entries from backup"
-      ansible.builtin.include_tasks: "{{ path_role_system_vdom }}/create-from-backup.yml"
+      ansible.builtin.include_role:
+        name: "system_vdom"
+        tasks_from: "create-from-backup.yml"
