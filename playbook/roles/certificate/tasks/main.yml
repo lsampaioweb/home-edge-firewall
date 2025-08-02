@@ -1,16 +1,39 @@
 ---
-- name: "Uploading the local SSL certificate to the firewall"
+- name: "Switch to temporary certificate to unlock current admin certificate"
+  fortinet.fortios.fortios_system_global:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_global:
+      admin_server_cert: "{{ temp_certificate_name }}"
+
+- name: "Delete existing certificate if it exists"
   fortinet.fortios.fortios_certificate_local:
     vdom: "{{ vdom | default(omit, true) }}"
-    state: "present"
+    state: "absent"
     certificate_local:
-      range: "global"
-      source: "user"
       name: "{{ certificate_name }}"
-      certificate: "{{ lookup('file', certificate_file) }}"
-      private_key: "{{ lookup('file', private_key_file) }}"
+  register: delete_cert_result
+  failed_when: delete_cert_result.failed and
+               ('not found' not in (delete_cert_result.msg | default('')) and
+                'does not exist' not in (delete_cert_result.msg | default('')))
+
+- name: "Import SSL certificate using monitor API"
+  fortinet.fortios.fortios_monitor:
+    vdom: "{{ vdom | default(omit, true) }}"
+    selector: "import.vpn-certificate.local"
+    params:
+      scope: "global"
+      type: "regular"
+      certname: "{{ certificate_name }}"
+      file_content: "{{ lookup('file', certificate_file) | b64encode }}"
+      key_file_content: "{{ lookup('file', private_key_file) | b64encode }}"
       password: "{{ ssl_password }}"
   register: "output"
+
+- name: "Switch admin interface to use new certificate"
+  fortinet.fortios.fortios_system_global:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_global:
+      admin_server_cert: "{{ certificate_name }}"
 
 - name: "Debug"
   ansible.builtin.debug:

@@ -1,5 +1,6 @@
 ---
-certificate_name: "edge-firewall-ssl-2025"
+certificate_name: "edge-firewall-2025"
+temp_certificate_name: "Fortinet_Factory"
 
 ssl_path: "ssl"
 certificate_base_name: "edge-firewall-01.lan.homelab"

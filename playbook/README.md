@@ -81,6 +81,11 @@ Run these commands on the computer running Ansible:
     ansible-playbook 04-system-vdom-create-from-minimal.yml
     ```
 
+1. Configure the ACME client to use a custom Certificate Authority (e.g., HCP Vault):
+    ```bash
+    ansible-playbook 05-certificate-acme.yml
+    ```
+
 1. Upload SSL certificate to the firewall:
     ```bash
     ansible-playbook 05-certificate-upload.yml
@@ -196,11 +201,6 @@ Run these commands on the computer running Ansible:
     ansible-playbook 21-firewall-dos-policy-backup.yml
     ansible-playbook 21-firewall-dos-policy-create-from-backup.yml
     ansible-playbook 21-firewall-dos-policy-create-from-minimal.yml
-    ```
-
-1. Configure the ACME client to use a custom Certificate Authority (e.g., HCP Vault):
-    ```bash
-    ansible-playbook 22-acme.yml
     ```
 
 1. Run all other playbooks in one execution:
