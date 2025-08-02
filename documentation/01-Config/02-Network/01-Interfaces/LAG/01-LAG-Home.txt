@@ -13,7 +13,6 @@ Address:
 Administrative Access:
   HTTPS                       : Checked
   PING                        : Checked
-  SSH                         : Checked (Only if/when necessary)
   Security Fabric Connection  : Checked
 
   Receive LLDP  : Use VDOM Setting
@@ -44,7 +43,7 @@ Advanced:
     end
 
 Network:
-  Device detection                : Checked
+  Device detection                : Unchecked
   Automatically authorize devices : Unchecked
   Security mode                   : Unchecked
 

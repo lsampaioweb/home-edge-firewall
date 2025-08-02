@@ -13,7 +13,7 @@ Address:
   Transmit LLDP : Use VDOM Setting
 
 Network:
-  Device detection : Checked
+  Device detection : Unchecked
   Security mode    : Unchecked
 
 Miscellaneous:
