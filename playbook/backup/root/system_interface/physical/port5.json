@@ -1,0 +1,6 @@
+{
+  "name": "port5",
+  "type": "physical",
+  "role": "lan",
+  "status": "up"
+}

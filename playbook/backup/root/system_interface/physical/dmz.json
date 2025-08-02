@@ -1,0 +1,6 @@
+{
+  "name": "dmz",
+  "type": "physical",
+  "role": "dmz",
+  "status": "down"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ha",
+  "type": "physical",
+  "role": "ha",
+  "status": "down"
+}
