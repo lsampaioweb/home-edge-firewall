@@ -1,0 +1,36 @@
+{
+  "name": "Zone-Homelab",
+  "intrazone": "deny",
+  "interface": [
+    {
+      "interface_name": "VL-HL-MGMT"
+    },
+    {
+      "interface_name": "VL-HL-CORE"
+    },
+    {
+      "interface_name": "VL-HL-LDAP"
+    },
+    {
+      "interface_name": "VL-HL-PROXY"
+    },
+    {
+      "interface_name": "VL-HL-BACKUP"
+    },
+    {
+      "interface_name": "VL-HL-REPOSITORY"
+    },
+    {
+      "interface_name": "VL-HL-TEMPLATE"
+    },
+    {
+      "interface_name": "VL-HL-JUMPSERVER"
+    },
+    {
+      "interface_name": "VL-HL-LOADBALANCER"
+    },
+    {
+      "interface_name": "VL-HL-MONITOR"
+    }
+  ]
+}
