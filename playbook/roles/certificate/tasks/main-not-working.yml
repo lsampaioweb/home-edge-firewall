@@ -3,11 +3,28 @@
   ansible.builtin.debug:
     msg:
       - "name         : {{ certificate_name }}"
-      # - "certificate  : {{ lookup('file', certificate_file) | b64encode }}"
-      # - "private_key  : {{ lookup('file', private_key_file) | b64encode }}"
+      # - "certificate  : {{ lookup('file', certificate_file) }}"
+      # - "private_key  : {{ lookup('file', private_key_file) }}"
   tags: ["never", "debug"]
 
-- name: "Uploading the local SSL certificate to the firewall"
+- name: "Switching to temporary certificate to unlock current admin certificate"
+  fortinet.fortios.fortios_system_global:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_global:
+      admin_server_cert: "{{ temp_certificate_name }}"
+
+- name: "Deleting existing certificate if it exists"
+  fortinet.fortios.fortios_certificate_local:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "absent"
+    certificate_local:
+      name: "{{ certificate_name }}"
+  register: delete_cert_result
+  failed_when: delete_cert_result.failed and
+               ('not found' not in (delete_cert_result.msg | default('')) and
+                'does not exist' not in (delete_cert_result.msg | default('')))
+
+- name: "Uploading the local SSL certificate using native module"
   fortinet.fortios.fortios_certificate_local:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
@@ -19,6 +36,12 @@
       private_key: "{{ lookup('file', private_key_file) | b64encode }}"
       password: "{{ ssl_password }}"
   register: "output"
+
+- name: "Switching admin interface to use new certificate"
+  fortinet.fortios.fortios_system_global:
+    vdom: "{{ vdom | default(omit, true) }}"
+    system_global:
+      admin_server_cert: "{{ certificate_name }}"
 
 - name: "Debug"
   ansible.builtin.debug:
