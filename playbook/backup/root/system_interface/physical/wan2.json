@@ -1,0 +1,16 @@
+{
+  "name": "wan2",
+  "type": "physical",
+  "alias": "Claro",
+  "role": "wan",
+  "estimated-downstream-bandwidth": 100000,
+  "estimated-upstream-bandwidth": 500000,
+  "mode": "dhcp",
+  "defaultgw": "enable",
+  "distance": 5,
+  "dns-server-override": "enable",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "monitor-bandwidth": "enable",
+  "status": "up"
+}
