@@ -1,0 +1,18 @@
+{
+  "id": 50,
+  "status": "enable",
+  "interface": "VL-HI-LOADBALANCER",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.1.50.2",
+      "end_ip": "10.1.50.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.1.50.1",
+  "dns-server1": "10.1.50.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

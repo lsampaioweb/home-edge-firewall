@@ -1,0 +1,18 @@
+{
+  "id": 130,
+  "status": "enable",
+  "interface": "VL-HL-BACKUP",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.2.130.2",
+      "end_ip": "10.2.130.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.2.130.1",
+  "dns-server1": "10.2.130.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

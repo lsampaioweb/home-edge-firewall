@@ -1,0 +1,18 @@
+{
+  "id": 125,
+  "status": "enable",
+  "interface": "VL-HL-PROXY",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.2.125.2",
+      "end_ip": "10.2.125.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.2.125.1",
+  "dns-server1": "10.2.125.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

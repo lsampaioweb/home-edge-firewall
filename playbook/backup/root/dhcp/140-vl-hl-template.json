@@ -1,0 +1,18 @@
+{
+  "id": 140,
+  "status": "enable",
+  "interface": "VL-HL-TEMPLATE",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.2.140.2",
+      "end_ip": "10.2.140.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.2.140.1",
+  "dns-server1": "10.2.140.1",
+  "lease_time": 600,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

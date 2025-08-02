@@ -1,0 +1,18 @@
+{
+  "id": 20,
+  "status": "enable",
+  "interface": "VL-HI-LDAP",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.1.20.2",
+      "end_ip": "10.1.20.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.1.20.1",
+  "dns-server1": "10.1.20.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": 10,
+  "status": "enable",
+  "interface": "VL-HI-MGMT",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.1.10.2",
+      "end_ip": "10.1.10.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.1.10.1",
+  "dns-server1": "10.1.10.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": []
+}

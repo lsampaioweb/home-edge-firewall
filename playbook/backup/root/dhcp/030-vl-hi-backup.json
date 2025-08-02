@@ -1,0 +1,27 @@
+{
+  "id": 30,
+  "status": "enable",
+  "interface": "VL-HI-BACKUP",
+  "ip_range": [
+    {
+      "id": 1,
+      "start_ip": "10.1.30.2",
+      "end_ip": "10.1.30.14"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "default-gateway": "10.1.30.1",
+  "dns-server1": "10.1.30.1",
+  "lease_time": 604800,
+  "domain": "lan.homelab",
+  "reserved_address": [
+    {
+      "action": "reserved",
+      "description": "",
+      "id": 1,
+      "ip": "10.1.30.2",
+      "mac": "5a:53:76:31:af:8b",
+      "type": "mac"
+    }
+  ]
+}
