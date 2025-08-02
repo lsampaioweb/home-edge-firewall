@@ -1,0 +1,20 @@
+{
+  "name": "SS-HI-VMS",
+  "type": "switch",
+  "member": [
+    {
+      "interface-name": "LAG-HI-VMS-01"
+    },
+    {
+      "interface-name": "LAG-HI-VMS-02"
+    }
+  ],
+  "role": "lan",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "mode": "static",
+  "status": "up"
+}

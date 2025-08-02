@@ -1,0 +1,21 @@
+{
+  "name": "SS-HI-CLSTR",
+  "type": "switch",
+  "member": [
+    {
+      "interface-name": "LAG-HI-CLSTR-01"
+    },
+    {
+      "interface-name": "LAG-HI-CLSTR-02"
+    }
+  ],
+  "role": "lan",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "security-mode": "none",
+  "mode": "static",
+  "status": "up"
+}

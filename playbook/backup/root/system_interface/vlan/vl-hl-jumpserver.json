@@ -1,0 +1,15 @@
+{
+  "name": "VL-HL-JUMPSERVER",
+  "type": "vlan",
+  "vlanid": 145,
+  "interface": "LAG-Homelab",
+  "role": "lan",
+  "ip": "10.2.145.1 255.255.255.240",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "security-mode": "none",
+  "status": "up"
+}

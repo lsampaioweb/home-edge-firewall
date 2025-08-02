@@ -1,19 +1,17 @@
 {
-  "name": "LAG-Home",
+  "name": "LAG-Homelab",
   "type": "aggregate",
   "member": [
     {
-      "interface-name": "port1"
+      "interface-name": "port12"
     }
   ],
   "role": "lan",
-  "ip": "192.168.2.1 255.255.255.0",
-  "allowaccess": "https ping fabric",
+  "ip": "0.0.0.0 0.0.0.0",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
   "lacp-mode": "static",
   "device-identification": "disable",
-  "device-user-identification": "disable",
   "security-mode": "none",
   "status": "up"
 }

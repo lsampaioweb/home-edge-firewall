@@ -1,0 +1,11 @@
+{
+  "name": "INT-loopback",
+  "type": "loopback",
+  "role": "lan",
+  "ip": "172.16.1.1 255.255.255.255",
+  "allowaccess": "ping snmp fabric",
+  "device-identification": "disable",
+  "security-mode": "none",
+  "description": "Interface that can be used for NTP, SNMP and others",
+  "status": "up"
+}

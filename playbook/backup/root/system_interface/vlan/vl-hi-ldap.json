@@ -1,0 +1,15 @@
+{
+  "name": "VL-HI-LDAP",
+  "type": "vlan",
+  "vlanid": 20,
+  "interface": "SS-HI-VMS",
+  "role": "lan",
+  "ip": "10.1.20.1 255.255.255.240",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "security-mode": "none",
+  "status": "up"
+}

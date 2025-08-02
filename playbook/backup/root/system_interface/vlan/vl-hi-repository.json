@@ -1,0 +1,15 @@
+{
+  "name": "VL-HI-REPOSITORY",
+  "type": "vlan",
+  "vlanid": 35,
+  "interface": "SS-HI-VMS",
+  "role": "lan",
+  "ip": "10.1.35.1 255.255.255.240",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "security-mode": "none",
+  "status": "up"
+}

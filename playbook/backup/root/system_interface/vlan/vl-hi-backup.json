@@ -1,0 +1,15 @@
+{
+  "name": "VL-HI-BACKUP",
+  "type": "vlan",
+  "vlanid": 30,
+  "interface": "SS-HI-VMS",
+  "role": "lan",
+  "ip": "10.1.30.1 255.255.255.240",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "security-mode": "none",
+  "status": "up"
+}

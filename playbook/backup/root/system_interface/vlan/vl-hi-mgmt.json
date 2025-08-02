@@ -1,0 +1,15 @@
+{
+  "name": "VL-HI-MGMT",
+  "type": "vlan",
+  "vlanid": 10,
+  "interface": "SS-HI-CLSTR",
+  "role": "lan",
+  "ip": "10.1.10.1 255.255.255.240",
+  "allowaccess": "ping fabric",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "security-mode": "none",
+  "status": "up"
+}
