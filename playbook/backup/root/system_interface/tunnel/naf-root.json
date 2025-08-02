@@ -1,0 +1,19 @@
+{
+  "name": "naf.root",
+  "type": "tunnel",
+  "role": "undefined",
+  "ip": "0.0.0.0 0.0.0.0",
+  "allowaccess": "",
+  "defaultgw": "enable",
+  "distance": 5,
+  "dns-server-override": "enable",
+  "device-identification": "disable",
+  "device-user-identification": "enable",
+  "lldp-reception": "vdom",
+  "lldp-transmission": "vdom",
+  "mode": "static",
+  "monitor-bandwidth": "disable",
+  "security-mode": "none",
+  "src-check": "disable",
+  "status": "up"
+}
