@@ -1,11 +1,11 @@
 {
-  "name": "Printer-HP-2675",
+  "name": "Impressora-hp-2874",
   "type": "mac",
   "comment": "Ansible",
   "associated_interface": "Zone-Home",
   "macaddr": [
     {
-      "macaddr": "48:ba:4e:08:d8:4e"
+      "macaddr": "24:6a:0e:b0:4c:77"
     }
   ]
 }
