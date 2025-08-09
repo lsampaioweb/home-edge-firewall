@@ -1,0 +1,33 @@
+{
+  "policyid": 1,
+  "name": "Block-Device-TV",
+  "srcintf": [
+    {
+      "name": "Zone-Home"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "SD-WAN"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "Block-Device-01"
+    }
+  ],
+  "dstaddr": [
+    {
+      "name": "all"
+    }
+  ],
+  "schedule": "always",
+  "service": [
+    {
+      "name": "ALL"
+    }
+  ],
+  "action": "deny",
+  "logtraffic": "all",
+  "status": "enable"
+}

@@ -1,0 +1,33 @@
+{
+  "policyid": 2,
+  "name": "Home-To-Internet",
+  "srcintf": [
+    {
+      "name": "Zone-Home"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "SD-WAN"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "LAG-Home address"
+    }
+  ],
+  "dstaddr": [
+    {
+      "name": "all"
+    }
+  ],
+  "schedule": "always",
+  "service": [
+    {
+      "name": "ALL"
+    }
+  ],
+  "action": "accept",
+  "logtraffic": "all",
+  "status": "enable"
+}
