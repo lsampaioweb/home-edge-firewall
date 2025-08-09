@@ -3,8 +3,8 @@
   ansible.builtin.debug:
     msg:
       - "name         : {{ certificate_name }}"
-      # - "certificate  : {{ lookup('file', certificate_file) }}"
-      # - "private_key  : {{ lookup('file', private_key_file) }}"
+      # - "certificate  : {{ lookup('file', certificate_file) | b64encode }}"
+      # - "private_key  : {{ lookup('file', private_key_file) | b64encode }}"
   tags: ["never", "debug"]
 
 - name: "Switching to temporary certificate to unlock current admin certificate"
@@ -24,16 +24,16 @@
                ('not found' not in (delete_cert_result.msg | default('')) and
                 'does not exist' not in (delete_cert_result.msg | default('')))
 
-- name: "Uploading the local SSL certificate using native module"
-  fortinet.fortios.fortios_certificate_local:
+- name: "Uploading the local SSL certificate using monitor API"
+  fortinet.fortios.fortios_monitor:
     vdom: "{{ vdom | default(omit, true) }}"
-    state: "present"
-    certificate_local:
-      range: "global"
-      source: "user"
-      name: "{{ certificate_name }}"
-      certificate: "{{ lookup('file', certificate_file) | b64encode }}"
-      private_key: "{{ lookup('file', private_key_file) | b64encode }}"
+    selector: "import.vpn-certificate.local"
+    params:
+      scope: "global"
+      type: "regular"
+      certname: "{{ certificate_name }}"
+      file_content: "{{ lookup('file', certificate_file) | b64encode }}"
+      key_file_content: "{{ lookup('file', private_key_file) | b64encode }}"
       password: "{{ ssl_password }}"
   register: "output"
 
