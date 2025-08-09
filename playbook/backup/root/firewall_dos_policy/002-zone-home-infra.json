@@ -1,8 +1,8 @@
 {
-  "policyid": 3,
+  "policyid": 2,
   "status": "enable",
-  "name": "Claro",
-  "interface": "wan2",
+  "name": "Zone-Home-Infra",
+  "interface": "Zone-Home-Infra",
   "srcaddr": [
     {
       "name": "all"
@@ -52,7 +52,7 @@
       "action": "pass",
       "log": "enable",
       "status": "enable",
-      "threshold": 25000
+      "threshold": 2000
     },
     {
       "name": "udp_scan",
@@ -80,7 +80,7 @@
       "action": "pass",
       "log": "enable",
       "status": "enable",
-      "threshold": 300
+      "threshold": 250
     },
     {
       "name": "icmp_sweep",
