@@ -2,6 +2,7 @@
 - name: "Setting up the control machine to run Ansible scripts"
   hosts: "ControlMachine"
   become: true
+  gather_facts: true
 
   roles:
     - "control_machine"

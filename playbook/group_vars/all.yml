@@ -6,12 +6,19 @@ domain: "lan.homelab"
 path_roles_common: "roles/common"
 path_common_tasks: "{{ path_roles_common }}/tasks"
 path_tasks_debian: "{{ path_common_tasks }}/debian"
+path_tasks_darwin: "{{ path_common_tasks }}/darwin"
 
 # Packages.
 path_debian_packages: "{{ path_tasks_debian }}/packages"
 path_packages_apt: "{{ path_debian_packages }}/apt.yml"
 path_packages_pipx: "{{ path_debian_packages }}/pipx.yml"
 path_packages_ansible_galaxy: "{{ path_debian_packages }}/ansible-galaxy.yml"
+
+# Darwin (macOS) Packages.
+path_darwin_packages: "{{ path_tasks_darwin }}/packages"
+path_packages_homebrew: "{{ path_darwin_packages }}/homebrew.yml"
+path_packages_pipx_darwin: "{{ path_darwin_packages }}/pipx.yml"
+path_packages_ansible_galaxy_darwin: "{{ path_darwin_packages }}/ansible-galaxy.yml"
 
 # Import Common Firewall Paths.
 path_roles_common_firewall: "roles/common_firewall"

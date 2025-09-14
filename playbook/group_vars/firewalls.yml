@@ -8,21 +8,21 @@ ssl_password_id: "{{ inventory_hostname_without_domain ~ '-ssl-password' }}"
 
 # The password of the user that will connect.
 # Ubuntu.
-ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ansible_password_id) }}"
+# ansible_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ansible_password_id) }}"
 # MacOS.
-# ansible_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + ansible_password_id) }}"
+ansible_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + ansible_password_id) }}"
 
 # The password that Zabbix will use to collect events and metrics from the firewall.
 # Ubuntu.
-snmp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + snmp_password_id) }}"
+# snmp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + snmp_password_id) }}"
 # MacOS.
-# snmp_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + snmp_password_id) }}"
+snmp_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + snmp_password_id) }}"
 
 # The password of the SSL certificate that will be uploaded to the firewall.
 # Ubuntu.
-ssl_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ssl_password_id) }}"
+# ssl_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ssl_password_id) }}"
 # MacOS.
-# ssl_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + ssl_password_id) }}"
+ssl_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + ssl_password_id) }}"
 
 search_keywork: "ansible"
 invalid_attribute: "q_origin_key"

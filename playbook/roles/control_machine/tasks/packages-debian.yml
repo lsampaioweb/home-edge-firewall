@@ -1,0 +1,23 @@
+---
+- name: "Ensure apt packages are installed"
+  ansible.builtin.include_tasks: "{{ path_packages_apt }}"
+  vars:
+    update_cache: true
+    upgrade: "safe"
+    packages:
+      - {name: "pipx"} # A tool for installing and managing Python packages.
+      - {name: "python-is-python3"}
+
+- name: "Installing pipx packages"
+  ansible.builtin.include_tasks: "{{ path_packages_pipx }}"
+  vars:
+    packages:
+      - {name: "ansible", install_deps: true}
+      - {name: "ansible-lint"}
+
+- name: "Ensure Ansible Galaxy collections are installed"
+  ansible.builtin.include_tasks: "{{ path_packages_ansible_galaxy }}"
+  vars:
+    packages:
+      - {name: "community.general"} # To use community.general modules.
+      - {name: "fortinet.fortios"} # To work with Fortigate.
