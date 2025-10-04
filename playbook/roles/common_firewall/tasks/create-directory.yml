@@ -1,5 +1,6 @@
 ---
 - name: "Ensure the directory: '{{ path }}' exists"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
   ansible.builtin.file:
     path: "{{ path }}"
     state: "directory"

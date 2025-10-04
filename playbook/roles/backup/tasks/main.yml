@@ -13,12 +13,14 @@
   tags: ["never", "debug"]
 
 - name: "Ensure the backup directory exists"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
   ansible.builtin.file:
     path: "{{ backup_global_config_path }}"
     state: "directory"
     mode: "0755"
 
 - name: "Saving the settings in a local file"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
   ansible.builtin.copy:
     content: "{{ data.meta.raw }}"
     dest: "{{ backup_global_config_path }}/{{ data_format }}.{{ backup_extention }}"
@@ -27,12 +29,14 @@
     data_format: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}"
 
 - name: "Retrieving the amount of backup files"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
   ansible.builtin.find:
     paths: "{{ backup_global_config_path }}"
     patterns: "*.{{ backup_extention }}"
   register: "backup_files"
 
 - name: "Removing old backup files"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
   ansible.builtin.file:
     path: "{{ item.path }}"
     state: "absent"
