@@ -1,0 +1,35 @@
+---
+- name: "Fetching all Syslog entries"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "log_setting"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_syslog_path }}"
+
+# - name: "Saving the Syslog settings in a local file"
+#   ansible.builtin.copy:
+#     content: "{{ line | to_nice_json(indent=2) }}"
+#     dest: "{{ backup_syslog_path }}/{{ file }}"
+#     mode: "0644"
+#   vars:
+#     line: >
+#       {{ (data.meta.results
+#       | ansible.utils.remove_keys(target=[invalid_attribute])
+#       | ansible.utils.replace_keys(target=[
+#         {'before': 'custom-field-name'        , 'after': 'custom_field_name'},
+#         {'before': 'enc-algorithm'            , 'after': 'enc_algorithm'},
+#         {'before': 'interface-select-method'  , 'after': 'interface_select_method'},
+#         {'before': 'max-log-rate'             , 'after': 'max_log_rate'},
+#         {'before': 'source-ip'                , 'after': 'source_ip'},
+#         {'before': 'ssl-min-proto-version'    , 'after': 'ssl_min_proto_version'},
+#         {'before': 'syslog-type'              , 'after': 'syslog_type'}
+#       ])) }}
+#     file: "{{ ((data.meta.results.server | replace(' ', '-')) + '.' + backup_extention) | lower }}"
