@@ -10,38 +10,38 @@
   "dns_entry": [
     {
       "type": "A",
-      "hostname": "edge-firewall-01",
+      "hostname": "firewall-01",
       "ip": "192.168.2.1",
       "status": "enable"
     },
     {
       "type": "PTR",
-      "hostname": "edge-firewall-01",
+      "hostname": "firewall-01",
       "ip": "192.168.2.1",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-firewall-01-loopback",
+      "hostname": "firewall-01-loopback",
       "ip": "172.16.1.1",
       "status": "enable"
     },
     {
       "type": "PTR",
-      "hostname": "edge-firewall-01-loopback",
+      "hostname": "firewall-01-loopback",
       "ip": "172.16.1.1",
       "status": "enable"
     },
     {
       "type": "CNAME",
-      "hostname": "edge-firewall-01-snmp",
-      "canonical_name": "edge-firewall-01-loopback",
+      "hostname": "firewall-01-snmp",
+      "canonical_name": "firewall-01-loopback",
       "status": "enable"
     },
     {
       "type": "CNAME",
       "hostname": "ntp-pool",
-      "canonical_name": "edge-firewall-01-loopback",
+      "canonical_name": "firewall-01-loopback",
       "status": "enable"
     },
     {

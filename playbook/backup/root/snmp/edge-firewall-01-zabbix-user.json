@@ -1,7 +1,7 @@
 {
   "auth_proto": "sha256",
   "events": "cpu-high mem-low log-full intf-ip ips-signature ips-anomaly av-virus av-oversize av-pattern av-fragmented fm-if-change bgp-established bgp-backward-transition ent-conf-change av-conserve av-bypass av-oversize-passed av-oversize-blocked ips-pkg-update ips-fail-open faz-disconnect wc-ap-up wc-ap-down fswctl-session-up fswctl-session-down load-balance-real-server-down per-cpu-high dhcp pool-usage ospf-nbr-state-change ospf-virtnbr-state-change",
-  "name": "edge-firewall-01-zabbix-user",
+  "name": "firewall-01-zabbix-user",
   "notify_hosts": "192.168.5.3",
   "priv_proto": "aes256",
   "queries": "enable",

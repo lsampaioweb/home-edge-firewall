@@ -1,9 +1,9 @@
 ---
-certificate_name: "edge-firewall-2025"
+certificate_name: "firewall-2025"
 temp_certificate_name: "Fortinet_Factory"
 
 ssl_path: "ssl"
-certificate_base_name: "edge-firewall-01.lan.homelab"
+certificate_base_name: "firewall-01.lan.homelab"
 
 certificate_file: "{{ ssl_path ~ '/' ~ certificate_base_name }}.crt"
 private_key_file: "{{ ssl_path ~ '/' ~ certificate_base_name }}.key"

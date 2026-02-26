@@ -1,25 +1,25 @@
 DNS Entries
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-firewall-01
+  Hostname                            : firewall-01
   IP Address                          : 192.168.2.1
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-firewall-01-loopback
+  Hostname                            : firewall-01-loopback
   IP Address                          : 172.16.1.1
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Canonical Name (CNAME)
-  Hostname                            : edge-firewall-01-snmp
-  Canonical Name (CNAME)              : edge-firewall-01-loopback
+  Hostname                            : firewall-01-snmp
+  Canonical Name (CNAME)              : firewall-01-loopback
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Canonical Name (CNAME)
   Hostname                            : ntp-pool
-  Canonical Name (CNAME)              : edge-firewall-01-loopback
+  Canonical Name (CNAME)              : firewall-01-loopback
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 

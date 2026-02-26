@@ -5,47 +5,47 @@ Run these commands on the computer running Ansible:
 1. Save the password for each Fortigate in the secret manager.
 
     - This is necessary to avoid putting any credentials in the source code.
-    - For example, to save the password for 'edge-firewall':
+    - For example, to save the password for 'firewall':
     ```bash
-    secret-tool store --label="edge-firewall-admin-password" password "edge-firewall-admin-password"
+    secret-tool store --label="firewall-admin-password" password "firewall-admin-password"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "edge-firewall-admin-password"
+    secret-tool lookup password "firewall-admin-password"
     ```
 
 1. Save the password that Zabbix will use to collect events and metrics from the firewall.
 
     ```bash
-    secret-tool store --label="edge-firewall-zabbix-password" password "edge-firewall-zabbix-password"
+    secret-tool store --label="firewall-zabbix-password" password "firewall-zabbix-password"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "edge-firewall-zabbix-password"
+    secret-tool lookup password "firewall-zabbix-password"
     ```
 
 1. Save the password that SNMP clients will use to connect to the firewall.
 
     ```bash
-    secret-tool store --label="edge-firewall-snmp-password" password "edge-firewall-snmp-password"
+    secret-tool store --label="firewall-snmp-password" password "firewall-snmp-password"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "edge-firewall-snmp-password"
+    secret-tool lookup password "firewall-snmp-password"
     ```
 
 1. Save the password for the private key of the SSL certificate used by the firewall admin interface.
 
     ```bash
-    secret-tool store --label="edge-firewall-ssl-password" password "edge-firewall-ssl-password"
+    secret-tool store --label="firewall-ssl-password" password "firewall-ssl-password"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "edge-firewall-ssl-password"
+    secret-tool lookup password "firewall-ssl-password"
     ```
 
 1. This repository have git submodule, run this command to download all of them:

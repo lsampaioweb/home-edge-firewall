@@ -1,5 +1,5 @@
 System Settings:
-  Host name                       : edge-firewall-01
+  Host name                       : firewall-01
   Time zone                       : (GMT-3:00 Brasilia)
   Set Time                        : NTP
   Select server                   : FortiGuard
@@ -11,7 +11,7 @@ Administration Settings:
   HTTP port               : 80
   Redirect to HTTPS       : Checked
   HTTPS port              : 443
-  HTTPS server certificate: edge-firewall-ssl
+  HTTPS server certificate: firewall-ssl
   SSH port                : 22
 
 Password Policy:
@@ -34,14 +34,14 @@ Email Service:
   Port                : specify : 587
   Authentication      : Checked
   Username            : lsampaioweb@gmail.com
-  Password            : KeyChain Key: "lsampaio-edge-firewall-smtp-password"
+  Password            : KeyChain Key: "lsampaio-firewall-smtp-password"
   Security Mode       : starttls
   Default Reply to    : lsampaioweb@gmail.com
 
 CLI:
 config alertemail setting
   set username "lsampaioweb@gmail.com"
-  set mailto1 "lsampaioweb+edge-firewall-01-alerts@gmail.com"
+  set mailto1 "lsampaioweb+firewall-01-alerts@gmail.com"
   set configuration-changes-logs enable
   set firewall-authentication-failure-logs enable
   set sslvpn-authentication-errors-logs enable
