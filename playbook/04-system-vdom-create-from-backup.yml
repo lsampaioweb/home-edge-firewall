@@ -1,6 +1,7 @@
 ---
 - name: "System VDOM settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating VDOM from backup"

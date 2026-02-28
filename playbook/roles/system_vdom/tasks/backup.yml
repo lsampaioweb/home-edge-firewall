@@ -5,9 +5,9 @@
     selector: "system_vdom"
 
 - name: "Debug"
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ data }}"
-  tags: ["never", "debug"]
 
 - name: "Ensure the backup directory exists"
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
