@@ -1,12 +1,12 @@
 ---
 - name: "Reading the json file '{{ file.path }}' that contains the desired settings"
   ansible.builtin.set_fact:
-    desired_settings: "{{ lookup('file', file.path) }}"
+    desired_settings: "{{ lookup('file', file.path) | from_json }}"
 
 - name: "Printing the desired settings json object"
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ desired_settings }}"
-  tags: ["never", "debug"]
 
 - name: "Creating System VDOM entries: {{ desired_settings.short_name }}"
   fortinet.fortios.fortios_system_vdom:
@@ -20,6 +20,6 @@
   register: "output"
 
 - name: "Debug"
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ output }}"
-  tags: ["never", "debug"]

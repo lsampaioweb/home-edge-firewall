@@ -1,7 +1,7 @@
 ---
 - name: "Reading the json file '{{ file.path }}' that contains the desired settings"
   ansible.builtin.set_fact:
-    desired_settings: "{{ lookup('file', file.path) }}"
+    desired_settings: "{{ lookup('file', file.path) | from_json }}"rom_json }}"rom_json }}"rom_json }}"
 
 - name: "Printing the desired settings json object"
   ansible.builtin.debug:
