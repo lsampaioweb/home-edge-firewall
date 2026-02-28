@@ -1,9 +1,0 @@
-{
-    "status": "enable",
-    "server": "edge-grafana.lan.homelab",
-    "port": 514,
-    "facility": "local7",
-    "source_ip": "172.16.1.1",
-    "format": "default",
-    "mode": "udp"
-}

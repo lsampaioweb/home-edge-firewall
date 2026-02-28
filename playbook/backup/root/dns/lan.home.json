@@ -46,55 +46,55 @@
     },
     {
       "type": "A",
-      "hostname": "edge-pve-01",
+      "hostname": "pve-01",
       "ip": "10.1.10.2",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-pve-02",
+      "hostname": "pve-02",
       "ip": "10.1.10.3",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-ldap-01",
+      "hostname": "ldap-01",
       "ip": "10.1.20.2",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-minio-01",
+      "hostname": "minio-01",
       "ip": "10.1.30.2",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "api.edge-minio-01",
+      "hostname": "api.minio-01",
       "ip": "10.1.30.2",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-minio-02",
+      "hostname": "minio-02",
       "ip": "10.1.30.3",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "api.edge-minio-02",
+      "hostname": "api.minio-02",
       "ip": "10.1.30.3",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-zabbix-01",
+      "hostname": "zabbix-01",
       "ip": "10.1.55.2",
       "status": "enable"
     },
     {
       "type": "A",
-      "hostname": "edge-grafana-01",
+      "hostname": "grafana-01",
       "ip": "10.1.55.3",
       "status": "enable"
     },
@@ -160,19 +160,19 @@
     },
     {
       "type": "CNAME",
-      "hostname": "edge-loadbalancer",
+      "hostname": "loadbalancer",
       "canonical_name": "stg-load-balancer-01",
       "status": "enable"
     },
     {
       "type": "CNAME",
-      "hostname": "edge-pve",
+      "hostname": "pve",
       "canonical_name": "stg-load-balancer-01",
       "status": "enable"
     },
     {
       "type": "CNAME",
-      "hostname": "edge-loadbalancer-01",
+      "hostname": "loadbalancer-01",
       "canonical_name": "stg-load-balancer-01",
       "status": "enable"
     }

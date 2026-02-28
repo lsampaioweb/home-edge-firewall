@@ -1,5 +1,5 @@
 {
-  "name": "edge-pve-01",
+  "name": "pve-01",
   "type": "mac",
   "comment": "Ansible",
   "associated_interface": "Zone-Home-Infra",

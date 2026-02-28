@@ -1,6 +1,6 @@
 {
-  "name": "edge-ldap",
-  "server": "edge-ldap-01.homelab",
+  "name": "ldap",
+  "server": "ldap-01.homelab",
   "port": 389,
   "cnid": "cn",
   "dn": "dc=homelab",
