@@ -3,10 +3,16 @@ localhost
 
 [ControlMachine:vars]
 ansible_connection=local
-ansible_python_interpreter=/usr/bin/python3
+# Use the same Python interpreter that's running the Ansible playbook.
+# This automatically uses pipx's Python when Ansible is installed via pipx.
+ansible_python_interpreter={{ ansible_playbook_python }}
 
 [firewalls]
-firewall.lan.homelab
+# Before we add the DNS entry, we have to use the IP address.
+firewall_01.lan.home ansible_host=192.168.4.1
+
+# After we add the DNS entry, we can use just the hostname.
+# firewall_01.lan.home
 
 [firewalls:vars]
 ansible_network_os=fortinet.fortios.fortios
