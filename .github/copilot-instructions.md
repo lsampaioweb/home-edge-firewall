@@ -1,4 +1,4 @@
-# .cursorrules for Home Edge Firewall Ansible Project
+# Home Edge Firewall Ansible Project
 
 ## Project Overview
 This is an Ansible automation project for managing a Fortigate firewall configuration.
@@ -21,12 +21,7 @@ The project follows a modular approach with roles, playbooks, and supports both 
   1. `XX-feature-create-from-minimal.yml` - Creates from minimal JSON.
 
 ### Role-Based Organization
-- Each feature has a dedicated role under `roles/`.
-- Role tasks are split into:
-  - `backup.yml` - Export functionality.
-  - `create-from-backup.yml` - Full restore functionality.
-  - `create-from-minimal.yml` - Minimal config functionality.
-  - `add-entry.yml` or `add-entry-custom.yml`/`add-entry-group.yml` - Core creation logic.
+- Each feature has a dedicated role under `roles/`, with task files mirroring the three-tier playbook structure (see Directory Structure).
 
 ### Data Management
 - **Full backups**: `.bkp` files with all Fortigate parameters.
@@ -40,7 +35,7 @@ The project follows a modular approach with roles, playbooks, and supports both 
 ---
 - name: "Descriptive action with feature name"
   hosts: "firewalls"
-  gather_facts: false  # ALWAYS false for Fortigate
+  gather_facts: false  # ALWAYS false for Fortigate.
 
   tasks:
     - name: "Action description"
@@ -67,6 +62,8 @@ The project follows a modular approach with roles, playbooks, and supports both 
       name: "{{ desired_settings.name }}"
       required_field: "{{ desired_settings.required_field }}"
       optional_field: "{{ desired_settings.optional_field | default(omit, true) }}"
+      # Hyphenated JSON keys must use bracket notation:
+      hyphenated_field: "{{ desired_settings['hyphenated-param'] | default(omit, true) }}"
   register: "output"
 ```
 
@@ -121,24 +118,12 @@ playbook/
 - Only include parameters visible in Fortigate UI.
 - Use exact parameter names from corresponding `.bkp` files.
 
-### Optional Parameter Handling
-```yaml
-# Required parameters - no default
-name: "{{ desired_settings.name }}"
-
-# Optional parameters - use omit
-optional_param: "{{ desired_settings.optional_param | default(omit, true) }}"
-
-# Handle hyphenated keys from JSON
-hyphenated_param: "{{ desired_settings['hyphenated-param'] | default(omit, true) }}"
-```
-
 ## Network Configuration Standards
 
 ### VLAN Scheme
 - **Home-Infra**: VLAN IDs 1-99, IP range 10.1.X.X.
-- **Homelab**: VLAN IDs 101-199, IP range 10.2.X.X.
-- VLAN ID maps to third octet: VLAN 110 → 10.2.110.0/28.
+- **Homelab**: VLAN IDs 101-199, IP range 20.1.X.X.
+- VLAN ID maps to third octet: VLAN 110 → 10.1.110.0/28.
 - Standard /28 subnets with .1 as gateway, .2-.14 as DHCP range.
 
 ### Inventory Requirements
@@ -186,33 +171,7 @@ vdom=root
     label: "{{ file.path }}"
 ```
 
-### Module Task Template
-```yaml
-- name: "Creating [Feature] entry: {{ desired_settings.name }}"
-  fortinet.fortios.fortios_[appropriate_module]:
-    vdom: "{{ vdom | default(omit, true) }}"
-    state: "present"
-    [module_section]:
-      # Required fields first
-      name: "{{ desired_settings.name }}"
-      # Optional fields with omit pattern
-      optional_field: "{{ desired_settings.optional_field | default(omit, true) }}"
-  register: "output"
-```
-
 ## AI Assistant Instructions
 
-When working with this codebase:
-
-1. **ALWAYS** set `gather_facts: false` for Fortigate playbooks.
 1. **NEVER** use pip commands - only pipx or homebrew.
-1. **FOLLOW** the three-tier backup/restore pattern for new features.
-1. **USE** the exact variable names and patterns shown above.
-1. **PRESERVE** the modular role structure.
-1. **MATCH** existing file naming conventions exactly.
-1. **INCLUDE** debug tasks with proper tags.
-1. **USE** `default(omit, true)` for optional Fortigate parameters.
-1. **MAINTAIN** the backup/minimal JSON distinction.
-1. **KEEP** minimal JSON files small and UI-focused only.
-
-When creating new features, copy the patterns from existing roles like `dns` or `services` rather than inventing new approaches.
+1. When creating new features, copy the patterns from existing roles like `dns` or `services` rather than inventing new approaches.
