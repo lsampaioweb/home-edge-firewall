@@ -8,39 +8,38 @@
   register: "data"
 
 - name: "Debug"
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ data }}"
-  tags: ["never", "debug"]
 
-- name: "Ensure the backup directory exists"
+- name: "Fixing SSL certificate issues for pipx environments"
   delegate_to: "{{ groups['ControlMachine'] | first }}"
-  ansible.builtin.file:
-    path: "{{ backup_global_config_path }}"
-    state: "directory"
-    mode: "0755"
+  block:
+    - name: "Ensure the backup directory exists"
+      ansible.builtin.file:
+        path: "{{ backup_global_config_path }}"
+        state: "directory"
+        mode: "0755"
 
-- name: "Saving the settings in a local file"
-  delegate_to: "{{ groups['ControlMachine'] | first }}"
-  ansible.builtin.copy:
-    content: "{{ data.meta.raw }}"
-    dest: "{{ backup_global_config_path }}/{{ data_format }}.{{ backup_extention }}"
-    mode: "0644"
-  vars:
-    data_format: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}"
+    - name: "Saving the settings in a local file"
+      ansible.builtin.copy:
+        content: "{{ data.meta.raw }}"
+        dest: "{{ backup_global_config_path }}/{{ data_format }}.{{ backup_extention }}"
+        mode: "0644"
+      vars:
+        data_format: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}"
 
-- name: "Retrieving the amount of backup files"
-  delegate_to: "{{ groups['ControlMachine'] | first }}"
-  ansible.builtin.find:
-    paths: "{{ backup_global_config_path }}"
-    patterns: "*.{{ backup_extention }}"
-  register: "backup_files"
+    - name: "Retrieving the amount of backup files"
+      ansible.builtin.find:
+        paths: "{{ backup_global_config_path }}"
+        patterns: "*.{{ backup_extention }}"
+      register: "backup_files"
 
-- name: "Removing old backup files"
-  delegate_to: "{{ groups['ControlMachine'] | first }}"
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    state: "absent"
-  loop: "{{ (backup_files.files | sort(attribute='mtime'))[0:-backup_files_to_keep] | list }}"
-  loop_control:
-    index_var: "index"
-    label: "{{ index }} - {{ item.path }}"
+    - name: "Removing old backup files"
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: "absent"
+      loop: "{{ (backup_files.files | sort(attribute='mtime'))[0:-backup_files_to_keep] | list }}"
+      loop_control:
+        index_var: "index"
+        label: "{{ index }} - {{ item.path }}"
