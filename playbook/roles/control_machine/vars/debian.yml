@@ -1,0 +1,15 @@
+---
+# lookup('env', 'HOME') runs in the Ansible process context (the invoking user),
+# so it is unaffected by become: true and always returns the real user's home dir.
+pipx_executable: "{{ lookup('env', 'HOME') }}/.local/bin/pipx"
+
+pipx_packages:
+  - { name: "ansible-core", install_deps: true, global: true }
+  - { name: "ansible-lint", global: true }
+  - {
+      name: "ansible-core",
+      state: "inject",
+      inject_packages: ["cryptography", "jmespath", "hvac"],
+      include_injected: true,
+      global: true,
+    }

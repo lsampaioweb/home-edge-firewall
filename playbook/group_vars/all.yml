@@ -1,6 +1,9 @@
 ---
+# Specify if more messages should be displayed during the executions. Defaults to false if not specified.
+debug: true
+
 # The domain name of the HomeLab.
-domain: "lan.homelab"
+domain: "lan.home"
 
 # Import Paths.
 path_roles_common: "roles/common"
@@ -8,7 +11,7 @@ path_common_tasks: "{{ path_roles_common }}/tasks"
 path_tasks_debian: "{{ path_common_tasks }}/debian"
 path_tasks_darwin: "{{ path_common_tasks }}/darwin"
 
-# Packages.
+# Debian Packages.
 path_debian_packages: "{{ path_tasks_debian }}/packages"
 path_packages_apt: "{{ path_debian_packages }}/apt.yml"
 path_packages_pipx: "{{ path_debian_packages }}/pipx.yml"

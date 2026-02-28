@@ -1,4 +1,0 @@
----
-- name: "Installing packages based on operating system"
-  when: ansible_os_family | lower in ['debian', 'darwin']
-  ansible.builtin.include_tasks: "packages-{{ ansible_os_family | lower }}.yml"
