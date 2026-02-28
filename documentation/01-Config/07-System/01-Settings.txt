@@ -34,7 +34,7 @@ Email Service:
   Port                : specify : 587
   Authentication      : Checked
   Username            : lsampaioweb@gmail.com
-  Password            : KeyChain Key: "lsampaio-firewall-smtp-password"
+  Password            : Secret Manager Id: "firewall_01_smtp_password"
   Security Mode       : starttls
   Default Reply to    : lsampaioweb@gmail.com
 

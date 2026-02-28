@@ -2,7 +2,7 @@ Name: Firewall-Admins
 Type: Firewall
 
 Remote Groups:
-  Remote Server : edge-ldap
+  Remote Server : ldap
 
   Custom LDAP filter : (objectClass=groupOfURLs)
   Selected           : network-admins

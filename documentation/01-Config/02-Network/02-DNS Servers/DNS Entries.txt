@@ -24,55 +24,55 @@ DNS Entries
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-pve-01
+  Hostname                            : pve-01
   IP Address                          : 10.1.10.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-pve-02
+  Hostname                            : pve-02
   IP Address                          : 10.1.10.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-ldap-01
+  Hostname                            : ldap-01
   IP Address                          : 10.1.20.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-minio-01
+  Hostname                            : minio-01
   IP Address                          : 10.1.30.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
-  Hostname                            : api.edge-minio-01
+  Hostname                            : api.minio-01
   IP Address                          : 10.1.30.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-minio-02
+  Hostname                            : minio-02
   IP Address                          : 10.1.30.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A)
-  Hostname                            : api.edge-minio-02
+  Hostname                            : api.minio-02
   IP Address                          : 10.1.30.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-zabbix-01
+  Hostname                            : zabbix-01
   IP Address                          : 10.1.55.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : edge-grafana-01
+  Hostname                            : grafana-01
   IP Address                          : 10.1.55.3
   TTL                                 : Use Zone TTL
   Status                              : Enabled
@@ -138,19 +138,19 @@ DNS Entries
   Status                              : Enabled
 
   Type                                : Canonical Name (CNAME)
-  Hostname                            : edge-loadbalancer
+  Hostname                            : loadbalancer
   Canonical Name (CNAME)              : stg-load-balancer-01
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Canonical Name (CNAME)
-  Hostname                            : edge-pve
+  Hostname                            : pve
   Canonical Name (CNAME)              : stg-load-balancer-01
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
   Type                                : Canonical Name (CNAME)
-  Hostname                            : edge-loadbalancer-01
+  Hostname                            : loadbalancer-01
   Canonical Name (CNAME)              : stg-load-balancer-01
   TTL                                 : Use Zone TTL
   Status                              : Enabled

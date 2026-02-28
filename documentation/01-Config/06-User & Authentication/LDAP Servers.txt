@@ -1,11 +1,11 @@
-Name                    : edge-ldap
-Server IP/Name          : edge-ldap-01.lan.homelab
+Name                    : ldap
+Server IP/Name          : ldap-01.lan.homelab
 Server Port             : 389
 Common Name Identifier  : cn
 Distinguished Name      : dc=homelab
 Exchange server         : Unchecked
 Bind Type               : Regular
 Username                : cn=ldap-reader,dc=homelab
-Password                : Keychain: "edge-ldap-01-ldap-reader"
+Password                : Keychain: "ldap-01-ldap-reader"
 Secure Connection       : Checked
 Protocol                : STARTTLS
