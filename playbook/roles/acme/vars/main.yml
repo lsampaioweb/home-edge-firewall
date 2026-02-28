@@ -1,4 +1,4 @@
 ---
 acme_ca_url: "https://vault.lan.homelab/v1/pki/acme/directory"
 acme_email: "bHNhbXBhaW93ZWJAZ21haWwuY29t" # String was encoded on base64 to avoid spammers.
-acme_interface: "port1" # The interface used for ACME challenges
+acme_interface: "port1" # The interface used for ACME challenges.
