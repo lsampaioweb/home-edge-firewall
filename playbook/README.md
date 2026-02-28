@@ -7,50 +7,55 @@ Run these commands on the computer running Ansible:
     - This is necessary to avoid putting any credentials in the source code.
     - For example, to save the password for 'firewall':
     ```bash
-    secret-tool store --label="firewall-admin-password" password "firewall-admin-password"
+    secret-tool store --label="firewall_01_usr_admin" password "firewall_01_usr_admin"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "firewall-admin-password"
-    ```
-
-1. Save the password that Zabbix will use to collect events and metrics from the firewall.
-
-    ```bash
-    secret-tool store --label="firewall-zabbix-password" password "firewall-zabbix-password"
-    ```
-
-1. Confirm the password was correctly saved in the secret manager:
-    ```bash
-    secret-tool lookup password "firewall-zabbix-password"
+    secret-tool lookup password "firewall_01_usr_admin"
     ```
 
 1. Save the password that SNMP clients will use to connect to the firewall.
 
     ```bash
-    secret-tool store --label="firewall-snmp-password" password "firewall-snmp-password"
+    secret-tool store --label="firewall_01_smtp_password" password "firewall_01_smtp_password"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "firewall-snmp-password"
+    secret-tool lookup password "firewall_01_smtp_password"
+    ```
+
+1. Save the password that Zabbix will use to collect events and metrics from the firewall.
+
+    ```bash
+    secret-tool store --label="firewall_01_usr_zabbix" password "firewall_01_usr_zabbix"
+    ```
+
+1. Confirm the password was correctly saved in the secret manager:
+    ```bash
+    secret-tool lookup password "firewall_01_usr_zabbix"
     ```
 
 1. Save the password for the private key of the SSL certificate used by the firewall admin interface.
 
     ```bash
-    secret-tool store --label="firewall-ssl-password" password "firewall-ssl-password"
+    secret-tool store --label="lan.home/prd/firewall.lan.home" password "lan.home/prd/firewall.lan.home"
     ```
 
 1. Confirm the password was correctly saved in the secret manager:
     ```bash
-    secret-tool lookup password "firewall-ssl-password"
+    secret-tool lookup password "lan.home/prd/firewall.lan.home"
     ```
 
 1. This repository have git submodule, run this command to download all of them:
     ```bash
     git submodule update --init --recursive
+    ```
+
+1. Change to the playbook directory:
+    ```bash
+    cd playbook/
     ```
 
 1. Prepare the Ubuntu machine to run Ansible playbooks:

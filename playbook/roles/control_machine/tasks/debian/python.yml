@@ -20,7 +20,7 @@
     packages: "{{ pipx_packages }}"
 
 - name: "Debug pipx installation output"
-  when: debug | bool
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg:
       - "{{ output }}"

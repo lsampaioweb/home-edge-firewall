@@ -8,7 +8,7 @@
     packages: "{{ ansible_galaxy_collections }}"
 
 - name: "Debug Ansible Galaxy installation output"
-  when: debug | bool
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg:
       - "{{ output }}"

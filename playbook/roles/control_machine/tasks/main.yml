@@ -1,6 +1,6 @@
 ---
 - name: "Displaying OS family fact for debugging"
-  when: debug | bool
+  tags: ["never", "debug"]
   ansible.builtin.debug:
     msg:
       - "ansible_facts - os_family : {{ ansible_facts['os_family'] }}"
