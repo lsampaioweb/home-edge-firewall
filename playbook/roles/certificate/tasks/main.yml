@@ -1,49 +1,105 @@
 ---
+- name: "Getting local certificate information"
+  delegate_to: "{{ groups['ControlMachine'] | first }}"
+  community.crypto.x509_certificate_info:
+    path: "{{ role_path }}/files/{{ certificate_file }}"
+  register: "local_cert_info"
+
+- name: "Normalizing local certificate serial number to hexadecimal"
+  ansible.builtin.set_fact:
+    # Converts decimal serial (e.g. 12345) to uppercase hex (e.g. '3039').
+    local_serial_hex: "{{ '%X' | format(local_cert_info.serial_number) }}"
+
+- name: "Getting certificate runtime details from firewall"
+  fortinet.fortios.fortios_monitor_fact:
+    vdom: "{{ vdom | default(omit, true) }}"
+    selector: "system_available-certificates"
+    filters:
+      - "name=={{ certificate_name }}"
+  register: "monitor_cert_info"
+
+- name: "Getting current admin server certificate configuration"
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ vdom | default(omit, true) }}"
+    selector: "system_global"
+  register: "current_admin_config"
+
+- name: "Checking if certificate update is needed"
+  ansible.builtin.set_fact:
+    current_admin_cert: "{{ temp_current_admin_cert }}"
+    remote_serial: "{{ temp_remote_serial }}"
+    # True when the certificate file on disk differs from what's on the firewall.
+    serial_mismatch: "{{ temp_remote_serial != local_serial_hex }}"
+    # True when the admin interface is not yet using this certificate.
+    config_mismatch: "{{ temp_current_admin_cert != certificate_name }}"
+  vars:
+    temp_current_admin_cert: "{{ current_admin_config.meta.results['admin-server-cert'] | default('') }}"
+    temp_remote_serial: >-
+      {{
+        monitor_cert_info.meta.results
+        | selectattr('name', 'equalto', certificate_name)
+        | map(attribute='serial_number')
+        | first
+        | default('NOT_FOUND')
+        | replace(':', '')
+        | string
+      }}
+
 - name: "Debug"
   ansible.builtin.debug:
     msg:
-      - "name         : {{ certificate_name }}"
-      # - "certificate  : {{ lookup('file', certificate_file) }}"
-      # - "private_key  : {{ lookup('file', private_key_file) }}"
+      - "Certificate name     : {{ certificate_name }}"
+      - "Local serial (hex)   : {{ local_serial_hex }}"
+      - "Remote serial (hex)  : {{ remote_serial }}"
+      - "Current admin cert   : {{ current_admin_cert }}"
+      - "Serial mismatch      : {{ serial_mismatch }}"
+      - "Config mismatch      : {{ config_mismatch }}"
+      - "Upload needed        : {{ serial_mismatch }}"
   tags: ["never", "debug"]
 
-- name: "Switching to temporary certificate to unlock current admin certificate"
-  fortinet.fortios.fortios_system_global:
-    vdom: "{{ vdom | default(omit, true) }}"
-    system_global:
-      admin_server_cert: "{{ temp_certificate_name }}"
+- name: "Certificate upload"
+  when: serial_mismatch | bool
+  block:
+    - name: "Switching to temporary certificate '{{ temp_certificate_name }}' to unlock current admin certificate"
+      when: current_admin_cert == certificate_name
+      fortinet.fortios.fortios_system_global:
+        vdom: "{{ vdom | default(omit, true) }}"
+        system_global:
+          admin_server_cert: "{{ temp_certificate_name }}"
 
-- name: "Deleting existing certificate if it exists"
-  fortinet.fortios.fortios_vpn_certificate_local:
-    vdom: "{{ vdom | default(omit, true) }}"
-    state: "absent"
-    vpn_certificate_local:
-      name: "{{ certificate_name }}"
-  register: delete_cert_result
-  failed_when: delete_cert_result.failed and
-               ('not found' not in (delete_cert_result.msg | default('')) and
-                'does not exist' not in (delete_cert_result.msg | default('')))
+    - name: "Deleting existing certificate '{{ certificate_name }}' if it exists"
+      fortinet.fortios.fortios_vpn_certificate_local:
+        vdom: "{{ vdom | default(omit, true) }}"
+        state: "absent"
+        vpn_certificate_local:
+          name: "{{ certificate_name }}"
+      register: "delete_cert_result"
+      failed_when:
+        - delete_cert_result.failed
+        - "'not found' not in (delete_cert_result.msg | default(''))"
+        - "'does not exist' not in (delete_cert_result.msg | default(''))"
 
-- name: "Uploading the local SSL certificate using native module"
-  fortinet.fortios.fortios_vpn_certificate_local:
-    vdom: "{{ vdom | default(omit, true) }}"
-    state: "present"
-    vpn_certificate_local:
-      range: "global"
-      source: "user"
-      name: "{{ certificate_name }}"
-      certificate: "{{ lookup('file', certificate_file) }}"
-      private_key: "{{ lookup('file', private_key_file) }}"
-      password: "{{ ssl_password }}"
-  register: "output"
+    - name: "Uploading the local SSL certificate '{{ certificate_name }}'"
+      fortinet.fortios.fortios_vpn_certificate_local:
+        vdom: "{{ vdom | default(omit, true) }}"
+        state: "present"
+        vpn_certificate_local:
+          range: "global"
+          source: "user"
+          name: "{{ certificate_name }}"
+          certificate: "{{ lookup('file', certificate_file) }}"
+          private_key: "{{ lookup('file', private_key_file) }}"
+          password: "{{ ssl_password }}"
+      register: "output"
 
-- name: "Switching admin interface to use new certificate"
+    - name: "Debug"
+      ansible.builtin.debug:
+        msg: "{{ output }}"
+      tags: ["never", "debug"]
+
+- name: "Switching admin interface to use certificate '{{ certificate_name }}'"
+  when: serial_mismatch | bool or config_mismatch | bool
   fortinet.fortios.fortios_system_global:
     vdom: "{{ vdom | default(omit, true) }}"
     system_global:
       admin_server_cert: "{{ certificate_name }}"
-
-- name: "Debug"
-  ansible.builtin.debug:
-    msg: "{{ output }}"
-  tags: ["never", "debug"]
