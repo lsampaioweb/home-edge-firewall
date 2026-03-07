@@ -1,0 +1,4 @@
+---
+system_vdom_minimal_keys:
+  - "name"
+  - "short_name"

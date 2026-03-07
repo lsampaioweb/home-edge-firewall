@@ -14,7 +14,7 @@
   vars:
     path: "{{ backup_system_vdom_path }}"
 
-- name: "Saving the System VDOM settings in a local file"
+- name: "Saving the System VDOM settings backup file"
   ansible.builtin.copy:
     content: "{{ line | to_nice_json(indent=2) }}"
     dest: "{{ backup_system_vdom_path }}/{{ file }}"
@@ -28,6 +28,24 @@
         {'before': 'vcluster-id', 'after': 'vcluster_id'}
       ])) }}
     file: "{{ (('%02d' | format(item['vcluster-id'] | int)) ~ '-' ~ (item['short-name'] | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item['short-name'] }}"
+
+- name: "Saving the System VDOM minimal file"
+  ansible.builtin.copy:
+    content: "{{ line | dict2items | selectattr('key', 'in', system_vdom_minimal_keys) | items2dict | to_nice_json(indent=2) }}"
+    dest: "{{ backup_system_vdom_path }}/{{ file }}"
+    mode: "0644"
+  vars:
+    line: >
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'short-name' , 'after': 'short_name'},
+        {'before': 'vcluster-id', 'after': 'vcluster_id'}
+      ])) }}
+    file: "{{ (('%02d' | format(item['vcluster-id'] | int)) ~ '-' ~ (item['short-name'] | replace(' ', '-')) + '.' + minimal_extention) | lower }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item['short-name'] }}"
