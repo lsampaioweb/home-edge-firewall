@@ -1,0 +1,15 @@
+{
+  "admin-https-redirect": "enable",
+  "admin-port": 80,
+  "admin-server-cert": "firewall-01.lan.home",
+  "admin-sport": 443,
+  "admin-ssh-port": 22,
+  "admin-telnet-port": 23,
+  "admintimeout": 6,
+  "alias": "FortiGate-80E",
+  "cfg-save": "automatic",
+  "gui-theme": "onyx",
+  "hostname": "firewall-01",
+  "language": "english",
+  "timezone": "America/Maceio"
+}

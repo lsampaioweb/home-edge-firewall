@@ -9,10 +9,10 @@ ansible_python_interpreter={{ ansible_playbook_python }}
 
 [firewalls]
 # Before we add the DNS entry, we have to use the IP address.
-firewall-01.lan.home ansible_host=192.168.4.1
+# firewall-01.lan.home ansible_host=XXX.XXX.XXX.XXX
 
 # After we add the DNS entry, we can use just the hostname.
-# firewall-01.lan.home
+firewall-01.lan.home
 
 [firewalls:vars]
 ansible_network_os=fortinet.fortios.fortios

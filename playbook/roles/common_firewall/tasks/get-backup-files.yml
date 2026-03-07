@@ -4,5 +4,5 @@
     paths: "{{ paths }}"
     patterns: "{{ internal_patterns }}"
   vars:
-    internal_patterns: "{{ (patterns is defined) | ternary(patterns, '*.' + backup_extention) }}"
+    internal_patterns: "{{ (patterns is defined) | ternary(patterns, backup_files_extention) }}"
   register: "backup_files"

@@ -2,7 +2,7 @@
 - name: "Retrieving the backup files"
   ansible.builtin.find:
     paths: "{{ backup_global_config_path }}"
-    patterns: "*.{{ backup_extention }}"
+    patterns: "{{ backup_files_extention }}"
   register: "backup_files"
 
 - name: "Retrieving the name of the last backup file"
