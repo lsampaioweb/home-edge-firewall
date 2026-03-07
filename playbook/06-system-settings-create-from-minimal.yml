@@ -1,6 +1,7 @@
 ---
 - name: "System settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Setting up System Settings from minimal JSON"

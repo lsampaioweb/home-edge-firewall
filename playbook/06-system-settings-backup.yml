@@ -1,6 +1,7 @@
 ---
 - name: "System settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Backing up the System settings"

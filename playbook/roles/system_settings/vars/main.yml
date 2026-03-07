@@ -1,0 +1,15 @@
+---
+system_settings_minimal_keys:
+  - "admin-https-redirect"
+  - "admin-port"
+  - "admin-server-cert"
+  - "admin-sport"
+  - "admin-ssh-port"
+  - "admin-telnet-port"
+  - "admintimeout"
+  - "alias"
+  - "cfg-save"
+  - "gui-theme"
+  - "hostname"
+  - "language"
+  - "timezone"
