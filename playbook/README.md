@@ -5,53 +5,59 @@ Run these commands on the computer running Ansible:
 1. Save the password for each Fortigate in the secret manager.
 
     - This is necessary to avoid putting any credentials in the source code.
-    - For example, to save the password for 'firewall':
-    ```bash
-    secret-tool store --label="firewall_01_usr_admin" password "firewall_01_usr_admin"
-    ```
+    - For example, to save the password for 'firewall-01' use this command:
+      ```bash
+      secret-tool store --label="firewall-01_usr_admin" password "firewall-01_usr_admin"
+      ```
 
-1. Confirm the password was correctly saved in the secret manager:
-    ```bash
-    secret-tool lookup password "firewall_01_usr_admin"
-    ```
-
-1. Save the password that SNMP clients will use to connect to the firewall.
-
-    ```bash
-    secret-tool store --label="firewall_01_smtp_password" password "firewall_01_smtp_password"
-    ```
-
-1. Confirm the password was correctly saved in the secret manager:
-    ```bash
-    secret-tool lookup password "firewall_01_smtp_password"
-    ```
-
-1. Save the password that Zabbix will use to collect events and metrics from the firewall.
-
-    ```bash
-    secret-tool store --label="firewall_01_usr_zabbix" password "firewall_01_usr_zabbix"
-    ```
-
-1. Confirm the password was correctly saved in the secret manager:
-    ```bash
-    secret-tool lookup password "firewall_01_usr_zabbix"
-    ```
+    - Confirm the password was correctly saved in the secret manager:
+        ```bash
+        secret-tool lookup password "firewall-01_usr_admin"
+        ```
 
 1. Save the password for the private key of the SSL certificate used by the firewall admin interface.
 
     ```bash
-    secret-tool store --label="lan.home/prd/firewall.lan.home" password "lan.home/prd/firewall.lan.home"
+    secret-tool store --label="lan.home/prd/firewall-01.lan.home" password "lan.home/prd/firewall-01.lan.home"
     ```
 
-1. Confirm the password was correctly saved in the secret manager:
+    - Confirm the password was correctly saved in the secret manager:
+        ```bash
+        secret-tool lookup password "lan.home/prd/firewall-01.lan.home"
+        ```
+
+1. Save the password that the firewall will use to send email notifications to the SMTP server.
+
     ```bash
-    secret-tool lookup password "lan.home/prd/firewall.lan.home"
+    secret-tool store --label="firewall-01_smtp_password" password "firewall-01_smtp_password"
     ```
 
-1. This repository have git submodule, run this command to download all of them:
+    - Confirm the password was correctly saved in the secret manager:
+        ```bash
+        secret-tool lookup password "firewall-01_smtp_password"
+        ```
+
+1. Save the password that SNMP clients will use to connect to the firewall.
+
     ```bash
-    git submodule update --init --recursive
+    secret-tool store --label="firewall-01_snmp_password" password "firewall-01_snmp_password"
     ```
+
+    - Confirm the password was correctly saved in the secret manager:
+        ```bash
+        secret-tool lookup password "firewall-01_snmp_password"
+        ```
+
+1. Save the password that Zabbix will use to collect events and metrics from the firewall.
+
+    ```bash
+    secret-tool store --label="firewall-01_usr_zabbix" password "firewall-01_usr_zabbix"
+    ```
+
+    - Confirm the password was correctly saved in the secret manager:
+        ```bash
+        secret-tool lookup password "firewall-01_usr_zabbix"
+        ```
 
 1. Change to the playbook directory:
     ```bash
