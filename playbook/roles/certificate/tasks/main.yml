@@ -67,6 +67,20 @@
         system_global:
           admin_server_cert: "{{ temp_certificate_name }}"
 
+    - name: "Uploading Sub-CA certificate '{{ sub_ca_name }}' to CA certificate store"
+      fortinet.fortios.fortios_vpn_certificate_ca:
+        vdom: "{{ vdom | default(omit, true) }}"
+        state: "present"
+        vpn_certificate_ca:
+          name: "{{ sub_ca_name }}"
+          ca: "{{ lookup('file', sub_ca_file) }}"
+      register: "ca_output"
+
+    - name: "Debug"
+      ansible.builtin.debug:
+        msg: "{{ ca_output }}"
+      tags: ["never", "debug"]
+
     - name: "Deleting existing certificate '{{ certificate_name }}' if it exists"
       fortinet.fortios.fortios_vpn_certificate_local:
         vdom: "{{ vdom | default(omit, true) }}"

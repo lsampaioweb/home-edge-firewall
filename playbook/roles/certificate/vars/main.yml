@@ -4,3 +4,6 @@ temp_certificate_name: "Fortinet_Factory"
 certificate_name: "{{ inventory_hostname }}"
 certificate_file: "{{ inventory_hostname }}.crt"
 private_key_file: "{{ inventory_hostname }}.key"
+
+sub_ca_name: "sub-ca-2026.lan.home"
+sub_ca_file: "sub-ca.lan.home.crt"
