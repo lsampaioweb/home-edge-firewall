@@ -1,6 +1,7 @@
 ---
 - name: "Restoring the system settings"
   hosts: "firewalls"
+  gather_facts: false
 
   roles:
     - "restore"

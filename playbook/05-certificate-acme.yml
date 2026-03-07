@@ -1,6 +1,7 @@
 ---
 - name: "Configure ACME client"
   hosts: "firewalls"
+  gather_facts: false
 
   roles:
     - "acme"
