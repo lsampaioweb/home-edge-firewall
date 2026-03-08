@@ -1,0 +1,20 @@
+---
+dns_minimal_keys:
+  - "authoritative"
+  - "contact"
+  - "dns_entry"
+  - "domain"
+  - "name"
+  - "primary_name"
+  - "status"
+  - "ttl"
+  - "type"
+  - "view"
+
+dns_entry_minimal_keys:
+  - "canonical_name"
+  - "hostname"
+  - "id"
+  - "ip"
+  - "status"
+  - "type"

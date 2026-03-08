@@ -8,6 +8,19 @@
 - name: "Saving minimal file '{{ dest_basename }}.{{ minimal_extention }}'"
   when: minimal_keys is defined
   ansible.builtin.copy:
-    content: "{{ entry | dict2items | selectattr('key', 'in', minimal_keys) | items2dict | to_nice_json(indent=2) }}"
+    content: "{{ minimal_entry | to_nice_json(indent=2) }}"
     dest: "{{ dest_dir }}/{{ dest_basename }}.{{ minimal_extention }}"
     mode: "0644"
+  vars:
+    top_filtered: "{{ entry | dict2items | selectattr('key', 'in', minimal_keys) | items2dict }}"
+    minimal_entry: >-
+      {{ (nested_key is defined and nested_minimal_keys is defined)
+         | ternary(
+             top_filtered | combine({
+               nested_key: top_filtered[nested_key]
+                 | map('dict2items')
+                 | map('selectattr', 'key', 'in', nested_minimal_keys)
+                 | map('items2dict') | list
+             }),
+             top_filtered
+           ) }}

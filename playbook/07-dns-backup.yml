@@ -1,6 +1,7 @@
 ---
 - name: "DNS settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Backing up the DNS settings"
