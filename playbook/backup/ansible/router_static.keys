@@ -11,7 +11,6 @@ internet_service: "{{ desired_settings['internet-service'] | default(omit, true)
 internet_service_custom: "{{ desired_settings['internet-service-custom'] | default(omit, true) }}"
 link_monitor_exempt: "{{ desired_settings['link-monitor-exempt'] | default(omit, true) }}"
 priority: "{{ desired_settings.priority | default(omit, true) }}"
-q_origin_key: "{{ desired_settings.q_origin_key | default(omit, true) }}"
 sdwan_zone: "{{ desired_settings['sdwan-zone'] | default(omit, true) }}"
 seq_num: "{{ desired_settings['seq-num'] | default(omit, true) }}"
 src: "{{ desired_settings.src | default(omit, true) }}"

@@ -221,6 +221,11 @@ Run these commands on the computer running Ansible:
     ansible-playbook site-create-from-minimal.yml
     ```
 
+1. Create Ansible attributes for all firewall Ansible modules:
+    ```bash
+    ansible-playbook 30-ansible-attributes-create.yml
+    ```
+
 ### Created by:
 
 Luciano Sampaio.

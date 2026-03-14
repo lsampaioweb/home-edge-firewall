@@ -1,0 +1,15 @@
+---
+- name: "Fetching all entries for selector: '{{ selector }}'"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Creating the Ansible attributes for selector: '{{ selector }}'"
+  when: data.meta.results is defined and data.meta.results | length > 0
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_ansible_attributes }}"
+  vars:
+    path: "{{ backup_ansible_attributes_path }}"
+    results: "{{ (data.meta.results | type_debug == 'list') | ternary(data.meta.results[0], data.meta.results) }}"
