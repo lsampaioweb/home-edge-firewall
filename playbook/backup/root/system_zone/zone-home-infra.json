@@ -1,36 +1,6 @@
 {
-  "name": "Zone-Home-Infra",
+  "description": "",
+  "interface": [],
   "intrazone": "deny",
-  "interface": [
-    {
-      "interface_name": "VL-HI-MGMT"
-    },
-    {
-      "interface_name": "VL-HI-CORE"
-    },
-    {
-      "interface_name": "VL-HI-LDAP"
-    },
-    {
-      "interface_name": "VL-HI-PROXY"
-    },
-    {
-      "interface_name": "VL-HI-BACKUP"
-    },
-    {
-      "interface_name": "VL-HI-REPOSITORY"
-    },
-    {
-      "interface_name": "VL-HI-TEMPLATE"
-    },
-    {
-      "interface_name": "VL-HI-JUMPSERVER"
-    },
-    {
-      "interface_name": "VL-HI-LOADBALANCER"
-    },
-    {
-      "interface_name": "VL-HI-MONITOR"
-    }
-  ]
+  "name": "zone-home-infra"
 }
