@@ -121,10 +121,10 @@ playbook/
 ## Network Configuration Standards
 
 ### VLAN Scheme
-- **Home-Infra**: VLAN IDs 1-99, IP range 10.1.X.X.
-- **Homelab**: VLAN IDs 101-199, IP range 20.1.X.X.
-- VLAN ID maps to third octet: VLAN 110 → 10.1.110.0/28.
-- Standard /28 subnets with .1 as gateway, .2-.14 as DHCP range.
+- **Home-Infra**: VLAN IDs 1110–1180, IP range 10.1.X.X/28.
+- **Homelab**: VLAN IDs 2110–2180, IP range 20.1.X.X/28.
+- VLAN ID maps to third octet via last two digits: VLAN 1110 → 10.1.10.0/28, VLAN 2135 → 20.1.35.0/28.
+- Standard /28 subnets: .0 = network, .1–.13 = DHCP range, .14 = gateway, .15 = broadcast.
 
 ### Inventory Requirements
 ```ini
