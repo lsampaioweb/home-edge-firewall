@@ -24,4 +24,5 @@ system_interface_minimal_keys:
   - "src-check"
   - "status"
   - "type"
+  - "vdom"
   - "vlanid"
