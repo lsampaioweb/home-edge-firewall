@@ -21,7 +21,6 @@
       color: "{{ desired_settings.color | default(omit, true) }}"
       comment: "{{ desired_settings.comment | default(omit, true) }}"
       country: "{{ desired_settings.country | default(omit, true) }}"
-      dirty: "{{ desired_settings.dirty | default(omit, true) }}"
       fabric_object: "{{ desired_settings['fabric-object'] | default(omit, true) }}"
       filter: "{{ desired_settings.filter | default(omit, true) }}"
       fsso_group: "{{ desired_settings['fsso-group'] | default(omit, true) }}"

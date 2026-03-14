@@ -1,0 +1,9 @@
+---
+firewall_address_minimal_keys:
+  - "associated-interface"
+  - "color"
+  - "comment"
+  - "macaddr"
+  - "name"
+  - "subnet"
+  - "type"

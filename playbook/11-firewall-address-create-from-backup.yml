@@ -1,6 +1,7 @@
 ---
 - name: "Firewall Address settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating Firewall Address from backup"
