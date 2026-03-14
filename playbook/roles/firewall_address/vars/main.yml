@@ -3,6 +3,7 @@ firewall_address_minimal_keys:
   - "associated-interface"
   - "color"
   - "comment"
+  - "interface"
   - "macaddr"
   - "name"
   - "subnet"
