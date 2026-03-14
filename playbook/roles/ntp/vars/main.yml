@@ -1,0 +1,7 @@
+---
+ntp_minimal_keys:
+  - "interface"
+  - "ntpsync"
+  - "server_mode"
+  - "syncinterval"
+  - "type"

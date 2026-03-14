@@ -1,6 +1,7 @@
 ---
 - name: "NTP settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating NTP entries from backup"

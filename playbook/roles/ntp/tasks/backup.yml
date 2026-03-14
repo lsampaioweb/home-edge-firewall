@@ -14,13 +14,10 @@
   vars:
     path: "{{ backup_ntp_path }}"
 
-- name: "Saving the NTP settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_ntp_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the NTP backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >
       {{ (data.meta.results
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
@@ -31,4 +28,6 @@
         {'before': 'source-ip'      , 'after': 'source_ip'},
         {'before': 'source-ip6'     , 'after': 'source_ip6'}
       ])) }}
-    file: "{{ ((data.meta.results.type | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+    dest_dir: "{{ backup_ntp_path }}"
+    dest_basename: "{{ (data.meta.results.type | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ ntp_minimal_keys }}"
