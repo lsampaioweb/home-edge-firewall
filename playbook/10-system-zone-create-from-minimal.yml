@@ -1,6 +1,7 @@
 ---
 - name: "System Zone settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating System Zone from minimal JSON"

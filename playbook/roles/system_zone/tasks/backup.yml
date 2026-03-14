@@ -14,19 +14,18 @@
   vars:
     path: "{{ backup_system_zone_path }}"
 
-- name: "Saving the System Zone settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_system_zone_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the System Zone backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
         {'before': 'interface-name', 'after': 'interface_name'}
       ])) }}
-    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+    dest_dir: "{{ backup_system_zone_path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ system_zone_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"

@@ -1,0 +1,6 @@
+---
+system_zone_minimal_keys:
+  - "description"
+  - "interface"
+  - "intrazone"
+  - "name"
