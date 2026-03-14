@@ -175,3 +175,18 @@ vdom=root
 
 1. **NEVER** use pip commands - only pipx or homebrew.
 1. When creating new features, copy the patterns from existing roles like `dns` or `services` rather than inventing new approaches.
+
+## Role Checklist (apply to every role when reviewing or fixing)
+
+When working on any role, always go through these steps in order:
+
+1. **`gather_facts: false`** — Verify all 3 playbooks (`backup`, `create-from-backup`, `create-from-minimal`) have `gather_facts: false`.
+2. **Minimal fields** — Check the existing hand-crafted `.json` files in `backup/root/<role>/` to determine the correct minimal keys. The union of all keys across all files is the baseline.
+3. **`vars/main.yml`** — Verify the file exists in `roles/<role>/vars/main.yml` with the `<role>_minimal_keys` list. Without it, the backup silently skips saving `.json` files.
+4. **`backup.yml`** — Verify it uses `path_common_firewall_save_backup_files` with `minimal_keys` set, and applies `remove_keys` for `invalid_attribute`. Add `replace_keys` for any keys the Ansible module renames (e.g. `interface-name` → `interface_name`).
+5. **`create-from-backup.yml` and `create-from-minimal.yml`** — Verify they use `path_common_firewall_get_backup_files`, loop with `loop_var: file`, and call `add-entry.yml`.
+6. **`add-entry.yml` — space-separated fields** — Check for fields that the FortiGate API returns as a space-separated string but the module expects as a list (e.g. `allowaccess`). Fix with `.split(' ') | select() | list`.
+7. **`add-entry.yml` — hyphenated sub-dict keys** — Check for nested dicts (e.g. `ipv6`, `phy_setting`) that contain hyphenated keys. The `.bkp` file will have them renamed by `backup.yml`, so `add-entry.yml` must read the underscored versions. Use the `hyphen_to_underscore` filter in `backup.yml` and matching underscored key access in `add-entry.yml`.
+8. **`add-entry.yml` — missing fields** — Cross-check fields against the module's `.keys` files (if present) and the `.bkp` files to ensure no important parameters are omitted.
+9. **Run all 3 playbooks** — Use full output (no `tail`/`grep` truncation) so failures are visible. Run backup first, then create-from-minimal, then create-from-backup.
+10. **API limitations** — Note any resources the FortiGate API cannot create programmatically (e.g. loopback interfaces require manual UI/CLI creation first).
