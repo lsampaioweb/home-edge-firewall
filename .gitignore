@@ -11,3 +11,6 @@
 *.conf
 *.crt
 *.key
+
+# Python cache files.
+*.pyc
