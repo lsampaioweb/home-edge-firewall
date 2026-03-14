@@ -1,14 +1,14 @@
 ---
 - name: "Reading the json file '{{ file.path }}' that contains the desired settings"
   ansible.builtin.set_fact:
-    desired_settings: "{{ lookup('file', file.path) | from_json }}"rom_json }}"
+    desired_settings: "{{ lookup('file', file.path) | from_json }}"
 
 - name: "Printing the desired settings json object"
   ansible.builtin.debug:
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating System Interfaces entry: {{ desired_settings.name }}"
+- name: "Creating System Interfaces entry: '{{ desired_settings.name }}'"
   fortinet.fortios.fortios_system_interface:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
@@ -17,7 +17,7 @@
       aggregate_type: "{{ desired_settings['aggregate-type'] | default(omit, true) }}"
       algorithm: "{{ desired_settings.algorithm | default(omit, true) }}"
       alias: "{{ desired_settings.alias | default(omit, true) }}"
-      allowaccess: "{{ desired_settings.allowaccess | default(omit, true) }}"
+      allowaccess: "{{ (desired_settings.allowaccess | default('', true)).split(' ') | select() | list | default(omit, true) }}"
       ap_discover: "{{ desired_settings['ap-discover'] | default(omit, true) }}"
       arpforward: "{{ desired_settings.arpforward | default(omit, true) }}"
       auth_cert: "{{ desired_settings['auth-cert'] | default(omit, true) }}"
@@ -152,6 +152,9 @@
       sample_rate: "{{ desired_settings['sample-rate'] | default(omit, true) }}"
       secondary_IP: "{{ desired_settings['secondary-IP'] | default(omit, true) }}"
       secondaryip: "{{ desired_settings.secondaryip | default(omit, true) }}"
+      security_8021x_dynamic_vlan_id: "{{ desired_settings['security-8021x-dynamic-vlan-id'] | default(omit, true) }}"
+      security_8021x_master: "{{ desired_settings['security-8021x-master'] | default(omit, true) }}"
+      security_8021x_mode: "{{ desired_settings['security-8021x-mode'] | default(omit, true) }}"
       security_exempt_list: "{{ desired_settings['security-exempt-list'] | default(omit, true) }}"
       security_external_logout: "{{ desired_settings['security-external-logout'] | default(omit, true) }}"
       security_external_web: "{{ desired_settings['security-external-web'] | default(omit, true) }}"
@@ -215,6 +218,19 @@
       wccp: "{{ desired_settings.wccp | default(omit, true) }}"
       weight: "{{ desired_settings.weight | default(omit, true) }}"
       wins_ip: "{{ desired_settings['wins-ip'] | default(omit, true) }}"
+      default_purdue_level: "{{ desired_settings['default-purdue-level'] | default(omit, true) }}"
+      dhcp_broadcast_flag: "{{ desired_settings['dhcp-broadcast-flag'] | default(omit, true) }}"
+      dhcp_relay_allow_no_end_option: "{{ desired_settings['dhcp-relay-allow-no-end-option'] | default(omit, true) }}"
+      dhcp_relay_circuit_id: "{{ desired_settings['dhcp-relay-circuit-id'] | default(omit, true) }}"
+      dhcp_relay_source_ip: "{{ desired_settings['dhcp-relay-source-ip'] | default(omit, true) }}"
+      dhcp_smart_relay: "{{ desired_settings['dhcp-smart-relay'] | default(omit, true) }}"
+      phy_setting: "{{ desired_settings['phy-setting'] | default(omit, true) }}"
+      pppoe_egress_cos: "{{ desired_settings['pppoe-egress-cos'] | default(omit, true) }}"
+      security_8021x_member_mode: "{{ desired_settings['security-8021x-member-mode'] | default(omit, true) }}"
+      stp_edge: "{{ desired_settings['stp-edge'] | default(omit, true) }}"
+      switch_controller_offload: "{{ desired_settings['switch-controller-offload'] | default(omit, true) }}"
+      switch_controller_offload_gw: "{{ desired_settings['switch-controller-offload-gw'] | default(omit, true) }}"
+      switch_controller_offload_ip: "{{ desired_settings['switch-controller-offload-ip'] | default(omit, true) }}"
   register: "output"
 
 - name: "Debug"

@@ -1,6 +1,7 @@
 ---
 - name: "System Interface settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Backing up the System Interface settings"

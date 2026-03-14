@@ -2,13 +2,18 @@
 - name: "Ensure the backup directory exists"
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
 
-- name: "Saving the System Interface settings in a local file: {{ item.name }}"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the System Interface backup and minimal files: '{{ item.name }}'"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])) }}
-    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | combine({'ipv6': item.ipv6 | default({}) | hyphen_to_underscore(['ip6_allowaccess', 'dhcp6_client_options'])})
+      | combine({'phy-setting': item['phy-setting'] | default({})
+          | hyphen_to_underscore()
+          | ansible.utils.replace_keys(target=[
+              {'before': 'signal_ok_threshold_value', 'after': 'signal_ok_threshold'}
+            ])})) }}
+    dest_dir: "{{ path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ system_interface_minimal_keys }}"
