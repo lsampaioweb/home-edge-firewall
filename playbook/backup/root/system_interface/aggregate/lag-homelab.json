@@ -1,17 +1,28 @@
 {
-  "name": "LAG-Homelab",
-  "type": "aggregate",
-  "member": [
-    {
-      "interface-name": "port12"
-    }
-  ],
-  "role": "lan",
+  "alias": "",
+  "allowaccess": "",
+  "defaultgw": "enable",
+  "description": "Homelab",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "distance": 5,
+  "dns-server-override": "enable",
+  "estimated-downstream-bandwidth": 0,
+  "estimated-upstream-bandwidth": 0,
+  "interface": "",
   "ip": "0.0.0.0 0.0.0.0",
+  "lacp-mode": "static",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "lacp-mode": "static",
-  "device-identification": "disable",
+  "member": [{"interface_name": "port12"}],
+  "mode": "static",
+  "monitor-bandwidth": "enable",
+  "name": "LAG-Homelab",
+  "role": "lan",
   "security-mode": "none",
-  "status": "up"
+  "src-check": "enable",
+  "status": "up",
+  "type": "aggregate",
+  "vdom": "root",
+  "vlanid": 0
 }

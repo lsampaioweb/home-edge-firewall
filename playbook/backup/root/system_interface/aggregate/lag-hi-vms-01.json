@@ -1,17 +1,28 @@
 {
-  "name": "LAG-HI-VMS-01",
-  "type": "aggregate",
-  "member": [
-    {
-      "interface-name": "port6"
-    }
-  ],
-  "role": "lan",
+  "alias": "",
+  "allowaccess": "",
+  "defaultgw": "enable",
+  "description": "Home Infra VMs - Server 01",
+  "device-identification": "disable",
+  "device-user-identification": "disable",
+  "distance": 5,
+  "dns-server-override": "enable",
+  "estimated-downstream-bandwidth": 0,
+  "estimated-upstream-bandwidth": 0,
+  "interface": "",
   "ip": "0.0.0.0 0.0.0.0",
+  "lacp-mode": "static",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "lacp-mode": "static",
-  "device-identification": "disable",
+  "member": [{"interface_name": "port6"}],
+  "mode": "static",
+  "monitor-bandwidth": "enable",
+  "name": "LAG-HI-VMS-01",
+  "role": "lan",
   "security-mode": "none",
-  "status": "up"
+  "src-check": "enable",
+  "status": "up",
+  "type": "aggregate",
+  "vdom": "root",
+  "vlanid": 0
 }
