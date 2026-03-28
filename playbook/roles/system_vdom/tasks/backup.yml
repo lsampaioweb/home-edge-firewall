@@ -17,13 +17,7 @@
 - name: "Saving the System VDOM backup and minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    entry: >
-      {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])
-      | ansible.utils.replace_keys(target=[
-        {'before': 'short-name' , 'after': 'short_name'},
-        {'before': 'vcluster-id', 'after': 'vcluster_id'}
-      ])) }}
+    entry: "{{ (item | ansible.utils.remove_keys(target=[invalid_attribute])) }}"
     dest_dir: "{{ backup_system_vdom_path }}"
     dest_basename: "{{ (('%02d' | format(item['vcluster-id'] | int)) ~ '-' ~ (item['short-name'] | replace(' ', '-'))) | lower }}"
     minimal_keys: "{{ system_vdom_minimal_keys }}"

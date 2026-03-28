@@ -8,15 +8,15 @@
   ansible.builtin.debug:
     msg: "{{ desired_settings }}"
 
-- name: "Creating System VDOM entries: {{ desired_settings.short_name }}"
+- name: "Creating System VDOM entries: {{ desired_settings['short-name'] }}"
   fortinet.fortios.fortios_system_vdom:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
     system_vdom:
       flag: "{{ desired_settings.flag | default(omit) }}"
       name: "{{ desired_settings.name | default(omit) }}"
-      short_name: "{{ desired_settings.short_name | default(omit) }}"
-      vcluster_id: "{{ desired_settings.vcluster_id | default(omit) }}"
+      short_name: "{{ desired_settings['short-name'] | default(omit) }}"
+      vcluster_id: "{{ desired_settings['vcluster-id'] | default(omit) }}"
   register: "output"
 
 - name: "Debug"
