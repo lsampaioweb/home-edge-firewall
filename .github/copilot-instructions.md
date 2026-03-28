@@ -175,6 +175,7 @@ vdom=root
 
 1. **NEVER** use pip commands - only pipx or homebrew.
 1. When creating new features, copy the patterns from existing roles like `dns` or `services` rather than inventing new approaches.
+1. **NEVER** truncate command output — do not append `| tail`, `| head`, `| grep` or any other filter to playbook or terminal commands. Always show the full output.
 
 ## Role Checklist (apply to every role when reviewing or fixing)
 
