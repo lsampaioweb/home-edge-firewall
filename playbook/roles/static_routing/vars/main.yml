@@ -1,0 +1,10 @@
+---
+static_routing_minimal_keys:
+  - "comment"
+  - "distance"
+  - "dst"
+  - "gateway"
+  - "priority"
+  - "sdwan_zone"
+  - "seq_num"
+  - "status"

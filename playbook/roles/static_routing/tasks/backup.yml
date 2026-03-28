@@ -14,13 +14,10 @@
   vars:
     path: "{{ backup_static_routing_path }}"
 
-- name: "Saving the Static Routing settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_static_routing_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the Static Routing backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
@@ -31,7 +28,9 @@
         {'before': 'sdwan-zone'             , 'after': 'sdwan_zone'},
         {'before': 'seq-num'                , 'after': 'seq_num'}
       ])) }}
-    file: "{{ (('%03d' | format(item.priority | int)) ~ '-' ~ (item['sdwan-zone'][0].name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+    dest_dir: "{{ backup_static_routing_path }}"
+    dest_basename: "{{ ('%03d' | format(item.priority | int)) ~ '-' ~ (item['sdwan-zone'][0].name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ static_routing_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item['sdwan-zone'][0].name }}"

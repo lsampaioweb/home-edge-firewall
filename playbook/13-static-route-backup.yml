@@ -1,6 +1,7 @@
 ---
 - name: "Static Route settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Backing up the Static Route settings"
