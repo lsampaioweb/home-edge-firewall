@@ -151,18 +151,18 @@ Run these commands on the computer running Ansible:
     ansible-playbook 12-services-create-from-minimal.yml
     ```
 
-1. Backup and create static routes:
-    ```bash
-    ansible-playbook 13-static-route-backup.yml
-    ansible-playbook 13-static-route-create-from-backup.yml
-    ansible-playbook 13-static-route-create-from-minimal.yml
-    ```
-
 1. Backup and create SDWAN settings:
     ```bash
-    ansible-playbook 14-system-sdwan-backup.yml
-    ansible-playbook 14-system-sdwan-create-from-backup.yml
-    ansible-playbook 14-system-sdwan-create-from-minimal.yml
+    ansible-playbook 13-system-sdwan-backup.yml
+    ansible-playbook 13-system-sdwan-create-from-backup.yml
+    ansible-playbook 13-system-sdwan-create-from-minimal.yml
+    ```
+
+1. Backup and create static routes:
+    ```bash
+    ansible-playbook 14-static-route-backup.yml
+    ansible-playbook 14-static-route-create-from-backup.yml
+    ansible-playbook 14-static-route-create-from-minimal.yml
     ```
 
 1. Backup and create Central SNAT settings:

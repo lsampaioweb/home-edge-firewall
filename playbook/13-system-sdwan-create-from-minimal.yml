@@ -1,9 +1,10 @@
 ---
 - name: "System SD-WAN settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
-    - name: "Backing up the System SD-WAN settings"
+    - name: "Creating System SD-WAN from minimal JSON"
       ansible.builtin.include_role:
         name: "system_sdwan"
-        tasks_from: "backup.yml"
+        tasks_from: "create-from-minimal.yml"

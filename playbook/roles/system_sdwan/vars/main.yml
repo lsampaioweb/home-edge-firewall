@@ -1,0 +1,4 @@
+---
+system_sdwan_minimal_keys:
+  - "status"
+  - "zone"

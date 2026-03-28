@@ -1,6 +1,7 @@
 ---
 - name: "System SD-WAN settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating System SD-WAN from backup"

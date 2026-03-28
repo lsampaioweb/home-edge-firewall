@@ -29,11 +29,11 @@
 - name: "Run the Services playbook"
   ansible.builtin.import_playbook: "12-services-create-from-backup.yml"
 
-- name: "Run the Static Routing playbook"
-  ansible.builtin.import_playbook: "13-static-route-create-from-backup.yml"
-
 - name: "Run the System SDWAN playbook"
-  ansible.builtin.import_playbook: "14-system-sdwan-create-from-backup.yml"
+  ansible.builtin.import_playbook: "13-system-sdwan-create-from-backup.yml"
+
+- name: "Run the Static Routing playbook"
+  ansible.builtin.import_playbook: "14-static-route-create-from-backup.yml"
 
 - name: "Run the Firewall Central SNAT playbook"
   ansible.builtin.import_playbook: "15-firewall-central-snat-create-from-backup.yml"
