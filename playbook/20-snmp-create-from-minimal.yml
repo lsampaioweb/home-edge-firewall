@@ -1,6 +1,7 @@
 ---
 - name: "SNMP settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating SNMP entries from minimal JSON"

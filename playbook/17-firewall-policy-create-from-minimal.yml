@@ -1,6 +1,7 @@
 ---
 - name: "Firewall Policy settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating Firewall Policy entries from minimal JSON"

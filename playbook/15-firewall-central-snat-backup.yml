@@ -1,6 +1,7 @@
 ---
 - name: "Firewall Central SNAT settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Backing up the Firewall Central SNAT settings"
