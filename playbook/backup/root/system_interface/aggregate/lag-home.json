@@ -1,10 +1,10 @@
 {
   "alias": "",
-  "allowaccess": "https ssh ping fabric",
+  "allowaccess": "ping https ssh fabric",
   "defaultgw": "enable",
   "description": "Home LAN",
   "device-identification": "disable",
-  "device-user-identification": "disable",
+  "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",
   "estimated-downstream-bandwidth": 0,
@@ -14,7 +14,11 @@
   "lacp-mode": "static",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "member": [{"interface_name": "port1"}],
+  "member": [
+    {
+      "interface_name": "port1"
+    }
+  ],
   "mode": "static",
   "monitor-bandwidth": "enable",
   "name": "LAG-Home",

@@ -1,7 +1,7 @@
 {
   "id": 45,
   "status": "enable",
-  "interface": "VL-HI-JUMPSERVER",
+  "interface": "VL-HI-JUMPSRV",
   "ip_range": [
     {
       "id": 1,

@@ -9,14 +9,12 @@
   "dns-server-override": "enable",
   "estimated-downstream-bandwidth": 0,
   "estimated-upstream-bandwidth": 0,
+  "interface": "",
   "ip": "0.0.0.0 0.0.0.0",
   "lacp-mode": "active",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "member": [
-    { "interface_name": "LAG-HI-VMS-01" },
-    { "interface_name": "LAG-HI-VMS-02" }
-  ],
+  "member": [],
   "mode": "static",
   "monitor-bandwidth": "enable",
   "name": "SS-HI-VMS",
