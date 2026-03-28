@@ -1,6 +1,7 @@
 ---
 - name: "LDAP settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating LDAP entries from minimal JSON"

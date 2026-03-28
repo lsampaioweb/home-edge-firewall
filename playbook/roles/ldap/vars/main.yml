@@ -1,0 +1,10 @@
+---
+ldap_minimal_keys:
+  - "cnid"
+  - "dn"
+  - "name"
+  - "port"
+  - "secure"
+  - "server"
+  - "type"
+  - "username"

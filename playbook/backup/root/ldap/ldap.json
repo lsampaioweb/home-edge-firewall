@@ -1,11 +1,10 @@
 {
-  "name": "ldap",
-  "server": "ldap-01.homelab",
-  "port": 389,
   "cnid": "cn",
   "dn": "dc=homelab",
-  "username": "cn=ldap-reader-firewall,dc=homelab",
-  "member-attr": "memberOf",
+  "name": "ldap",
+  "port": 389,
   "secure": "starttls",
-  "obtain-user-info": "enable"
+  "server": "ldap-01.homelab",
+  "type": "regular",
+  "username": "cn=ldap-reader-firewall,dc=homelab"
 }

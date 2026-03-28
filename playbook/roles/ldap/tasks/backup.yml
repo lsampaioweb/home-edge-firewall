@@ -14,13 +14,13 @@
   vars:
     path: "{{ backup_ldap_path }}"
 
-- name: "Saving the LDAP settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ item | to_nice_json(indent=2) }}"
-    dest: "{{ backup_ldap_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the LDAP backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
-  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
+    entry: "{{ (item | ansible.utils.remove_keys(target=[invalid_attribute])) }}"
+    dest_dir: "{{ backup_ldap_path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ ldap_minimal_keys }}"
+  loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"
