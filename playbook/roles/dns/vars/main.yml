@@ -2,10 +2,10 @@
 dns_minimal_keys:
   - "authoritative"
   - "contact"
-  - "dns_entry"
+  - "dns-entry"
   - "domain"
   - "name"
-  - "primary_name"
+  - "primary-name"
   - "status"
   - "ttl"
   - "type"

@@ -1,7 +1,7 @@
 {
   "authoritative": "enable",
   "contact": "lsampaio",
-  "dns_entry": [
+  "dns-entry": [
     {
       "canonical_name": "",
       "hostname": "firewall-01",
@@ -53,7 +53,7 @@
   ],
   "domain": "lan.home",
   "name": "lan.home",
-  "primary_name": "firewall-01",
+  "primary-name": "firewall-01",
   "status": "enable",
   "ttl": 86400,
   "type": "primary",

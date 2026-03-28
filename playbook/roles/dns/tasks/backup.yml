@@ -20,22 +20,16 @@
 - name: "Saving the DNS backup and minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    entry: >
+    entry: >-
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
-        {'before': 'allow-transfer' , 'after': 'allow_transfer'},
-        {'before': 'dns-entry'      , 'after': 'dns_entry'},
-        {'before': 'canonical-name' , 'after': 'canonical_name'},
-        {'before': 'ip-primary'     , 'after': 'ip_primary'},
-        {'before': 'primary-name'   , 'after': 'primary_name'},
-        {'before': 'rr-max'         , 'after': 'rr_max'},
-        {'before': 'source-ip'      , 'after': 'source_ip'}
+        {'before': 'canonical-name', 'after': 'canonical_name'}
       ])) }}
     dest_dir: "{{ backup_dns_path }}"
     dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
     minimal_keys: "{{ dns_minimal_keys }}"
-    nested_key: "dns_entry"
+    nested_key: "dns-entry"
     nested_minimal_keys: "{{ dns_entry_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
