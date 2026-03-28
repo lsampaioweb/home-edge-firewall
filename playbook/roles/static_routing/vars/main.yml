@@ -5,6 +5,6 @@ static_routing_minimal_keys:
   - "dst"
   - "gateway"
   - "priority"
-  - "sdwan_zone"
-  - "seq_num"
+  - "sdwan-zone"
+  - "seq-num"
   - "status"

@@ -17,17 +17,7 @@
 - name: "Saving the Static Routing backup and minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    entry: >-
-      {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])
-      | ansible.utils.replace_keys(target=[
-        {'before': 'dynamic-gateway'        , 'after': 'dynamic_gateway'},
-        {'before': 'internet-service'       , 'after': 'internet_service'},
-        {'before': 'internet-service-custom', 'after': 'internet_service_custom'},
-        {'before': 'link-monitor-exempt'    , 'after': 'link_monitor_exempt'},
-        {'before': 'sdwan-zone'             , 'after': 'sdwan_zone'},
-        {'before': 'seq-num'                , 'after': 'seq_num'}
-      ])) }}
+    entry: "{{ (item | ansible.utils.remove_keys(target=[invalid_attribute])) }}"
     dest_dir: "{{ backup_static_routing_path }}"
     dest_basename: "{{ ('%03d' | format(item.priority | int)) ~ '-' ~ (item['sdwan-zone'][0].name | replace(' ', '-')) | lower }}"
     minimal_keys: "{{ static_routing_minimal_keys }}"
