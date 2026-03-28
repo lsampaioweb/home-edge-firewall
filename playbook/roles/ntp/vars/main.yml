@@ -2,6 +2,6 @@
 ntp_minimal_keys:
   - "interface"
   - "ntpsync"
-  - "server_mode"
+  - "server-mode"
   - "syncinterval"
   - "type"

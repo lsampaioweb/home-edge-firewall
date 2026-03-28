@@ -17,16 +17,11 @@
 - name: "Saving the NTP backup and minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    entry: >
+    entry: >-
       {{ (data.meta.results
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
-        {'before': 'interface-name' , 'after': 'interface_name'},
-        {'before': 'key-id'         , 'after': 'key_id'},
-        {'before': 'key-type'       , 'after': 'key_type'},
-        {'before': 'server-mode'    , 'after': 'server_mode'},
-        {'before': 'source-ip'      , 'after': 'source_ip'},
-        {'before': 'source-ip6'     , 'after': 'source_ip6'}
+        {'before': 'interface-name', 'after': 'interface_name'}
       ])) }}
     dest_dir: "{{ backup_ntp_path }}"
     dest_basename: "{{ (data.meta.results.type | replace(' ', '-')) | lower }}"

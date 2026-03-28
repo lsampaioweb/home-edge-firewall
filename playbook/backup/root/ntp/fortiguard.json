@@ -5,7 +5,7 @@
     }
   ],
   "ntpsync": "enable",
-  "server_mode": "enable",
+  "server-mode": "enable",
   "syncinterval": 60,
   "type": "fortiguard"
 }
