@@ -14,10 +14,7 @@
   "lacp-mode": "active",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "member": [
-    { "interface_name": "LAG-HI-CLSTR-01" },
-    { "interface_name": "LAG-HI-CLSTR-02" }
-  ],
+  "member": [],
   "mode": "static",
   "monitor-bandwidth": "enable",
   "name": "SS-HI-CLSTR",
