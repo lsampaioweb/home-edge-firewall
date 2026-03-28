@@ -8,6 +8,9 @@
     entry: >-
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'interface-name', 'after': 'interface_name'}
+      ])
       | combine({'ipv6': item.ipv6 | default({}) | hyphen_to_underscore(['ip6_allowaccess', 'dhcp6_client_options'])})
       | combine({'phy-setting': item['phy-setting'] | default({})
           | hyphen_to_underscore()
