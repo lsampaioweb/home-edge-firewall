@@ -1,7 +1,9 @@
 {
-  "name": "Zabbix-Client",
-  "comment": "Ansible",
   "category": "Network Services",
+  "comment": "Ansible",
+  "name": "Zabbix-Client",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "10050"
+  "sctp-portrange": "",
+  "tcp-portrange": "10050",
+  "udp-portrange": ""
 }

@@ -1,7 +1,9 @@
 {
-  "name": "SMTP",
-  "comment": "Ansible",
   "category": "Email",
+  "comment": "Ansible",
+  "name": "SMTP",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "25"
+  "sctp-portrange": "",
+  "tcp-portrange": "25",
+  "udp-portrange": ""
 }

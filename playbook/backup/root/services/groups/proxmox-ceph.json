@@ -1,5 +1,4 @@
 {
-  "name": "Proxmox-Ceph",
   "comment": "Ansible",
   "member": [
     {
@@ -8,5 +7,6 @@
     {
       "name": "Proxmox-Ceph-6789"
     }
-  ]
+  ],
+  "name": "Proxmox-Ceph"
 }

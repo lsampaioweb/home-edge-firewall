@@ -1,6 +1,7 @@
 ---
 - name: "Services settings"
   hosts: "firewalls"
+  gather_facts: false
 
   tasks:
     - name: "Creating Services from backup"

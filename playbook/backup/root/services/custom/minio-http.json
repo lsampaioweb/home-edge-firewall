@@ -1,7 +1,9 @@
 {
-  "name": "Minio-HTTP",
-  "comment": "Ports that Minio will expose. Ansible",
   "category": "Web Access",
+  "comment": "Ports that Minio will expose. Ansible",
+  "name": "Minio-HTTP",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "9000 9001"
+  "sctp-portrange": "",
+  "tcp-portrange": "9000 9001",
+  "udp-portrange": ""
 }

@@ -1,7 +1,9 @@
 {
-  "name": "Binance-Stream",
-  "comment": "Ansible",
   "category": "Network Services",
+  "comment": "Ansible",
+  "name": "Binance-Stream",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "9443"
+  "sctp-portrange": "",
+  "tcp-portrange": "9443",
+  "udp-portrange": ""
 }

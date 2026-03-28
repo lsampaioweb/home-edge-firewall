@@ -1,0 +1,14 @@
+---
+services_custom_minimal_keys:
+  - "category"
+  - "comment"
+  - "name"
+  - "protocol"
+  - "sctp-portrange"
+  - "tcp-portrange"
+  - "udp-portrange"
+
+services_group_minimal_keys:
+  - "comment"
+  - "member"
+  - "name"

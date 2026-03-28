@@ -1,7 +1,9 @@
 {
-  "name": "Syslog-Promtail",
-  "comment": "Ansible",
   "category": "Network Services",
+  "comment": "Ansible",
+  "name": "Syslog-Promtail",
   "protocol": "TCP/UDP/SCTP",
+  "sctp-portrange": "",
+  "tcp-portrange": "",
   "udp-portrange": "1514"
 }

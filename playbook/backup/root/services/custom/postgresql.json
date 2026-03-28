@@ -1,7 +1,9 @@
 {
-  "name": "PostgreSQL",
-  "comment": "Ansible",
   "category": "Database",
+  "comment": "Ansible",
+  "name": "PostgreSQL",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "5432"
+  "sctp-portrange": "",
+  "tcp-portrange": "5432",
+  "udp-portrange": ""
 }

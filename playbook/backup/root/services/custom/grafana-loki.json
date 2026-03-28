@@ -1,7 +1,9 @@
 {
-  "name": "Grafana-Loki",
-  "comment": "Ansible",
   "category": "Network Services",
+  "comment": "Ansible",
+  "name": "Grafana-Loki",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "3100"
+  "sctp-portrange": "",
+  "tcp-portrange": "3100",
+  "udp-portrange": ""
 }

@@ -1,7 +1,9 @@
 {
-  "name": "Proxmox-Ceph-3300",
-  "comment": "Ansible",
   "category": "Network Services",
+  "comment": "Ansible",
+  "name": "Proxmox-Ceph-3300",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "3300"
+  "sctp-portrange": "",
+  "tcp-portrange": "3300",
+  "udp-portrange": ""
 }

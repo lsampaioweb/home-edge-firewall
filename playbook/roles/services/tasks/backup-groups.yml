@@ -14,14 +14,14 @@
   vars:
     path: "{{ backup_services_group_path }}"
 
-- name: "Saving the Services with 'Ansible' keyword in the comments to a local file"
-  ansible.builtin.copy:
-    content: "{{ item | to_nice_json(indent=2) }}"
-    dest: "{{ backup_services_group_path }}/{{ file }}"
-    mode: "0644"
-  vars:
-    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+- name: "Saving the Group Service backup and minimal files for entries with comment containing '{{ search_keywork }}'"
   when: item.comment is search(search_keywork, ignorecase=true)
-  loop: "{{ data.meta.results | default([]) | ansible.utils.remove_keys(target=[invalid_attribute]) }}"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
+  vars:
+    entry: "{{ (item | ansible.utils.remove_keys(target=[invalid_attribute])) }}"
+    dest_dir: "{{ backup_services_group_path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ services_group_minimal_keys }}"
+  loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"

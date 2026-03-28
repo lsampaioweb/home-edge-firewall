@@ -1,7 +1,9 @@
 {
-  "name": "LDAPS",
-  "comment": "Ansible",
   "category": "Authentication",
+  "comment": "Ansible",
+  "name": "LDAPS",
   "protocol": "TCP/UDP/SCTP",
-  "tcp-portrange": "636"
+  "sctp-portrange": "",
+  "tcp-portrange": "636",
+  "udp-portrange": ""
 }
