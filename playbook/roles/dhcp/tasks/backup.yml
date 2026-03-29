@@ -21,10 +21,6 @@
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute, 'ddns-key'])
       | ansible.utils.replace_keys(target=[
-        {'before': 'uci-match',       'after': 'uci_match'},
-        {'before': 'uci-string',      'after': 'uci_string'},
-        {'before': 'vci-match',       'after': 'vci_match'},
-        {'before': 'vci-string',      'after': 'vci_string'},
         {'before': 'circuit-id',      'after': 'circuit_id'},
         {'before': 'circuit-id-type', 'after': 'circuit_id_type'},
         {'before': 'remote-id',       'after': 'remote_id'},
@@ -35,7 +31,11 @@
           | ansible.utils.replace_keys(target=[
               {'before': 'start-ip',   'after': 'start_ip'},
               {'before': 'end-ip',     'after': 'end_ip'},
-              {'before': 'lease-time', 'after': 'lease_time'}
+              {'before': 'lease-time', 'after': 'lease_time'},
+              {'before': 'uci-match',  'after': 'uci_match'},
+              {'before': 'uci-string', 'after': 'uci_string'},
+              {'before': 'vci-match',  'after': 'vci_match'},
+              {'before': 'vci-string', 'after': 'vci_string'}
             ])
         }) }}
     dest_dir: "{{ backup_dhcp_path }}"
