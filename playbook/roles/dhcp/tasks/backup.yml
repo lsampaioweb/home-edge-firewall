@@ -14,31 +14,35 @@
   vars:
     path: "{{ backup_dhcp_path }}"
 
-- name: "Saving the DHCP settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_dhcp_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the DHCP backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
       | ansible.utils.remove_keys(target=[invalid_attribute, 'ddns-key'])
       | ansible.utils.replace_keys(target=[
-        {'before': 'ip-range'         , 'after': 'ip_range'},
-        {'before': 'end-ip'           , 'after': 'end_ip'},
-        {'before': 'lease-time'       , 'after': 'lease_time'},
-        {'before': 'start-ip'         , 'after': 'start_ip'},
-        {'before': 'uci-match'        , 'after': 'uci_match'},
-        {'before': 'uci-string'       , 'after': 'uci_string'},
-        {'before': 'vci-match'        , 'after': 'vci_match'},
-        {'before': 'vci-string'       , 'after': 'vci_string'},
-        {'before': 'reserved-address' , 'after': 'reserved_address'},
-        {'before': 'circuit-id'       , 'after': 'circuit_id'},
-        {'before': 'circuit-id-type'  , 'after': 'circuit_id_type'},
-        {'before': 'remote-id'        , 'after': 'remote_id'},
-        {'before': 'remote-id-type'   , 'after': 'remote_id_type'}
-      ])) }}
-    file: "{{ (('%03d' | format(item.id | int)) ~ '-' ~ (item.interface | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+        {'before': 'uci-match',       'after': 'uci_match'},
+        {'before': 'uci-string',      'after': 'uci_string'},
+        {'before': 'vci-match',       'after': 'vci_match'},
+        {'before': 'vci-string',      'after': 'vci_string'},
+        {'before': 'circuit-id',      'after': 'circuit_id'},
+        {'before': 'circuit-id-type', 'after': 'circuit_id_type'},
+        {'before': 'remote-id',       'after': 'remote_id'},
+        {'before': 'remote-id-type',  'after': 'remote_id_type'}
+      ]))
+      | combine({'ip-range': item['ip-range'] | default([])
+          | ansible.utils.remove_keys(target=[invalid_attribute])
+          | ansible.utils.replace_keys(target=[
+              {'before': 'start-ip',   'after': 'start_ip'},
+              {'before': 'end-ip',     'after': 'end_ip'},
+              {'before': 'lease-time', 'after': 'lease_time'}
+            ])
+        }) }}
+    dest_dir: "{{ backup_dhcp_path }}"
+    dest_basename: "{{ ('%04d' | format(item.id | int)) ~ '-' ~ (item.interface | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ dhcp_minimal_keys }}"
+    nested_key: "ip-range"
+    nested_minimal_keys: "{{ dhcp_ip_range_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.interface }}"

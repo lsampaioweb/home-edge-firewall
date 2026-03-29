@@ -1,0 +1,17 @@
+---
+dhcp_minimal_keys:
+  - "default-gateway"
+  - "domain"
+  - "dns-service"
+  - "id"
+  - "interface"
+  - "ip-range"
+  - "netmask"
+  - "reserved-address"
+  - "status"
+
+dhcp_ip_range_minimal_keys:
+  - "id"
+  - "start_ip"
+  - "end_ip"
+  - "lease_time"
