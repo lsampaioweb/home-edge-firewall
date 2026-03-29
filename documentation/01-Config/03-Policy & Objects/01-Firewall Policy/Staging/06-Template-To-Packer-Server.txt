@@ -1,5 +1,5 @@
 Name                : Template-To-Packer-Server
-Incoming Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
 Outgoing Interface  : Zone-Home
 Source              : VS-TEMPLATE address
 Destination         : LAG-Home address

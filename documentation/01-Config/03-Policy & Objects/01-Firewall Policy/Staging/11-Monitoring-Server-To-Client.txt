@@ -1,6 +1,6 @@
 Name                : Monitoring-Server-To-Client
-Incoming Interface  : Zone-Home-Staging
-Outgoing Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
+Outgoing Interface  : Zone-Staging
 Source              : VS-MONITOR address
 Destination         : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address
 Schedule            : always

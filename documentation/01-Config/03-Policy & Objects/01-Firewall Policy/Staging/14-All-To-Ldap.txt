@@ -1,6 +1,6 @@
 Name                : All-To-Ldap
-Incoming Interface  : Zone-Home-Staging
-Outgoing Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
+Outgoing Interface  : Zone-Staging
 Source              : VS-MGMT address, VS-CORE address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address, VS-MONITOR address
 Destination         : VS-LDAP address
 Schedule            : always

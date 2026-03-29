@@ -1,6 +1,6 @@
 Name                : Template-To-JumpServer
-Incoming Interface  : Zone-Home-Staging
-Outgoing Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
+Outgoing Interface  : Zone-Staging
 Source              : VS-TEMPLATE address
 Destination         : VS-JUMPSERVER address
 Schedule            : always

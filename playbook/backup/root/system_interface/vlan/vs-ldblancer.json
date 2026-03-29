@@ -9,7 +9,7 @@
   "dns-server-override": "enable",
   "estimated-downstream-bandwidth": 0,
   "estimated-upstream-bandwidth": 0,
-  "interface": "SS-HI-VMS",
+  "interface": "SS-S-VMS",
   "ip": "10.1.50.14 255.255.255.240",
   "lacp-mode": "active",
   "lldp-reception": "vdom",

@@ -1,8 +1,8 @@
 Interface:
-  Name              : LAG-HI-VMS-02
+  Name              : LAG-S-CLSTR-02
   Alias             :
   Type              : 802.3ad Aggregrate
-  Interface members : Int-Home-02-02 (port10)
+  Interface members : Int-Home-02-01 (port9)
   Role              : LAN
 
 Address:
@@ -14,14 +14,14 @@ Address:
   Transmit LLDP : Use VDOM Setting
 
 Network:
-  Device detection                : Unchecked
-  Security mode                   : Unchecked
+  Device detection : Unchecked
+  Security mode    : Unchecked
 
 Miscellaneous:
   Status: Enabled
 
   CLI:
   config system interface
-    edit LAG-HI-VMS-02
+    edit LAG-S-CLSTR-02
       set lacp-mode static
     end

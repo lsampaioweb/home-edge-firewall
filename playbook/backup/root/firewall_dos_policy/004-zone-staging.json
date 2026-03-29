@@ -1,8 +1,8 @@
 {
   "policyid": 2,
   "status": "enable",
-  "name": "zone-home-staging",
-  "interface": "zone-home-staging",
+  "name": "zone-staging",
+  "interface": "zone-staging",
   "srcaddr": [
     {
       "name": "all"

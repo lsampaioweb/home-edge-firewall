@@ -1,5 +1,5 @@
 Name                : Staging-To-Internet
-Incoming Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
 Outgoing Interface  : SD-WAN
 Source              : VS-MGMT address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address
 Destination         : all

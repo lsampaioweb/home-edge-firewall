@@ -1,5 +1,5 @@
 Policy
-  Incoming Interface  : Zone-Home-Staging
+  Incoming Interface  : Zone-Staging
   Outgoing Interface  : DigitalNET (wan1), Claro (win2)
   Source Address      : VS-MGMT address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address
   Destination Address : all

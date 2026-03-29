@@ -1,7 +1,7 @@
 Interface:
-  Name         : SS-HI-VMS
+  Name         : SS-S-CLSTR
   Type         : Software Switch
-  Interface    : LAG-HI-VMS-01, LAG-HI-VMS-02
+  Interface    : LAG-S-CLSTR-01, LAG-S-CLSTR-02
   Role         : LAN
 
 Address:
@@ -9,12 +9,12 @@ Address:
   IP/Netmask                            : 0.0.0.0/0.0.0.0
   Create address object matching subnet : Unchecked
 
-Address:
   Receive LLDP  : Use VDOM Setting
   Transmit LLDP : Use VDOM Setting
 
 Network:
   Device detection : Unchecked
+  Security mode    : Unchecked
 
 Miscellaneous:
   Status: Enabled

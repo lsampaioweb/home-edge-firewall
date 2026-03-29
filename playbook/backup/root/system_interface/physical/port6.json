@@ -2,7 +2,7 @@
   "alias": "Int-Home-01-02",
   "allowaccess": "",
   "defaultgw": "enable",
-  "description": "LAG-HI-VMS-01 member",
+  "description": "LAG-S-VMS-01 member",
   "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,

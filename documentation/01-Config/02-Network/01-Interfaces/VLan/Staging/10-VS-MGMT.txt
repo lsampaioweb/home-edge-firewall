@@ -2,7 +2,7 @@ Interface:
   Name          : VS-MGMT
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-HI-CLSTR
+  Interface     : SS-S-CLSTR
   VLAN ID       : 10
   Role          : LAN
 

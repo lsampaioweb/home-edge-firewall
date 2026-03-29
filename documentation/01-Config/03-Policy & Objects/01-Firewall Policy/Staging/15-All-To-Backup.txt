@@ -1,6 +1,6 @@
 Name                : All-To-Backup
-Incoming Interface  : Zone-Home-Staging
-Outgoing Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
+Outgoing Interface  : Zone-Staging
 Source              : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address, VS-MONITOR address
 Destination         : VS-BACKUP address
 Schedule            : always

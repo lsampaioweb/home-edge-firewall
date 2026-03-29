@@ -3,7 +3,7 @@
   "comments": "Home-Staging To Internet",
   "srcintf": [
     {
-      "name": "zone-home-staging"
+      "name": "zone-staging"
     }
   ],
   "dstintf": [

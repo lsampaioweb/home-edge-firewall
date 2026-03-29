@@ -1,5 +1,5 @@
 Name                : JumpServer-To-Firewall
-Incoming Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
 Outgoing Interface  : Zone-Home
 Source              : VS-JUMPSERVER address
 Destination         : this-firewall-address

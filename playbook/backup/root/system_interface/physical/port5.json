@@ -2,7 +2,7 @@
   "alias": "Int-Home-01-01",
   "allowaccess": "",
   "defaultgw": "enable",
-  "description": "LAG-HI-CLSTR-01 member",
+  "description": "LAG-S-CLSTR-01 member",
   "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,

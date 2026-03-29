@@ -1,6 +1,6 @@
 Name                : JumpServer-To-Mgmt
-Incoming Interface  : Zone-Home-Staging
-Outgoing Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
+Outgoing Interface  : Zone-Staging
 Source              : VS-JUMPSERVER address
 Destination         : VS-MGMT address
 Schedule            : always

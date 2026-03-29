@@ -2,7 +2,7 @@ Interface:
   Name          : VS-TEMPLATE
   Type          : VLAN
   VLAN Protocol : 802.1Q
-  Interface     : SS-HI-VMS
+  Interface     : SS-S-VMS
   VLAN ID       : 40
   Role          : LAN
 

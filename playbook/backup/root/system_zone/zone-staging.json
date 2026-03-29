@@ -2,5 +2,5 @@
   "description": "",
   "interface": [],
   "intrazone": "deny",
-  "name": "zone-home-staging"
+  "name": "zone-staging"
 }

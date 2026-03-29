@@ -1,6 +1,6 @@
 Edit Policy
-  Name                : Zone-Home-Staging
-  Incoming Interface  : Zone-Home-Staging
+  Name                : Zone-Staging
+  Incoming Interface  : Zone-Staging
   Source Address      : all
   Destination Address : all
   Service             : ALL

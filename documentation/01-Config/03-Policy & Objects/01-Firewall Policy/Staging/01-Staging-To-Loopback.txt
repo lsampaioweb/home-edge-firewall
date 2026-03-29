@@ -1,5 +1,5 @@
 Name                : Staging-To-Loopback
-Incoming Interface  : Zone-Home-Staging
+Incoming Interface  : Zone-Staging
 Outgoing Interface  : INT-Loopback
 Source              : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address, VS-MONITOR address
 Destination         : INT-Loopback address

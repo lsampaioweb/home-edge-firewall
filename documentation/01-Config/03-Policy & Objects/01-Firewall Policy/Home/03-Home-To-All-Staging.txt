@@ -1,6 +1,6 @@
 Name                : Home-To-All-Staging
 Incoming Interface  : Zone-Home
-Outgoing Interface  : Zone-Home-Staging
+Outgoing Interface  : Zone-Staging
 Source              : Macbook-Luciano, MacBook-Fernanda
 Destination         : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address, VS-MONITOR address
 Schedule            : always
