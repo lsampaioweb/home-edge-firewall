@@ -9,19 +9,14 @@ The project follows a modular approach with roles, playbooks, and supports both 
 - **Target Platform**: Fortigate firewall via HTTPAPI.
 - **Development Environment**: macOS/Ubuntu with pipx-managed Ansible.
 - **Version Control**: Git/GitHub.
-- **Documentation**: Plain text files and structured directories.
 
 ## Architecture Principles
 
-### Playbook Structure
-- Each major Fortigate feature has its own numbered playbook (e.g., `07-dns-backup.yml`).
-- Three-tier approach per feature:
-  1. `XX-feature-backup.yml` - Exports current config.
-  1. `XX-feature-create-from-backup.yml` - Restores from full backup.
-  1. `XX-feature-create-from-minimal.yml` - Creates from minimal JSON.
-
-### Role-Based Organization
-- Each feature has a dedicated role under `roles/`, with task files mirroring the three-tier playbook structure (see Directory Structure).
+### Three-Tier Approach
+Each Fortigate feature has three numbered playbooks and matching task files:
+1. `XX-feature-backup.yml` / `backup.yml` — Exports current config to `.bkp` and `.json` files.
+2. `XX-feature-create-from-backup.yml` / `create-from-backup.yml` — Restores from full `.bkp` backup.
+3. `XX-feature-create-from-minimal.yml` / `create-from-minimal.yml` — Creates from minimal `.json`.
 
 ### Data Management
 - **Full backups**: `.bkp` files with all Fortigate parameters.
@@ -30,7 +25,7 @@ The project follows a modular approach with roles, playbooks, and supports both 
 
 ## Code Style & Conventions
 
-### Playbook Standards
+### Playbook Template
 ```yaml
 ---
 - name: "Descriptive action with feature name"
@@ -42,7 +37,7 @@ The project follows a modular approach with roles, playbooks, and supports both 
       ansible.builtin.include_tasks: "{{ path_role_feature }}/task-file.yml"
 ```
 
-### Task File Patterns
+### Task File Template
 ```yaml
 ---
 - name: "Reading the json file '{{ file.path }}' that contains the desired settings"
@@ -65,58 +60,46 @@ The project follows a modular approach with roles, playbooks, and supports both 
       # Hyphenated JSON keys must use bracket notation:
       hyphenated_field: "{{ desired_settings['hyphenated-param'] | default(omit, true) }}"
   register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
 ```
 
 ### Variable Naming
 - Use descriptive names with underscores: `desired_settings`, `backup_files`.
 - Prefix path variables: `path_role_`, `path_backup_`.
-- Use consistent suffixes: `_path`, `_files`, `_extension`.
 
-### Error Handling & Debugging
-- Include debug tasks with `tags: ["never", "debug"]`.
-- Register outputs as `output` for consistency.
-- Use `default(omit, true)` for optional Fortigate parameters.
-- Let Fortigate handle validation - don't over-validate in Ansible.
-
-## File Organization Standards
+## File Organization
 
 ### Directory Structure
 ```
 playbook/
 ├── [01-99]-*.yml                    # Individual feature playbooks
 ├── site-*.yml                       # Master playbooks
-├── ansible.cfg                      # Ansible configuration
+├── ansible.cfg
 ├── roles/
 │   └── [feature]/
-│       └── tasks/
-│           ├── backup.yml
-│           ├── create-from-backup.yml
-│           ├── create-from-minimal.yml
-│           └── add-entry*.yml
+│       ├── tasks/
+│       │   ├── backup.yml
+│       │   ├── create-from-backup.yml
+│       │   ├── create-from-minimal.yml
+│       │   └── add-entry*.yml
+│       └── vars/
+│           └── main.yml             # <role>_minimal_keys defined here
 ├── backup/root/
 │   └── [feature]/
 │       ├── *.bkp                    # Full backup files
-│       ├── *.json                   # Minimal config files
-│       ├── custom/                  # For services
-│       └── groups/                  # For service groups
+│       └── *.json                   # Minimal config files
 └── inventory/
-    └── hosts                        # Inventory file
+    └── hosts
 ```
 
 ### Naming Conventions
 - **Playbooks**: `##-feature-action.yml` (zero-padded numbers).
-- **Backup files**: `lowercase-name.bkp`.
-- **Minimal files**: `lowercase-name.json` (matching .bkp filename).
-- **VLAN files**: `###-VS-ROLE.txt` (Staging) or `###-VP-ROLE.txt` (Production).
-
-## JSON Structure Standards
-
-### Minimal JSON Requirements
-- **Custom Services**: Must include `name`, `category`, `protocol`.
-- **Service Groups**: Must include `name`, `member`.
-- **DNS**: Must include `name`, `domain`, `type`.
-- Only include parameters visible in Fortigate UI.
-- Use exact parameter names from corresponding `.bkp` files.
+- **Backup/minimal files**: `lowercase-name.bkp` / `lowercase-name.json` (matching filenames).
+- **DHCP/numbered files**: `%04d-<interface-lowercase>.json` (4-digit ID matching VLAN ID).
 
 ## Network Configuration Standards
 
@@ -126,76 +109,56 @@ playbook/
 - VLAN ID maps to third octet via last two digits: VLAN 1110 → 10.1.10.0/28, VLAN 2135 → 20.1.35.0/28.
 - Standard /28 subnets: .0 = network, .1–.13 = DHCP range, .14 = gateway, .15 = broadcast.
 
-### Inventory Requirements
-```ini
-[firewalls:vars]
-ansible_user=admin
-ansible_network_os=fortinet.fortios.fortios
-ansible_connection=httpapi
-ansible_httpapi_use_ssl=true
-vdom=root
-```
-
-## Quality Guidelines
-
-### Idempotency
-- All playbooks must be safely re-runnable.
-- Use `state: present` for create operations.
-- Rely on Fortigate's built-in change detection.
-
-### Testing Approach
-- Start with low-risk features (services, DNS) before network changes.
-- Use backup playbooks before making changes.
-- Test minimal JSON with non-critical elements first.
-
-### Documentation Standards
-- Maintain text files in `documentation/` matching UI structure.
-- Keep README focused on commands and purpose, not verbose explanations.
-- Update `copilot-context.md` for major workflow changes.
-
-## Common Patterns to Follow
-
-### File Processing Loop
-```yaml
-- name: "Retrieving the [type] files"
-  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
-  vars:
-    paths: "{{ backup_feature_path }}"
-    patterns: "{{ backup_files_extension }}"  # or minimal_files_extension
-
-- name: "Creating [Feature] entries from [type]"
-  ansible.builtin.include_tasks: "add-entry.yml"
-  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
-  loop_control:
-    loop_var: "file"
-    label: "{{ file.path }}"
-```
+### Interface Name Truncation
+FortiGate enforces a 15-character interface name limit. Always use the exact shortened name in any file that references these interfaces:
+| Full name | FortiGate name |
+|-----------|----------------|
+| VS-REPOSITORY | VS-REPOSITR |
+| VS-JUMPSERVER | VS-JUMPSRV |
+| VS-LOADBALANCER | VS-LDBLANCER |
+| VP-REPOSITORY | VP-REPOSITR |
+| VP-JUMPSERVER | VP-JUMPSRV |
+| VP-LOADBALANCER | VP-LDBLANCER |
 
 ## AI Assistant Instructions
 
-1. **NEVER** use pip commands - only pipx or homebrew.
-1. When creating new features, copy the patterns from existing roles like `dns` or `services` rather than inventing new approaches.
-1. **NEVER** truncate command output — do not append `| tail`, `| head`, `| grep` or any other filter to playbook or terminal commands. Always show the full output.
+1. **NEVER** use pip commands — only pipx or homebrew.
+2. When creating new features, copy patterns from existing roles like `dns` or `dhcp` rather than inventing new approaches.
+3. **NEVER** truncate command output — do not append `| tail`, `| head`, `| grep` or any other filter to playbook or terminal commands. Always show the full output.
+4. **Always read files before assuming their content** — never modify or advise based on assumed state.
 
 ## Role Checklist (apply to every role when reviewing or fixing)
 
 When working on any role, always go through these steps in order:
 
-1. **`gather_facts: false`** — Verify all 3 playbooks (`backup`, `create-from-backup`, `create-from-minimal`) have `gather_facts: false`.
+1. **`gather_facts: false`** — Verify all 3 playbooks have `gather_facts: false`.
 2. **Minimal fields** — Check the existing hand-crafted `.json` files in `backup/root/<role>/` to determine the correct minimal keys. The union of all keys across all files is the baseline.
 3. **`vars/main.yml`** — Verify the file exists in `roles/<role>/vars/main.yml` with the `<role>_minimal_keys` list. Without it, the backup silently skips saving `.json` files.
 4. **`backup.yml`** — Verify it uses `path_common_firewall_save_backup_files` with `minimal_keys` set, and applies `remove_keys` for `invalid_attribute`. For hyphenated keys, follow the rules below.
 5. **Hyphenated key strategy** — Two rules, applied per key:
-   - **Top-level keys** (e.g. `source-ip`, `seq-num`): do NOT rename in `backup.yml`. Keep the hyphenated key in `.bkp`/`.json` files. In `add-entry.yml`, read with bracket notation: `desired_settings['source-ip']`. In `vars/main.yml` minimal_keys list, use the hyphenated name.
-   - **Sub-keys inside nested lists** (e.g. `interface-name` inside each element of an `interface` list): DO rename using `replace_keys` in `backup.yml`. In `add-entry.yml`, read with dot notation: `desired_settings.interface` (the whole list is passed as-is, sub-keys are already underscored).
+   - **Top-level keys** (e.g. `source-ip`, `lease-time`): do NOT rename in `backup.yml`. Keep the hyphenated key in `.bkp`/`.json` files. In `add-entry.yml`, read with bracket notation: `desired_settings['source-ip']`. In `vars/main.yml` minimal_keys list, use the hyphenated name.
+   - **Sub-keys inside nested lists** (e.g. `start-ip` inside each element of an `ip-range` list): DO rename using `replace_keys` in `backup.yml`. In `add-entry.yml`, read with dot notation (the whole list is passed as-is, sub-keys are already underscored).
    - To decide which rule applies: inspect the raw FortiGate data (from a `.bkp` file or debug output) and check whether the hyphenated key is at the top level of the entry dict or nested inside a list of sub-dicts.
    - **Name collision** — When the same hyphenated key name exists at BOTH the top level AND inside a nested list (e.g. `lease-time` is a top-level DHCP key AND a sub-key inside each `ip-range` item), the main `replace_keys` pipeline must NOT rename it (top-level rule applies). Instead, use `combine({'<nested-key>': item['<nested-key>'] | ... | replace_keys(...)})` to apply renaming only to the sub-dicts in isolation — the same pattern used for `ipv6` in `system_interface/tasks/backup-by-type.yml`. In `vars/main.yml`, the `nested_minimal_keys` list must use the **underscored** name (e.g. `lease_time`) since the sub-dicts have already been renamed by the time `save_backup_files` filters them.
-6. **Nested list key filtering** — When a top-level key holds a list of sub-dicts that need their own minimal-key pruning (e.g. `ip-range`, `dns-entry`), do NOT use inline `combine` + `keep_keys` in `backup.yml`. Instead, pass two extra vars to `path_common_firewall_save_backup_files`:
+6. **Nested list key filtering** — When a top-level key holds a list of sub-dicts that need their own minimal-key pruning (e.g. `ip-range`, `dns-entry`), pass two extra vars to `path_common_firewall_save_backup_files`:
    - `nested_key: "<key-name>"` — the top-level key whose list of sub-dicts should be filtered.
    - `nested_minimal_keys: "{{ <role>_<nested>_minimal_keys }}"` — list of sub-dict keys to keep (defined in `vars/main.yml`).
    The `save_backup_files` common task handles the filtering natively. See the `dns` role (`nested_key: "dns-entry"`) and `dhcp` role (`nested_key: "ip-range"`) for reference.
+7. **`create-from-backup.yml` and `create-from-minimal.yml`** — Verify they use `path_common_firewall_get_backup_files`, loop with `loop_var: file`, and call `add-entry.yml`:
+   ```yaml
+   - name: "Retrieving the [type] files"
+     ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
+     vars:
+       paths: "{{ backup_feature_path }}"
+       patterns: "{{ backup_files_extension }}"  # or minimal_files_extension
 
-7. **`create-from-backup.yml` and `create-from-minimal.yml`** — Verify they use `path_common_firewall_get_backup_files`, loop with `loop_var: file`, and call `add-entry.yml`.
+   - name: "Creating [Feature] entries"
+     ansible.builtin.include_tasks: "add-entry.yml"
+     loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+     loop_control:
+       loop_var: "file"
+       label: "{{ file.path }}"
+   ```
 8. **`add-entry.yml` — space-separated fields** — Check for fields that the FortiGate API returns as a space-separated string but the module expects as a list (e.g. `allowaccess`). Fix with `.split(' ') | select() | list`.
 9. **`add-entry.yml` — missing fields** — Cross-check fields against the module's `.keys` files (if present) and the `.bkp` files to ensure no important parameters are omitted.
 10. **Run all 3 playbooks** — Use full output (no `tail`/`grep` truncation) so failures are visible. Run backup first, then create-from-minimal, then create-from-backup.
