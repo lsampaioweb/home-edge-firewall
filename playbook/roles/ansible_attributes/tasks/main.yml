@@ -13,6 +13,7 @@
     - "system_dns-database"
     - "system_global"
     - "system_interface"
+    - "system_switch-interface"
     - "system_ntp"
     - "system_sdwan"
     - "system_vdom"
