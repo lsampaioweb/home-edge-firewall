@@ -1,0 +1,18 @@
+{
+  "default-gateway": "192.168.3.1",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 2,
+  "interface": "LAG-Home",
+  "ip-range": [
+    {
+      "end_ip": "192.168.3.254",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "192.168.3.200"
+    }
+  ],
+  "netmask": "255.255.255.0",
+  "reserved-address": [],
+  "status": "enable"
+}

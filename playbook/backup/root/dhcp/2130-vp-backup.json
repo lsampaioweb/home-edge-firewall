@@ -1,0 +1,18 @@
+{
+  "default-gateway": "20.1.30.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 2130,
+  "interface": "VP-BACKUP",
+  "ip-range": [
+    {
+      "end_ip": "20.1.30.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "20.1.30.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [],
+  "status": "enable"
+}

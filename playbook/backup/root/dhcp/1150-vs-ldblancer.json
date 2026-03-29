@@ -1,0 +1,18 @@
+{
+  "default-gateway": "10.1.50.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 1150,
+  "interface": "VS-LDBLANCER",
+  "ip-range": [
+    {
+      "end_ip": "10.1.50.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.50.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [],
+  "status": "enable"
+}

@@ -1,0 +1,18 @@
+{
+  "default-gateway": "20.1.15.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 2115,
+  "interface": "VP-CORE",
+  "ip-range": [
+    {
+      "end_ip": "20.1.15.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "20.1.15.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [],
+  "status": "enable"
+}

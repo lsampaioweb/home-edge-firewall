@@ -1,0 +1,18 @@
+{
+  "default-gateway": "10.1.10.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 1110,
+  "interface": "VS-MGMT",
+  "ip-range": [
+    {
+      "end_ip": "10.1.10.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.10.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [],
+  "status": "enable"
+}

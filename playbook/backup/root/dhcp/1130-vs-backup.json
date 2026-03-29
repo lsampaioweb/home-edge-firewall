@@ -1,0 +1,31 @@
+{
+  "default-gateway": "10.1.30.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 1130,
+  "interface": "VS-BACKUP",
+  "ip-range": [
+    {
+      "end_ip": "10.1.30.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.30.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 1,
+      "ip": "10.1.30.1",
+      "mac": "5a:53:76:31:af:8b",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    }
+  ],
+  "status": "enable"
+}

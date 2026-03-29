@@ -1,0 +1,18 @@
+{
+  "default-gateway": "10.1.20.14",
+  "dns-service": "local",
+  "domain": "lan.homelab",
+  "id": 1120,
+  "interface": "VS-LDAP",
+  "ip-range": [
+    {
+      "end_ip": "10.1.20.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.20.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [],
+  "status": "enable"
+}
