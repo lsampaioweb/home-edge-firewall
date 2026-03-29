@@ -1,6 +1,6 @@
 SNMP Agent:
   Description : Fortigate 80E
-  Location    : DC Home-Infra
+  Location    : DC Staging
   Contact Info: lsampaioweb+firewall-01@gmail.com
 
 User Name : firewall-01-zabbix-user

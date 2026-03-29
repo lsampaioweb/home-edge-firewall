@@ -1,11 +1,13 @@
 {
-  "name": "TV-Sala",
-  "type": "mac",
+  "associated-interface": "",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "8c:79:f5:9b:a3:09"
     }
-  ]
+  ],
+  "name": "tv-sala",
+  "type": "mac"
 }

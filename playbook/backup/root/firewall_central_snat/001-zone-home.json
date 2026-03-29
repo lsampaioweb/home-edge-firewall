@@ -3,7 +3,7 @@
   "comments": "Lan to Internet",
   "srcintf": [
     {
-      "name": "Zone-Home"
+      "name": "zone-home"
     }
   ],
   "dstintf": [

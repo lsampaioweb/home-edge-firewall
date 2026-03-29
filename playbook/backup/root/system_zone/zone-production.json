@@ -1,0 +1,6 @@
+{
+  "description": "",
+  "interface": [],
+  "intrazone": "deny",
+  "name": "zone-production"
+}

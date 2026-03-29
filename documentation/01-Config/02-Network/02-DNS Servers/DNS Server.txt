@@ -6,102 +6,102 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-MGMT
+      Interface     : VS-MGMT
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-CORE
+      Interface     : VS-CORE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-LDAP
+      Interface     : VS-LDAP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-PROXY
+      Interface     : VS-PROXY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-BACKUP
+      Interface     : VS-BACKUP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-REPOSITORY
+      Interface     : VS-REPOSITORY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-TEMPLATE
+      Interface     : VS-TEMPLATE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-JUMPSERVER
+      Interface     : VS-JUMPSERVER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-LOADBALANCER
+      Interface     : VS-LOADBALANCER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HI-MONITOR
+      Interface     : VS-MONITOR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-MGMT
+      Interface     : VP-MGMT
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-CORE
+      Interface     : VP-CORE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-LDAP
+      Interface     : VP-LDAP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-PROXY
+      Interface     : VP-PROXY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-BACKUP
+      Interface     : VP-BACKUP
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-REPOSITORY
+      Interface     : VP-REPOSITORY
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-TEMPLATE
+      Interface     : VP-TEMPLATE
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-JUMPSERVER
+      Interface     : VP-JUMPSERVER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-LOADBALANCER
+      Interface     : VP-LOADBALANCER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VL-HL-MONITOR
+      Interface     : VP-MONITOR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked

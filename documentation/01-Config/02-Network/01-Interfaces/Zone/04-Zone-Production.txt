@@ -1,0 +1,3 @@
+Name                      : Zone-Production
+Block intra-zone traffic  : Checked
+Interface members         : VP-MGMT, VP-CORE, VP-LDAP, VP-PROXY, VP-BACKUP, VP-REPOSITORY, VP-TEMPLATE, VP-JUMPSERVER, VP-LOADBALANCER, VP-MONITOR

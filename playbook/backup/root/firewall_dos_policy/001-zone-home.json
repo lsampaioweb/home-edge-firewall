@@ -1,8 +1,8 @@
 {
   "policyid": 1,
   "status": "enable",
-  "name": "Zone-Home",
-  "interface": "Zone-Home",
+  "name": "zone-home",
+  "interface": "zone-home",
   "srcaddr": [
     {
       "name": "all"

@@ -1,0 +1,25 @@
+Name                : JumpServer-To-All
+Incoming Interface  : Zone-Home-Staging
+Outgoing Interface  : Zone-Home-Staging
+Source              : VS-JUMPSERVER address
+Destination         : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-LOADBALANCER address, VS-MONITOR address
+Schedule            : always
+Service             : SSH, PING
+Action              : ACCEPT
+
+Firewall/Network Options
+  Protocol Options    : default
+
+Security Profiles
+  AntiVirus               : Unchecked
+  Web Filter              : Unchecked
+  DNS Filter              : Unchecked
+  Application Control     : Unchecked
+  IPS                     : Unchecked
+  File Filter             : Unchecked
+  SSL Inspection          : Unchecked
+
+Logging Options
+  Log Allowed Traffic : All Sessions
+
+Enable this policy: Checked

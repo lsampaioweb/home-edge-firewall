@@ -1,11 +1,13 @@
 {
-  "name": "Printer-3D",
-  "type": "mac",
+  "associated-interface": "",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "14:6b:9c:dc:e2:dc"
     }
-  ]
+  ],
+  "name": "printer-3d",
+  "type": "mac"
 }

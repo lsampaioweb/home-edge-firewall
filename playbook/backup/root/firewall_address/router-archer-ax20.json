@@ -1,0 +1,13 @@
+{
+  "associated-interface": "",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "90:9a:4a:09:36:f8"
+    }
+  ],
+  "name": "router-archer-ax20",
+  "type": "mac"
+}

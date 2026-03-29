@@ -1,0 +1,13 @@
+{
+  "associated-interface": "zone-home",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "2a:bd:1e:f0:ce:5c"
+    }
+  ],
+  "name": "apple-watch",
+  "type": "mac"
+}

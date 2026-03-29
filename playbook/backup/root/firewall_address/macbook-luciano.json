@@ -1,11 +1,13 @@
 {
-  "name": "MacBook-Luciano",
-  "type": "mac",
+  "associated-interface": "",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "1a:10:90:85:c5:61"
     }
-  ]
+  ],
+  "name": "macbook-luciano",
+  "type": "mac"
 }

@@ -1,11 +1,13 @@
 {
-  "name": "Block-Device-01",
-  "type": "mac",
+  "associated-interface": "zone-home",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "3c:77:e6:8a:b7:7b"
     }
-  ]
+  ],
+  "name": "block-device-01",
+  "type": "mac"
 }

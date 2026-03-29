@@ -1,11 +1,13 @@
 {
-  "name": "TV-Escritorio",
-  "type": "mac",
+  "associated-interface": "",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "a4:30:7a:f3:32:58"
     }
-  ]
+  ],
+  "name": "tv-escritorio",
+  "type": "mac"
 }

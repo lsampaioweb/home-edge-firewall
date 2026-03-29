@@ -1,0 +1,12 @@
+Policy
+  Incoming Interface  : Zone-Home-Staging
+  Outgoing Interface  : DigitalNET (wan1), Claro (win2)
+  Source Address      : VS-MGMT address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address
+  Destination Address : all
+
+NAT
+  NAT : Checked
+    IP Pool Configuration : Use Outgoing Interface Address
+    Protocol              : any
+  Comments                : Staging To Internet
+  Enable this Policy      : Checked

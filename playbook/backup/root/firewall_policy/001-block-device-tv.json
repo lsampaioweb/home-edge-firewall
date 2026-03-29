@@ -3,7 +3,7 @@
   "name": "Block-Device-TV",
   "srcintf": [
     {
-      "name": "Zone-Home"
+      "name": "zone-home"
     }
   ],
   "dstintf": [

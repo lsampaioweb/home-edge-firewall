@@ -1,11 +1,13 @@
 {
-  "name": "pve-01",
-  "type": "mac",
+  "associated-interface": "",
+  "color": 0,
   "comment": "Ansible",
-  "associated_interface": "Zone-Home-Infra",
+  "interface": "",
   "macaddr": [
     {
       "macaddr": "60:be:b4:08:f7:68"
     }
-  ]
+  ],
+  "name": "pve-01",
+  "type": "mac"
 }

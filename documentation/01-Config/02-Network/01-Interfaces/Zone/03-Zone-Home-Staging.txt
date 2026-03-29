@@ -1,0 +1,3 @@
+Name                      : Zone-Home-Staging
+Block intra-zone traffic  : Checked
+Interface members         : VS-MGMT, VS-CORE, VS-LDAP, VS-PROXY, VS-BACKUP, VS-REPOSITORY, VS-TEMPLATE, VS-JUMPSERVER, VS-LOADBALANCER, VS-MONITOR

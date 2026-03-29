@@ -1,8 +1,8 @@
 {
-  "alias": "Int-Homelab",
+  "alias": "Int-Production",
   "allowaccess": "",
   "defaultgw": "enable",
-  "description": "LAG-Homelab member",
+  "description": "LAG-Production member",
   "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,

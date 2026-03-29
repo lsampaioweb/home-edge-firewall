@@ -1,0 +1,12 @@
+Policy
+  Incoming Interface  : Zone-Production
+  Outgoing Interface  : DigitalNET (wan1), Claro (win2)
+  Source Address      : VP-MGMT address, VP-REPOSITORY address, VP-TEMPLATE address, VP-JUMPSERVER address
+  Destination Address : all
+
+NAT
+  NAT : Checked
+    IP Pool Configuration : Use Outgoing Interface Address
+    Protocol              : any
+  Comments                : Production To Internet
+  Enable this Policy      : Checked

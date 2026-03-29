@@ -3,7 +3,7 @@
   "name": "Home-To-Internet",
   "srcintf": [
     {
-      "name": "Zone-Home"
+      "name": "zone-home"
     }
   ],
   "dstintf": [

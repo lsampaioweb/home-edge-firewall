@@ -1,3 +1,0 @@
-Name                      : Zone-Home-Infra
-Block intra-zone traffic  : Checked
-Interface members         : VL-HI-MGMT, VL-HI-CORE, VL-HI-LDAP, VL-HI-PROXY, VL-HI-BACKUP, VL-HI-REPOSITORY, VL-HI-TEMPLATE, VL-HI-JUMPSERVER, VL-HI-LOADBALANCER, VL-HI-MONITOR
