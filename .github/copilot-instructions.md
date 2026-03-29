@@ -107,7 +107,7 @@ playbook/
 - **Playbooks**: `##-feature-action.yml` (zero-padded numbers).
 - **Backup files**: `lowercase-name.bkp`.
 - **Minimal files**: `lowercase-name.json` (matching .bkp filename).
-- **VLAN files**: `###-VL-ENV-ROLE.txt`.
+- **VLAN files**: `###-VS-ROLE.txt` (Staging) or `###-VP-ROLE.txt` (Production).
 
 ## JSON Structure Standards
 
@@ -121,8 +121,8 @@ playbook/
 ## Network Configuration Standards
 
 ### VLAN Scheme
-- **Home-Infra**: VLAN IDs 1110–1180, IP range 10.1.X.X/28.
-- **Homelab**: VLAN IDs 2110–2180, IP range 20.1.X.X/28.
+- **Staging**: VLAN IDs 1110–1180, IP range 10.1.X.X/28. Interfaces: `VS-*`, software switch `SS-S-VMS` / `SS-S-CLSTR`, zone `zone-staging`.
+- **Production**: VLAN IDs 2110–2180, IP range 20.1.X.X/28. Interfaces: `VP-*`, software switch `SS-P-VMS` / `SS-P-CLSTR`, zone `zone-production`.
 - VLAN ID maps to third octet via last two digits: VLAN 1110 → 10.1.10.0/28, VLAN 2135 → 20.1.35.0/28.
 - Standard /28 subnets: .0 = network, .1–.13 = DHCP range, .14 = gateway, .15 = broadcast.
 
