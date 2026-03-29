@@ -189,8 +189,13 @@ When working on any role, always go through these steps in order:
    - **Top-level keys** (e.g. `source-ip`, `seq-num`): do NOT rename in `backup.yml`. Keep the hyphenated key in `.bkp`/`.json` files. In `add-entry.yml`, read with bracket notation: `desired_settings['source-ip']`. In `vars/main.yml` minimal_keys list, use the hyphenated name.
    - **Sub-keys inside nested lists** (e.g. `interface-name` inside each element of an `interface` list): DO rename using `replace_keys` in `backup.yml`. In `add-entry.yml`, read with dot notation: `desired_settings.interface` (the whole list is passed as-is, sub-keys are already underscored).
    - To decide which rule applies: inspect the raw FortiGate data (from a `.bkp` file or debug output) and check whether the hyphenated key is at the top level of the entry dict or nested inside a list of sub-dicts.
-6. **`create-from-backup.yml` and `create-from-minimal.yml`** — Verify they use `path_common_firewall_get_backup_files`, loop with `loop_var: file`, and call `add-entry.yml`.
-7. **`add-entry.yml` — space-separated fields** — Check for fields that the FortiGate API returns as a space-separated string but the module expects as a list (e.g. `allowaccess`). Fix with `.split(' ') | select() | list`.
-8. **`add-entry.yml` — missing fields** — Cross-check fields against the module's `.keys` files (if present) and the `.bkp` files to ensure no important parameters are omitted.
-9. **Run all 3 playbooks** — Use full output (no `tail`/`grep` truncation) so failures are visible. Run backup first, then create-from-minimal, then create-from-backup.
-10. **API limitations** — Note any resources the FortiGate API cannot create programmatically (e.g. loopback interfaces require manual UI/CLI creation first).
+6. **Nested list key filtering** — When a top-level key holds a list of sub-dicts that need their own minimal-key pruning (e.g. `ip-range`, `dns-entry`), do NOT use inline `combine` + `keep_keys` in `backup.yml`. Instead, pass two extra vars to `path_common_firewall_save_backup_files`:
+   - `nested_key: "<key-name>"` — the top-level key whose list of sub-dicts should be filtered.
+   - `nested_minimal_keys: "{{ <role>_<nested>_minimal_keys }}"` — list of sub-dict keys to keep (defined in `vars/main.yml`).
+   The `save_backup_files` common task handles the filtering natively. See the `dns` role (`nested_key: "dns-entry"`) and `dhcp` role (`nested_key: "ip-range"`) for reference.
+
+7. **`create-from-backup.yml` and `create-from-minimal.yml`** — Verify they use `path_common_firewall_get_backup_files`, loop with `loop_var: file`, and call `add-entry.yml`.
+8. **`add-entry.yml` — space-separated fields** — Check for fields that the FortiGate API returns as a space-separated string but the module expects as a list (e.g. `allowaccess`). Fix with `.split(' ') | select() | list`.
+9. **`add-entry.yml` — missing fields** — Cross-check fields against the module's `.keys` files (if present) and the `.bkp` files to ensure no important parameters are omitted.
+10. **Run all 3 playbooks** — Use full output (no `tail`/`grep` truncation) so failures are visible. Run backup first, then create-from-minimal, then create-from-backup.
+11. **API limitations** — Note any resources the FortiGate API cannot create programmatically (e.g. loopback interfaces require manual UI/CLI creation first).
