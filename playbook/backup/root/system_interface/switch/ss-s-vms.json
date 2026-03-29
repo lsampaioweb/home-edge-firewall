@@ -3,7 +3,7 @@
   "allowaccess": "",
   "defaultgw": "enable",
   "description": "Staging VMs - Software Switch",
-  "device-identification": "disable",
+  "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",
@@ -23,7 +23,7 @@
     }
   ],
   "mode": "static",
-  "monitor-bandwidth": "enable",
+  "monitor-bandwidth": "disable",
   "name": "SS-S-VMS",
   "role": "lan",
   "security-mode": "none",
