@@ -1,7 +1,4 @@
 ---
-system_interface_member_rename_keys:
-  - {before: "interface-name", after: "interface_name"}
-
 system_interface_minimal_keys:
   - "alias"
   - "allowaccess"
