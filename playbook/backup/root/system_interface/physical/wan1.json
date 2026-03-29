@@ -4,7 +4,7 @@
   "defaultgw": "enable",
   "description": "DigitalNET ISP - Primary WAN",
   "device-identification": "disable",
-  "device-user-identification": "disable",
+  "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",
   "estimated-downstream-bandwidth": 100000,

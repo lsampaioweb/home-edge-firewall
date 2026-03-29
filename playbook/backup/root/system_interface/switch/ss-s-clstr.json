@@ -4,7 +4,7 @@
   "defaultgw": "enable",
   "description": "Staging Cluster - Software Switch",
   "device-identification": "disable",
-  "device-user-identification": "disable",
+  "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",
   "estimated-downstream-bandwidth": 0,
@@ -14,7 +14,14 @@
   "lacp-mode": "active",
   "lldp-reception": "vdom",
   "lldp-transmission": "vdom",
-  "member": [],
+  "member": [
+    {
+      "interface_name": "LAG-S-CLSTR-01"
+    },
+    {
+      "interface_name": "LAG-S-CLSTR-02"
+    }
+  ],
   "mode": "static",
   "monitor-bandwidth": "enable",
   "name": "SS-S-CLSTR",
