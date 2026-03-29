@@ -232,6 +232,9 @@
       switch_controller_offload_gw: "{{ desired_settings['switch-controller-offload-gw'] | default(omit, true) }}"
       switch_controller_offload_ip: "{{ desired_settings['switch-controller-offload-ip'] | default(omit, true) }}"
   register: "output"
+  failed_when: >-
+    output.failed and
+    "type can't be changed" not in (output.meta.cli_error | default([]) | join(' '))
 
 - name: "Debug"
   ansible.builtin.debug:

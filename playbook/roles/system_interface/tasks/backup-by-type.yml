@@ -2,6 +2,20 @@
 - name: "Ensure the backup directory exists"
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
 
+- name: "Building member list for entry: '{{ item.name }}'"
+  ansible.builtin.set_fact:
+    _entry_member: >-
+      {{ (switch_member_by_name[item.name] | default(item)).member | default([])
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'interface-name', 'after': 'interface_name'}
+      ]) }}
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ _entry_member }}"
+  tags: ["never", "debug"]
+
 - name: "Saving the System Interface backup and minimal files: '{{ item.name }}'"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
@@ -11,6 +25,7 @@
       | ansible.utils.replace_keys(target=[
         {'before': 'interface-name', 'after': 'interface_name'}
       ])
+      | combine({'member': _entry_member})
       | combine({'ipv6': item.ipv6 | default({}) | hyphen_to_underscore(['ip6_allowaccess', 'dhcp6_client_options'])})
       | combine({'phy-setting': item['phy-setting'] | default({})
           | hyphen_to_underscore()

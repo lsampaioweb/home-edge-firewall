@@ -4,15 +4,35 @@
   vars:
     selector: "system_interface"
 
-- name: "Debug"
+- name: "Saving System Interface results"
+  ansible.builtin.set_fact:
+    system_interface_results: "{{ data.meta.results | default([]) }}"
+
+- name: "Debugging System Interface"
   ansible.builtin.debug:
-    msg: "{{ data }}"
+    msg: "{{ system_interface_results }}"
+  tags: ["never", "debug"]
+
+- name: "Fetching all Software Switch membership entries"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "system_switch-interface"
+
+- name: "Saving Software Switch membership results"
+  ansible.builtin.set_fact:
+    # Build a dict keyed by switch name for O(1) lookup in backup-by-type.yml.
+    # dict(names | zip(items)) produces: {"SS-S-CLSTR": {...}, "SS-S-VMS": {...}}
+    switch_member_by_name: "{{ dict(data.meta.results | default([]) | map(attribute='name') | zip(data.meta.results | default([]))) }}"
+
+- name: "Debugging Software Switch membership"
+  ansible.builtin.debug:
+    msg: "{{ switch_member_by_name }}"
   tags: ["never", "debug"]
 
 - name: "Backing up the System Interface settings"
   ansible.builtin.include_tasks: "backup-by-type.yml"
   vars:
     path: "{{ backup_system_interface_path }}/{{ item.type }}"
-  loop: "{{ data.meta.results | default([]) }}"
+  loop: "{{ system_interface_results }}"
   loop_control:
     label: "{{ item.name }} - {{ item.type }}"

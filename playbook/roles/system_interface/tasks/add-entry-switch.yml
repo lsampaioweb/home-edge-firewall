@@ -1,0 +1,32 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) | from_json }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Creating/Updating Software Switch entry: '{{ desired_settings.name }}'"
+  fortinet.fortios.fortios_system_switch_interface:
+    vdom: "{{ vdom | default(omit, true) }}"
+    state: "present"
+    system_switch_interface:
+      intra_switch_policy: "{{ desired_settings['intra-switch-policy'] | default(omit, true) }}"
+      mac_ttl: "{{ desired_settings['mac-ttl'] | default(omit, true) }}"
+      member: "{{ desired_settings.member | default(omit, true) }}"
+      name: "{{ desired_settings.name }}"
+      span: "{{ desired_settings.span | default(omit, true) }}"
+      span_dest_port: "{{ desired_settings['span-dest-port'] | default(omit, true) }}"
+      span_direction: "{{ desired_settings['span-direction'] | default(omit, true) }}"
+      span_source_port: "{{ desired_settings['span-source-port'] | default(omit, true) }}"
+      type: "{{ desired_settings.type | default(omit, true) }}"
+      vdom: "{{ desired_settings.vdom | default(omit, true) }}"
+
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]
