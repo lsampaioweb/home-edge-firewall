@@ -1,0 +1,12 @@
+---
+firewall_central_snat_minimal_keys:
+  - "comments"
+  - "dst-addr"
+  - "dstintf"
+  - "nat"
+  - "orig-addr"
+  - "policyid"
+  - "protocol"
+  - "srcintf"
+  - "status"
+  - "type"
