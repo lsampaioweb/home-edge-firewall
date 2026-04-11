@@ -1,6 +1,37 @@
 {
   "description": "",
-  "interface": [],
+  "interface": [
+    {
+      "interface_name": "VP-BACKUP"
+    },
+    {
+      "interface_name": "VP-CORE"
+    },
+    {
+      "interface_name": "VP-JUMPSRV"
+    },
+    {
+      "interface_name": "VP-LDAP"
+    },
+    {
+      "interface_name": "VP-LDBLANCER"
+    },
+    {
+      "interface_name": "VP-MGMT"
+    },
+    {
+      "interface_name": "VP-MONITOR"
+    },
+    {
+      "interface_name": "VP-PROXY"
+    },
+    {
+      "interface_name": "VP-REPOSITR"
+    },
+    {
+      "interface_name": "VP-TEMPLATE"
+    }
+  ],
   "intrazone": "deny",
   "name": "zone-production"
 }

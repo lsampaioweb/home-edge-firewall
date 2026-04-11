@@ -1,6 +1,28 @@
 {
   "description": "",
-  "interface": [],
+  "interface": [
+    {
+      "interface_name": "port2"
+    },
+    {
+      "interface_name": "port3"
+    },
+    {
+      "interface_name": "port4"
+    },
+    {
+      "interface_name": "port7"
+    },
+    {
+      "interface_name": "port8"
+    },
+    {
+      "interface_name": "dmz"
+    },
+    {
+      "interface_name": "ha"
+    }
+  ],
   "intrazone": "deny",
   "name": "zone-unused"
 }

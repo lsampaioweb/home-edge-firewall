@@ -1,6 +1,10 @@
 {
   "description": "",
-  "interface": [],
+  "interface": [
+    {
+      "interface_name": "LAG-Home"
+    }
+  ],
   "intrazone": "deny",
   "name": "zone-home"
 }
