@@ -8,7 +8,7 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating a Firewall Central SNAT entry for: {{ desired_settings.srcintf[0].name }}"
+- name: "Creating a Firewall Central SNAT entry for: '{{ desired_settings.srcintf[0].name }}'"
   fortinet.fortios.fortios_firewall_central_snat_map:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"
