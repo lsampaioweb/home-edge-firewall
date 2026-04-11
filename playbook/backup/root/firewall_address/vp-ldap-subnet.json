@@ -1,0 +1,10 @@
+{
+  "associated-interface": "",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [],
+  "name": "vp-ldap-subnet",
+  "subnet": "20.1.20.0 255.255.255.240",
+  "type": "ipmask"
+}
