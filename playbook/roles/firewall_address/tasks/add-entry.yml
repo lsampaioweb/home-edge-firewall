@@ -9,7 +9,7 @@
       - "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating firewall addresses entry: {{ desired_settings.name }}"
+- name: "Creating firewall addresses entry: '{{ desired_settings.name }}'"
   fortinet.fortios.fortios_firewall_address:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"

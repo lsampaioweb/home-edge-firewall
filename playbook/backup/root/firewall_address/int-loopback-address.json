@@ -2,9 +2,9 @@
   "associated-interface": "",
   "color": 0,
   "comment": "Ansible",
-  "interface": "int-loopback",
+  "interface": "INT-loopback",
   "macaddr": [],
   "name": "int-loopback address",
-  "subnet": "172.16.1.1 255.255.255.255",
+  "subnet": "10.1.0.1 255.255.255.255",
   "type": "interface-subnet"
 }
