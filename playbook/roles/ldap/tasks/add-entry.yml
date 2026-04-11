@@ -8,7 +8,7 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating a LDAP entry: {{ desired_settings.name }}"
+- name: "Creating a LDAP entry: '{{ desired_settings.name }}'"
   fortinet.fortios.fortios_user_ldap:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"

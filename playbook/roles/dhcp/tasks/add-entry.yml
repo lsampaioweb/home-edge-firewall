@@ -8,7 +8,7 @@
     msg: "{{ desired_settings }}"
   tags: ["never", "debug"]
 
-- name: "Creating a DHCP entry for: {{ desired_settings.interface }}"
+- name: "Creating a DHCP entry for: '{{ desired_settings.interface }}'"
   fortinet.fortios.fortios_system_dhcp_server:
     vdom: "{{ vdom | default(omit, true) }}"
     state: "present"

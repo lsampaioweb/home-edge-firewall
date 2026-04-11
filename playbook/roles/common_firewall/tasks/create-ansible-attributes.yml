@@ -2,7 +2,7 @@
 - name: "Ensure the backup directory exists"
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
 
-- name: "Creating the Ansible attributes for: {{ selector }}"
+- name: "Creating the Ansible attributes for: '{{ selector }}'"
   when: key not in [invalid_attribute]
   ansible.builtin.lineinfile:
     path: "{{ path }}/{{ file }}"
