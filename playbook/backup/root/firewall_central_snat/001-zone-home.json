@@ -1,9 +1,8 @@
 {
-  "policyid": 1,
   "comments": "Lan to Internet",
-  "srcintf": [
+  "dst-addr": [
     {
-      "name": "zone-home"
+      "name": "all"
     }
   ],
   "dstintf": [
@@ -14,16 +13,19 @@
       "name": "wan2"
     }
   ],
-  "orig_addr": [
+  "nat": "enable",
+  "orig-addr": [
     {
       "name": "LAG-Home address"
     }
   ],
-  "dst_addr": [
+  "policyid": 1,
+  "protocol": 0,
+  "srcintf": [
     {
-      "name": "all"
+      "name": "zone-home"
     }
   ],
-  "nat": "enable",
-  "status": "enable"
+  "status": "enable",
+  "type": "ipv4"
 }

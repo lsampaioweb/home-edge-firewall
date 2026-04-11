@@ -1,5 +1,5 @@
 {
-  "comments": "Staging to Internet",
+  "comments": "Production to Internet",
   "dst-addr": [
     {
       "name": "all"
@@ -19,11 +19,11 @@
       "name": "all"
     }
   ],
-  "policyid": 2,
+  "policyid": 3,
   "protocol": 0,
   "srcintf": [
     {
-      "name": "zone-staging"
+      "name": "zone-production"
     }
   ],
   "status": "enable",
