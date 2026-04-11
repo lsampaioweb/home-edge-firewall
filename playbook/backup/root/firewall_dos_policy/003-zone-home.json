@@ -1,149 +1,150 @@
 {
-  "policyid": 1,
-  "status": "enable",
-  "name": "zone-home",
-  "interface": "zone-home",
-  "srcaddr": [
+  "anomaly": [
     {
-      "name": "all"
+      "action": "pass",
+      "log": "enable",
+      "name": "tcp_syn_flood",
+      "status": "enable",
+      "threshold": 5000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "tcp_port_scan",
+      "status": "enable",
+      "threshold": 2000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "tcp_src_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "tcp_dst_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "udp_flood",
+      "status": "enable",
+      "threshold": 50000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "udp_scan",
+      "status": "enable",
+      "threshold": 2000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "udp_src_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "udp_dst_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "icmp_flood",
+      "status": "enable",
+      "threshold": 500
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "icmp_sweep",
+      "status": "enable",
+      "threshold": 200
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "icmp_src_session",
+      "status": "enable",
+      "threshold": 500
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "icmp_dst_session",
+      "status": "enable",
+      "threshold": 2000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "ip_src_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "ip_dst_session",
+      "status": "enable",
+      "threshold": 10000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "sctp_flood",
+      "status": "enable",
+      "threshold": 2000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "sctp_scan",
+      "status": "enable",
+      "threshold": 1000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "sctp_src_session",
+      "status": "enable",
+      "threshold": 5000
+    },
+    {
+      "action": "pass",
+      "log": "enable",
+      "name": "sctp_dst_session",
+      "status": "enable",
+      "threshold": 5000
     }
   ],
+  "comments": "",
   "dstaddr": [
     {
       "name": "all"
     }
   ],
+  "interface": "zone-home",
+  "name": "zone-home",
+  "policyid": 3,
   "service": [
     {
       "name": "ALL"
     }
   ],
-  "anomaly": [
+  "srcaddr": [
     {
-      "name": "tcp_syn_flood",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 2000
-    },
-    {
-      "name": "tcp_port_scan",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 1000
-    },
-    {
-      "name": "tcp_src_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "tcp_dst_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "udp_flood",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 25000
-    },
-    {
-      "name": "udp_scan",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 2000
-    },
-    {
-      "name": "udp_src_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "udp_dst_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "icmp_flood",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 300
-    },
-    {
-      "name": "icmp_sweep",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 100
-    },
-    {
-      "name": "icmp_src_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 300
-    },
-    {
-      "name": "icmp_dst_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 1000
-    },
-    {
-      "name": "ip_src_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "ip_dst_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "sctp_flood",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 2000
-    },
-    {
-      "name": "sctp_scan",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 1000
-    },
-    {
-      "name": "sctp_src_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
-    },
-    {
-      "name": "sctp_dst_session",
-      "action": "pass",
-      "log": "enable",
-      "status": "enable",
-      "threshold": 5000
+      "name": "all"
     }
-  ]
+  ],
+  "status": "enable"
 }

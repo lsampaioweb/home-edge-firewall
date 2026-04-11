@@ -1,0 +1,18 @@
+---
+firewall_dos_policy_minimal_keys:
+  - "anomaly"
+  - "comments"
+  - "dstaddr"
+  - "interface"
+  - "name"
+  - "policyid"
+  - "service"
+  - "srcaddr"
+  - "status"
+
+firewall_dos_policy_anomaly_minimal_keys:
+  - "action"
+  - "log"
+  - "name"
+  - "status"
+  - "threshold"

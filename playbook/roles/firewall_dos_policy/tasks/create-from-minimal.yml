@@ -1,10 +1,11 @@
 ---
-- name: "Retrieving the backup files"
+- name: "Retrieving the JSON files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
   vars:
     paths: "{{ backup_firewall_dos_policy_path }}"
+    patterns: "{{ minimal_files_extention }}"
 
-- name: "Creating Firewall DOS Policy entries"
+- name: "Creating Firewall DOS Policy entries from minimal JSON"
   ansible.builtin.include_tasks: "add-entry.yml"
   loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
   loop_control:
