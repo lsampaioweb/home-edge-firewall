@@ -21,10 +21,10 @@
       {{ (data.meta.results
       | ansible.utils.remove_keys(target=[invalid_attribute])
       | ansible.utils.replace_keys(target=[
-        {'before': 'health-check'       , 'after': 'health_check'},
-        {'before': 'load-balance-mode'  , 'after': 'load_balance_mode'},
-        {'before': 'duplication-max-num', 'after': 'duplication_max_num'},
-        {'before': 'spillover-threshold', 'after': 'spillover_threshold'}
+        {'before': 'advpn-health-check'       , 'after': 'advpn_health_check'},
+        {'before': 'advpn-select'             , 'after': 'advpn_select'},
+        {'before': 'minimum-sla-meet-members' , 'after': 'minimum_sla_meet_members'},
+        {'before': 'service-sla-tie-break'    , 'after': 'service_sla_tie_break'}
       ])) }}
     dest_dir: "{{ backup_system_sdwan_path }}"
     dest_basename: "sdwan"

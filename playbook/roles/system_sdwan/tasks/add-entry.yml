@@ -15,7 +15,6 @@
       duplication: "{{ desired_settings.duplication | default(omit, true) }}"
       duplication_max_num: "{{ desired_settings['duplication-max-num'] | default(omit, true) }}"
       fail_alert_interfaces: "{{ desired_settings['fail-alert-interfaces'] | default(omit, true) }}"
-      spillover_threshold: "{{ desired_settings['spillover-threshold'] | default(omit, true) }}"
       fail_detect: "{{ desired_settings['fail-detect'] | default(omit, true) }}"
       health_check: "{{ desired_settings['health-check'] | default(omit, true) }}"
       load_balance_mode: "{{ desired_settings['load-balance-mode'] | default(omit, true) }}"
