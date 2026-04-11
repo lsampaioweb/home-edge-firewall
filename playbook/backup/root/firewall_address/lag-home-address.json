@@ -1,0 +1,10 @@
+{
+  "associated-interface": "",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "LAG-Home",
+  "macaddr": [],
+  "name": "LAG-Home address",
+  "subnet": "192.168.3.0 255.255.255.0",
+  "type": "ipmask"
+}
