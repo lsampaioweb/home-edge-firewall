@@ -1,0 +1,12 @@
+---
+snmp_minimal_keys:
+  - "auth-proto"
+  - "events"
+  - "name"
+  - "notify-hosts"
+  - "priv-proto"
+  - "queries"
+  - "query-port"
+  - "security-level"
+  - "status"
+  - "trap-status"

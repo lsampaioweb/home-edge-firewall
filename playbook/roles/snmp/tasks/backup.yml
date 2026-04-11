@@ -14,33 +14,15 @@
   vars:
     path: "{{ backup_snmp_path }}"
 
-- name: "Saving the SNMP settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_snmp_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the SNMP backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])
-      | ansible.utils.replace_keys(target=[
-        {'before': 'auth-proto'     , 'after': 'auth_proto'},
-        {'before': 'auth-pwd'       , 'after': 'auth_pwd'},
-        {'before': 'ha-direct'      , 'after': 'ha_direct'},
-        {'before': 'mib-view'       , 'after': 'mib_view'},
-        {'before': 'notify-hosts'   , 'after': 'notify_hosts'},
-        {'before': 'notify-hosts6'  , 'after': 'notify_hosts6'},
-        {'before': 'priv-proto'     , 'after': 'priv_proto'},
-        {'before': 'priv-pwd'       , 'after': 'priv_pwd'},
-        {'before': 'query-port'     , 'after': 'query_port'},
-        {'before': 'security-level' , 'after': 'security_level'},
-        {'before': 'source-ip'      , 'after': 'source_ip'},
-        {'before': 'source-ipv6'    , 'after': 'source_ipv6'},
-        {'before': 'trap-lport'     , 'after': 'trap_lport'},
-        {'before': 'trap-rport'     , 'after': 'trap_rport'},
-        {'before': 'trap-status'    , 'after': 'trap_status'},
-      ])) }}
-    file: "{{ ((item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+      | ansible.utils.remove_keys(target=[invalid_attribute, 'auth-pwd', 'priv-pwd'])) }}
+    dest_dir: "{{ backup_snmp_path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ snmp_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"
