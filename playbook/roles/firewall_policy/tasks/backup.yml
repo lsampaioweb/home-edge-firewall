@@ -19,9 +19,9 @@
   vars:
     entry: >-
       {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])) }}
+      | ansible.utils.remove_keys(target=[invalid_attribute, 'ip-version-type', 'policy-behaviour-type', 'uuid-idx'])) }}
     dest_dir: "{{ backup_firewall_policy_path }}"
-    dest_basename: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-'))) | lower }}"
+    dest_basename: "{{ (('%05d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-'))) | lower }}"
     minimal_keys: "{{ firewall_policy_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
