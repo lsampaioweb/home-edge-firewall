@@ -1,5 +1,5 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
@@ -12,23 +12,35 @@
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Production-To-Internet",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 24,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "HTTP"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "PING"
+    },
+    {
+      "name": "NTP"
+    },
+    {
+      "name": "SMTPS"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "all"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-production"
     }
   ],
   "status": "enable"

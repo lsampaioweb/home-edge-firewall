@@ -1,34 +1,37 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "int-loopback address"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "INT-loopback"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Production-To-Loopback",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 25,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "NTP"
+    },
+    {
+      "name": "PING"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "all"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-production"
     }
   ],
   "status": "enable"

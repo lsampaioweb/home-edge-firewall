@@ -1,0 +1,47 @@
+{
+  "action": "accept",
+  "comments": "Ansible",
+  "dstaddr": [
+    {
+      "name": "vp-core-subnet"
+    },
+    {
+      "name": "vp-jumpsrv-subnet"
+    },
+    {
+      "name": "vp-ldblancer-subnet"
+    },
+    {
+      "name": "vp-template-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Production-Backup-Server-To-Clients",
+  "nat": "disable",
+  "policyid": 29,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vp-backup-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "status": "enable"
+}

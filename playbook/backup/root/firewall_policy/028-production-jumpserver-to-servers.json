@@ -1,0 +1,56 @@
+{
+  "action": "accept",
+  "comments": "Ansible",
+  "dstaddr": [
+    {
+      "name": "vp-core-subnet"
+    },
+    {
+      "name": "vp-backup-subnet"
+    },
+    {
+      "name": "vp-repositr-subnet"
+    },
+    {
+      "name": "vp-ldblancer-subnet"
+    },
+    {
+      "name": "vp-template-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Production-JumpServer-To-Servers",
+  "nat": "disable",
+  "policyid": 28,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "Proxmox-Server"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vp-jumpsrv-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "status": "enable"
+}

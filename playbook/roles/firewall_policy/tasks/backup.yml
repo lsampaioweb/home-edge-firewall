@@ -14,20 +14,15 @@
   vars:
     path: "{{ backup_firewall_policy_path }}"
 
-- name: "Saving the Firewall Policy settings in a local file"
-  ansible.builtin.copy:
-    content: "{{ line | to_nice_json(indent=2) }}"
-    dest: "{{ backup_firewall_policy_path }}/{{ file }}"
-    mode: "0644"
+- name: "Saving the Firewall Policy backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
-    line: >
+    entry: >-
       {{ (item
-      | ansible.utils.remove_keys(target=[invalid_attribute])
-      | ansible.utils.replace_keys(target=[
-        {'before': 'av-profile' , 'after': 'av_profile'},
-        {'before': 'cifs-profile' , 'after': 'cifs_profile'}
-      ])) }}
-    file: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-')) + '.' + backup_extention) | lower }}"
+      | ansible.utils.remove_keys(target=[invalid_attribute])) }}
+    dest_dir: "{{ backup_firewall_policy_path }}"
+    dest_basename: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-'))) | lower }}"
+    minimal_keys: "{{ firewall_policy_minimal_keys }}"
   loop: "{{ data.meta.results | default([]) }}"
   loop_control:
     label: "{{ item.name }}"

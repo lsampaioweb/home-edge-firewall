@@ -1,29 +1,38 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vp-jumpsrv-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-production"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Home-To-Production-JumpServer",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 10,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "RDP"
+    },
+    {
+      "name": "SpringBoot-HTTP"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "all"
     }
   ],
   "srcintf": [

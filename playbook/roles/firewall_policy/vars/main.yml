@@ -1,0 +1,15 @@
+---
+firewall_policy_minimal_keys:
+  - "action"
+  - "comments"
+  - "dstaddr"
+  - "dstintf"
+  - "logtraffic"
+  - "name"
+  - "nat"
+  - "policyid"
+  - "schedule"
+  - "service"
+  - "srcaddr"
+  - "srcintf"
+  - "status"

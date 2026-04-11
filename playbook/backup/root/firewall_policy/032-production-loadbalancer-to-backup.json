@@ -3,32 +3,35 @@
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vp-backup-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-production"
     }
   ],
   "logtraffic": "all",
-  "name": "Home-To-Internet",
+  "name": "Production-LoadBalancer-To-Backup",
   "nat": "disable",
-  "policyid": 2,
+  "policyid": 32,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "Minio-HTTP"
     }
   ],
   "srcaddr": [
     {
-      "name": "all"
+      "name": "vp-ldblancer-subnet"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-production"
     }
   ],
   "status": "enable"

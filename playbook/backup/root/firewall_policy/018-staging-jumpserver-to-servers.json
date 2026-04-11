@@ -1,0 +1,56 @@
+{
+  "action": "accept",
+  "comments": "Ansible",
+  "dstaddr": [
+    {
+      "name": "vs-core-subnet"
+    },
+    {
+      "name": "vs-backup-subnet"
+    },
+    {
+      "name": "vs-repositr-subnet"
+    },
+    {
+      "name": "vs-ldblancer-subnet"
+    },
+    {
+      "name": "vs-template-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Staging-JumpServer-To-Servers",
+  "nat": "disable",
+  "policyid": 18,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "Proxmox-Server"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vs-jumpsrv-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "status": "enable"
+}

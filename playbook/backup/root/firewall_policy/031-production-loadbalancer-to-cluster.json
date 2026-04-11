@@ -1,0 +1,41 @@
+{
+  "action": "accept",
+  "comments": "Ansible",
+  "dstaddr": [
+    {
+      "name": "vp-core-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Production-LoadBalancer-To-Cluster",
+  "nat": "disable",
+  "policyid": 31,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "Proxmox-Server"
+    },
+    {
+      "name": "SpringBoot-HTTP"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vp-ldblancer-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "status": "enable"
+}

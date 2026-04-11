@@ -1,34 +1,34 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vs-jumpsrv-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-staging"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Staging-Template-To-JumpServer",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 23,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "Cloud-Init"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "vs-template-subnet"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-staging"
     }
   ],
   "status": "enable"

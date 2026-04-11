@@ -1,29 +1,35 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vs-backup-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-staging"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Home-To-Staging-Backup",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 6,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "Minio-HTTP"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "all"
     }
   ],
   "srcintf": [

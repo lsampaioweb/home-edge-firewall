@@ -3,32 +3,38 @@
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vs-core-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-staging"
     }
   ],
   "logtraffic": "all",
-  "name": "Home-To-Internet",
+  "name": "Staging-LoadBalancer-To-Cluster",
   "nat": "disable",
-  "policyid": 2,
+  "policyid": 21,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "Proxmox-Server"
+    },
+    {
+      "name": "SpringBoot-HTTP"
     }
   ],
   "srcaddr": [
     {
-      "name": "all"
+      "name": "vs-ldblancer-subnet"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-staging"
     }
   ],
   "status": "enable"

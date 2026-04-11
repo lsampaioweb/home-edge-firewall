@@ -1,29 +1,38 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "vp-ldblancer-subnet"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-production"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Home-To-Production-LoadBalancer",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 12,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "HTTP"
+    },
+    {
+      "name": "HTTPS"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "all"
     }
   ],
   "srcintf": [

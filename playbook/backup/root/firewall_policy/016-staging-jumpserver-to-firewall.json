@@ -1,34 +1,37 @@
 {
-  "action": "deny",
+  "action": "accept",
   "comments": "Ansible",
   "dstaddr": [
     {
-      "name": "all"
+      "name": "this-firewall-address"
     }
   ],
   "dstintf": [
     {
-      "name": "SD-WAN"
+      "name": "zone-home"
     }
   ],
   "logtraffic": "all",
-  "name": "Block-Device-TV",
+  "name": "Staging-JumpServer-To-Firewall",
   "nat": "disable",
-  "policyid": 1,
+  "policyid": 16,
   "schedule": "always",
   "service": [
     {
-      "name": "ALL"
+      "name": "PING"
+    },
+    {
+      "name": "HTTPS"
     }
   ],
   "srcaddr": [
     {
-      "name": "block-device-01"
+      "name": "vs-jumpsrv-subnet"
     }
   ],
   "srcintf": [
     {
-      "name": "zone-home"
+      "name": "zone-staging"
     }
   ],
   "status": "enable"

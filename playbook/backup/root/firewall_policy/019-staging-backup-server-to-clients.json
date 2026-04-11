@@ -1,0 +1,47 @@
+{
+  "action": "accept",
+  "comments": "Ansible",
+  "dstaddr": [
+    {
+      "name": "vs-core-subnet"
+    },
+    {
+      "name": "vs-jumpsrv-subnet"
+    },
+    {
+      "name": "vs-ldblancer-subnet"
+    },
+    {
+      "name": "vs-template-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Staging-Backup-Server-To-Clients",
+  "nat": "disable",
+  "policyid": 19,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vs-backup-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "status": "enable"
+}
