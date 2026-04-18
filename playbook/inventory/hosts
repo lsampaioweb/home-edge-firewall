@@ -8,10 +8,6 @@ ansible_connection=local
 ansible_python_interpreter={{ ansible_playbook_python }}
 
 [firewalls]
-# Before we add the DNS entry, we have to use the IP address.
-# firewall-01.lan.home ansible_host=XXX.XXX.XXX.XXX
-
-# After we add the DNS entry, we can use just the hostname.
 firewall-01.lan.home
 
 [firewalls:vars]
@@ -20,5 +16,5 @@ ansible_connection=httpapi
 ansible_httpapi_use_ssl=true
 ansible_user=admin
 vdom=root
-# Don't use this. This is VERY BAD!
+# Set to true ONLY during initial bootstrap (before the SSL certificate is uploaded via 05-certificate-upload.yml).
 # ansible_httpapi_validate_certs=false
