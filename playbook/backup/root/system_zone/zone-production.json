@@ -1,5 +1,5 @@
 {
-  "description": "zone-production",
+  "description": "Zone for Production network",
   "interface": [
     {
       "interface_name": "VP-BACKUP"

@@ -1,5 +1,5 @@
 {
-  "description": "zone-home",
+  "description": "Zone for Home network",
   "interface": [
     {
       "interface_name": "LAG-Home"

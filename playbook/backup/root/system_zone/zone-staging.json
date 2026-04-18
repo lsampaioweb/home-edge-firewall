@@ -1,5 +1,5 @@
 {
-  "description": "zone-staging",
+  "description": "Zone for Staging network",
   "interface": [
     {
       "interface_name": "VS-BACKUP"
