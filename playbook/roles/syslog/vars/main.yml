@@ -1,0 +1,9 @@
+---
+syslog_minimal_keys:
+  - "facility"
+  - "format"
+  - "mode"
+  - "port"
+  - "server"
+  - "source-ip"
+  - "status"
