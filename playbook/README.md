@@ -240,25 +240,25 @@ Run these commands on the computer running Ansible:
     ansible-playbook 21-email-server-create-from-minimal.yml
     ```
 
+1. Backup and create Alert Email settings:
+    ```bash
+    ansible-playbook 22-alertemail-backup.yml
+    ansible-playbook 22-alertemail-create-from-backup.yml
+    ansible-playbook 22-alertemail-create-from-minimal.yml
+    ```
+
 1. Backup and create Syslog system settings:
     ```bash
-    ansible-playbook 22-syslog-backup.yml
-    ansible-playbook 22-syslog-create-from-backup.yml
-    ansible-playbook 22-syslog-create-from-minimal.yml
+    ansible-playbook 23-syslog-backup.yml
+    ansible-playbook 23-syslog-create-from-backup.yml
+    ansible-playbook 23-syslog-create-from-minimal.yml
     ```
 
 1. Backup and create SNMP system settings:
     ```bash
-    ansible-playbook 23-snmp-backup.yml
-    ansible-playbook 23-snmp-create-from-backup.yml
-    ansible-playbook 23-snmp-create-from-minimal.yml
-    ```
-
-1. Backup and create Alert Email settings:
-    ```bash
-    ansible-playbook 24-alertemail-backup.yml
-    ansible-playbook 24-alertemail-create-from-backup.yml
-    ansible-playbook 24-alertemail-create-from-minimal.yml
+    ansible-playbook 24-snmp-backup.yml
+    ansible-playbook 24-snmp-create-from-backup.yml
+    ansible-playbook 24-snmp-create-from-minimal.yml
     ```
 
 1. Create Ansible attributes for all firewall Ansible modules:

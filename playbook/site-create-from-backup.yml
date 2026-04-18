@@ -56,11 +56,11 @@
 - name: "Run the Email Server playbook"
   ansible.builtin.import_playbook: "21-email-server-create-from-backup.yml"
 
+- name: "Run the Alert Email playbook"
+  ansible.builtin.import_playbook: "22-alertemail-create-from-backup.yml"
+
 - name: "Run the Syslog playbook"
-  ansible.builtin.import_playbook: "22-syslog-create-from-backup.yml"
+  ansible.builtin.import_playbook: "23-syslog-create-from-backup.yml"
 
 - name: "Run the SNMP playbook"
-  ansible.builtin.import_playbook: "23-snmp-create-from-backup.yml"
-
-- name: "Run the Alert Email playbook"
-  ansible.builtin.import_playbook: "24-alertemail-create-from-backup.yml"
+  ansible.builtin.import_playbook: "24-snmp-create-from-backup.yml"
