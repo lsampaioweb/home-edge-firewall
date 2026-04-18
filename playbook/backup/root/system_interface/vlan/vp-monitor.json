@@ -3,7 +3,7 @@
   "allowaccess": "ping fabric",
   "defaultgw": "enable",
   "description": "Production Monitor",
-  "device-identification": "disable",
+  "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",

@@ -3,7 +3,7 @@
   "allowaccess": "",
   "defaultgw": "enable",
   "description": "",
-  "device-identification": "disable",
+  "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",
