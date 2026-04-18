@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "zone-production",
   "interface": [
     {
       "interface_name": "VP-BACKUP"

@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "zone-unused",
   "interface": [
     {
       "interface_name": "port2"

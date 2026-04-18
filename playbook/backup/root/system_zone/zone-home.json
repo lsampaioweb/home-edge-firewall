@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "zone-home",
   "interface": [
     {
       "interface_name": "LAG-Home"
