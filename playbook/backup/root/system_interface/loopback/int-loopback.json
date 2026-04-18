@@ -3,7 +3,7 @@
   "allowaccess": "ping ssh snmp fabric",
   "defaultgw": "enable",
   "description": "Loopback for NTP, SNMP and others",
-  "device-identification": "enable",
+  "device-identification": "disable",
   "device-user-identification": "enable",
   "distance": 5,
   "dns-server-override": "enable",

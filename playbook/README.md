@@ -64,28 +64,22 @@ Run these commands on the computer running Ansible:
     cd playbook/
     ```
 
-1. **After a factory reset**, the FortiGate's DNS server is not running yet, so `firewall-01.lan.home` won't resolve.
+1. **After a factory reset only**: perform these two bootstrap steps before running any playbook:
 
-    - Add a temporary entry to `/etc/hosts` on the control machine (requires sudo in a regular terminal):
+    - Add a temporary entry to `/etc/hosts` so `firewall-01.lan.home` resolves (requires sudo — run from a regular terminal, not the VS Code integrated terminal):
       ```bash
       sudo sh -c 'echo "192.168.4.1 firewall.lan.home firewall-01.lan.home" >> /etc/hosts'
       ```
 
-    - Keep `inventory/hosts` using the bare hostname (no `ansible_host` override) so that Ansible connects using the hostname, which matches the SSL certificate CN.
-
-      After playbook 07 (DNS) has run and the FortiGate's DNS server is resolving `lan.home` correctly, remove the `/etc/hosts` entry:
+    - Uncomment the certificate bypass line in `inventory/hosts`:
       ```bash
-      sudo sed -i '/firewall.*lan\.home/d' /etc/hosts
+      sed -i 's/^# ansible_httpapi_validate_certs=false/ansible_httpapi_validate_certs=false/' inventory/hosts
       ```
 
-1. **After a factory reset**, the FortiGate has a self-signed SSL certificate that Ansible cannot verify.
-
-    - Temporarily enable certificate bypass in `inventory/hosts` by setting:
-      ```
-      ansible_httpapi_validate_certs=false
-      ```
-
-      After playbook `05-certificate-upload.yml` has completed successfully, remove this line (or set it back to `false` commented out) to restore strict certificate validation.
+1. All playbooks accept `tags` to print extra information in the output:
+    ```bash
+    ansible-playbook xxx.yml --tags "untagged,debug"
+    ```
 
 1. Prepare the Ubuntu machine to run Ansible playbooks:
 
@@ -96,21 +90,16 @@ Run these commands on the computer running Ansible:
       ansible-playbook 01-control-machine.yml -K
       ```
 
-1. All playbooks accept `tags` to print extra information in the output:
-    ```bash
-    ansible-playbook xxx.yml --tags "untagged,debug"
-    ```
-
 1. These playbooks perform system backups and restores:
     - Backup all settings. It will keep only the latest 5 files.
-    ```bash
-    ansible-playbook 02-backup.yml
-    ```
+      ```bash
+      ansible-playbook 02-backup.yml
+      ```
 
     - CAUTION: This playbook reboots the firewall. Use with care:
-    ```bash
-    ansible-playbook 03-restore.yml
-    ```
+      ```bash
+      ansible-playbook 03-restore.yml
+      ```
 
 1. Backup and create VDOM settings:
     ```bash
@@ -127,6 +116,11 @@ Run these commands on the computer running Ansible:
 1. Upload SSL certificate to the firewall:
     ```bash
     ansible-playbook 05-certificate-upload.yml
+    ```
+
+1. **After a factory reset only**: the trusted SSL certificate is now installed. Restore strict certificate validation by commenting the bypass back out in `inventory/hosts`:
+    ```bash
+    sed -i 's/^ansible_httpapi_validate_certs=false/# ansible_httpapi_validate_certs=false/' inventory/hosts
     ```
 
 1. Backup and create global system settings:
@@ -155,6 +149,11 @@ Run these commands on the computer running Ansible:
     ansible-playbook 09-dns-server-backup.yml
     ansible-playbook 09-dns-server-create-from-backup.yml
     ansible-playbook 09-dns-server-create-from-minimal.yml
+    ```
+
+1. **After a factory reset only**: the FortiGate DNS server is now running and resolving `lan.home`. Remove the temporary `/etc/hosts` entry:
+    ```bash
+    sudo sed -i '/firewall.*lan\.home/d' /etc/hosts
     ```
 
 1. Backup and create NTP system settings:
@@ -262,16 +261,16 @@ Run these commands on the computer running Ansible:
     ansible-playbook 24-alertemail-create-from-minimal.yml
     ```
 
+1. Create Ansible attributes for all firewall Ansible modules:
+    ```bash
+    ansible-playbook 30-ansible-attributes-create.yml
+    ```
+
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml
     ansible-playbook site-create-from-backup.yml
     ansible-playbook site-create-from-minimal.yml
-    ```
-
-1. Create Ansible attributes for all firewall Ansible modules:
-    ```bash
-    ansible-playbook 30-ansible-attributes-create.yml
     ```
 
 ### Created by:
