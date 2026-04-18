@@ -14,6 +14,7 @@
     state: "present"
     user_ldap:
       name: "{{ desired_settings.name }}"
+      account_key_cert_field: "{{ desired_settings['account-key-cert-field'] | default(omit, true) }}"
       account_key_filter: "{{ desired_settings['account-key-filter'] | default(omit, true) }}"
       account_key_processing: "{{ desired_settings['account-key-processing'] | default(omit, true) }}"
       account_key_upn_san: "{{ desired_settings['account-key-upn-san'] | default(omit, true) }}"
@@ -49,6 +50,7 @@
       two_factor_authentication: "{{ desired_settings['two-factor-authentication'] | default(omit, true) }}"
       two_factor_filter: "{{ desired_settings['two-factor-filter'] | default(omit, true) }}"
       two_factor_notification: "{{ desired_settings['two-factor-notification'] | default(omit, true) }}"
+      status_ttl: "{{ desired_settings['status-ttl'] | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"
       user_info_exchange_server: "{{ desired_settings['user-info-exchange-server'] | default(omit, true) }}"
       username: "{{ desired_settings.username | default(omit, true) }}"

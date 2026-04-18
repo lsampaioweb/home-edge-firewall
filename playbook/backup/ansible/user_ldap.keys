@@ -37,3 +37,5 @@ two_factor_notification: "{{ desired_settings['two-factor-notification'] | defau
 type: "{{ desired_settings.type | default(omit, true) }}"
 user_info_exchange_server: "{{ desired_settings['user-info-exchange-server'] | default(omit, true) }}"
 username: "{{ desired_settings.username | default(omit, true) }}"
+account_key_cert_field: "{{ desired_settings['account-key-cert-field'] | default(omit, true) }}"
+status_ttl: "{{ desired_settings['status-ttl'] | default(omit, true) }}"
