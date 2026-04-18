@@ -1,0 +1,6 @@
+dnsfilter_profile: "{{ desired_settings['dnsfilter-profile'] | default(omit, true) }}"
+doh: "{{ desired_settings.doh | default(omit, true) }}"
+doh3: "{{ desired_settings.doh3 | default(omit, true) }}"
+doq: "{{ desired_settings.doq | default(omit, true) }}"
+mode: "{{ desired_settings.mode | default(omit, true) }}"
+name: "{{ desired_settings.name | default(omit, true) }}"
