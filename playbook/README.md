@@ -64,10 +64,37 @@ Run these commands on the computer running Ansible:
     cd playbook/
     ```
 
+1. **After a factory reset**, the FortiGate's DNS server is not running yet, so `firewall-01.lan.home` won't resolve.
+
+    - Add a temporary entry to `/etc/hosts` on the control machine (requires sudo in a regular terminal):
+      ```bash
+      sudo sh -c 'echo "192.168.4.1 firewall.lan.home firewall-01.lan.home" >> /etc/hosts'
+      ```
+
+    - Keep `inventory/hosts` using the bare hostname (no `ansible_host` override) so that Ansible connects using the hostname, which matches the SSL certificate CN.
+
+      After playbook 07 (DNS) has run and the FortiGate's DNS server is resolving `lan.home` correctly, remove the `/etc/hosts` entry:
+      ```bash
+      sudo sed -i '/firewall.*lan\.home/d' /etc/hosts
+      ```
+
+1. **After a factory reset**, the FortiGate has a self-signed SSL certificate that Ansible cannot verify.
+
+    - Temporarily enable certificate bypass in `inventory/hosts` by setting:
+      ```
+      ansible_httpapi_validate_certs=false
+      ```
+
+      After playbook `05-certificate-upload.yml` has completed successfully, remove this line (or set it back to `false` commented out) to restore strict certificate validation.
+
 1. Prepare the Ubuntu machine to run Ansible playbooks:
-    ```bash
-    ansible-playbook 01-control-machine.yml -K
-    ```
+
+    - This requires `sudo`. Run it from a regular system terminal, not from inside VS Code (the VS Code integrated terminal blocks privilege escalation).
+
+      This only needs to be run once per machine — skip it if Ansible and the `fortinet.fortios` collection are already installed.
+      ```bash
+      ansible-playbook 01-control-machine.yml -K
+      ```
 
 1. All playbooks accept `tags` to print extra information in the output:
     ```bash
