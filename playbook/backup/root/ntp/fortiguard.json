@@ -2,6 +2,69 @@
   "interface": [
     {
       "interface_name": "port11"
+    },
+    {
+      "interface_name": "VS-BACKUP"
+    },
+    {
+      "interface_name": "VS-CORE"
+    },
+    {
+      "interface_name": "VS-JUMPSRV"
+    },
+    {
+      "interface_name": "VS-LDAP"
+    },
+    {
+      "interface_name": "VS-LDBLANCER"
+    },
+    {
+      "interface_name": "VS-MGMT"
+    },
+    {
+      "interface_name": "VS-MONITOR"
+    },
+    {
+      "interface_name": "VS-PROXY"
+    },
+    {
+      "interface_name": "VS-REPOSITR"
+    },
+    {
+      "interface_name": "VS-TEMPLATE"
+    },
+    {
+      "interface_name": "VP-BACKUP"
+    },
+    {
+      "interface_name": "VP-CORE"
+    },
+    {
+      "interface_name": "VP-JUMPSRV"
+    },
+    {
+      "interface_name": "VP-LDAP"
+    },
+    {
+      "interface_name": "VP-LDBLANCER"
+    },
+    {
+      "interface_name": "VP-MGMT"
+    },
+    {
+      "interface_name": "VP-MONITOR"
+    },
+    {
+      "interface_name": "VP-PROXY"
+    },
+    {
+      "interface_name": "VP-REPOSITR"
+    },
+    {
+      "interface_name": "VP-TEMPLATE"
+    },
+    {
+      "interface_name": "LAG-Home"
     }
   ],
   "ntpsync": "enable",
