@@ -28,6 +28,7 @@
       orig_addr6: "{{ desired_settings['orig-addr6'] | default(omit) }}"
       orig_port: "{{ desired_settings['orig-port'] | default(omit) }}"
       policyid: "{{ desired_settings.policyid | default(omit) }}"
+      port_preserve: "{{ desired_settings['port-preserve'] | default(omit, true) }}"
       protocol: "{{ desired_settings.protocol | default(omit) }}"
       srcintf: "{{ desired_settings.srcintf | default(omit) }}"
       status: "{{ desired_settings.status | default(omit) }}"
