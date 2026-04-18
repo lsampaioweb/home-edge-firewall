@@ -157,102 +157,109 @@ Run these commands on the computer running Ansible:
     ansible-playbook 09-system-interface-create-from-minimal.yml
     ```
 
+1. Backup and create DNS Server on Interface settings *(role to be created)*:
+    ```bash
+    ansible-playbook 10-dns-server-backup.yml
+    ansible-playbook 10-dns-server-create-from-backup.yml
+    ansible-playbook 10-dns-server-create-from-minimal.yml
+    ```
+
 1. Backup and create NTP system settings:
     ```bash
-    ansible-playbook 10-ntp-backup.yml
-    ansible-playbook 10-ntp-create-from-backup.yml
-    ansible-playbook 10-ntp-create-from-minimal.yml
+    ansible-playbook 11-ntp-backup.yml
+    ansible-playbook 11-ntp-create-from-backup.yml
+    ansible-playbook 11-ntp-create-from-minimal.yml
     ```
 
 1. Backup and create system zones:
     ```bash
-    ansible-playbook 11-system-zone-backup.yml
-    ansible-playbook 11-system-zone-create-from-backup.yml
-    ansible-playbook 11-system-zone-create-from-minimal.yml
+    ansible-playbook 12-system-zone-backup.yml
+    ansible-playbook 12-system-zone-create-from-backup.yml
+    ansible-playbook 12-system-zone-create-from-minimal.yml
     ```
 
 1. Backup and create DHCP system settings:
     ```bash
-    ansible-playbook 12-dhcp-backup.yml
-    ansible-playbook 12-dhcp-create-from-backup.yml
-    ansible-playbook 12-dhcp-create-from-minimal.yml
+    ansible-playbook 13-dhcp-backup.yml
+    ansible-playbook 13-dhcp-create-from-backup.yml
+    ansible-playbook 13-dhcp-create-from-minimal.yml
     ```
 
 1. Backup and create SDWAN settings:
     ```bash
-    ansible-playbook 13-system-sdwan-backup.yml
-    ansible-playbook 13-system-sdwan-create-from-backup.yml
-    ansible-playbook 13-system-sdwan-create-from-minimal.yml
+    ansible-playbook 14-system-sdwan-backup.yml
+    ansible-playbook 14-system-sdwan-create-from-backup.yml
+    ansible-playbook 14-system-sdwan-create-from-minimal.yml
     ```
 
 1. Backup and create static routes:
     ```bash
-    ansible-playbook 14-static-route-backup.yml
-    ansible-playbook 14-static-route-create-from-backup.yml
-    ansible-playbook 14-static-route-create-from-minimal.yml
+    ansible-playbook 15-static-route-backup.yml
+    ansible-playbook 15-static-route-create-from-backup.yml
+    ansible-playbook 15-static-route-create-from-minimal.yml
     ```
 
 1. Backup and create services:
     ```bash
-    ansible-playbook 15-services-backup.yml
-    ansible-playbook 15-services-create-from-backup.yml
-    ansible-playbook 15-services-create-from-minimal.yml
+    ansible-playbook 16-services-backup.yml
+    ansible-playbook 16-services-create-from-backup.yml
+    ansible-playbook 16-services-create-from-minimal.yml
     ```
 
 1. Backup and create Syslog system settings:
     ```bash
-    ansible-playbook 16-syslog-backup.yml
-    ansible-playbook 16-syslog-create-from-backup.yml
-    ansible-playbook 16-syslog-create-from-minimal.yml
+    ansible-playbook 17-syslog-backup.yml
+    ansible-playbook 17-syslog-create-from-backup.yml
+    ansible-playbook 17-syslog-create-from-minimal.yml
     ```
 
 1. Backup and create SNMP system settings:
     ```bash
-    ansible-playbook 17-snmp-backup.yml
-    ansible-playbook 17-snmp-create-from-backup.yml
-    ansible-playbook 17-snmp-create-from-minimal.yml
+    ansible-playbook 18-snmp-backup.yml
+    ansible-playbook 18-snmp-create-from-backup.yml
+    ansible-playbook 18-snmp-create-from-minimal.yml
     ```
 
 1. Backup and create firewall addresses:
     ```bash
-    ansible-playbook 18-firewall-address-backup.yml
-    ansible-playbook 18-firewall-address-create-from-backup.yml
-    ansible-playbook 18-firewall-address-create-from-minimal.yml
+    ansible-playbook 19-firewall-address-backup.yml
+    ansible-playbook 19-firewall-address-create-from-backup.yml
+    ansible-playbook 19-firewall-address-create-from-minimal.yml
     ```
 
 1. Backup and create Central SNAT settings:
     ```bash
-    ansible-playbook 19-firewall-central-snat-backup.yml
-    ansible-playbook 19-firewall-central-snat-create-from-backup.yml
-    ansible-playbook 19-firewall-central-snat-create-from-minimal.yml
+    ansible-playbook 20-firewall-central-snat-backup.yml
+    ansible-playbook 20-firewall-central-snat-create-from-backup.yml
+    ansible-playbook 20-firewall-central-snat-create-from-minimal.yml
     ```
 
 1. Backup and create Firewall DOS Policy settings:
     ```bash
-    ansible-playbook 20-firewall-dos-policy-backup.yml
-    ansible-playbook 20-firewall-dos-policy-create-from-backup.yml
-    ansible-playbook 20-firewall-dos-policy-create-from-minimal.yml
+    ansible-playbook 21-firewall-dos-policy-backup.yml
+    ansible-playbook 21-firewall-dos-policy-create-from-backup.yml
+    ansible-playbook 21-firewall-dos-policy-create-from-minimal.yml
     ```
 
 1. Backup and create firewall policies:
     ```bash
-    ansible-playbook 21-firewall-policy-backup.yml
-    ansible-playbook 21-firewall-policy-create-from-backup.yml
-    ansible-playbook 21-firewall-policy-create-from-minimal.yml
+    ansible-playbook 22-firewall-policy-backup.yml
+    ansible-playbook 22-firewall-policy-create-from-backup.yml
+    ansible-playbook 22-firewall-policy-create-from-minimal.yml
     ```
 
 1. Backup and create Email Server settings:
     ```bash
-    ansible-playbook 22-email-server-backup.yml
-    ansible-playbook 22-email-server-create-from-backup.yml
-    ansible-playbook 22-email-server-create-from-minimal.yml
+    ansible-playbook 23-email-server-backup.yml
+    ansible-playbook 23-email-server-create-from-backup.yml
+    ansible-playbook 23-email-server-create-from-minimal.yml
     ```
 
 1. Backup and create Alert Email settings:
     ```bash
-    ansible-playbook 23-alertemail-backup.yml
-    ansible-playbook 23-alertemail-create-from-backup.yml
-    ansible-playbook 23-alertemail-create-from-minimal.yml
+    ansible-playbook 24-alertemail-backup.yml
+    ansible-playbook 24-alertemail-create-from-backup.yml
+    ansible-playbook 24-alertemail-create-from-minimal.yml
     ```
 
 1. Run all other playbooks in one execution:
