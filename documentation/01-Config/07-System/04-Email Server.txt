@@ -1,0 +1,8 @@
+Email Service:
+  Type        : Custom
+  Server      : smtp.gmail.com
+  Port        : 587
+  Security    : STARTTLS
+  Authenticate: Enable
+  User Name   : lsampaioweb@gmail.com
+  Password    : KeyChain: "smtp-password"

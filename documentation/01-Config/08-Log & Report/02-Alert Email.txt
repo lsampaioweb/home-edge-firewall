@@ -1,0 +1,14 @@
+Alert Email:
+  From (Username) : lsampaioweb@gmail.com
+  To (Mailto1)    : lsampaioweb+firewall-01-alerts@gmail.com
+  To (Mailto2)    : (empty)
+  To (Mailto3)    : (empty)
+
+  Authentication Logs:
+    Admin Login Failures                      : Enable
+    Firewall Authentication Failures          : Enable
+    SSH Events                                : Enable
+    SSL-VPN Authentication Errors             : Enable
+
+  Configuration Logs:
+    Configuration Changes                     : Enable

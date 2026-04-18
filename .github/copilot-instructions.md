@@ -163,3 +163,6 @@ When working on any role, always go through these steps in order:
 9. **`add-entry.yml` — missing fields** — Cross-check fields against the module's `.keys` files (if present) and the `.bkp` files to ensure no important parameters are omitted.
 10. **Run all 3 playbooks** — Use full output (no `tail`/`grep` truncation) so failures are visible. Run backup first, then create-from-minimal, then create-from-backup.
 11. **API limitations** — Note any resources the FortiGate API cannot create programmatically (e.g. loopback interfaces require manual UI/CLI creation first).
+12. **Site playbooks** — After creating or deleting a role, update all three site playbooks (`site-backup.yml`, `site-create-from-backup.yml`, `site-create-from-minimal.yml`) to add or remove the corresponding `import_playbook` entries in numbered order.
+13. **README** — After creating or deleting a role, add or remove the corresponding numbered section in `playbook/README.md`, keeping entries in numbered order.
+14. **Documentation** — After creating or deleting a role, create or remove the matching `.txt` file(s) under `documentation/01-Config/` in the appropriate FortiGate UI section folder. The file must document the actual configured values using the same free-form structured text style as existing files.

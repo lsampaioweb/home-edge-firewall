@@ -55,3 +55,9 @@
 
 - name: "Run the Firewall Policy playbook"
   ansible.builtin.import_playbook: "21-firewall-policy-create-from-backup.yml"
+
+- name: "Run the Email Server playbook"
+  ansible.builtin.import_playbook: "22-email-server-create-from-backup.yml"
+
+- name: "Run the Alert Email playbook"
+  ansible.builtin.import_playbook: "23-alertemail-create-from-backup.yml"

@@ -214,6 +214,20 @@ Run these commands on the computer running Ansible:
     ansible-playbook 21-firewall-policy-create-from-minimal.yml
     ```
 
+1. Backup and create Email Server settings:
+    ```bash
+    ansible-playbook 22-email-server-backup.yml
+    ansible-playbook 22-email-server-create-from-backup.yml
+    ansible-playbook 22-email-server-create-from-minimal.yml
+    ```
+
+1. Backup and create Alert Email settings:
+    ```bash
+    ansible-playbook 23-alertemail-backup.yml
+    ansible-playbook 23-alertemail-create-from-backup.yml
+    ansible-playbook 23-alertemail-create-from-minimal.yml
+    ```
+
 1. Run all other playbooks in one execution:
     ```bash
     ansible-playbook site-backup.yml
