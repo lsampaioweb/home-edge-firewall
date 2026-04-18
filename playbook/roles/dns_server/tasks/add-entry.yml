@@ -14,7 +14,7 @@
     state: "present"
     system_dns_server:
       name: "{{ desired_settings.name }}"
-      mode: "{{ desired_settings.mode | default(omit, true) }}"
+      mode: "{{ desired_settings.mode | default(omit, true) }}" # noqa: args[module]
       dnsfilter_profile: "{{ desired_settings['dnsfilter-profile'] | default(omit, true) }}"
       doh: "{{ desired_settings.doh | default(omit, true) }}"
       doh3: "{{ desired_settings.doh3 | default(omit, true) }}"
