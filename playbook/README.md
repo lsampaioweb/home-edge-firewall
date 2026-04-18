@@ -157,7 +157,7 @@ Run these commands on the computer running Ansible:
     ansible-playbook 09-system-interface-create-from-minimal.yml
     ```
 
-1. Backup and create DNS Server on Interface settings *(role to be created)*:
+1. Backup and create DNS Server on Interface settings:
     ```bash
     ansible-playbook 10-dns-server-backup.yml
     ansible-playbook 10-dns-server-create-from-backup.yml

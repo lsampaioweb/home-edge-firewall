@@ -20,7 +20,8 @@
 - name: "Run the System Interface playbook"
   ansible.builtin.import_playbook: "09-system-interface-create-from-minimal.yml"
 
-# 10-dns-server-create-from-minimal.yml (to be created)
+- name: "Run the DNS Server on Interface playbook"
+  ansible.builtin.import_playbook: "10-dns-server-create-from-minimal.yml"
 
 - name: "Run the NTP playbook"
   ansible.builtin.import_playbook: "11-ntp-create-from-minimal.yml"

@@ -1,0 +1,10 @@
+---
+- name: "DNS Server on Interface settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Backing up the DNS Server on Interface settings"
+      ansible.builtin.include_role:
+        name: "dns_server"
+        tasks_from: "backup.yml"

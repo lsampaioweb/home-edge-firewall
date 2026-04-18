@@ -1,0 +1,4 @@
+---
+dns_server_minimal_keys:
+  - "mode"
+  - "name"

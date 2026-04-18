@@ -11,6 +11,7 @@
     - "log.syslogd_setting"
     - "router_static"
     - "system_dns-database"
+    - "system_dns-server"
     - "system_global"
     - "system_interface"
     - "system_switch-interface"

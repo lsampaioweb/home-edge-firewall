@@ -31,7 +31,7 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VS-REPOSITORY
+      Interface     : VS-REPOSITR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
@@ -41,12 +41,12 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VS-JUMPSERVER
+      Interface     : VS-JUMPSRV
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VS-LOADBALANCER
+      Interface     : VS-LDBLANCER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
@@ -81,7 +81,7 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VP-REPOSITORY
+      Interface     : VP-REPOSITR
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
@@ -91,12 +91,12 @@ DNS Service on Interface
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VP-JUMPSERVER
+      Interface     : VP-JUMPSRV
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
     -
-      Interface     : VP-LOADBALANCER
+      Interface     : VP-LDBLANCER
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
