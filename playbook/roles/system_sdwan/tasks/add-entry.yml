@@ -12,6 +12,8 @@
   fortinet.fortios.fortios_system_sdwan:
     vdom: "{{ vdom | default(omit, true) }}"
     system_sdwan:
+      app_perf_log_period: "{{ desired_settings['app-perf-log-period'] | default(omit, true) }}"
+      duplication_max_discrepancy: "{{ desired_settings['duplication-max-discrepancy'] | default(omit, true) }}"
       duplication: "{{ desired_settings.duplication | default(omit, true) }}"
       duplication_max_num: "{{ desired_settings['duplication-max-num'] | default(omit, true) }}"
       fail_alert_interfaces: "{{ desired_settings['fail-alert-interfaces'] | default(omit, true) }}"

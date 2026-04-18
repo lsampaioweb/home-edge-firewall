@@ -17,15 +17,67 @@
 - name: "Saving the System SDWAN backup and minimal files"
   ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
   vars:
+    # sla is excluded because its nested sla.link_cost_factor field is
+    # returned by the API as a space-separated string (e.g. "latency jitter packet-loss")
+    # but the fortios_system_sdwan module requires it as a list. There is no simple
+    # way to transform this in Jinja2 at restore time. SystemDNS is a FortiGate
+    # built-in health-check that is always present and self-managed by the device.
+    # Custom health-checks should be defined manually in the .json file if needed.
     entry: >-
       {{ (data.meta.results
-      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.remove_keys(target=[invalid_attribute, 'sla'])
       | ansible.utils.replace_keys(target=[
-        {'before': 'advpn-health-check'       , 'after': 'advpn_health_check'},
-        {'before': 'advpn-select'             , 'after': 'advpn_select'},
-        {'before': 'minimum-sla-meet-members' , 'after': 'minimum_sla_meet_members'},
-        {'before': 'service-sla-tie-break'    , 'after': 'service_sla_tie_break'}
+        {'before': 'advpn-health-check'         , 'after': 'advpn_health_check'},
+        {'before': 'advpn-select'               , 'after': 'advpn_select'},
+        {'before': 'minimum-sla-meet-members'   , 'after': 'minimum_sla_meet_members'},
+        {'before': 'service-sla-tie-break'      , 'after': 'service_sla_tie_break'},
+        {'before': 'seq-num'                    , 'after': 'seq_num'},
+        {'before': 'ingress-spillover-threshold', 'after': 'ingress_spillover_threshold'},
+        {'before': 'preferred-source'           , 'after': 'preferred_source'},
+        {'before': 'spillover-threshold'        , 'after': 'spillover_threshold'},
+        {'before': 'transport-group'            , 'after': 'transport_group'},
+        {'before': 'volume-ratio'               , 'after': 'volume_ratio'},
+        {'before': 'addr-mode'                  , 'after': 'addr_mode'},
+        {'before': 'class-id'                   , 'after': 'class_id'},
+        {'before': 'detect-mode'                , 'after': 'detect_mode'},
+        {'before': 'dns-match-ip'               , 'after': 'dns_match_ip'},
+        {'before': 'dns-request-domain'         , 'after': 'dns_request_domain'},
+        {'before': 'embed-measured-health'      , 'after': 'embed_measured_health'},
+        {'before': 'ftp-file'                   , 'after': 'ftp_file'},
+        {'before': 'ftp-mode'                   , 'after': 'ftp_mode'},
+        {'before': 'ha-priority'                , 'after': 'ha_priority'},
+        {'before': 'http-agent'                 , 'after': 'http_agent'},
+        {'before': 'http-get'                   , 'after': 'http_get'},
+        {'before': 'http-match'                 , 'after': 'http_match'},
+        {'before': 'mos-codec'                  , 'after': 'mos_codec'},
+        {'before': 'packet-size'                , 'after': 'packet_size'},
+        {'before': 'probe-count'                , 'after': 'probe_count'},
+        {'before': 'probe-packets'              , 'after': 'probe_packets'},
+        {'before': 'probe-timeout'              , 'after': 'probe_timeout'},
+        {'before': 'quality-measured-method'    , 'after': 'quality_measured_method'},
+        {'before': 'security-mode'              , 'after': 'security_mode'},
+        {'before': 'sla-fail-log-period'        , 'after': 'sla_fail_log_period'},
+        {'before': 'sla-id-redistribute'        , 'after': 'sla_id_redistribute'},
+        {'before': 'sla-pass-log-period'        , 'after': 'sla_pass_log_period'},
+        {'before': 'system-dns'                 , 'after': 'system_dns'},
+        {'before': 'threshold-alert-jitter'     , 'after': 'threshold_alert_jitter'},
+        {'before': 'threshold-alert-latency'    , 'after': 'threshold_alert_latency'},
+        {'before': 'threshold-alert-packetloss' , 'after': 'threshold_alert_packetloss'},
+        {'before': 'threshold-warning-jitter'   , 'after': 'threshold_warning_jitter'},
+        {'before': 'threshold-warning-latency'  , 'after': 'threshold_warning_latency'},
+        {'before': 'threshold-warning-packetloss', 'after': 'threshold_warning_packetloss'},
+        {'before': 'update-cascade-interface'   , 'after': 'update_cascade_interface'},
+        {'before': 'update-static-route'        , 'after': 'update_static_route'},
+        {'before': 'jitter-threshold'           , 'after': 'jitter_threshold'},
+        {'before': 'latency-threshold'          , 'after': 'latency_threshold'},
+        {'before': 'link-cost-factor'           , 'after': 'link_cost_factor'},
+        {'before': 'mos-threshold'              , 'after': 'mos_threshold'},
+        {'before': 'packetloss-threshold'       , 'after': 'packetloss_threshold'},
+        {'before': 'priority-in-sla'            , 'after': 'priority_in_sla'},
+        {'before': 'priority-out-sla'           , 'after': 'priority_out_sla'}
       ])) }}
     dest_dir: "{{ backup_system_sdwan_path }}"
     dest_basename: "sdwan"
     minimal_keys: "{{ system_sdwan_minimal_keys }}"
+    nested_key: "members"
+    nested_minimal_keys: "{{ system_sdwan_members_minimal_keys }}"

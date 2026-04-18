@@ -1,4 +1,24 @@
 {
+  "members": [
+    {
+      "cost": 0,
+      "gateway": "192.168.1.1",
+      "interface": "wan1",
+      "priority": 1,
+      "seq_num": 1,
+      "status": "enable",
+      "zone": "SD-WAN"
+    },
+    {
+      "cost": 0,
+      "gateway": "192.168.2.1",
+      "interface": "wan2",
+      "priority": 1,
+      "seq_num": 2,
+      "status": "enable",
+      "zone": "SD-WAN"
+    }
+  ],
   "status": "enable",
   "zone": [
     {
@@ -6,6 +26,13 @@
       "advpn_select": "disable",
       "minimum_sla_meet_members": 1,
       "name": "virtual-wan-link",
+      "service_sla_tie_break": "cfg-order"
+    },
+    {
+      "advpn_health_check": "",
+      "advpn_select": "disable",
+      "minimum_sla_meet_members": 1,
+      "name": "SD-WAN",
       "service_sla_tie_break": "cfg-order"
     }
   ]

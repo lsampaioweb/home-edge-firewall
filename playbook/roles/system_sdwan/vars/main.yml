@@ -1,4 +1,14 @@
 ---
 system_sdwan_minimal_keys:
+  - "members"
+  - "status"
+  - "zone"
+
+system_sdwan_members_minimal_keys:
+  - "cost"
+  - "gateway"
+  - "interface"
+  - "priority"
+  - "seq_num"
   - "status"
   - "zone"
