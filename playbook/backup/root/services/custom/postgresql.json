@@ -1,5 +1,5 @@
 {
-  "category": "Database",
+  "category": "Network Services",
   "comment": "Ansible",
   "name": "PostgreSQL",
   "protocol": "TCP/UDP/SCTP",
