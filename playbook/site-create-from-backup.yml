@@ -11,20 +11,20 @@
 - name: "Run the System Settings playbook"
   ansible.builtin.import_playbook: "06-system-settings-create-from-backup.yml"
 
-- name: "Run the DNS playbook"
-  ansible.builtin.import_playbook: "07-dns-create-from-backup.yml"
-
-- name: "Run the LDAP playbook"
-  ansible.builtin.import_playbook: "08-ldap-create-from-backup.yml"
-
 - name: "Run the System Interface playbook"
-  ansible.builtin.import_playbook: "09-system-interface-create-from-backup.yml"
+  ansible.builtin.import_playbook: "07-system-interface-create-from-backup.yml"
+
+- name: "Run the DNS playbook"
+  ansible.builtin.import_playbook: "08-dns-create-from-backup.yml"
 
 - name: "Run the DNS Server on Interface playbook"
-  ansible.builtin.import_playbook: "10-dns-server-create-from-backup.yml"
+  ansible.builtin.import_playbook: "09-dns-server-create-from-backup.yml"
 
 - name: "Run the NTP playbook"
-  ansible.builtin.import_playbook: "11-ntp-create-from-backup.yml"
+  ansible.builtin.import_playbook: "10-ntp-create-from-backup.yml"
+
+- name: "Run the LDAP playbook"
+  ansible.builtin.import_playbook: "11-ldap-create-from-backup.yml"
 
 - name: "Run the System Zone playbook"
   ansible.builtin.import_playbook: "12-system-zone-create-from-backup.yml"
@@ -41,26 +41,26 @@
 - name: "Run the Services playbook"
   ansible.builtin.import_playbook: "16-services-create-from-backup.yml"
 
-- name: "Run the Syslog playbook"
-  ansible.builtin.import_playbook: "17-syslog-create-from-backup.yml"
-
-- name: "Run the SNMP playbook"
-  ansible.builtin.import_playbook: "18-snmp-create-from-backup.yml"
-
 - name: "Run the Firewall Addresses playbook"
-  ansible.builtin.import_playbook: "19-firewall-address-create-from-backup.yml"
+  ansible.builtin.import_playbook: "17-firewall-address-create-from-backup.yml"
 
 - name: "Run the Firewall Central SNAT playbook"
-  ansible.builtin.import_playbook: "20-firewall-central-snat-create-from-backup.yml"
+  ansible.builtin.import_playbook: "18-firewall-central-snat-create-from-backup.yml"
 
 - name: "Run the Firewall DOS Policy playbook"
-  ansible.builtin.import_playbook: "21-firewall-dos-policy-create-from-backup.yml"
+  ansible.builtin.import_playbook: "19-firewall-dos-policy-create-from-backup.yml"
 
 - name: "Run the Firewall Policy playbook"
-  ansible.builtin.import_playbook: "22-firewall-policy-create-from-backup.yml"
+  ansible.builtin.import_playbook: "20-firewall-policy-create-from-backup.yml"
 
 - name: "Run the Email Server playbook"
-  ansible.builtin.import_playbook: "23-email-server-create-from-backup.yml"
+  ansible.builtin.import_playbook: "21-email-server-create-from-backup.yml"
+
+- name: "Run the Syslog playbook"
+  ansible.builtin.import_playbook: "22-syslog-create-from-backup.yml"
+
+- name: "Run the SNMP playbook"
+  ansible.builtin.import_playbook: "23-snmp-create-from-backup.yml"
 
 - name: "Run the Alert Email playbook"
   ansible.builtin.import_playbook: "24-alertemail-create-from-backup.yml"
