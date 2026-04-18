@@ -1,0 +1,25 @@
+---
+- name: "Fetching the Email Server settings"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "system_email-server"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_system_email_server_path }}"
+
+- name: "Saving the Email Server backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
+  vars:
+    entry: >-
+      {{ (data.meta.results
+      | ansible.utils.remove_keys(target=[invalid_attribute, 'password'])) }}
+    dest_dir: "{{ backup_system_email_server_path }}"
+    dest_basename: "email-server"
+    minimal_keys: "{{ system_email_server_minimal_keys }}"

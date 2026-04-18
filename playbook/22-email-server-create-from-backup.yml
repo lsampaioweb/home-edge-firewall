@@ -1,0 +1,10 @@
+---
+- name: "Email Server settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Creating Email Server settings from backup"
+      ansible.builtin.include_role:
+        name: "system_email_server"
+        tasks_from: "create-from-backup.yml"

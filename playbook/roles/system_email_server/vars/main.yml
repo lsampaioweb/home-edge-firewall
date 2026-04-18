@@ -1,0 +1,8 @@
+---
+system_email_server_minimal_keys:
+  - "type"
+  - "server"
+  - "port"
+  - "authenticate"
+  - "username"
+  - "security"

@@ -7,7 +7,7 @@ ansible_password_id: "{{ inventory_hostname_without_domain ~ '_usr_admin' }}"
 
 # "lan.home/prd/firewall-01.lan.home"
 ssl_password_id: "{{ domain ~ '/prd/' ~ inventory_hostname }}"
-# smtp_password_id: "{{ inventory_hostname_without_domain ~ '_smtp_password' }}"
+smtp_password_id: "{{ inventory_hostname_without_domain ~ '_smtp_password' }}"
 snmp_password_id: "{{ inventory_hostname_without_domain ~ '_snmp_password' }}"
 
 # The password of the user that will connect to the firewall using Ansible.
@@ -24,7 +24,7 @@ ssl_password: "{{ lookup('pipe', 'secret-tool lookup password ' + ssl_password_i
 
 # The password that the firewall will use to send email notifications to the SMTP server.
 # Ubuntu.
-# smtp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + smtp_password_id) }}"
+smtp_password: "{{ lookup('pipe', 'secret-tool lookup password ' + smtp_password_id) }}"
 # MacOS.
 # smtp_password: "{{ lookup('pipe', 'security find-generic-password -w -s ' + smtp_password_id) }}"
 
@@ -104,3 +104,6 @@ backup_system_sdwan_path: "{{ backup_vdom_path }}/system_sdwan"
 
 # Static Routing.
 backup_static_routing_path: "{{ backup_vdom_path }}/static_routing"
+
+# System Email Server.
+backup_system_email_server_path: "{{ backup_vdom_path }}/system_email_server"

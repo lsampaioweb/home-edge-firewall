@@ -21,6 +21,9 @@
     - "system.dhcp_server"
     - "system.snmp_user"
     - "user_ldap"
+    - "system_email-server"
+    - "system_alarm"
+    - "alertemail_setting"
   loop_control:
     loop_var: "selector"
     label: "{{ selector }}"

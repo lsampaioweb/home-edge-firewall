@@ -1,0 +1,8 @@
+{
+  "authenticate": "enable",
+  "port": 587,
+  "security": "starttls",
+  "server": "smtp.gmail.com",
+  "type": "custom",
+  "username": "lsampaioweb@gmail.com"
+}
