@@ -1,0 +1,10 @@
+---
+- name: "Alertemail settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Backing up the Alertemail settings"
+      ansible.builtin.include_role:
+        name: "alertemail"
+        tasks_from: "backup.yml"

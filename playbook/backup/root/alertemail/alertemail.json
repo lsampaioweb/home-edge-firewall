@@ -1,0 +1,11 @@
+{
+  "admin-login-logs": "enable",
+  "configuration-changes-logs": "enable",
+  "firewall-authentication-failure-logs": "enable",
+  "mailto1": "lsampaioweb+firewall-01-alerts@gmail.com",
+  "mailto2": "",
+  "mailto3": "",
+  "ssh-logs": "enable",
+  "sslvpn-authentication-errors-logs": "enable",
+  "username": "lsampaioweb@gmail.com"
+}

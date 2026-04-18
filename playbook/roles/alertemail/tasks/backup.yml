@@ -1,0 +1,25 @@
+---
+- name: "Fetching the Alertemail settings"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "alertemail_setting"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_alertemail_path }}"
+
+- name: "Saving the Alertemail backup and minimal files"
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
+  vars:
+    entry: >-
+      {{ (data.meta.results
+      | ansible.utils.remove_keys(target=[invalid_attribute])) }}
+    dest_dir: "{{ backup_alertemail_path }}"
+    dest_basename: "alertemail"
+    minimal_keys: "{{ alertemail_minimal_keys }}"

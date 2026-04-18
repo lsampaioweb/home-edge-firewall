@@ -107,3 +107,6 @@ backup_static_routing_path: "{{ backup_vdom_path }}/static_routing"
 
 # System Email Server.
 backup_system_email_server_path: "{{ backup_vdom_path }}/system_email_server"
+
+# Alertemail.
+backup_alertemail_path: "{{ backup_vdom_path }}/alertemail"

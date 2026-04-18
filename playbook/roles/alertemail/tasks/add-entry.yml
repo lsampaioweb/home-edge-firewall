@@ -1,0 +1,55 @@
+---
+- name: "Reading the json file '{{ file.path }}' that contains the desired settings"
+  ansible.builtin.set_fact:
+    desired_settings: "{{ lookup('file', file.path) | from_json }}"
+
+- name: "Printing the desired settings json object"
+  ansible.builtin.debug:
+    msg: "{{ desired_settings }}"
+  tags: ["never", "debug"]
+
+- name: "Setting Alertemail settings"
+  fortinet.fortios.fortios_alertemail_setting:
+    vdom: "{{ vdom | default(omit, true) }}"
+    alertemail_setting:
+      FDS_license_expiring_warning: "{{ desired_settings['FDS-license-expiring-warning'] | default(omit, true) }}"
+      FDS_update_logs: "{{ desired_settings['FDS-update-logs'] | default(omit, true) }}"
+      FIPS_CC_errors: "{{ desired_settings['FIPS-CC-errors'] | default(omit, true) }}"
+      FSSO_disconnect_logs: "{{ desired_settings['FSSO-disconnect-logs'] | default(omit, true) }}"
+      HA_logs: "{{ desired_settings['HA-logs'] | default(omit, true) }}"
+      IPS_logs: "{{ desired_settings['IPS-logs'] | default(omit, true) }}"
+      IPsec_errors_logs: "{{ desired_settings['IPsec-errors-logs'] | default(omit, true) }}"
+      PPP_errors_logs: "{{ desired_settings['PPP-errors-logs'] | default(omit, true) }}"
+      admin_login_logs: "{{ desired_settings['admin-login-logs'] | default(omit, true) }}"
+      alert_interval: "{{ desired_settings['alert-interval'] | default(omit, true) }}"
+      amc_interface_bypass_mode: "{{ desired_settings['amc-interface-bypass-mode'] | default(omit, true) }}"
+      antivirus_logs: "{{ desired_settings['antivirus-logs'] | default(omit, true) }}"
+      configuration_changes_logs: "{{ desired_settings['configuration-changes-logs'] | default(omit, true) }}"
+      critical_interval: "{{ desired_settings['critical-interval'] | default(omit, true) }}"
+      debug_interval: "{{ desired_settings['debug-interval'] | default(omit, true) }}"
+      email_interval: "{{ desired_settings['email-interval'] | default(omit, true) }}"
+      emergency_interval: "{{ desired_settings['emergency-interval'] | default(omit, true) }}"
+      error_interval: "{{ desired_settings['error-interval'] | default(omit, true) }}"
+      filter_mode: "{{ desired_settings['filter-mode'] | default(omit, true) }}"
+      firewall_authentication_failure_logs: "{{ desired_settings['firewall-authentication-failure-logs'] | default(omit, true) }}"
+      fortiguard_log_quota_warning: "{{ desired_settings['fortiguard-log-quota-warning'] | default(omit, true) }}"
+      information_interval: "{{ desired_settings['information-interval'] | default(omit, true) }}"
+      local_disk_usage: "{{ desired_settings['local-disk-usage'] | default(omit, true) }}"
+      log_disk_usage_warning: "{{ desired_settings['log-disk-usage-warning'] | default(omit, true) }}"
+      mailto1: "{{ desired_settings.mailto1 | default(omit, true) }}"
+      mailto2: "{{ desired_settings.mailto2 | default(omit, true) }}"
+      mailto3: "{{ desired_settings.mailto3 | default(omit, true) }}"
+      notification_interval: "{{ desired_settings['notification-interval'] | default(omit, true) }}"
+      severity: "{{ desired_settings.severity | default(omit, true) }}"
+      ssh_logs: "{{ desired_settings['ssh-logs'] | default(omit, true) }}"
+      sslvpn_authentication_errors_logs: "{{ desired_settings['sslvpn-authentication-errors-logs'] | default(omit, true) }}"
+      username: "{{ desired_settings.username | default(omit, true) }}"
+      violation_traffic_logs: "{{ desired_settings['violation-traffic-logs'] | default(omit, true) }}"
+      warning_interval: "{{ desired_settings['warning-interval'] | default(omit, true) }}"
+      webfilter_logs: "{{ desired_settings['webfilter-logs'] | default(omit, true) }}"
+  register: "output"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ output }}"
+  tags: ["never", "debug"]

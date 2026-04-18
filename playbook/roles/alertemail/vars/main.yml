@@ -1,0 +1,11 @@
+---
+alertemail_minimal_keys:
+  - "username"
+  - "mailto1"
+  - "mailto2"
+  - "mailto3"
+  - "configuration-changes-logs"
+  - "firewall-authentication-failure-logs"
+  - "sslvpn-authentication-errors-logs"
+  - "admin-login-logs"
+  - "ssh-logs"
