@@ -3,7 +3,7 @@
   "format": "default",
   "mode": "udp",
   "port": 514,
-  "server": "grafana.lan.homelab",
+  "server": "grafana.lan.home",
   "source-ip": "10.1.55.14",
   "status": "enable"
 }
