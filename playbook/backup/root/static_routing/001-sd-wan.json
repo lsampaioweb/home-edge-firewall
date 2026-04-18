@@ -1,14 +1,14 @@
 {
-  "seq-num": 1,
+  "comment": "DigitalNET e Claro",
+  "distance": 1,
   "dst": "0.0.0.0 0.0.0.0",
   "gateway": "0.0.0.0",
-  "comment": "DigitalNET e Claro",
-  "status": "enable",
-  "distance": 1,
   "priority": 1,
   "sdwan-zone": [
     {
       "name": "SD-WAN"
     }
-  ]
+  ],
+  "seq-num": 1,
+  "status": "enable"
 }
