@@ -1,6 +1,6 @@
 {
   "alias": "",
-  "allowaccess": "ping ssh snmp fabric",
+  "allowaccess": "ping https ssh snmp fabric",
   "defaultgw": "enable",
   "description": "Loopback for NTP, SNMP and others",
   "device-identification": "disable",
