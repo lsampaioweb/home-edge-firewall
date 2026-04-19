@@ -1,7 +1,7 @@
 {
   "default-gateway": "192.168.3.1",
   "dns-service": "local",
-  "domain": "lan.homelab",
+  "domain": "lan.home",
   "id": 2,
   "interface": "LAG-Home",
   "ip-range": [
@@ -13,6 +13,91 @@
     }
   ],
   "netmask": "255.255.255.0",
-  "reserved-address": [],
+  "reserved-address": [
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 1,
+      "ip": "192.168.3.2",
+      "mac": "90:9a:4a:09:36:f8",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 2,
+      "ip": "192.168.3.4",
+      "mac": "c2:6f:6f:72:38:b6",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 3,
+      "ip": "192.168.3.6",
+      "mac": "6a:cd:39:f5:8e:17",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 4,
+      "ip": "192.168.3.7",
+      "mac": "8c:79:f5:9b:a3:09",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 5,
+      "ip": "192.168.3.8",
+      "mac": "bc:45:5b:c1:12:ec",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 6,
+      "ip": "192.168.3.9",
+      "mac": "a4:30:7a:f3:32:58",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 7,
+      "ip": "192.168.3.10",
+      "mac": "24:6a:0e:b0:4c:77",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    }
+  ],
   "status": "enable"
 }

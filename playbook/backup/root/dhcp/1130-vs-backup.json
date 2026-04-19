@@ -1,7 +1,7 @@
 {
   "default-gateway": "10.1.30.14",
   "dns-service": "local",
-  "domain": "lan.homelab",
+  "domain": "lan.home",
   "id": 1130,
   "interface": "VS-BACKUP",
   "ip-range": [

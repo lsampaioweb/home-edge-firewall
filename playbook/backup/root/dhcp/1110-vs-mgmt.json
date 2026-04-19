@@ -1,7 +1,7 @@
 {
   "default-gateway": "10.1.10.14",
   "dns-service": "local",
-  "domain": "lan.homelab",
+  "domain": "lan.home",
   "id": 1110,
   "interface": "VS-MGMT",
   "ip-range": [

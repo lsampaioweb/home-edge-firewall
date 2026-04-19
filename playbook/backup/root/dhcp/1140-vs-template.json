@@ -1,7 +1,7 @@
 {
   "default-gateway": "10.1.40.14",
   "dns-service": "local",
-  "domain": "lan.homelab",
+  "domain": "lan.home",
   "id": 1140,
   "interface": "VS-TEMPLATE",
   "ip-range": [
