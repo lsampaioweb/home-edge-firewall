@@ -7,7 +7,7 @@ Interface:
 
 Address:
   Addressing mode                       : Manual
-  IP/Netmask                            : 192.168.2.1/24
+  IP/Netmask                            : 192.168.3.1/24
   Create address object matching subnet : Checked
 
 Administrative Access:
@@ -20,7 +20,7 @@ Administrative Access:
 
 DHCP Server:
   DHCP status     : Enabled
-  Address range   : 192.168.2.200-192.168.2.254
+  Address range   : 192.168.3.200-192.168.3.254
   Netmask         : 255.255.255.0
   Default gateway : Same as Interface IP
   DNS server      : Same as Interface IP
@@ -32,7 +32,7 @@ Advanced:
   CLI:
   config system dhcp server
     edit x (3)
-      set domain "lan.homelab"
+      set domain "lan.home"
     end
   end
 

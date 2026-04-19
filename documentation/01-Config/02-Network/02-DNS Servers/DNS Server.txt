@@ -110,8 +110,8 @@ DNS Database
   New DNS Zone
     Type                    : Primary
     View                    : Shadow
-    DNS Zone                : lan.homelab
-    Domain Name             : lan.homelab
+    DNS Zone                : lan.home
+    Domain Name             : lan.home
     Hostname of Primary DNS : dns-01
     Contact Email Address   : lsampaio
     TTL (86400 seconds)     : 1 Day
