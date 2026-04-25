@@ -1,6 +1,6 @@
 {
   "alias": "",
-  "allowaccess": "ping fabric",
+  "allowaccess": "ping https ssh fabric",
   "defaultgw": "enable",
   "description": "Production Management",
   "device-identification": "enable",

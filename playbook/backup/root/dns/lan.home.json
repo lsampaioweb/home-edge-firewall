@@ -6,9 +6,17 @@
       "canonical_name": "",
       "hostname": "firewall-01",
       "id": 1,
-      "ip": "10.1.0.1",
+      "ip": "192.168.3.1",
       "status": "enable",
       "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01",
+      "id": 2,
+      "ip": "192.168.3.1",
+      "status": "enable",
+      "type": "PTR"
     },
     {
       "canonical_name": "",

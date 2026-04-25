@@ -4,11 +4,35 @@
   "dns-entry": [
     {
       "canonical_name": "",
-      "hostname": "firewall-01",
+      "hostname": "firewall-01-stg",
       "id": 1,
-      "ip": "10.1.0.1",
+      "ip": "10.1.10.14",
       "status": "enable",
       "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-stg",
+      "id": 2,
+      "ip": "10.1.10.14",
+      "status": "enable",
+      "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-prd",
+      "id": 7,
+      "ip": "20.1.10.14",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-prd",
+      "id": 8,
+      "ip": "20.1.10.14",
+      "status": "enable",
+      "type": "PTR"
     },
     {
       "canonical_name": "",
