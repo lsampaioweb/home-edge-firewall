@@ -120,6 +120,33 @@ FortiGate enforces a 15-character interface name limit. Always use the exact sho
 | VP-JUMPSERVER | VP-JUMPSRV |
 | VP-LOADBALANCER | VP-LDBLANCER |
 
+## Firewall Management Access
+
+### Interface allowaccess Policy
+Management access (HTTPS/SSH) is controlled exclusively by `allowaccess` on each interface — **not** by firewall policies (which only govern through-traffic). The rule is:
+
+| Interface | allowaccess | Audience |
+|-----------|-------------|----------|
+| LAG-Home | `ping https ssh fabric` | Home machine (192.168.3.x) |
+| VS-MGMT | `ping https ssh fabric` | Staging management VMs |
+| VP-MGMT | `ping https ssh fabric` | Production management VMs |
+| INT-loopback | `ping snmp fabric` | NTP/SNMP services only — never HTTPS/SSH |
+| All other VLANs | `ping` or nothing | No management access |
+
+### DNS Naming Convention for Firewall Management
+Each audience uses a distinct hostname pointing to their local gateway IP:
+
+| Zone | Hostname | IP | Users |
+|------|----------|----|-------|
+| `lan.home` | `firewall-01.lan.home` | `192.168.3.1` | Home machine |
+| `lan.homelab` | `firewall-01-stg.lan.homelab` | `10.1.10.14` | Staging mgmt VMs |
+| `lan.homelab` | `firewall-01-prd.lan.homelab` | `20.1.10.14` | Production mgmt machines |
+
+### PTR Record Rules
+- FortiGate enforces **one PTR per IP** across all zones — attempting a second PTR for the same IP in any zone returns error `-6054`.
+- Keep one PTR per unique IP in the zone that owns that IP range.
+- Never add a PTR in `lan.homelab` for an IP that already has a PTR in `lan.home`.
+
 ## AI Assistant Instructions
 
 1. **NEVER** use pip commands — only pipx or homebrew.
