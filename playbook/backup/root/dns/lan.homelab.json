@@ -4,40 +4,8 @@
   "dns-entry": [
     {
       "canonical_name": "",
-      "hostname": "firewall-01-stg",
-      "id": 1,
-      "ip": "10.1.10.14",
-      "status": "enable",
-      "type": "A"
-    },
-    {
-      "canonical_name": "",
-      "hostname": "firewall-01-stg",
-      "id": 2,
-      "ip": "10.1.10.14",
-      "status": "enable",
-      "type": "PTR"
-    },
-    {
-      "canonical_name": "",
-      "hostname": "firewall-01-prd",
-      "id": 7,
-      "ip": "20.1.10.14",
-      "status": "enable",
-      "type": "A"
-    },
-    {
-      "canonical_name": "",
-      "hostname": "firewall-01-prd",
-      "id": 8,
-      "ip": "20.1.10.14",
-      "status": "enable",
-      "type": "PTR"
-    },
-    {
-      "canonical_name": "",
       "hostname": "firewall-01-loopback",
-      "id": 3,
+      "id": 1,
       "ip": "10.1.0.1",
       "status": "enable",
       "type": "A"
@@ -45,7 +13,7 @@
     {
       "canonical_name": "firewall-01-loopback",
       "hostname": "firewall-01-snmp",
-      "id": 5,
+      "id": 2,
       "ip": "0.0.0.0",
       "status": "enable",
       "type": "CNAME"
@@ -53,10 +21,42 @@
     {
       "canonical_name": "firewall-01-loopback",
       "hostname": "ntp-pool",
-      "id": 6,
+      "id": 3,
       "ip": "0.0.0.0",
       "status": "enable",
       "type": "CNAME"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-stg",
+      "id": 4,
+      "ip": "10.1.10.14",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-stg",
+      "id": 5,
+      "ip": "10.1.10.14",
+      "status": "enable",
+      "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-prd",
+      "id": 6,
+      "ip": "20.1.10.14",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "firewall-01-prd",
+      "id": 7,
+      "ip": "20.1.10.14",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.homelab",
