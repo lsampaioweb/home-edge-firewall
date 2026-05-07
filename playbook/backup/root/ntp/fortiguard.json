@@ -65,6 +65,9 @@
     },
     {
       "interface_name": "LAG-Home"
+    },
+    {
+      "interface_name": "INT-loopback"
     }
   ],
   "ntpsync": "enable",
