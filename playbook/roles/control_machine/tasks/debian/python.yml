@@ -15,7 +15,7 @@
 - name: "Installing pipx packages"
   ansible.builtin.import_role:
     name: "common"
-    tasks_from: "debian/packages/pipx.yml"
+    tasks_from: "debian/packages/pipx"
   vars:
     packages: "{{ pipx_packages }}"
 

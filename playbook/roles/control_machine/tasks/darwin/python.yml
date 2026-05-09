@@ -5,7 +5,7 @@
 - name: "Installing Homebrew packages"
   ansible.builtin.import_role:
     name: "common"
-    tasks_from: "darwin/packages/homebrew.yml"
+    tasks_from: "darwin/packages/homebrew"
   vars:
     update_cache: true
     upgrade: false
@@ -15,7 +15,7 @@
 - name: "Installing pipx packages"
   ansible.builtin.import_role:
     name: "common"
-    tasks_from: "darwin/packages/pipx.yml"
+    tasks_from: "darwin/packages/pipx"
   vars:
     packages: "{{ pipx_packages }}"
 
