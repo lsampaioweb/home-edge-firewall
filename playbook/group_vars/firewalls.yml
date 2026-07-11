@@ -6,7 +6,7 @@ inventory_hostname_without_domain: "{{ inventory_hostname | replace('.' + domain
 ansible_password_id: "{{ inventory_hostname_without_domain ~ '_usr_admin' }}"
 
 # "lan.home/prd/firewall-01.lan.home"
-ssl_password_id: "{{ domain ~ '/prd/' ~ inventory_hostname }}"
+ssl_password_id: "{{ domain ~ '/prd/firewall.' ~ domain }}"
 smtp_password_id: "{{ inventory_hostname_without_domain ~ '_smtp_password' }}"
 snmp_password_id: "{{ inventory_hostname_without_domain ~ '_snmp_password' }}"
 
