@@ -16,5 +16,5 @@ ansible_connection=httpapi
 ansible_httpapi_use_ssl=true
 ansible_user=admin
 vdom=root
-# Set to true ONLY during initial bootstrap (before the SSL certificate is uploaded via 05-certificate-upload.yml).
+# Set to false ONLY during initial bootstrap (before the SSL certificate is uploaded via 05-certificate-upload.yml).
 # ansible_httpapi_validate_certs=false
