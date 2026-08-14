@@ -1,0 +1,10 @@
+---
+- name: "DNS settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Backing up the DNS settings"
+      ansible.builtin.import_role:
+        name: "dns"
+        tasks_from: "backup.yml"

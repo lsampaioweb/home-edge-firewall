@@ -1,0 +1,10 @@
+---
+- name: "NTP settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Backing up the NTP settings"
+      ansible.builtin.import_role:
+        name: "ntp"
+        tasks_from: "backup.yml"

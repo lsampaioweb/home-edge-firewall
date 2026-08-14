@@ -1,0 +1,12 @@
+---
+- name: "Creating a System Interface by type from minimal JSON"
+  # Loop requires include_tasks for per-iteration task file execution
+  ansible.builtin.include_tasks: "create-by-type-minimal.yml"
+  loop:
+    - paths: "{{ backup_system_interface_path }}/tunnel"
+    - paths: "{{ backup_system_interface_path }}/loopback"
+    - paths: "{{ backup_system_interface_path }}/physical"
+    - paths: "{{ backup_system_interface_path }}/aggregate"
+    - paths: "{{ backup_system_interface_path }}/switch"
+      task_file: "add-entry-switch.yml"
+    - paths: "{{ backup_system_interface_path }}/vlan"

@@ -1,0 +1,39 @@
+---
+- name: "Fetching all DNS entries"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "system_dns-database"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+    # msg: "{{ data.meta.results[1] }}"
+    # msg: "{{ data.meta.results[1]['dns-entry'] }}"
+    # msg: "{{ data.meta.results[0]['dns-entry'][0].hostname }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_dns_path }}"
+
+- name: "Saving the DNS backup and minimal files"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
+  vars:
+    entry: >-
+      {{ (item
+      | ansible.utils.remove_keys(target=[invalid_attribute])
+      | ansible.utils.replace_keys(target=[
+        {'before': 'canonical-name', 'after': 'canonical_name'}
+      ])) }}
+    dest_dir: "{{ backup_dns_path }}"
+    dest_basename: "{{ (item.name | replace(' ', '-')) | lower }}"
+    minimal_keys: "{{ dns_minimal_keys }}"
+    nested_key: "dns-entry"
+    nested_minimal_keys: "{{ dns_entry_minimal_keys }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"

@@ -1,0 +1,30 @@
+---
+- name: "Retrieving the backup files"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
+  vars:
+    paths: "{{ backup_services_custom_path }}"
+    patterns: "{{ backup_files_extention }}"
+
+- name: "Creating Custom Services entries"
+  # Loop requires include_tasks for per-iteration task file execution
+  ansible.builtin.include_tasks: "add-entry-custom.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"
+
+- name: "Retrieving the backup files"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_get_backup_files }}"
+  vars:
+    paths: "{{ backup_services_group_path }}"
+    patterns: "{{ backup_files_extention }}"
+
+- name: "Creating Group Services entries"
+  # Loop requires include_tasks for per-iteration task file execution
+  ansible.builtin.include_tasks: "add-entry-group.yml"
+  loop: "{{ backup_files.files | default([]) | sort(attribute='path') }}"
+  loop_control:
+    loop_var: "file"
+    label: "{{ file.path }}"

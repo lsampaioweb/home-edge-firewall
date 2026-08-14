@@ -1,0 +1,10 @@
+---
+- name: "Services settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Backing up the Services settings"
+      ansible.builtin.import_role:
+        name: "services"
+        tasks_from: "backup.yml"

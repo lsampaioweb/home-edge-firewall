@@ -1,0 +1,23 @@
+---
+- name: "Ensure the backup directory exists"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+
+- name: "Creating the Ansible attributes for: '{{ selector }}'"
+  when: key not in [invalid_attribute]
+  ansible.builtin.lineinfile:
+    path: "{{ path }}/{{ file }}"
+    line: "{{ key ~ desired_settings_item ~ each_item ~ default_omit }}"
+    mode: "0644"
+    create: true
+  vars:
+    file: "{{ ((selector | replace('-', '_')) + '.keys') | lower }}"
+    key: "{{ item.key | replace('-', '_') }}"
+    desired_settings_item: '{{ '': "{{ desired_settings'' }}'
+    start_bracket: "['"
+    end_bracket: "']"
+    each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"
+    default_omit: ' | default(omit, true) }}"'
+  loop: "{{ results | default({}) | dict2items | sort(attribute='key') }}"
+  loop_control:
+    label: "{{ key }}"

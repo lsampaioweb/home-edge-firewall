@@ -1,0 +1,10 @@
+---
+- name: "System settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Setting up System Settings from minimal JSON"
+      ansible.builtin.import_role:
+        name: "system_settings"
+        tasks_from: "create-from-minimal.yml"

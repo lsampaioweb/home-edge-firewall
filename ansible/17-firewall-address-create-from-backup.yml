@@ -1,0 +1,10 @@
+---
+- name: "Firewall Address settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Creating Firewall Address from backup"
+      ansible.builtin.import_role:
+        name: "firewall_address"
+        tasks_from: "create-from-backup.yml"

@@ -1,0 +1,10 @@
+---
+- name: "SNMP settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Creating SNMP entries from backup"
+      ansible.builtin.import_role:
+        name: "snmp"
+        tasks_from: "create-from-backup.yml"

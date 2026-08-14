@@ -1,0 +1,10 @@
+---
+- name: "Syslog settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Creating Syslog entries from backup"
+      ansible.builtin.import_role:
+        name: "syslog"
+        tasks_from: "create-from-backup.yml"

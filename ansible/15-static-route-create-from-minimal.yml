@@ -1,0 +1,10 @@
+---
+- name: "Static Route settings"
+  hosts: "firewalls"
+  gather_facts: false
+
+  tasks:
+    - name: "Creating Static Route from minimal JSON"
+      ansible.builtin.import_role:
+        name: "static_routing"
+        tasks_from: "create-from-minimal.yml"

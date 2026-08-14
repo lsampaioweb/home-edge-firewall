@@ -1,0 +1,40 @@
+---
+- name: "Fetching all Firewall DOS Policy entries"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
+  vars:
+    selector: "firewall_DoS-policy"
+
+- name: "Debug"
+  ansible.builtin.debug:
+    msg: "{{ data }}"
+  tags: ["never", "debug"]
+
+- name: "Ensure the backup directory exists"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
+  vars:
+    path: "{{ backup_firewall_dos_policy_path }}"
+
+- name: "Saving the Firewall DOS Policy backup and minimal files"
+  # Dynamic path resolves task file from group_vars at runtime
+  ansible.builtin.include_tasks: "{{ path_common_firewall_save_backup_files }}"
+  vars:
+    entry: >-
+      {{ (item | ansible.utils.remove_keys(target=[invalid_attribute]))
+      | combine({'anomaly': item.anomaly | default([])
+          | ansible.utils.remove_keys(target=[invalid_attribute])
+          | ansible.utils.replace_keys(target=[
+              {'before': 'quarantine-expiry',  'after': 'quarantine_expiry'},
+              {'before': 'quarantine-log',     'after': 'quarantine_log'},
+              {'before': 'threshold(default)', 'after': 'threshold_default'}
+            ])
+        }) }}
+    dest_dir: "{{ backup_firewall_dos_policy_path }}"
+    dest_basename: "{{ (('%03d' | format(item.policyid | int)) ~ '-' ~ (item.name | replace(' ', '-'))) | lower }}"
+    minimal_keys: "{{ firewall_dos_policy_minimal_keys }}"
+    nested_key: "anomaly"
+    nested_minimal_keys: "{{ firewall_dos_policy_anomaly_minimal_keys }}"
+  loop: "{{ data.meta.results | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"
