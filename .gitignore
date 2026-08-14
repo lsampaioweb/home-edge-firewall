@@ -5,6 +5,7 @@
 .LSOverride
 .ansible
 .vscode
+.github
 
 # Backup files
 *.bkp
