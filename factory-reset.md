@@ -76,7 +76,7 @@ secret-tool store --label="firewall-01_usr_admin" password "firewall-01_usr_admi
 ### Step 5 — Run the site playbook
 
 ```bash
-cd /home/lsampaio/Luciano/git/home/03-home-edge-firewall/playbook
+cd /home/lsampaio/Luciano/git/home/03-home-edge-firewall/ansible
 ```
 
 ```bash

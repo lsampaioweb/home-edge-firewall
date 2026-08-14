@@ -25,7 +25,7 @@ In order to download all the submodules, you have to run the following commands:
 
 #
 ### Roles you can execute:
-[Roles](playbook/README.md "Roles")
+[Roles](ansible/README.md "Roles")
 
 #
 ### Links:
