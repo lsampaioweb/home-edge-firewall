@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: dns_server
+  namespace: lsampaioweb
+  company: "thecodemaster.net"
+  author: "Luciano Sampaio"
+  description: "Configure DNS server on interface settings on the firewall."
+
+  license: "MIT"
+
+  min_ansible_version: "2.16"
+
+  platforms:
+    - name: "Ubuntu"
+
+  galaxy_tags:
+    - "fortigate"
+    - "ubuntu"

@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: static_routing
+  namespace: lsampaioweb
   company: "thecodemaster.net"
   author: "Luciano Sampaio"
   description: "Setup up the Static Routing entries."

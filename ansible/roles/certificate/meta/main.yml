@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: certificate
+  namespace: lsampaioweb
   company: "thecodemaster.net"
   author: "Luciano Sampaio"
   description: "Upload SSL certificate to the firewall."

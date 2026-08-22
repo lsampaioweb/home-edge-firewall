@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: system_email_server
+  namespace: lsampaioweb
+  company: "thecodemaster.net"
+  author: "Luciano Sampaio"
+  description: "Configure email server settings on the firewall."
+
+  license: "MIT"
+
+  min_ansible_version: "2.16"
+
+  platforms:
+    - name: "Ubuntu"
+
+  galaxy_tags:
+    - "fortigate"
+    - "ubuntu"

@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: system_sdwan
+  namespace: lsampaioweb
   company: "thecodemaster.net"
   author: "Luciano Sampaio"
   description: "Setup up the System SDWAN entries."

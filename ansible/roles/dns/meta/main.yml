@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: dns
+  namespace: lsampaioweb
   company: "thecodemaster.net"
   author: "Luciano Sampaio"
   description: "Setup up the DNS database and entries."

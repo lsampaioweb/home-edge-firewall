@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: acme
+  namespace: lsampaioweb
   company: "thecodemaster.net"
   author: "Luciano Sampaio"
   description: "Configure ACME client on the firewall."
