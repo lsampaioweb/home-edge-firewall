@@ -47,9 +47,9 @@
       violation_traffic_logs: "{{ desired_settings['violation-traffic-logs'] | default(omit, true) }}"
       warning_interval: "{{ desired_settings['warning-interval'] | default(omit, true) }}"
       webfilter_logs: "{{ desired_settings['webfilter-logs'] | default(omit, true) }}"
-  register: "output"
+  register: "alertemail_config_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ alertemail_config_result }}"
   tags: ["never", "debug"]

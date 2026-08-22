@@ -45,7 +45,7 @@
         | string
       }}
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg:
       - "Certificate name     : {{ certificate_name }}"
@@ -76,7 +76,7 @@
           ca: "{{ lookup('file', sub_ca_file) }}"
       register: "ca_output"
 
-    - name: "Debug"
+    - name: "Debugging"
       ansible.builtin.debug:
         msg: "{{ ca_output }}"
       tags: ["never", "debug"]
@@ -104,11 +104,11 @@
           certificate: "{{ lookup('file', certificate_file) }}"
           private_key: "{{ lookup('file', private_key_file) }}"
           password: "{{ ssl_password }}"
-      register: "output"
+      register: "cert_upload_result"
 
-    - name: "Debug"
+    - name: "Debugging"
       ansible.builtin.debug:
-        msg: "{{ output }}"
+        msg: "{{ cert_upload_result }}"
       tags: ["never", "debug"]
 
 - name: "Switching admin interface to use certificate '{{ certificate_name }}'"

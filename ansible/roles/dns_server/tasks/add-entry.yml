@@ -19,9 +19,9 @@
       doh: "{{ desired_settings.doh | default(omit, true) }}"
       doh3: "{{ desired_settings.doh3 | default(omit, true) }}"
       doq: "{{ desired_settings.doq | default(omit, true) }}"
-  register: "output"
+  register: "dns_server_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ dns_server_entry_result }}"
   tags: ["never", "debug"]

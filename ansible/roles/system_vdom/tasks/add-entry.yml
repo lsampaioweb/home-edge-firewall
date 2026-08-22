@@ -17,9 +17,9 @@
       name: "{{ desired_settings.name | default(omit) }}"
       short_name: "{{ desired_settings['short-name'] | default(omit) }}"
       vcluster_id: "{{ desired_settings['vcluster-id'] | default(omit) }}"
-  register: "output"
+  register: "vdom_result"
 
-- name: "Debug"
+- name: "Debugging"
   tags: ["never", "debug"]
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ vdom_result }}"

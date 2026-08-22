@@ -24,9 +24,9 @@
       type: "{{ desired_settings.type | default(omit, true) }}"
       vdom: "{{ desired_settings.vdom | default(omit, true) }}"
 
-  register: "output"
+  register: "interface_switch_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ interface_switch_result }}"
   tags: ["never", "debug"]

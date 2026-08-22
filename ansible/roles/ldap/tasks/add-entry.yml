@@ -54,9 +54,9 @@
       type: "{{ desired_settings.type | default(omit, true) }}"
       user_info_exchange_server: "{{ desired_settings['user-info-exchange-server'] | default(omit, true) }}"
       username: "{{ desired_settings.username | default(omit, true) }}"
-  register: "output"
+  register: "ldap_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ ldap_entry_result }}"
   tags: ["never", "debug"]

@@ -5,7 +5,7 @@
   vars:
     selector: "system_dns-database"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg: "{{ data }}"
     # msg: "{{ data.meta.results[1] }}"

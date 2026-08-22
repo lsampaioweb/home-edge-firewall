@@ -12,7 +12,7 @@
         {'before': 'interface-name', 'after': 'interface_name'}
       ]) }}
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg: "{{ _entry_member }}"
   tags: ["never", "debug"]

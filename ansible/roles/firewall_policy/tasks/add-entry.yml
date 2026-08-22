@@ -186,9 +186,9 @@
       ztna_policy_redirect: "{{ desired_settings['ztna-policy-redirect'] | default(omit, true) }}"
       ztna_status: "{{ desired_settings['ztna-status'] | default(omit, true) }}"
       ztna_tags_match_logic: "{{ desired_settings['ztna-tags-match-logic'] | default(omit, true) }}"
-  register: "output"
+  register: "firewall_policy_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ firewall_policy_result }}"
   tags: ["never", "debug"]

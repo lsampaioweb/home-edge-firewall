@@ -33,9 +33,9 @@
       tag: "{{ desired_settings.tag | default(omit, true) }}"
       vrf: "{{ (desired_settings.vrf is defined and desired_settings.vrf != 'unspecified') | ternary(desired_settings.vrf, '') | default(omit, true) }}"
       weight: "{{ desired_settings.weight | default(omit, true) }}"
-  register: "output"
+  register: "static_route_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ static_route_result }}"
   tags: ["never", "debug"]

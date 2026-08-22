@@ -18,9 +18,9 @@
       interface: "{{ desired_settings.interface | default(omit, true) }}"
       intrazone: "{{ desired_settings.intrazone | default(omit, true) }}"
       tagging: "{{ desired_settings.tagging | default(omit, true) }}"
-  register: "output"
+  register: "zone_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ zone_result }}"
   tags: ["never", "debug"]

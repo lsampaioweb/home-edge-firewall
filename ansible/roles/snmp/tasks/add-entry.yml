@@ -33,9 +33,9 @@
       trap_rport: "{{ desired_settings['trap-rport'] | default(omit, true) }}"
       trap_status: "{{ desired_settings['trap-status'] | default(omit, true) }}"
       vdoms: "{{ desired_settings.vdoms | default(omit, true) }}"
-  register: "output"
+  register: "snmp_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ snmp_entry_result }}"
   tags: ["never", "debug"]

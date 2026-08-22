@@ -22,9 +22,9 @@
       service: "{{ desired_settings.service | default(omit) }}"
       srcaddr: "{{ desired_settings.srcaddr | default(omit) }}"
       status: "{{ desired_settings.status | default(omit) }}"
-  register: "output"
+  register: "dos_policy_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ dos_policy_result }}"
   tags: ["never", "debug"]

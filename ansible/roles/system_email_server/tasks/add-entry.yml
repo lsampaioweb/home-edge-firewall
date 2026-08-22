@@ -25,9 +25,9 @@
       type: "{{ desired_settings.type | default(omit, true) }}"
       username: "{{ desired_settings.username | default(omit, true) }}"
       validate_server: "{{ desired_settings['validate-server'] | default(omit, true) }}"
-  register: "output"
+  register: "email_server_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ email_server_result }}"
   tags: ["never", "debug"]

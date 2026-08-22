@@ -19,9 +19,9 @@
       comment: "{{ desired_settings.comment | default(omit, true) }}"
       fabric_object: "{{ desired_settings['fabric-object'] | default(omit, true) }}"
       proxy: "{{ desired_settings.proxy | default(omit, true) }}"
-  register: "output"
+  register: "service_group_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ service_group_result }}"
   tags: ["never", "debug"]

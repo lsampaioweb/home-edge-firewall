@@ -7,7 +7,7 @@
       scope: "global"
   register: "data"
 
-- name: "Debug"
+- name: "Debugging"
   tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ data }}"

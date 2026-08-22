@@ -5,7 +5,7 @@
   vars:
     selector: "system_global"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg: "{{ data }}"
     # msg: "{{ output.meta.results }}"

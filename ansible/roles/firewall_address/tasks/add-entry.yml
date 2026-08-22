@@ -46,9 +46,9 @@
       tagging: "{{ desired_settings.tagging | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"
       uuid: "{{ desired_settings.uuid | default(omit, true) }}"
-  register: "output"
+  register: "firewall_addr_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ firewall_addr_entry_result }}"
   tags: ["never", "debug"]

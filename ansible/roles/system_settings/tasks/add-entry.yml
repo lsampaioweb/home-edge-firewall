@@ -221,9 +221,9 @@
       wimax_4g_usb: "{{ desired_settings['wimax-4g-usb'] | default(omit, true) }}"
       wireless_controller: "{{ desired_settings['wireless-controller'] | default(omit, true) }}"
       wireless_controller_port: "{{ desired_settings['wireless-controller-port'] | default(omit, true) }}"
-  register: "output"
+  register: "system_settings_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ system_settings_result }}"
   tags: ["never", "debug"]

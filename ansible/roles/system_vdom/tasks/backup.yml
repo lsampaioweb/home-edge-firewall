@@ -5,7 +5,7 @@
   vars:
     selector: "system_vdom"
 
-- name: "Debug"
+- name: "Debugging"
   tags: ["never", "debug"]
   ansible.builtin.debug:
     msg: "{{ data }}"

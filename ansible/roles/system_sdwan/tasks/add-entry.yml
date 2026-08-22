@@ -29,9 +29,9 @@
       speedtest_bypass_routing: "{{ desired_settings['speedtest-bypass-routing'] | default(omit, true) }}"
       status: "{{ desired_settings.status | default(omit, true) }}"
       zone: "{{ desired_settings.zone | default(omit, true) }}"
-  register: "output"
+  register: "sdwan_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ sdwan_entry_result }}"
   tags: ["never", "debug"]

@@ -3,7 +3,7 @@
   # Dynamic path resolves task file from group_vars at runtime
   ansible.builtin.include_tasks: "{{ path_common_firewall_configuration_fact }}"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg: "{{ data }}"
   tags: ["never", "debug"]

@@ -30,9 +30,9 @@
       ttl: "{{ desired_settings.ttl | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"
       view: "{{ desired_settings.view | default(omit, true) }}"
-  register: "output"
+  register: "dns_entry_result"
 
 - name: "Debug output"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ dns_entry_result }}"
   tags: ["never", "debug"]

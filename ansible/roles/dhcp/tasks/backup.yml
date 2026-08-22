@@ -5,7 +5,7 @@
   vars:
     selector: "system.dhcp_server"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
     msg: "{{ data }}"
   tags: ["never", "debug"]

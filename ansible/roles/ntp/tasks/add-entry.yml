@@ -24,9 +24,9 @@
       source_ip6: "{{ desired_settings['source-ip6'] | default(omit, true) }}"
       syncinterval: "{{ desired_settings.syncinterval | default(omit, true) }}"
       type: "{{ desired_settings.type | default(omit, true) }}"
-  register: "output"
+  register: "ntp_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ ntp_entry_result }}"
   tags: ["never", "debug"]

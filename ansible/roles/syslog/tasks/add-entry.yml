@@ -28,9 +28,9 @@
       ssl_min_proto_version: "{{ desired_settings['ssl-min-proto-version'] | default(omit, true) }}"
       status: "{{ desired_settings.status | default(omit, true) }}"
       syslog_type: "{{ desired_settings['syslog-type'] | default(omit, true) }}"
-  register: "output"
+  register: "syslog_entry_result"
 
-- name: "Debug"
+- name: "Debugging"
   ansible.builtin.debug:
-    msg: "{{ output }}"
+    msg: "{{ syslog_entry_result }}"
   tags: ["never", "debug"]
