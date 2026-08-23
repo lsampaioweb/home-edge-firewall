@@ -14,3 +14,6 @@
 
 # Python cache files.
 *.pyc
+
+# The AI custom files should be ignored.
+.github/
