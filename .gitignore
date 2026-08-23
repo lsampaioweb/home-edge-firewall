@@ -3,9 +3,8 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-.ansible
-.vscode
-.github
+.ansible/
+.vscode/
 
 # Backup files
 *.bkp
