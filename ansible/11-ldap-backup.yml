@@ -1,10 +1,10 @@
 ---
-- name: "LDAP settings"
+- name: "Configuring LDAP settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the LDAP settings"
+    - name: "Configuring Backing up the LDAP settings"
       ansible.builtin.import_role:
         name: "ldap"
         tasks_from: "backup.yml"

@@ -1,5 +1,5 @@
 ---
-- name: "DNS settings"
+- name: "Configuring DNS settings"
   hosts: "firewalls"
   gather_facts: false
 

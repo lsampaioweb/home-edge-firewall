@@ -10,7 +10,7 @@
   ansible.builtin.debug:
     msg: "{{ data }}"
 
-- name: "Ensure the backup directory exists"
+- name: "Ensuring the backup directory exists"
   # Dynamic path resolves task file from group_vars at runtime
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
   vars:

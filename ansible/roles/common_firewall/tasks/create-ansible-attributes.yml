@@ -1,5 +1,5 @@
 ---
-- name: "Ensure the backup directory exists"
+- name: "Ensuring the backup directory exists"
   # Dynamic path resolves task file from group_vars at runtime
   ansible.builtin.include_tasks: "{{ path_common_firewall_create_directory }}"
 
@@ -18,6 +18,6 @@
     end_bracket: "']"
     each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"
     default_omit: ' | default(omit, true) }}"'
-  loop: "{{ results | default({}) | dict2items | sort(attribute='key') }}"
+  loop: "{{ (results | default({}) | dict2items | sort(attribute='key')) | default([], true) }}"
   loop_control:
     label: "{{ key }}"

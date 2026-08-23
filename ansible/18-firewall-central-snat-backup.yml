@@ -1,10 +1,10 @@
 ---
-- name: "Firewall Central SNAT settings"
+- name: "Configuring Firewall Central SNAT settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the Firewall Central SNAT settings"
+    - name: "Configuring Backing up the Firewall Central SNAT settings"
       ansible.builtin.import_role:
         name: "firewall_central_snat"
         tasks_from: "backup.yml"

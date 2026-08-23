@@ -1,5 +1,5 @@
 ---
-- name: "System Interface settings"
+- name: "Configuring System Interface settings"
   hosts: "firewalls"
   gather_facts: false
 

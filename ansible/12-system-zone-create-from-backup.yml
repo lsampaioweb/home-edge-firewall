@@ -1,5 +1,5 @@
 ---
-- name: "System Zone settings"
+- name: "Configuring System Zone settings"
   hosts: "firewalls"
   gather_facts: false
 

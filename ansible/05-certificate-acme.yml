@@ -1,5 +1,5 @@
 ---
-- name: "Configure ACME client"
+- name: "Configuring ACME client"
   hosts: "firewalls"
   gather_facts: false
 

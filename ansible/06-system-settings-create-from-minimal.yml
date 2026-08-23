@@ -1,5 +1,5 @@
 ---
-- name: "System settings"
+- name: "Configuring System settings"
   hosts: "firewalls"
   gather_facts: false
 

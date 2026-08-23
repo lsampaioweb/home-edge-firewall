@@ -1,5 +1,5 @@
 ---
-- name: "Services settings"
+- name: "Configuring Services settings"
   hosts: "firewalls"
   gather_facts: false
 

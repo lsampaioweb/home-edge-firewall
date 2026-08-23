@@ -1,10 +1,10 @@
 ---
-- name: "System VDOM settings"
+- name: "Configuring System VDOM settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the System VDOM settings"
+    - name: "Configuring Backing up the System VDOM settings"
       ansible.builtin.import_role:
         name: "system_vdom"
         tasks_from: "backup.yml"

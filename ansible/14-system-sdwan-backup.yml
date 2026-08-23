@@ -1,10 +1,10 @@
 ---
-- name: "System SD-WAN settings"
+- name: "Configuring System SD-WAN settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the System SD-WAN settings"
+    - name: "Configuring Backing up the System SD-WAN settings"
       ansible.builtin.import_role:
         name: "system_sdwan"
         tasks_from: "backup.yml"

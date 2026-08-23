@@ -1,5 +1,5 @@
 ---
-- name: "DNS Server on Interface settings"
+- name: "Configuring DNS Server on Interface settings"
   hosts: "firewalls"
   gather_facts: false
 

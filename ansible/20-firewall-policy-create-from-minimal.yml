@@ -1,5 +1,5 @@
 ---
-- name: "Firewall Policy settings"
+- name: "Configuring Firewall Policy settings"
   hosts: "firewalls"
   gather_facts: false
 

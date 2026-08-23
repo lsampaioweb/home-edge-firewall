@@ -15,7 +15,7 @@
 - name: "Fixing SSL certificate issues for pipx environments"
   delegate_to: "{{ control_machine_host | default(groups['ControlMachine'] | first, true) }}"
   block:
-    - name: "Ensure the backup directory exists"
+    - name: "Ensuring the backup directory exists"
       ansible.builtin.file:
         path: "{{ backup_global_config_path }}"
         state: "directory"

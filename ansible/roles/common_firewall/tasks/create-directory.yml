@@ -1,5 +1,5 @@
 ---
-- name: "Ensure the directory: '{{ path }}' exists"
+- name: "Ensuring the directory: '{{ path }}' exists"
   delegate_to: "{{ control_machine_host | default(groups['ControlMachine'] | first, true) }}"
   ansible.builtin.file:
     path: "{{ path }}"

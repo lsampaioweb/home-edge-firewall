@@ -1,10 +1,10 @@
 ---
-- name: "System Interface settings"
+- name: "Configuring System Interface settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the System Interface settings"
+    - name: "Configuring Backing up the System Interface settings"
       ansible.builtin.import_role:
         name: "system_interface"
         tasks_from: "backup.yml"

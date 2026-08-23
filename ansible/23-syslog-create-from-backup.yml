@@ -1,5 +1,5 @@
 ---
-- name: "Syslog settings"
+- name: "Configuring Syslog settings"
   hosts: "firewalls"
   gather_facts: false
 

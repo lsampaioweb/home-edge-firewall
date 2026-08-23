@@ -1,5 +1,5 @@
 ---
-- name: "System VDOM settings"
+- name: "Configuring System VDOM settings"
   hosts: "firewalls"
   gather_facts: false
 

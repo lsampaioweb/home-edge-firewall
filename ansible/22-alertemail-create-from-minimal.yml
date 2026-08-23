@@ -1,5 +1,5 @@
 ---
-- name: "Alertemail settings"
+- name: "Configuring Alertemail settings"
   hosts: "firewalls"
   gather_facts: false
 

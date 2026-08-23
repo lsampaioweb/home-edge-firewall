@@ -1,5 +1,5 @@
 ---
-- name: "SNMP settings"
+- name: "Configuring SNMP settings"
   hosts: "firewalls"
   gather_facts: false
 

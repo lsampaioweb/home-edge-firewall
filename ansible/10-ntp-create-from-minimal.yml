@@ -1,5 +1,5 @@
 ---
-- name: "NTP settings"
+- name: "Configuring NTP settings"
   hosts: "firewalls"
   gather_facts: false
 

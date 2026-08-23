@@ -1,5 +1,5 @@
 ---
-- name: "Email Server settings"
+- name: "Configuring Email Server settings"
   hosts: "firewalls"
   gather_facts: false
 

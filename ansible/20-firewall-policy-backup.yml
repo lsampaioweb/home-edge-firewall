@@ -1,10 +1,10 @@
 ---
-- name: "Firewall Policy settings"
+- name: "Configuring Firewall Policy settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the Firewall Policy settings"
+    - name: "Configuring Backing up the Firewall Policy settings"
       ansible.builtin.import_role:
         name: "firewall_policy"
         tasks_from: "backup.yml"

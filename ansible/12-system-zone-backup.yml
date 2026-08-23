@@ -1,10 +1,10 @@
 ---
-- name: "System Zone settings"
+- name: "Configuring System Zone settings"
   hosts: "firewalls"
   gather_facts: false
 
   tasks:
-    - name: "Backing up the System Zone settings"
+    - name: "Configuring Backing up the System Zone settings"
       ansible.builtin.import_role:
         name: "system_zone"
         tasks_from: "backup.yml"

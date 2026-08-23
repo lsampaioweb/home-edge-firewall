@@ -1,5 +1,5 @@
 ---
-- name: "LDAP settings"
+- name: "Configuring LDAP settings"
   hosts: "firewalls"
   gather_facts: false
 
