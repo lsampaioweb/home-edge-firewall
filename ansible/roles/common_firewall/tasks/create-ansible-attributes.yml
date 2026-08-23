@@ -18,6 +18,6 @@
     end_bracket: "']"
     each_item: "{{ (not '-' in item.key) | ternary('.' + item.key, (start_bracket ~ item.key ~ end_bracket)) }}"
     default_omit: ' | default(omit, true) }}"'
-  loop: "{{ (results | default({}) | dict2items | sort(attribute='key')) | default([], true) }}"
+  loop: "{{ (results | default({}) | dict2items | sort(attribute='key')) | default([]) }}"
   loop_control:
     label: "{{ key }}"
