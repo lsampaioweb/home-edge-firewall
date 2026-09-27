@@ -79,13 +79,29 @@ secret-tool store --label="firewall-01_usr_admin" password "firewall-01_usr_admi
 cd /home/lsampaio/Luciano/git/home/03-home-edge-firewall/ansible
 ```
 
+After a factory reset, add a temporary hostname entry and disable certificate validation until the firewall's trusted certificate is installed:
+
+```bash
+sudo sh -c 'echo "192.168.4.1 firewall.lan.home firewall-01.lan.home" >> /etc/hosts'
+sed -i 's/^# ansible_httpapi_validate_certs=false/ansible_httpapi_validate_certs=false/' inventory/hosts
+```
+
+Run the restore playbook:
+
 ```bash
 ansible-playbook site-create-from-backup.yml
 ```
 
-### Step 6 — Restore DHCP on Ubuntu (after role 12 completes)
+After the playbook completes, restore strict certificate validation and remove the temporary hostname entry:
 
-Once the playbook finishes, revert `enp4s0` back to DHCP so it picks up a lease from the restored FortiGate DHCP server:
+```bash
+sed -i 's/^ansible_httpapi_validate_certs=false/# ansible_httpapi_validate_certs=false/' inventory/hosts
+sudo sed -i '/firewall.*lan\.home/d' /etc/hosts
+```
+
+### Step 6 — Restore DHCP on Ubuntu (after playbook 13 restores DHCP)
+
+Once the site playbook finishes, revert `enp4s0` back to DHCP so it picks up a lease from the restored FortiGate DHCP server:
 
 ```bash
 nmcli con mod "Wired connection 4" ipv4.addresses "" ipv4.gateway "" ipv4.method auto
