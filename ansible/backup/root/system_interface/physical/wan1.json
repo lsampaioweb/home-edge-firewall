@@ -1,8 +1,8 @@
 {
-  "alias": "DigitalNET",
+  "alias": "MasterLink",
   "allowaccess": "ping fabric",
   "defaultgw": "enable",
-  "description": "DigitalNET ISP - Primary WAN",
+  "description": "MasterLink ISP - Primary WAN",
   "device-identification": "enable",
   "device-user-identification": "enable",
   "distance": 5,

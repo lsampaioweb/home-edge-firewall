@@ -134,7 +134,7 @@
     }
   ],
   "interface": "wan1",
-  "name": "wan1-digitalnet",
+  "name": "wan1-masterlink",
   "policyid": 1,
   "service": [
     {
