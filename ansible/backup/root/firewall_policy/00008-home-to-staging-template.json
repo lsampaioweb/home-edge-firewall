@@ -26,7 +26,7 @@
   ],
   "srcaddr": [
     {
-      "name": "all"
+      "name": "LAG-Home address"
     }
   ],
   "srcintf": [

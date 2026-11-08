@@ -121,6 +121,18 @@
       "remote_id": "",
       "remote_id_type": "string",
       "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 10,
+      "ip": "192.168.3.3",
+      "mac": "e0:0a:f6:5e:a8:73",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
     }
   ],
   "status": "enable"

@@ -1,0 +1,43 @@
+{
+  "default-gateway": "10.1.9.14",
+  "dns-service": "local",
+  "domain": "",
+  "id": 24,
+  "interface": "SS-S-CLSTR",
+  "ip-range": [
+    {
+      "end_ip": "10.1.9.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.9.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "reserved-address": [
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 1,
+      "ip": "10.1.9.1",
+      "mac": "60:be:b4:08:f7:69",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    },
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 2,
+      "ip": "10.1.9.2",
+      "mac": "00:d0:b4:01:77:7d",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    }
+  ],
+  "status": "enable"
+}

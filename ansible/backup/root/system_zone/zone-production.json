@@ -30,6 +30,9 @@
     },
     {
       "interface_name": "VP-TEMPLATE"
+    },
+    {
+      "interface_name": "LAG-Production"
     }
   ],
   "intrazone": "deny",

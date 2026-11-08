@@ -57,6 +57,22 @@
       "ip": "20.1.10.14",
       "status": "enable",
       "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "proxmox-auto-install-assistant",
+      "id": 8,
+      "ip": "192.168.3.3",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "proxmox-auto-install-assistant",
+      "id": 9,
+      "ip": "192.168.3.3",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.homelab",

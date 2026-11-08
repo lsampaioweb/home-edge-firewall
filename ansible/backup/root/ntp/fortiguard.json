@@ -1,37 +1,13 @@
 {
   "interface": [
     {
-      "interface_name": "port11"
+      "interface_name": "INT-loopback"
     },
     {
-      "interface_name": "VS-BACKUP"
+      "interface_name": "LAG-Home"
     },
     {
-      "interface_name": "VS-CORE"
-    },
-    {
-      "interface_name": "VS-JUMPSRV"
-    },
-    {
-      "interface_name": "VS-LDAP"
-    },
-    {
-      "interface_name": "VS-LDBLANCER"
-    },
-    {
-      "interface_name": "VS-MGMT"
-    },
-    {
-      "interface_name": "VS-MONITOR"
-    },
-    {
-      "interface_name": "VS-PROXY"
-    },
-    {
-      "interface_name": "VS-REPOSITR"
-    },
-    {
-      "interface_name": "VS-TEMPLATE"
+      "interface_name": "SS-S-CLSTR"
     },
     {
       "interface_name": "VP-BACKUP"
@@ -64,10 +40,37 @@
       "interface_name": "VP-TEMPLATE"
     },
     {
-      "interface_name": "LAG-Home"
+      "interface_name": "VS-BACKUP"
     },
     {
-      "interface_name": "INT-loopback"
+      "interface_name": "VS-CORE"
+    },
+    {
+      "interface_name": "VS-JUMPSRV"
+    },
+    {
+      "interface_name": "VS-LDAP"
+    },
+    {
+      "interface_name": "VS-LDBLANCER"
+    },
+    {
+      "interface_name": "VS-MGMT"
+    },
+    {
+      "interface_name": "VS-MONITOR"
+    },
+    {
+      "interface_name": "VS-PROXY"
+    },
+    {
+      "interface_name": "VS-REPOSITR"
+    },
+    {
+      "interface_name": "VS-TEMPLATE"
+    },
+    {
+      "interface_name": "LAG-Production"
     }
   ],
   "ntpsync": "enable",

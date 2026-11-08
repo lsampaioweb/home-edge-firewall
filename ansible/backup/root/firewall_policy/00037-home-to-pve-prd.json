@@ -1,0 +1,47 @@
+{
+  "action": "accept",
+  "comments": " (Copy of Home-Proxmox) (Copy of )",
+  "dstaddr": [
+    {
+      "name": "LAG-Production address"
+    },
+    {
+      "name": "vp-mgmt-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Home-To-PVE-Prd",
+  "nat": "disable",
+  "policyid": 37,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "Proxmox-Server"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "LAG-Home address"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-home"
+    }
+  ],
+  "status": "disable"
+}

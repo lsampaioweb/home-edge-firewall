@@ -30,6 +30,9 @@
     },
     {
       "interface_name": "VS-TEMPLATE"
+    },
+    {
+      "interface_name": "SS-S-CLSTR"
     }
   ],
   "intrazone": "deny",

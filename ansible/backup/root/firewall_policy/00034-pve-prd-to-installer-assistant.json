@@ -1,0 +1,38 @@
+{
+  "action": "accept",
+  "comments": "From PVE Homelab to Proxmox Auto Install Assistant",
+  "dstaddr": [
+    {
+      "name": "notebook-luciano-ip"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-home"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "PVE-Prd-To-Installer-Assistant",
+  "nat": "disable",
+  "policyid": 34,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "SpringBoot-HTTP"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "LAG-Production address"
+    },
+    {
+      "name": "vp-mgmt-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-production"
+    }
+  ],
+  "status": "enable"
+}

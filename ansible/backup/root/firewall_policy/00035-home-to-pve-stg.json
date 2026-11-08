@@ -1,0 +1,47 @@
+{
+  "action": "accept",
+  "comments": "",
+  "dstaddr": [
+    {
+      "name": "vs-mgmt-subnet"
+    },
+    {
+      "name": "SS-S-CLSTR address"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Home-To-PVE-Stg",
+  "nat": "disable",
+  "policyid": 35,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "Proxmox-Server"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "LAG-Home address"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-home"
+    }
+  ],
+  "status": "enable"
+}
