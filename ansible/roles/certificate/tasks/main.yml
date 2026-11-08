@@ -57,7 +57,7 @@
       - "Upload needed        : {{ serial_mismatch }}"
   tags: ["never", "debug"]
 
-- name: "Certificate upload"
+- name: "Uploading the certificate"
   when: serial_mismatch | bool
   block:
     - name: "Switching to temporary certificate '{{ temp_certificate_name }}' to unlock current admin certificate"
@@ -94,6 +94,7 @@
         - "'does not exist' not in (delete_cert_result.msg | default(''))"
 
     - name: "Uploading the local SSL certificate '{{ certificate_name }}'"
+      no_log: "{{ not (debug | default(false)) }}"
       fortinet.fortios.fortios_vpn_certificate_local:
         vdom: "{{ vdom | default(omit, true) }}"
         state: "present"

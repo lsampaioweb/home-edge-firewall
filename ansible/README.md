@@ -18,12 +18,12 @@ Run these commands on the computer running Ansible:
 1. Save the password for the private key of the SSL certificate used by the firewall admin interface.
 
     ```bash
-    secret-tool store --label="lan.home/prd/firewall-01.lan.home" password "lan.home/prd/firewall-01.lan.home"
+    secret-tool store --label="lan.home/prd/firewall.lan.home" password "lan.home/prd/firewall.lan.home"
     ```
 
     - Confirm the password was correctly saved in the secret manager:
         ```bash
-        secret-tool lookup password "lan.home/prd/firewall-01.lan.home"
+        secret-tool lookup password "lan.home/prd/firewall.lan.home"
         ```
 
 1. Save the password that the firewall will use to send email notifications to the SMTP server.
@@ -80,6 +80,8 @@ Run these commands on the computer running Ansible:
     ```bash
     ansible-playbook xxx.yml --tags "untagged,debug"
     ```
+
+    - Debug-tagged tasks may print sensitive data. Setting `debug=true` also disables `no_log` for the certificate upload.
 
 1. Prepare the Ubuntu machine to run Ansible playbooks:
 

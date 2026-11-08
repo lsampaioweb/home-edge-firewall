@@ -1,5 +1,5 @@
 ---
-- name: "Upload SSL certificate to the firewall"
+- name: "Uploading SSL certificate to the firewall"
   hosts: "firewalls"
   gather_facts: false
 
