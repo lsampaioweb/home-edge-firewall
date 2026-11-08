@@ -12,7 +12,7 @@
   ansible.builtin.debug:
     msg: "{{ data }}"
 
-- name: "Fixing SSL certificate issues for pipx environments"
+- name: "Saving and rotating local backup files"
   delegate_to: "{{ control_machine_host | default(groups['ControlMachine'] | first, true) }}"
   block:
     - name: "Ensuring the backup directory exists"

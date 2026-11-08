@@ -93,7 +93,7 @@ Run these commands on the computer running Ansible:
       ```
 
 1. These playbooks perform system backups and restores:
-    - Backup all settings. It will keep only the latest 5 files.
+    - Backup all settings. The configured retention is the latest 10 global backup files (`backup_files_to_keep`).
       ```bash
       ansible-playbook 02-backup.yml
       ```
