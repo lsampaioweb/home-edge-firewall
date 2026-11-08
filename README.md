@@ -12,13 +12,7 @@ In order to download all the submodules, you have to run the following commands:
     git clone --recurse-submodules https://github.com/lsampaioweb/home-edge-firewall.git
     ```
 
-1. If you have already cloned. Just initialize the tracking of the submodules.
-    ```bash
-    git submodule --init
-    git pull --recurse-submodules
-    ```
-
-1. Or in just one line:
+1. If you have already cloned the repository, initialize its submodules:
     ```bash
     git submodule update --init --recursive
     ```
