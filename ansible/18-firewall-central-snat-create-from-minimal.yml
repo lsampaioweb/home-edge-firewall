@@ -1,5 +1,5 @@
 ---
-- name: "Firewall Central SNAT settings from minimal config"
+- name: "Creating Firewall Central SNAT entries from minimal JSON"
   hosts: "firewalls"
   gather_facts: false
 

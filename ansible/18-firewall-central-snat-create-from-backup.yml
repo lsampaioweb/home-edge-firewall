@@ -1,5 +1,5 @@
 ---
-- name: "Firewall Central SNAT settings from backup"
+- name: "Creating Firewall Central SNAT entries from backup"
   hosts: "firewalls"
   gather_facts: false
 
