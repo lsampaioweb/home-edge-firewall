@@ -49,6 +49,38 @@
       "ip": "192.168.3.1",
       "status": "enable",
       "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "pve-01",
+      "id": 7,
+      "ip": "10.1.10.1",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "pve-01",
+      "id": 8,
+      "ip": "10.1.10.1",
+      "status": "enable",
+      "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "pve-02",
+      "id": 9,
+      "ip": "10.1.10.2",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "pve-02",
+      "id": 10,
+      "ip": "10.1.10.2",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.home",
