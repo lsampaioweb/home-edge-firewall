@@ -13,6 +13,10 @@
     }
   ],
   "netmask": "255.255.255.240",
+  "ntp-server1": "0.0.0.0",
+  "ntp-server2": "0.0.0.0",
+  "ntp-server3": "0.0.0.0",
+  "ntp-service": "local",
   "reserved-address": [
     {
       "action": "reserved",

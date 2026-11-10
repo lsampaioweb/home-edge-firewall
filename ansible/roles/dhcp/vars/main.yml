@@ -7,6 +7,10 @@ dhcp_minimal_keys:
   - "interface"
   - "ip-range"
   - "netmask"
+  - "ntp-service"
+  - "ntp-server1"
+  - "ntp-server2"
+  - "ntp-server3"
   - "reserved-address"
   - "status"
 
