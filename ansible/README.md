@@ -275,6 +275,91 @@ Run these commands on the computer running Ansible:
     ansible-playbook site-create-from-minimal.yml
     ```
 
+### Adding VLANs
+
+Run the following commands from `ansible/`, using `inventory/hosts`.
+
+A new VLAN requires more than an interface definition. Compare an existing VLAN
+in the same VDOM and environment, then add or update all six configuration areas:
+
+| Area | Definition under `backup/<vdom>/` |
+| --- | --- |
+| VLAN interface | `system_interface/vlan/<vlan>.json` |
+| DHCP scope | `dhcp/<id>-<vlan>.json` |
+| Interface DNS service | `dns_server/<vlan>.json` |
+| NTP server interface membership | `ntp/*.json` |
+| Zone membership | `system_zone/*.json` |
+| Subnet address object | `firewall_address/<vlan>-subnet.json` |
+
+Preserve existing shared-list members, zone isolation, and referenced interface
+names. A VLAN ID does not establish its subnet or parent interface. Do not copy
+staging addressing into production.
+
+Apply the minimal definitions in dependency order:
+
+```bash
+ansible-playbook -i inventory/hosts \
+    07-system-interface-create-from-minimal.yml \
+    09-dns-server-create-from-minimal.yml \
+    10-ntp-create-from-minimal.yml \
+    12-system-zone-create-from-minimal.yml \
+    13-dhcp-create-from-minimal.yml \
+    17-firewall-address-create-from-minimal.yml
+```
+
+Each playbook processes all matching saved definitions in its area, not only the
+new VLANs. Add `--syntax-check` to validate the playbooks without applying them.
+Also validate JSON, unique IDs, subnet overlap, DHCP ranges, and cross-file
+references before importing.
+
+Service configuration does not grant access between VLANs. Review existing
+zone-wide coverage separately from application-specific policy permissions.
+
+### DHCP NTP settings
+
+System NTP server membership and DHCP NTP advertisement are separate settings.
+The VS and VP VLAN scopes use `"ntp-service": "local"` so DHCP clients are told to
+use the FortiGate's IP on their VLAN. The system NTP configuration must also have
+server mode enabled and include that interface.
+
+| DHCP option | JSON value | Client NTP server |
+| --- | --- | --- |
+| Local | `local` | FortiGate interface IP on the client VLAN |
+| Same as System NTP | `default` | Upstream NTP servers configured for the FortiGate |
+| Specify | `specify` | Addresses configured in `ntp-server1` through `ntp-server3` |
+
+Use `specify` only with usable server addresses. The `0.0.0.0` server fields are
+unused when the mode is `local`. Clients must support DHCP-provided NTP settings
+and may need a lease renewal to receive changes.
+
+For DHCP-only changes, run:
+
+```bash
+ansible-playbook 13-dhcp-create-from-minimal.yml -i inventory/hosts
+```
+
+### Backup files
+
+Minimal `.json` files are consumed by `create-from-minimal` playbooks. Full `.bkp`
+files are captured device configuration consumed by `create-from-backup`
+playbooks; do not fabricate them to represent desired settings.
+
+Backup playbooks regenerate both formats from device data. Apply pending minimal
+changes before running a backup, or preserve them separately, because a backup
+can overwrite unapplied edits. The DHCP minimal filter retains the NTP mode and
+all three explicit NTP server fields.
+
+After applying DHCP changes, refresh the captured configuration with:
+
+```bash
+ansible-playbook 13-dhcp-backup.yml -i inventory/hosts
+```
+
+Comparing a regenerated minimal file with its full backup confirms consistency,
+not that the previous desired configuration was applied. Compare against a saved
+pre-import version as well. Configuration checks do not replace live client
+DHCP, DNS, NTP, and connectivity tests.
+
 ### Created by:
 
 Luciano Sampaio.
