@@ -1,0 +1,35 @@
+{
+  "default-gateway": "10.1.65.14",
+  "dns-service": "local",
+  "domain": "lan.home",
+  "id": 1165,
+  "interface": "VS-DATABASE",
+  "ip-range": [
+    {
+      "end_ip": "10.1.65.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.65.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "ntp-server1": "0.0.0.0",
+  "ntp-server2": "0.0.0.0",
+  "ntp-server3": "0.0.0.0",
+  "ntp-service": "local",
+  "reserved-address": [
+    {
+      "action": "reserved",
+      "circuit_id": "",
+      "circuit_id_type": "string",
+      "description": "",
+      "id": 1,
+      "ip": "10.1.65.1",
+      "mac": "bc:17:22:08:c6:2b",
+      "remote_id": "",
+      "remote_id_type": "string",
+      "type": "mac"
+    }
+  ],
+  "status": "enable"
+}

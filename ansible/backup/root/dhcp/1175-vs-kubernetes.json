@@ -1,0 +1,22 @@
+{
+  "default-gateway": "10.1.75.14",
+  "dns-service": "local",
+  "domain": "lan.home",
+  "id": 1175,
+  "interface": "VS-KUBERNETES",
+  "ip-range": [
+    {
+      "end_ip": "10.1.75.13",
+      "id": 1,
+      "lease_time": 0,
+      "start_ip": "10.1.75.1"
+    }
+  ],
+  "netmask": "255.255.255.240",
+  "ntp-server1": "0.0.0.0",
+  "ntp-server2": "0.0.0.0",
+  "ntp-server3": "0.0.0.0",
+  "ntp-service": "local",
+  "reserved-address": [],
+  "status": "enable"
+}

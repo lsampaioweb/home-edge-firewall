@@ -33,6 +33,18 @@
     },
     {
       "interface_name": "SS-S-CLSTR"
+    },
+    {
+      "interface_name": "VS-CICD"
+    },
+    {
+      "interface_name": "VS-DATABASE"
+    },
+    {
+      "interface_name": "VS-KUBERNETES"
+    },
+    {
+      "interface_name": "VS-SECURITY"
     }
   ],
   "intrazone": "deny",
