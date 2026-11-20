@@ -83,6 +83,9 @@
     },
     {
       "interface_name": "VS-SECURITY"
+    },
+    {
+      "interface_name": "port11"
     }
   ],
   "ntpsync": "enable",

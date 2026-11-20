@@ -25,17 +25,20 @@
     },
     {
       "name": "PING"
-    },
-    {
-      "name": "NTP"
-    },
-    {
-      "name": "SMTPS"
     }
   ],
   "srcaddr": [
     {
-      "name": "all"
+      "name": "SS-S-CLSTR address"
+    },
+    {
+      "name": "vs-mgmt-subnet"
+    },
+    {
+      "name": "vs-template-subnet"
+    },
+    {
+      "name": "vs-database-subnet"
     }
   ],
   "srcintf": [

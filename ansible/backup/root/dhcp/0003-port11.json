@@ -1,7 +1,7 @@
 {
   "default-gateway": "192.168.4.1",
   "dns-service": "local",
-  "domain": "",
+  "domain": "lan.home",
   "id": 3,
   "interface": "port11",
   "ip-range": [
@@ -16,7 +16,7 @@
   "ntp-server1": "0.0.0.0",
   "ntp-server2": "0.0.0.0",
   "ntp-server3": "0.0.0.0",
-  "ntp-service": "specify",
+  "ntp-service": "local",
   "reserved-address": [],
   "status": "enable"
 }

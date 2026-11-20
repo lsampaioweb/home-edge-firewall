@@ -25,17 +25,11 @@
     },
     {
       "name": "PING"
-    },
-    {
-      "name": "NTP"
-    },
-    {
-      "name": "SMTPS"
     }
   ],
   "srcaddr": [
     {
-      "name": "all"
+      "name": "LAG-Production address"
     }
   ],
   "srcintf": [

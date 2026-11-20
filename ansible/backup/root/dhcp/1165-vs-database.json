@@ -17,19 +17,6 @@
   "ntp-server2": "0.0.0.0",
   "ntp-server3": "0.0.0.0",
   "ntp-service": "local",
-  "reserved-address": [
-    {
-      "action": "reserved",
-      "circuit_id": "",
-      "circuit_id_type": "string",
-      "description": "",
-      "id": 1,
-      "ip": "10.1.65.1",
-      "mac": "bc:17:22:08:c6:2b",
-      "remote_id": "",
-      "remote_id_type": "string",
-      "type": "mac"
-    }
-  ],
+  "reserved-address": [],
   "status": "enable"
 }
