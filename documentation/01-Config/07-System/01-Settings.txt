@@ -5,13 +5,13 @@ System Settings:
   Select server                   : FortiGuard
   Sync interval                   : 60
   Setup device as local NTP server: Checked
-    Listen on Interfaces          : LAG-Home, VS-MGMT, VS-CORE, VS-LDAP, VS-PROXY, VS-BACKUP, VS-REPOSITORY, VS-TEMPLATE, VS-JUMPSERVER, VS-LOADBALANCER, VS-MONITOR, VP-MGMT, VP-CORE, VP-LDAP, VP-PROXY, VP-BACKUP, VP-REPOSITORY, VP-TEMPLATE, VP-JUMPSERVER, VP-LOADBALANCER, VP-MONITOR
+    Listen on Interfaces          : INT-loopback, LAG-Home, SS-S-CLSTR, VP-BACKUP, VP-CORE, VP-JUMPSRV, VP-LDAP, VP-LDBLANCER, VP-MGMT, VP-MONITOR, VP-PROXY, VP-REPOSITR, VP-TEMPLATE, VS-BACKUP, VS-CORE, VS-JUMPSRV, VS-LDAP, VS-LDBLANCER, VS-MGMT, VS-MONITOR, VS-PROXY, VS-REPOSITR, VS-TEMPLATE, LAG-Production, VS-CICD, VS-DATABASE, VS-KUBERNETES, VS-SECURITY, port11
 
 Administration Settings:
   HTTP port               : 80
   Redirect to HTTPS       : Checked
   HTTPS port              : 443
-  HTTPS server certificate: firewall-ssl
+  HTTPS server certificate: firewall-01.lan.home
   SSH port                : 22
 
 Password Policy:

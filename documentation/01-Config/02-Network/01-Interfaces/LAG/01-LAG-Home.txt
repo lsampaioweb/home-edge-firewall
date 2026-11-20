@@ -7,7 +7,7 @@ Interface:
 
 Address:
   Addressing mode                       : Manual
-  IP/Netmask                            : 192.168.3.1/24
+  IP/Netmask                            : 192.168.3.1/255.255.255.0
   Create address object matching subnet : Checked
 
 Administrative Access:

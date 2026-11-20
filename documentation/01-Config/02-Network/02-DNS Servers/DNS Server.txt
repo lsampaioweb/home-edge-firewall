@@ -105,6 +105,41 @@ DNS Service on Interface
       Mode          : Recursive
       DNS Filter    : Unchecked
       DNS over HTTPS: Unchecked
+    -
+      Interface     : LAG-Production
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : SS-S-CLSTR
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VS-CICD
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VS-DATABASE
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VS-KUBERNETES
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : VS-SECURITY
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
+    -
+      Interface     : port11
+      Mode          : Recursive
+      DNS Filter    : Unchecked
+      DNS over HTTPS: Unchecked
 
 DNS Database
   New DNS Zone
@@ -112,7 +147,7 @@ DNS Database
     View                    : Shadow
     DNS Zone                : lan.home
     Domain Name             : lan.home
-    Hostname of Primary DNS : dns-01
+    Hostname of Primary DNS : firewall-01
     Contact Email Address   : lsampaio
     TTL (86400 seconds)     : 1 Day
     Authoritative           : Checked

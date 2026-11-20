@@ -15,14 +15,14 @@ Security Level
   Password                  : KeyChain: "firewall-01-zabbix-user"
 
 Host:
-  IP Address                : 10.1.55.2
+  IP Address                : 20.1.55.1
 
 Queries:
   Enabled : Checked
   Port    : 161
 
-Traps:
-  Enabled     : Checked
+  Traps:
+  Enabled     : Unchecked
   Local Port  : 161
   Remote Port : 162
 

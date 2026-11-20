@@ -235,6 +235,16 @@ Run these commands on the computer running Ansible:
     ansible-playbook 20-firewall-policy-create-from-minimal.yml
     ```
 
+1. Review saved firewall policy captures for `all` source and destination addresses:
+    ```bash
+    ansible-playbook 20-firewall-policy-review.yml
+    ```
+
+    The review reads saved `.bkp` files, not the live firewall or minimal JSON. Findings do not fail the playbook; unreadable or invalid input does. To accept a specific finding, provide its VDOM, policy ID, check and reason:
+    ```bash
+    ansible-playbook 20-firewall-policy-review.yml -e '{"firewall_policy_review_exceptions":[{"vdom":"root","policy_id":14,"check":"POLICY_ALL_ALL","reason":"Approved internet access"}]}'
+    ```
+
 1. Backup and create Email Server settings:
     ```bash
     ansible-playbook 21-email-server-backup.yml

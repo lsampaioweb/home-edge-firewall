@@ -6,7 +6,7 @@ Interface:
 
 Address:
   Addressing mode                       : Manual
-  IP/Netmask                            : 0.0.0.0/0.0.0.0
+  IP/Netmask                            : 10.1.9.14/255.255.255.240
   Create address object matching subnet : Unchecked
 
   Receive LLDP  : Use VDOM Setting

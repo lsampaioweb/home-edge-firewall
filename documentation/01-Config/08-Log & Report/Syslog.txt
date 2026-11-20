@@ -1,6 +1,6 @@
 01 - config log syslogd setting
   status              : enable
-  server              : grafana-01.lan.homelab
+  server              : grafana.lan.home
   mode                : udp
   port                : 514
   facility            : local7

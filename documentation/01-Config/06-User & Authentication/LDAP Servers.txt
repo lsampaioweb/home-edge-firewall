@@ -1,11 +1,11 @@
 Name                    : ldap
-Server IP/Name          : ldap-01.lan.home
+Server IP/Name          : ldap-01.homelab
 Server Port             : 389
 Common Name Identifier  : cn
-Distinguished Name      : dc=home
+Distinguished Name      : dc=homelab
 Exchange server         : Unchecked
 Bind Type               : Regular
-Username                : cn=ldap-reader,dc=home
+Username                : cn=ldap-reader-firewall,dc=homelab
 Password                : Keychain: "ldap-01-ldap-reader"
 Secure Connection       : Checked
 Protocol                : STARTTLS

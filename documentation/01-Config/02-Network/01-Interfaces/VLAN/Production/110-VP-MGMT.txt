@@ -3,12 +3,12 @@ Interface:
   Type          : VLAN
   VLAN Protocol : 802.1Q
   Interface     : LAG-Production
-  VLAN ID       : 110
+  VLAN ID       : 2110
   Role          : LAN
 
 Address:
   Addressing mode : Manual
-  IP/Netmask      : 10.2.110.1/255.255.255.240
+  IP/Netmask      : 20.1.10.14/255.255.255.240
 
 Create address object matching subnet: Checked
 
@@ -18,7 +18,7 @@ Administrative Access:
 
 DHCP Server:
   DHCP status     : Enabled
-  Address range   : 10.2.110.2-10.2.110.14
+  Address range   : 20.1.10.1-20.1.10.13
   Netmask         : 255.255.255.240
   Default gateway : Same as Interface IP
   DNS server      : Same as Interface IP
