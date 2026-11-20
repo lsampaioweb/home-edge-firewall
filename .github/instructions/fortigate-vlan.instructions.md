@@ -62,6 +62,7 @@ Paths below are relative to `ansible/backup/<vdom>/`.
 - Verify that each DHCP gateway matches its interface IP and that lease endpoints lie in the subnet without including the gateway, network address, or broadcast address.
 - Verify that each subnet address object matches its VLAN network and zone.
 - Compare shared lists before and after the edit to confirm that existing members and isolation settings are preserved.
+- Search the target VDOM's other JSON for references to the VLAN interface IP or stable host IPs in its subnet, including DNS A/PTR records, Syslog `source-ip`, SNMP notification hosts, and DHCP reservations. Keep such references aligned when the requested address changes; do not replicate monitoring settings to unrelated VLANs.
 - Run `ansible-playbook --syntax-check` for the affected import playbooks using the maintained inventory.
 - Compare captured configuration with preserved pre-import definitions; agreement between regenerated minimal and full backups alone does not prove that intended settings were applied.
 - Distinguish configuration validation from live DHCP, DNS, NTP, and connectivity tests; report live behavior as unverified unless tested.
