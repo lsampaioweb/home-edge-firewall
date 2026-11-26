@@ -1,0 +1,10 @@
+{
+  "associated-interface": "",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "SS-S-CLSTR",
+  "macaddr": [],
+  "name": "SS-S-CLSTR address",
+  "subnet": "10.1.9.0 255.255.255.240",
+  "type": "interface-subnet"
+}

@@ -1,0 +1,10 @@
+{
+  "associated-interface": "",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "LAG-Production",
+  "macaddr": [],
+  "name": "LAG-Production address",
+  "subnet": "20.1.9.0 255.255.255.240",
+  "type": "interface-subnet"
+}

@@ -1,13 +1,13 @@
 {
-  "associated-interface": "",
+  "associated-interface": "zone-staging",
   "color": 0,
   "comment": "Ansible",
   "interface": "",
   "macaddr": [
     {
-      "macaddr": "60:be:b4:08:f7:68"
+      "macaddr": "00:d0:b4:01:77:7d"
     }
   ],
-  "name": "pve-01",
+  "name": "pve-02-home",
   "type": "mac"
 }
