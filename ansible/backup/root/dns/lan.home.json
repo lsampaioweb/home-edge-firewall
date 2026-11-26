@@ -81,6 +81,22 @@
       "ip": "10.1.10.2",
       "status": "enable",
       "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-postgresql-01",
+      "id": 11,
+      "ip": "10.1.65.1",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-postgresql-01",
+      "id": 12,
+      "ip": "10.1.65.1",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.home",
