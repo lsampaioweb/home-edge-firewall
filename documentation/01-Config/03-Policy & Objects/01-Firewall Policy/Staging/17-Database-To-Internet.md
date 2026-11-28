@@ -1,10 +1,11 @@
-Name                : Staging-To-Internet
-Incoming Interface  : Zone-Staging
+```text
+Name                : Database-To-Internet
+Incoming Interface  : zone-staging
 Outgoing Interface  : SD-WAN
-Source              : VS-MGMT address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address
+Source              : vs-database-subnet
 Destination         : all
 Schedule            : always
-Service             : HTTP, HTTPS, PING, SMTPS
+Service             : HTTP, HTTPS, PING
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -25,3 +26,4 @@ Logging Options
   Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked
+```

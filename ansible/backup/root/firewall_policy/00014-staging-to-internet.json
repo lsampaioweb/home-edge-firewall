@@ -33,12 +33,6 @@
     },
     {
       "name": "vs-mgmt-subnet"
-    },
-    {
-      "name": "vs-template-subnet"
-    },
-    {
-      "name": "vs-database-subnet"
     }
   ],
   "srcintf": [

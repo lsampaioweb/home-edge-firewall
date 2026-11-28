@@ -1,0 +1,41 @@
+{
+  "action": "accept",
+  "comments": "",
+  "dstaddr": [
+    {
+      "name": "all"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "SD-WAN"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "JumpServer-To-Internet",
+  "nat": "disable",
+  "policyid": 41,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "HTTP"
+    },
+    {
+      "name": "HTTPS"
+    },
+    {
+      "name": "PING"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "vs-jumpsrv-subnet"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "status": "enable"
+}
