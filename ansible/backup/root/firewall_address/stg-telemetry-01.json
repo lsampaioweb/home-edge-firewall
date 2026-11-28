@@ -1,0 +1,13 @@
+{
+  "associated-interface": "zone-staging",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "bc:17:22:b8:34:d6"
+    }
+  ],
+  "name": "stg-telemetry-01",
+  "type": "mac"
+}

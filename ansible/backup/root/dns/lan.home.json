@@ -113,6 +113,38 @@
       "ip": "10.1.45.1",
       "status": "enable",
       "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-grafana-01",
+      "id": 15,
+      "ip": "10.1.55.1",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-grafana-01",
+      "id": 16,
+      "ip": "10.1.55.1",
+      "status": "enable",
+      "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-telemetry-01",
+      "id": 17,
+      "ip": "10.1.55.2",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-telemetry-01",
+      "id": 18,
+      "ip": "10.1.55.2",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.home",

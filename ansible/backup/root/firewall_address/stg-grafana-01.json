@@ -1,0 +1,13 @@
+{
+  "associated-interface": "zone-staging",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "bc:17:22:1b:61:9f"
+    }
+  ],
+  "name": "stg-grafana-01",
+  "type": "mac"
+}
