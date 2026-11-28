@@ -1,0 +1,38 @@
+{
+  "action": "accept",
+  "comments": "",
+  "dstaddr": [
+    {
+      "name": "vs-monitor-subnet"
+    }
+  ],
+  "dstintf": [
+    {
+      "name": "zone-staging"
+    }
+  ],
+  "logtraffic": "all",
+  "name": "Home-To-Staging-Monitor",
+  "nat": "disable",
+  "policyid": 43,
+  "schedule": "always",
+  "service": [
+    {
+      "name": "PING"
+    },
+    {
+      "name": "SSH"
+    }
+  ],
+  "srcaddr": [
+    {
+      "name": "LAG-Home address"
+    }
+  ],
+  "srcintf": [
+    {
+      "name": "zone-home"
+    }
+  ],
+  "status": "enable"
+}
