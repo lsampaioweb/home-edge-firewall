@@ -1,0 +1,13 @@
+{
+  "associated-interface": "zone-staging",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "bc:17:22:6e:d5:e3"
+    }
+  ],
+  "name": "stg-jumpserver-01",
+  "type": "mac"
+}
