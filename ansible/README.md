@@ -139,10 +139,20 @@ Run these commands on the computer running Ansible:
     ansible-playbook 07-system-interface-create-from-minimal.yml
     ```
 
-1. Backup and create DNS settings:
+1. Manage DNS database settings:
+
+    The backup downloads the firewall's DNS zones and overwrites matching saved `.json` and `.bkp` files. Preserve any unapplied changes before running it.
     ```bash
     ansible-playbook 08-dns-backup.yml
+    ```
+
+    To restore saved full captures, run:
+    ```bash
     ansible-playbook 08-dns-create-from-backup.yml
+    ```
+
+    To apply saved minimal definitions, run the following playbook. It processes all saved DNS zone definitions, not only the edited zone.
+    ```bash
     ansible-playbook 08-dns-create-from-minimal.yml
     ```
 

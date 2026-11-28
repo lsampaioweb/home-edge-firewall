@@ -97,6 +97,22 @@
       "ip": "10.1.65.1",
       "status": "enable",
       "type": "PTR"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-jumpserver-01",
+      "id": 13,
+      "ip": "10.1.45.1",
+      "status": "enable",
+      "type": "A"
+    },
+    {
+      "canonical_name": "",
+      "hostname": "stg-jumpserver-01",
+      "id": 14,
+      "ip": "10.1.45.1",
+      "status": "enable",
+      "type": "PTR"
     }
   ],
   "domain": "lan.home",
