@@ -49,7 +49,7 @@ Paths below are relative to `ansible/backup/<vdom>/`.
 - Author desired configuration in minimal `.json` files consumed by the `create-from-minimal` playbooks.
 - Treat `.bkp` files as captured device configuration consumed by the `create-from-backup` playbooks; do not fabricate raw backups or device-assigned metadata.
 - Keep runtime playbook or role changes out of a VLAN data update unless the existing loader or backup filter cannot preserve the required configuration.
-- Preserve unapplied minimal definitions before running backup playbooks, which regenerate both formats from device data.
+- Backup playbooks regenerate both formats from device data; follow the [project backup safeguard](../copilot-instructions.md).
 
 ## Validate Before Completion
 

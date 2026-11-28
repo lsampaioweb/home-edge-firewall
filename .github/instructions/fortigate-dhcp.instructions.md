@@ -18,6 +18,7 @@ applyTo: "ansible/backup/*/dhcp/*.json"
 - Verify that every lease range is inside the subnet and excludes the network, broadcast, and gateway addresses.
 - Check scope ID uniqueness, lease-range overlap, reserved-address conflicts, and all existing members before editing a scope.
 - Treat `reserved-address` entries as IP-to-client bindings, commonly keyed by MAC. Match each reserved `ip` against the dynamic pool and inspect its binding fields; the absence of a hostname does not mean the address is unreserved.
+- When changing a reservation's MAC, check matching MAC-type firewall address objects and their consumers; confirm intended changes before updating them.
 - Search other target-VDOM JSON for fixed IP references that fall inside a proposed DHCP pool, including DNS A/PTR records, SNMP notification hosts, Syslog source addresses, and address objects. Require an explicit reservation or a non-overlapping pool when the host assignment is meant to be stable; do not invent reservations.
 - When `dns-service` is `local`, verify that the interface has the intended DNS service configuration. DNS database entries under `dns/` are separate from interface DNS service under `dns_server/`.
 - When `ntp-service` is `local`, verify that the enabled NTP server configuration includes the exact interface. When it is `specify`, require explicit usable server addresses.

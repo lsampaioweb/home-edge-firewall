@@ -19,7 +19,9 @@ applyTo: "ansible/backup/*/dns/*.json,ansible/backup/*/dns_server/*.json"
 - Verify referenced names and addresses against the user's request and current configuration. Add paired A/PTR records only when requested or established by the existing zone convention; do not invent hostnames or addresses.
 - When adding or changing a host A or PTR record, check target-VDOM DHCP scopes for an overlapping pool or reservation, including the reserved client's MAC.
 - For a host address in a DHCP pool, confirm whether the host uses DHCP. If it does, obtain and verify its MAC and align its reservation; do not invent a MAC or reassign another client's reservation without confirmation.
+- For a static host address inside a DHCP pool, verify that it is excluded from dynamic allocation; otherwise report the unresolved conflict.
 - When adding or changing a VM host record with a confirmed MAC address, check for a matching MAC-type firewall address object. If one is absent, create it using the confirmed name, MAC, and associated zone; do not alter firewall permissions.
+- Do not infer that a firewall address object is absent from the device solely because it is missing from filtered backups. Verify live ownership when available, or report it as unverified before creating an object.
 - When changing or removing a record, search the same zone for CNAME references to it.
 - Search other target-VDOM JSON for FQDN consumers such as Syslog servers, LDAP servers, and the admin certificate name. A hostname absent from a local zone may be supplied by another DNS source; report unresolved ownership instead of assuming it is invalid or creating a record automatically.
 

@@ -16,7 +16,7 @@ applyTo: "ansible/backup/*/system_settings/*.json"
 - Before changing `admin-server-cert`, verify that the named certificate exists in the captured configuration and matches the certificate upload workflow. Certificate material is handled by the certificate role, not a minimal JSON area.
 - Before changing hostname or administrator access ports, check dependent DNS names, inventory access, HTTPS redirect, and current management reachability. Do not risk locking out the maintained Ansible connection.
 - FortiGate NTP server mode and interface membership are managed separately under `ntp/`; read the [zone and NTP contract](fortigate-zone-ntp.instructions.md) for those changes.
-- Do not claim fields outside the system-settings minimal-key filter are imported by editing this JSON.
+- Verify importer support separately from minimal-backup retention: fields mapped by the importer may still be omitted when a backup regenerates the JSON.
 
 ## Validate Before Completion
 
