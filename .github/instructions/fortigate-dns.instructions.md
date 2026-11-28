@@ -17,6 +17,9 @@ applyTo: "ansible/backup/*/dns/*.json,ansible/backup/*/dns_server/*.json"
 - When a request adds a new DNS zone rather than a record, inspect the zone type, authoritative behavior, and current DNS playbook support before creating a definition.
 - Check record type-specific fields: A and PTR records use IP addresses, while CNAME records reference a canonical name.
 - Verify referenced names and addresses against the user's request and current configuration. Add paired A/PTR records only when requested or established by the existing zone convention; do not invent hostnames or addresses.
+- When adding or changing a host A or PTR record, check target-VDOM DHCP scopes for an overlapping pool or reservation, including the reserved client's MAC.
+- For a host address in a DHCP pool, confirm whether the host uses DHCP. If it does, obtain and verify its MAC and align its reservation; do not invent a MAC or reassign another client's reservation without confirmation.
+- When adding or changing a VM host record with a confirmed MAC address, check for a matching MAC-type firewall address object. If one is absent, create it using the confirmed name, MAC, and associated zone; do not alter firewall permissions.
 - When changing or removing a record, search the same zone for CNAME references to it.
 - Search other target-VDOM JSON for FQDN consumers such as Syslog servers, LDAP servers, and the admin certificate name. A hostname absent from a local zone may be supplied by another DNS source; report unresolved ownership instead of assuming it is invalid or creating a record automatically.
 
