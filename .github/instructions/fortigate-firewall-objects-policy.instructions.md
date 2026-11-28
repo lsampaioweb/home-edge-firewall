@@ -22,6 +22,7 @@ applyTo: "ansible/backup/*/firewall_address/*.json,ansible/backup/*/services/**/
 
 ## Check Policy Impact
 
+- Prefer separate policies per workload or subnet when independent traffic inspection or service restrictions are needed.
 - For firewall policy changes, verify source and destination interfaces, address objects, service objects, schedule, action, and policy ID against existing definitions.
 - For central SNAT and DoS policy changes, verify referenced interfaces or zones, addresses, services, and policy IDs.
 - Do not infer or add application access, widen address or service scope, or extend per-VLAN permissions unless explicitly requested.
