@@ -3,7 +3,7 @@
 - When changing a file, add an empty line at the end only if one is not already present.
 - For FortiGate configuration requests, identify and read every matching topic contract in `instructions/` before editing. Search the target VDOM's minimal JSON definitions and relevant documentation for dependencies; do not assume the requested file is the only affected configuration.
 - Treat minimal `*.json` files as desired configuration and `.bkp` files as captured device configuration. Do not fabricate backups or run live imports unless requested.
-- Before running a backup, preserve unapplied minimal definitions that it could overwrite.
+- Before running a backup, preserve minimal definitions it could overwrite, including unapplied changes. The Git index is sufficient when all relevant definitions are tracked and their intended contents are staged with no unstaged changes; otherwise preserve untracked, ignored, or unstaged definitions separately.
 - Before importing, check for stale definitions and explain the playbook's actual scope, including when it processes all matching files.
 - Do not assume deleting a local definition removes the firewall object; verify deletion support and report any manual step.
 - After changing configuration files, identify the playbooks needed to apply the changes, explain what each does and where to run it, or state when no playbook is needed.
