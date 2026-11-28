@@ -1,0 +1,13 @@
+{
+  "associated-interface": "zone-staging",
+  "color": 0,
+  "comment": "Ansible",
+  "interface": "",
+  "macaddr": [
+    {
+      "macaddr": "bc:17:22:97:86:85"
+    }
+  ],
+  "name": "stg-postgresql-01",
+  "type": "mac"
+}
