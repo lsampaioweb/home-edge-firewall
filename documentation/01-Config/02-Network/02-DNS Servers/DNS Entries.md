@@ -1,3 +1,4 @@
+```text
 DNS Entries
   Type                                : Address (A) and IPv4 Pointer (PTR)
   Hostname                            : firewall-01
@@ -62,12 +63,6 @@ DNS Entries
   Type                                : Address (A)
   Hostname                            : api.minio-02
   IP Address                          : 10.1.30.3
-  TTL                                 : Use Zone TTL
-  Status                              : Enabled
-
-  Type                                : Address (A) and IPv4 Pointer (PTR)
-  Hostname                            : zabbix-01
-  IP Address                          : 10.1.55.2
   TTL                                 : Use Zone TTL
   Status                              : Enabled
 
@@ -154,3 +149,4 @@ DNS Entries
   Canonical Name (CNAME)              : stg-load-balancer-01
   TTL                                 : Use Zone TTL
   Status                              : Enabled
+```

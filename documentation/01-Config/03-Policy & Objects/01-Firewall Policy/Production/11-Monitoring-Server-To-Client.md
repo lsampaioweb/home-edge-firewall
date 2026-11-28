@@ -1,10 +1,11 @@
+```text
 Name                : Monitoring-Server-To-Client
 Incoming Interface  : Zone-Production
 Outgoing Interface  : Zone-Production
 Source              : VP-MONITOR address
 Destination         : VP-MGMT address, VP-CORE address, VP-LDAP address, VP-PROXY address, VP-BACKUP address, VP-REPOSITORY address, VP-TEMPLATE address, VP-JUMPSERVER address, VP-LOADBALANCER address
 Schedule            : always
-Service             : HTTPS, PING, SNMP, Zabbix-Client
+Service             : HTTPS, PING, SNMP
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -23,3 +24,4 @@ Logging Options
   Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked
+```

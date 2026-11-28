@@ -1,10 +1,11 @@
+```text
 Name                : Monitoring-Client-To-Server
 Incoming Interface  : Zone-Production
 Outgoing Interface  : Zone-Production
 Source              : VP-MGMT address, VP-CORE address, VP-LDAP address, VP-PROXY address, VP-BACKUP address, VP-REPOSITORY address, VP-TEMPLATE address, VP-JUMPSERVER address, VP-LOADBALANCER address
 Destination         : VP-MONITOR address
 Schedule            : always
-Service             : Grafana-Loki, SNMP, SYSLOG, SYSLOG-Promtail, Zabbix-Server
+Service             : Grafana-Loki, SNMP, SYSLOG, SYSLOG-Promtail
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -23,3 +24,4 @@ Logging Options
   Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked
+```

@@ -1,10 +1,11 @@
-Name                : Monitoring-Client-To-Server
+```text
+Name                : Monitoring-Server-To-Client
 Incoming Interface  : Zone-Staging
 Outgoing Interface  : Zone-Staging
-Source              : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address
-Destination         : VS-MONITOR address
+Source              : VS-MONITOR address
+Destination         : VS-MGMT address, VS-CORE address, VS-LDAP address, VS-PROXY address, VS-BACKUP address, VS-REPOSITORY address, VS-TEMPLATE address, VS-JUMPSERVER address, VS-LOADBALANCER address
 Schedule            : always
-Service             : Grafana-Loki, SNMP, SYSLOG, SYSLOG-Promtail, Zabbix-Server
+Service             : HTTPS, PING, SNMP
 Action              : ACCEPT
 
 Firewall/Network Options
@@ -23,3 +24,4 @@ Logging Options
   Log Allowed Traffic : All Sessions
 
 Enable this policy: Checked
+```

@@ -48,17 +48,6 @@ Run these commands on the computer running Ansible:
         secret-tool lookup password "firewall-01_snmp_password"
         ```
 
-1. Save the password that Zabbix will use to collect events and metrics from the firewall.
-
-    ```bash
-    secret-tool store --label="firewall-01_usr_zabbix" password "firewall-01_usr_zabbix"
-    ```
-
-    - Confirm the password was correctly saved in the secret manager:
-        ```bash
-        secret-tool lookup password "firewall-01_usr_zabbix"
-        ```
-
 1. Change to the Ansible directory:
     ```bash
     cd ansible/
